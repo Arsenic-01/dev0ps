@@ -1,0 +1,44 @@
+'use client';
+
+import Hero from '@/components/Hero';
+import Grid from '@/components/Grid';
+import CallToAction from '@/components/CallToAction';
+import Clients from '@/components/Clients';
+import Work from '@/components/ui/Work';
+import Values from '@/components/Values';
+import Development from '@/components/Development';
+import { Testimonials } from '@/components/Testimonials';
+import Services from '@/components/Services';
+import FAQ from '@/components/Accordian';
+import Example from '../components/ui/HeroImg';
+import * as Sentry from '@sentry/nextjs';
+
+const Home = () => {
+  Sentry.metrics.set('user_view_home', 'client');
+
+  return (
+    <main className='relative bg-black-100 flex z-0 justify-center items-center flex-col overflow-hidden mx-auto '>
+      <Hero />
+      <Clients />
+      <div className='lg:max-w-screen-2xl max-w-7xl  w-full sm:px-10 px-5'>
+        <Services />
+      </div>
+      <div className='max-w-7xl w-full sm:px-10 px-5'>
+        <Work />
+        <Grid />
+      </div>
+      <div className='lg:max-w-screen-2xl max-w-7xl  w-full sm:px-10 px-5'>
+        <Development />
+
+        <Values />
+        <Testimonials />
+      </div>
+      <div className='max-w-7xl w-full sm:px-10 px-5'>
+        <CallToAction />
+        <FAQ />
+      </div>
+    </main>
+  );
+};
+
+export default Home;
