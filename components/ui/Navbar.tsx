@@ -8,17 +8,29 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   Button,
+  user,
 } from '@nextui-org/react';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { navItems } from '@/data';
-import useAuth from '@/context/useAuth';
-import { account } from '@/lib/appwrite.config';
-import { deleteSessionClient } from '@/lib/appwrite';
+
+import { deleteSessionClient, getLoggedInUser } from '@/lib/appwrite';
+import { redirect, useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { authStatus } = useAuth();
+
+  const [user, setUser] = useState<any | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const user = await getLoggedInUser();
+      setUser(user);
+    };
+    fetchData();
+  }, []);
+  const router = useRouter();
 
   return (
     <Navbar
@@ -51,13 +63,16 @@ export default function NavbarComponent() {
         ))}
       </NavbarContent>
       <NavbarContent justify='end'>
-        {authStatus ? (
+        {user ? (
           <NavbarItem>
             <Button
               color='primary'
               variant='shadow'
               radius='full'
-              onClick={async () => deleteSessionClient()}
+              onClick={async () => {
+                await deleteSessionClient();
+                router.push('/login');
+              }}
             >
               Logout
             </Button>

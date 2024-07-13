@@ -43,19 +43,26 @@ export const ClientLoginForm = () => {
     });
 
     const data = await response;
-    console.log(data);
-
+    // const { setAuthStatus } = useAuth();
     const fetchData = async () => {
-      const promise = await fetch('/api/user'); // Replace with your API endpoint
-      const result = await promise.json();
-      const id = result.$id;
-      console.log(result);
-      if (result) {
-        // const { setAuthStatus } = useAuth();
-        // setAuthStatus(true);
-        router.push(`/clients/${id}/new-appointment`);
-        toast('Login Successful! 🎉');
-      } else {
+      try {
+        const promise = await fetch('/api/user'); // Replace with your API endpoint
+        const result = await promise.json();
+        if (result?.error?.code === 401 || result?.status === 'error') {
+          toast('Login Failed Invalid Credentials 👀');
+          return;
+        }
+        const id = result.user.$id;
+        console.log(result);
+        if (result) {
+          //          setAuthStatus(true);
+
+          router.replace(`/clients/${id}/new-appointment`);
+          toast('Login Successful! 🎉');
+        } else {
+          toast('Login Failed');
+        }
+      } catch (error) {
         toast('Login Failed');
       }
     };

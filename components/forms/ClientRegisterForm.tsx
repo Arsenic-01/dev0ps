@@ -73,8 +73,6 @@ export const ClientForm = () => {
             password: values.password,
           };
           registerUserDocument(newUser);
-          // const { setAuthStatus } = useAuth();
-          // setAuthStatus(true);
           router.push(`/clients/${id}/new-appointment`);
           toast('Login Successful! 🎉');
         } else {

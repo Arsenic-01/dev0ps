@@ -4,12 +4,19 @@ import { AppointmentForm } from '@/components/forms/AppointmentForm';
 import { getClient } from '@/lib/actions/client.actions';
 import * as Sentry from '@sentry/nextjs';
 import { SearchParamProps } from '@/types';
+import { getLoggedInUser } from '@/lib/appwrite';
+import { redirect } from 'next/navigation';
 
 const Appointment = async ({ params: { userId } }: SearchParamProps) => {
   const client = await getClient(userId);
   const year = new Date().getFullYear();
 
   Sentry.metrics.set('user_view_new-appointment', 'client');
+  const user = await getLoggedInUser();
+  if (typeof window !== 'undefined') {
+    window.location.reload();
+  }
+  if (!user) redirect('/login');
 
   return (
     <div className='flex h-screen max-h-screen'>

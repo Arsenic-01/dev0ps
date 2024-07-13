@@ -1,7 +1,9 @@
 'use server';
 import { Client, Account } from 'node-appwrite';
 import { cookies } from 'next/headers';
-import { account, client } from './appwrite.config';
+import { account } from './appwrite.config';
+import { createSessionClient1 } from './server/appwrite.actions';
+// import { , client } from './appwrite.config'
 
 const ENDPOINT = process.env.NEXT_PUBLIC_ENDPOINT;
 const PROJECT_ID = process.env.PROJECT_ID;
@@ -19,7 +21,7 @@ const createAdminClient = async () => {
   };
 };
 
-const createSessionClient = async (request) => {
+const createSessionClient = async (request?: any | null) => {
   const client = new Client().setEndpoint(ENDPOINT!).setProject(PROJECT_ID!);
 
   const session = request.cookies.get('session');
@@ -33,13 +35,24 @@ const createSessionClient = async (request) => {
   };
 };
 
-const deleteSessionClient = async () => {
+export async function getLoggedInUser() {
   try {
-    const result = await account.deleteSession('current');
-    return result;
+    const { account } = await createSessionClient1();
+    return await account.get();
   } catch (error) {
-    console.log('error on delete session wtf', error);
-  }
-};
+    console.log('error on getting user session wtf', error);
 
-export { createAdminClient, createSessionClient, deleteSessionClient };
+    return null;
+  }
+}
+
+export async function deleteSessionClient() {
+  try {
+    const cookieStore = cookies();
+    const hasCookie = cookieStore.delete('session');
+  } catch (error) {
+    console.log('error on deleting user session', error);
+  }
+}
+
+export { createAdminClient, createSessionClient };

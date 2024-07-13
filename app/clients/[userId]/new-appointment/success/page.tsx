@@ -7,6 +7,7 @@ import { formatDateTime } from '@/lib/utils';
 import * as Sentry from '@sentry/nextjs';
 import { SearchParamProps } from '@/types';
 import { redirect } from 'next/navigation';
+import { getLoggedInUser } from '@/lib/appwrite';
 const RequestSuccess = async ({
   searchParams,
   params: { userId },
@@ -15,6 +16,9 @@ const RequestSuccess = async ({
   const appointment = await getAppointment(appointmentId);
   const year = new Date().getFullYear();
   Sentry.metrics.set('user_view_new-appointment_success', 'client');
+  const user = await getLoggedInUser();
+
+  if (!user) redirect('/login');
 
   return (
     <div className=' flex h-screen max-h-screen px-[5%]'>
