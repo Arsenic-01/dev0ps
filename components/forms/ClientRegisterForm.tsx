@@ -17,7 +17,7 @@ import {
   createUser,
   registerUserDocument,
 } from '../../lib/actions/client.actions';
-import useAuth from '@/context/useAuth';
+import GeneratedUserId from '@/lib/actions/generateUserId';
 
 export const ClientForm = () => {
   const router = useRouter();
@@ -62,9 +62,11 @@ export const ClientForm = () => {
       const fetchData = async () => {
         const promise = await fetch('/api/user'); // Replace with your API endpoint
         const result = await promise.json();
-        const id: string | number = result.$id;
+
         console.log(result);
-        if (result) {
+        if (result && result.status === 'success') {
+          const id: string | number = result?.user?.$id;
+
           const newUser = {
             userId: id,
             name: values.name,
@@ -73,18 +75,21 @@ export const ClientForm = () => {
             password: values.password,
           };
           registerUserDocument(newUser);
-          router.push(`/clients/${id}/new-appointment`);
-          toast('Login Successful! 🎉');
+          if (newUser.userId !== undefined) {
+            router.push(`/clients/${id}/new-appointment`);
+            toast('Login Successful! 🎉');
+          }
         } else {
           toast('Login Failed User Already Exists');
         }
       };
+
       fetchData();
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
-
-    setIsLoading(false);
   };
 
   return (

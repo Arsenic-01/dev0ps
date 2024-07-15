@@ -143,6 +143,34 @@ export const gridItems = [
   },
 ];
 
+// export const companies = [
+//   {
+//     id: 1,
+//     name: 'State_Bank_of_India',
+//     img: '/logos/State_Bank_of_India_logo.svg.png',
+//   },
+//   {
+//     id: 2,
+//     name: 'mahindra-rise',
+//     img: '/logos/mahindra-rise.png',
+//   },
+//   {
+//     id: 3,
+//     name: 'everest',
+//     img: '/logos/everest.png',
+//   },
+//   {
+//     id: 4,
+//     name: 'supreme',
+//     img: '/logos/Supreme_Industries_logo.svg.png',
+//   },
+//   {
+//     id: 5,
+//     name: 'parksyde',
+//     img: '/logos/parksyde.png',
+//   },
+// ];
+
 export const companies = [
   {
     id: 1,
@@ -168,6 +196,49 @@ export const companies = [
     id: 5,
     name: 'parksyde',
     img: '/logos/parksyde.png',
+  },
+];
+
+export const companieslogo = [
+  {
+    imgSrc: '/logos/State_Bank_of_India_logo.png',
+    imgClassname: 'w-auto h-14',
+  },
+  {
+    imgSrc: '/logos/mahindra-rise.png',
+    imgClassname: 'w-auto h-10',
+  },
+  {
+    imgSrc: '/logos/everest.png',
+    imgClassname: 'w-auto h-24',
+  },
+  {
+    imgSrc: '/logos/Supreme_Industries_logo.svg.png',
+    imgClassname: 'w-auto h-20',
+  },
+  {
+    imgSrc: '/logos/parksyde.png',
+    imgClassname: 'w-28 h-auto',
+  },
+  {
+    imgSrc: '/logos/Seal_of_Maharashtra.svg.png',
+    imgClassname: 'w-28 h-auto',
+  },
+  {
+    imgSrc: '/logos/Indian_Oil_Logo.svg.png',
+    imgClassname: 'w-44 h-auto',
+  },
+  {
+    imgSrc: '/logos/Bank-of-Baroda-Logo.png',
+    imgClassname: 'w-auto h-24',
+  },
+  {
+    imgSrc: '/logos/pernod_richard.png',
+    imgClassname: 'w-40 h-auto',
+  },
+  {
+    imgSrc: '/logos/pals.png',
+    imgClassname: 'w-32 h-auto',
   },
 ];
 

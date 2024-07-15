@@ -12,25 +12,29 @@ import { Star } from 'lucide-react';
 import { Outfit } from 'next/font/google';
 import Link from 'next/link';
 import { HoverBorderGradient } from './ui/hover-border-gradient';
+import { AnimatedTooltipPreview } from './ui/Tooltip';
 
 const outfit = Outfit({ subsets: ['latin'] });
 const Hero = () => {
   return (
-    <div className='pb-20 pt-20 sm:pt-32 2xl:pt-32 md:pt-20 lg:pt-32 xl:pt-20'>
+    <div className='pb-20 pt-20 sm:pt-32 2xl:pt-[110px] md:pt-20 lg:pt-32 xl:pt-20'>
       {/**
        *  UI: Spotlights
        *  Link: https://ui.aceternity.com/components/spotlight
        */}
       <div>
         <Spotlight
-          className='-top-40 -left-10 md:-left-32 md:-top-20 h-screen'
+          className='-top-40 -left-10 md:-left-32 md:-top-20 h-[100vh] w-[100vw] md:h-[80vh] md:w-[50vw] '
           fill='white'
         />{' '}
         <Spotlight
-          className='h-[80vh] w-[50vw] top-10 left-full'
+          className='h-[100vh] w-[100vw] md:h-[80vh] md:w-[50vw] top-10 left-full'
           fill='purple'
         />
-        <Spotlight className='left-80 top-28 h-[80vh] w-[50vw]' fill='red' />
+        <Spotlight
+          className='left-80 top-28 h-[100vh] w-[100vw] md:h-[80vh] md:w-[50vw] '
+          fill='red'
+        />
       </div>
 
       {/**
@@ -38,7 +42,7 @@ const Hero = () => {
        *  change bg color to bg-black-100 and reduce grid color from
        *  0.2 to 0.03
        */}
-      <div className='h-screen w-full dark:bg-black bg-white  dark:bg-grid-white/[0.1] bg-grid-black/[0.02] absolute flex top-0 left-0 items-center justify-center'>
+      <div className='h-screen w-full dark:bg-black bg-white  dark:bg-grid-white/[0.05] bg-grid-black/[0.01] absolute flex top-0 left-0 items-center justify-center'>
         <div className='absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]'></div>
       </div>
 
@@ -73,51 +77,31 @@ const Hero = () => {
             <br />
             <span className='text-[#FF7878]'>focused</span> on your results
           </span>
-          <p className='mt-10 sm:mt-12 text-pretty leading-relaxed sm:hidden text-base'>
-            <span
-              className={`${outfit.className} bg-neutral-700/[.7] px-2 text-lg rounded-md`}
-            >
-              SUNIL BHOR & ASSOCIATES
-            </span>{' '}
-            <span className='font-extrabold italic	'>
-              offers expert consultancy
-            </span>{' '}
-            in architecture, structural design, project management, and property
-            valuation <span className='font-black	'>nationwide</span>.
-          </p>
-          <p className='mt-12 text-pretty hidden sm:block text-base leading-loose lg:text-lg'>
-            <span
-              className={`${outfit.className} bg-neutral-700/[.7] px-2  text-lg rounded-md lg:text-xl`}
-            >
-              SUNIL BHOR & ASSOCIATES
-            </span>{' '}
-            is a{' '}
-            <span className='font-extrabold	italic'>
-              distinguished consultancy firm
-            </span>{' '}
-            with over{' '}
-            <span className='underline underline-offset-4'>
-              25 years of experience
-            </span>{' '}
-            providing an array of services encompassing{' '}
-            <span className='font-extrabold	'>
-              architectural planning, structural design, project management
-              consultancy, and property valuation for residential, commercial,
-              and industrial projects
-            </span>{' '}
-            nationwide in India.
-          </p>
+          <TextGenerateEffect
+            className='mt-10 sm:mt-12 text-pretty leading-relaxed sm:hidden text-base'
+            words='SUNIL BHOR & ASSOCIATES offers expert consultancy offers expert consultancy n architecture, structural design, project management, and property valuation nationwide'
+          />
+
+          <TextGenerateEffect
+            words='SUNIL BHOR & ASSOCIATES is a distinguished consultancy firm with
+            over 25 years of experience providing an array of services
+            encompassing architectural planning, structural design, project
+            management consultancy, and property valuation for residential,
+            commercial, and industrial projects nationwide in India.'
+            className='mt-4 text-pretty hidden sm:block text-base leading-loose lg:text-lg'
+          />
+
           <div className='md:mt-10 mt-8 flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-20'>
             <Link href='/register'>
               <MagicButton
                 title='Get Started'
                 icon={<FaLocationArrow />}
                 position='right'
+                otherClasses='bg-black'
               />
             </Link>
             <div className='flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center  gap-5'>
-              <div className='flex -space-x-4'>
-                <img
+              {/* <img
                   className='inline-block select-none pointer-events-none	 h-10 w-10 rounded-full  '
                   src='/users/user-1.png'
                   alt='user image'
@@ -141,7 +125,9 @@ const Hero = () => {
                   className='inline-block select-none pointer-events-none	 object-cover h-10 w-10 rounded-full'
                   src='/users/user-5.jpg'
                   alt='user image'
-                />
+                /> */}
+              <div className='flex -space-x-3'>
+                <AnimatedTooltipPreview />
               </div>
 
               <div className='flex flex-col justify-between items-center sm:items-start'>

@@ -49,7 +49,7 @@ export const PasskeyModal = () => {
 
   const closeModal = () => {
     setOpen(false);
-    router.push('/appointment');
+    router.push('/login');
   };
 
   const validatePasskey = (

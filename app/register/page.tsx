@@ -13,25 +13,14 @@ const Home = ({ searchParams }: SearchParamProps) => {
   const year = new Date().getFullYear();
   isAdmin && console.log('im here');
   return (
-    <div className='flex h-screen max-h-screen'>
+    <div className='flex min-h-screen'>
       {isAdmin && <PasskeyModal />}
 
-      <section className='remove-scrollbar container my-auto'>
+      <section className='remove-scrollbar container my-auto py-14'>
         <div className='sub-container max-w-[496px]'>
-          <div className='inline-flex gap-2 justify-items-center items-center mb-12'>
-            <Image
-              src='/nav.png'
-              height={1000}
-              width={1000}
-              alt='patient'
-              className=' h-10 w-fit'
-            />
-            <h2 className='text-24-bold'>SBA</h2>
-          </div>
-
           <ClientForm />
 
-          <div className='text-14-regular mt-20 flex justify-between'>
+          <div className='text-14-regular mt-10 flex justify-between'>
             <p className='justify-items-end text-dark-600 xl:text-left'>
               © {year} SBA
             </p>
@@ -44,14 +33,15 @@ const Home = ({ searchParams }: SearchParamProps) => {
           </div>
         </div>
       </section>
-
-      <Image
-        src='/side_img2.jpg'
-        height={1000}
-        width={1000}
-        alt='patient'
-        className='side-img max-w-[50%]'
-      />
+      <div className='w-[50%] hidden md:block'>
+        <Image
+          src='/side_img2.jpg'
+          height={1000}
+          width={1000}
+          alt='patient'
+          className='side-img select-none pointer-events-none max-w-[100%]'
+        />
+      </div>
     </div>
   );
 };

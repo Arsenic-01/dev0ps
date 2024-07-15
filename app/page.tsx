@@ -12,32 +12,39 @@ import Services from '@/components/Services';
 import FAQ from '@/components/Accordian';
 import Example from '../components/ui/HeroImg';
 import * as Sentry from '@sentry/nextjs';
+import { InfiniteMovingCards } from '@/components/ui/InfiniteCards';
+import { companieslogo } from '@/data';
+import NavbarComponent from '@/components/ui/Navbar';
 
 const Home = () => {
   Sentry.metrics.set('user_view_home', 'client');
 
   return (
-    <main className='relative bg-black-100 flex z-0 justify-center items-center flex-col overflow-hidden mx-auto '>
-      <Hero />
-      <Clients />
-      <div className='lg:max-w-screen-2xl max-w-7xl  w-full sm:px-10 px-5'>
-        <Services />
-      </div>
-      <div className='max-w-7xl w-full sm:px-10 px-5'>
-        <Work />
-        <Grid />
-      </div>
-      <div className='lg:max-w-screen-2xl max-w-7xl  w-full sm:px-10 px-5'>
-        <Development />
+    <>
+      <NavbarComponent />
+      <main className='relative bg-black-100 flex z-0 justify-center items-center flex-col overflow-hidden mx-auto '>
+        <Hero />
+        {/* <Clients /> */}
+        <InfiniteMovingCards items={companieslogo} />
+        <div className='lg:max-w-screen-2xl max-w-7xl  w-full sm:px-10 px-5'>
+          <Services />
+        </div>
+        <div className='max-w-7xl w-full sm:px-10 px-5'>
+          <Work />
+          <Grid />
+        </div>
+        <div className='lg:max-w-screen-2xl max-w-7xl  w-full sm:px-10 px-5'>
+          <Development />
 
-        <Values />
-        <Testimonials />
-      </div>
-      <div className='max-w-7xl w-full sm:px-10 px-5'>
-        <CallToAction />
-        <FAQ />
-      </div>
-    </main>
+          <Values />
+          <Testimonials />
+        </div>
+        <div className='max-w-7xl w-full sm:px-10 px-5'>
+          <CallToAction />
+          <FAQ />
+        </div>
+      </main>
+    </>
   );
 };
 

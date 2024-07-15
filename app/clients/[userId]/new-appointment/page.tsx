@@ -33,7 +33,7 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
             <h2 className='text-24-bold'>SBA</h2>
           </div>
           <AppointmentForm
-            clientId={client.$id}
+            clientId={client?.$id}
             userId={userId}
             type='create'
           />

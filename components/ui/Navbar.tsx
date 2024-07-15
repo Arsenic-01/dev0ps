@@ -11,22 +11,23 @@ import {
   user,
 } from '@nextui-org/react';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { navItems } from '@/data';
 
 import { deleteSessionClient, getLoggedInUser } from '@/lib/appwrite';
 import { redirect, useRouter } from 'next/navigation';
-import { toast } from 'sonner';
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const [user, setUser] = useState<any | null>(null);
+  const [fetchuser, setfetchUser] = useState<any | null>(null);
+
+  // const { user, setUser } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchData = async () => {
-      const user = await getLoggedInUser();
-      setUser(user);
+      const result = await getLoggedInUser();
+      setfetchUser(result);
     };
     fetchData();
   }, []);
@@ -63,7 +64,7 @@ export default function NavbarComponent() {
         ))}
       </NavbarContent>
       <NavbarContent justify='end'>
-        {user ? (
+        {fetchuser ? (
           <NavbarItem>
             <Button
               color='primary'

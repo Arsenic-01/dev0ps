@@ -1,7 +1,7 @@
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { redirect } from 'next/navigation';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -14,8 +14,6 @@ import SubmitButton from '../SubmitButton';
 import { toast } from 'sonner';
 import { FaRightToBracket } from 'react-icons/fa6';
 import { useRouter } from 'next/navigation';
-import useAuth from '@/context/useAuth';
-import router from 'next/router';
 
 export const ClientLoginForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -43,7 +41,7 @@ export const ClientLoginForm = () => {
     });
 
     const data = await response;
-    // const { setAuthStatus } = useAuth();
+
     const fetchData = async () => {
       try {
         const promise = await fetch('/api/user'); // Replace with your API endpoint
@@ -55,8 +53,6 @@ export const ClientLoginForm = () => {
         const id = result.user.$id;
         console.log(result);
         if (result) {
-          //          setAuthStatus(true);
-
           router.replace(`/clients/${id}/new-appointment`);
           toast('Login Successful! 🎉');
         } else {

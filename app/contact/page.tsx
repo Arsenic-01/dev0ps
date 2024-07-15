@@ -70,19 +70,30 @@ const page = () => {
                   Regd. Office: 8, First Floor, Rambaug Society, Vidya Vikas
                   Circle,Gangapur Road, Nashik422013
                 </p>
-                <p className='text-slate-300 inline-flex gap-5 items-center'>
-                  <FaEnvelope className='w-5 h-5' /> sba.nashik@gmail.com
-                </p>
-                <p
+                <a
+                  href='mailto:sba.nashik@gmail.com?subject=Hey%20there!&body=I%20am%20_____%20and%20I%20want%20to%20Contact%20you%20for%20______'
                   className='text-slate-300 inline-flex gap-5 items-center'
-                  suppressHydrationWarning
                 >
-                  <FaPhone className='w-5 h-5' /> +91 98223 77366{' '}
+                  <FaEnvelope className='w-5 h-5' /> sba.nashik@gmail.com
+                </a>
+
+                <div className='text-slate-300 inline-flex gap-5 items-center'>
+                  <a
+                    className='inline-flex gap-5 items-center'
+                    href='tel:+919822377366'
+                  >
+                    <FaPhone className='w-5 h-5' /> +91 98223 77366
+                  </a>
                   <span className='text-slate-700 select-none pointer-events-none'>
                     |
                   </span>{' '}
-                  +91 79724 18920
-                </p>
+                  <a
+                    className='inline-flex gap-5 items-center'
+                    href='tel:+917972418920'
+                  >
+                    <FaPhone className='w-5 h-5' /> +91 79724 18920
+                  </a>
+                </div>
               </div>
             </div>
             <div className='text-center mx-auto'>

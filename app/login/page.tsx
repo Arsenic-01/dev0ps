@@ -1,4 +1,3 @@
-'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { toast } from 'sonner';
@@ -14,13 +13,14 @@ const Home = async ({ searchParams }: SearchParamProps) => {
   const isAdmin = searchParams?.admin === 'true';
   const year = new Date().getFullYear();
   isAdmin && console.log('im here');
+
   return (
-    <div className='flex h-screen max-h-screen'>
+    <div className='flex h-screen min-h-screen'>
       {isAdmin && <PasskeyModal />}
 
       <section className='remove-scrollbar container my-auto'>
         <div className='sub-container max-w-[496px]'>
-          <div className='inline-flex gap-2 justify-items-center items-center mb-12'>
+          {/* <div className='hidden xl:inline-flex gap-2 justify-items-center items-center mb-12'>
             <Image
               src='/nav.png'
               height={1000}
@@ -29,7 +29,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
               className=' h-10 w-fit'
             />
             <h2 className='text-24-bold'>SBA</h2>
-          </div>
+          </div> */}
 
           <ClientLoginForm />
 
@@ -46,14 +46,15 @@ const Home = async ({ searchParams }: SearchParamProps) => {
           </div>
         </div>
       </section>
-
-      <Image
-        src='/side_img2.jpg'
-        height={1000}
-        width={1000}
-        alt='patient'
-        className='side-img max-w-[50%]'
-      />
+      <div className='w-[50%] hidden md:block'>
+        <Image
+          src='/side_img2.jpg'
+          height={1000}
+          width={1000}
+          alt='patient'
+          className='side-img select-none pointer-events-none  max-w-[100%]'
+        />
+      </div>
     </div>
   );
 };

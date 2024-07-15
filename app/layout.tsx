@@ -6,6 +6,7 @@ import { Providers } from './nextuiProvider';
 import NavbarComponent from '@/components/ui/Navbar';
 import FooterExp from '@/components/FooterExp';
 import { Toaster } from 'sonner';
+import { useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -32,7 +33,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Providers>
-            <NavbarComponent />
             {children}
             <Toaster />
 
