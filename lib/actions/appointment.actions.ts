@@ -27,7 +27,7 @@ export const createAppointment = async (
     );
 
     revalidatePath('/admin');
-    const smsMessage = `Greetings from SBA. A new Appointment has been scheduled on ${formatDateTime(appointment.schedule!).dateTime}. click the link below to view the details. https://sba.vercel.app/admin`;
+    const smsMessage = `Greetings from SBA. A new Appointment has been scheduled on ${formatDateTime(appointment.schedule!).dateTime}. click the link below to view the details. https://sba-main.vercel.app/admin`;
     await sendSMSNotification(process.env.ADMIN_USER_ID!, smsMessage);
     return parseStringify(newAppointment);
   } catch (error) {
