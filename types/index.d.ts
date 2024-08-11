@@ -23,6 +23,7 @@ declare interface LoginUserParams {
 declare interface User extends CreateUserParams {
   $id: string;
 }
+declare type Status = 'pending' | 'scheduled' | 'cancelled';
 
 declare type CreateAppointmentParams = {
   client: string;
