@@ -11,8 +11,7 @@ const About = () => {
   return (
     <div className='relative py-10 bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto '>
       <WhoWeAre />
-      <OurTeam />
-      <Experience />
+      {/* <Experience /> */}
     </div>
   );
 };

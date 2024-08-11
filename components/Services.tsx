@@ -11,14 +11,14 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
 const Services = () => {
   return (
-    <div className="p-10 lg:mb-28  flex flex-col">
-      <h1 className="text-5xl lg:text-6xl xl:text-7xl mb-7">
+    <div className='py-10 px-4 md:p-10 lg:mb-28  flex flex-col'>
+      <h1 className='text-5xl lg:text-6xl xl:text-7xl mb-7'>
         Our Prime Services
       </h1>
-      <div className="flex flex-col lg:flex-row mt-0 sm:mt-16 lg:mt-20 justify-center  gap-16 xl:gap-20">
+      <div className='flex flex-col lg:flex-row mt-0 sm:mt-16 lg:mt-20 justify-center  gap-16 xl:gap-20'>
         <EmblaCarousel slides={SLIDES} options={OPTIONS} />
-        <div className="flex flex-col gap-9">
-          <p className="text-base text-pretty sm:text-lg">
+        <div className='flex flex-col gap-9'>
+          <p className='text-base text-pretty sm:text-lg'>
             Our consultancy offers a wide range of services, including
             architectural planning, structural design, project management
             consultancy, and property valuation for residential, commercial, and
@@ -28,24 +28,24 @@ const Services = () => {
             in Thane, Mumbai, we have been fully equipped and automated since
             1999, providing top-tier services with advanced infrastructure.
           </p>
-          <div className="flex gap-4">
+          <div className='flex gap-4'>
             <Button
               as={Link}
-              color="primary"
-              href="#"
-              variant="shadow"
-              radius="full"
-              className="w-24"
+              color='primary'
+              href='#'
+              variant='shadow'
+              radius='full'
+              className='w-24'
             >
               View All
             </Button>
             <Button
               as={Link}
-              color="primary"
-              href="#"
-              variant="shadow"
-              radius="full"
-              className="w-24"
+              color='primary'
+              href='#'
+              variant='shadow'
+              radius='full'
+              className='w-24'
             >
               Book Call
             </Button>

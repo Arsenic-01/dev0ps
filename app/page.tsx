@@ -10,7 +10,6 @@ import Development from '@/components/Development';
 import { Testimonials } from '@/components/Testimonials';
 import Services from '@/components/Services';
 import FAQ from '@/components/Accordian';
-import Example from '../components/ui/HeroImg';
 import * as Sentry from '@sentry/nextjs';
 import { InfiniteMovingCards } from '@/components/ui/InfiniteCards';
 import { companieslogo } from '@/data';
@@ -32,10 +31,9 @@ const Home = () => {
         <div className='max-w-7xl w-full sm:px-10 px-5'>
           <Work />
           <Grid />
+          <Development />
         </div>
         <div className='lg:max-w-screen-2xl max-w-7xl  w-full sm:px-10 px-5'>
-          <Development />
-
           <Values />
           <Testimonials />
         </div>

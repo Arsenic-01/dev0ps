@@ -143,7 +143,7 @@ export const AppointmentForm = ({
               fieldType={FormFieldType.DATE_PICKER}
               control={form.control}
               name='schedule'
-              label='Expected appointment date'
+              label='Expected appointment date and time (Working days only)'
               showTimeSelect
               dateFormat='MM/dd/yyyy  -  h:mm aa'
             />

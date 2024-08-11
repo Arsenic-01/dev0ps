@@ -24,15 +24,15 @@ const Hero = () => {
        */}
       <div>
         <Spotlight
-          className='-top-40 -left-10 md:-left-32 md:-top-20 h-[100vh] w-[100vw] md:h-[80vh] md:w-[50vw] '
+          className='-top-40 -left-10 lg:-left-32 lg:-top-20 h-[100vh] w-[100vw] lg:h-[80vh] lg:w-[50vw] '
           fill='white'
         />{' '}
         <Spotlight
-          className='h-[100vh] w-[100vw] md:h-[80vh] md:w-[50vw] top-10 left-full'
+          className='h-[100vh] w-[100vw] lg:h-[80vh] lg:w-[50vw] top-10 left-full'
           fill='purple'
         />
         <Spotlight
-          className='left-80 top-28 h-[100vh] w-[100vw] md:h-[80vh] md:w-[50vw] '
+          className='left-80 top-28 h-[100vh] w-[100vw] lg:h-[80vh] lg:w-[50vw] '
           fill='red'
         />
       </div>
@@ -52,12 +52,12 @@ const Hero = () => {
             <HoverBorderGradient
               containerClassName='rounded-full'
               as='button'
-              className='dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2'
+              className='dark:bg-black bg-white text-black dark:text-white flex items-center space-y-2 sm:space-y-0 sm:space-x-2'
             >
               <span> Turning blueprints into landmarks🏗️✨</span>
             </HoverBorderGradient>
           </div>
-          <span className='mt-4 sm:mt-5 font-bold text-5xl lg:text-6xl xl:text-7xl'>
+          <span className='mt-3 sm:mt-5 font-bold text-5xl lg:text-6xl xl:text-7xl'>
             <Typewriter
               options={{
                 strings: [
@@ -78,8 +78,8 @@ const Hero = () => {
             <span className='text-[#FF7878]'>focused</span> on your results
           </span>
           <TextGenerateEffect
-            className='mt-10 sm:mt-12 text-pretty leading-relaxed sm:hidden text-base'
-            words='SUNIL BHOR & ASSOCIATES offers expert consultancy offers expert consultancy n architecture, structural design, project management, and property valuation nationwide'
+            className='mt-10 sm:mt-12 text-pretty leading-relaxed sm:hidden sm:text-left text-center text-base'
+            words='SUNIL BHOR & ASSOCIATES offers expert consultancy in architecture, structural design, project management, and property valuation nationwide'
           />
 
           <TextGenerateEffect
@@ -174,7 +174,7 @@ const Hero = () => {
           }}
           className='hidden opacity-65 hover:opacity-90 md:inline-flex absolute select-none gap-2 rounded-full right-20 bottom-0 2xl:-bottom-10'
         >
-          Scroll down <FaCircleArrowDown className='animate-bounce w-6 h-6 ' />
+          Scroll down <FaCircleArrowDown className='w-6 h-6 ' />
         </span>
       </div>
     </div>

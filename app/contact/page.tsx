@@ -11,7 +11,7 @@ const page = () => {
       <div className='mt-24 md:px-8'>
         <h1 className='pointer-events-auto text-5xl md:text-6xl font-black text-center md:text-left text-slate-100 xl:text-7xl'>
           Let&apos;s Work Together
-          <span className='text-red-600'>.</span>
+          <span className='text-[#EF4444]'>.</span>
         </h1>
         <div className='max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 sm:px-4 py-6'>
           <div className='px-5 sm:px-4 sm:py-3'>

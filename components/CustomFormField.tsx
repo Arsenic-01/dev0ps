@@ -128,7 +128,7 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
             <FormControl>
               <ReactDatePicker
                 minTime={setHours(setMinutes(new Date(), 0), 15)}
-                maxTime={setHours(setMinutes(new Date(), 30), 21)}
+                maxTime={setHours(setMinutes(new Date(), 30), 20)}
                 showTimeSelect={props.showTimeSelect ?? false}
                 // showTimeSelect
                 selected={field.value}

@@ -70,9 +70,9 @@ export const InfiniteMovingCards = ({
     }
   };
   return (
-    <section className='pb-20 mt-12 lg:pb-32 xl:pb-36'>
+    <section className='mb-20  lg:pb-32 xl:pb-36'>
       <div className='flex flex-col gap-10'>
-        <h2 className='font-extralight text-lg text-center mb-5 text-white'>
+        <h2 className='font-extralight z-50 text-lg text-center mb-5 text-white'>
           Trusted partners by Industrial Leaders.
         </h2>
         <div>

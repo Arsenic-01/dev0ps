@@ -2,14 +2,14 @@ import React from 'react';
 
 const Development = () => {
   return (
-    <section className='relative radial-2 w-full rounded-3xl flex justify-center items-center  lg:my-36 my-16 px-4 md:px-7 py-7 md:py-14'>
+    <section className='relative bg-neutral-950/60	 md:bg-zinc-900/90 w-full rounded-xl flex justify-center items-center  lg:my-36 my-16 px-4 md:px-7 py-7 md:py-14'>
       <div className='max-w-7xl w-full'>
         <div className='flex flex-col justify-center items-center'>
           <h2 className='text-4xl md:text-4xl lg:text-5xl font-bold text-center md:text-left'>
             We <span className='text-green-300'>reduce</span> development{' '}
             <span className='text-red-400'>risk</span>
           </h2>
-          <div className='flex flex-col md:flex-row justify-around gap-7 lg:gap-20  select-none mt-12 sm:mt-16  '>
+          <div className='flex flex-col md:flex-row justify-around gap-7 md:gap-10 lg:px-3 select-none mt-12 sm:mt-16  '>
             <div className='rounded-xl p-7 flex flex-col text-left gap-5 md:gap-10 justify-center items-center cardglass'>
               <img
                 src='/d1.svg'

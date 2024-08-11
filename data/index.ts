@@ -2,7 +2,29 @@ export const navItems = [
   { path: '/services', display: 'Services', id: 1 },
   { path: '/projects', display: 'Projects', id: 2 },
   { path: '/about', display: 'About', id: 3 },
-  { path: '/contact', display: 'Careers', id: 4 },
+  { path: '/contact', display: 'Contact', id: 4 },
+];
+
+export const ServicegridItems = [
+  {
+    id: 1,
+    className:
+      'lg:col-span-3 md:col-span-5 col-span-5 md:row-span-2 lg:min-h-[35vh] min-h-[25vh]',
+  },
+  {
+    id: 2,
+    className: 'md:col-span-3 md:row-span-2 row-span-2 col-span-5 min-h-[35vh]',
+  },
+  {
+    id: 3,
+    className:
+      'md:col-span-2 md:row-span-2 col-span-5 row-span-2 min-h-[30vh] md:min-h-[35vh] lg:min-h-fit	',
+  },
+  {
+    id: 4,
+    className:
+      'md:col-span-4 md:row-span-2 col-span-5 row-span-2 min-h-[25vh] md:min-h-[35vh] lg:min-h-fit	',
+  },
 ];
 
 export const ServiceCards = [

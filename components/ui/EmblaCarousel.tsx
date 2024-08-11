@@ -53,27 +53,27 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   }, [emblaApi, onScroll]);
 
   return (
-    <div className="embla lg:margin-auto">
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
+    <div className='embla lg:margin-auto'>
+      <div className='embla__viewport' ref={emblaRef}>
+        <div className='embla__container'>
           {ServiceCards.map((el) => (
-            <div className="embla__slide" key={el.id}>
-              <div className="embla__slide__number">
+            <div className='embla__slide' key={el.id}>
+              <div className='embla__slide__number'>
                 <ThemeProvider theme={darkTheme}>
                   <CssBaseline />
                   <Card sx={{ maxWidth: 350 }}>
                     <CardActionArea>
                       <CardMedia
-                        component="img"
-                        width="200"
+                        component='img'
+                        width='200'
                         image={el.imgSrc}
-                        alt=""
+                        alt=''
                       />
                       <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
+                        <Typography gutterBottom variant='h5' component='div'>
                           {el.title}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography variant='body2' color='text.secondary'>
                           {el.description}
                         </Typography>
                       </CardContent>
@@ -86,15 +86,15 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         </div>
       </div>
 
-      <div className="embla__controls">
-        <div className="embla__buttons">
+      <div className='embla__controls'>
+        <div className='embla__buttons'>
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
 
-        <div className="embla__progress">
+        <div className='embla__progress'>
           <div
-            className="embla__progress__bar"
+            className='embla__progress__bar'
             style={{ transform: `translate3d(${scrollProgress}%,0px,0px)` }}
           />
         </div>

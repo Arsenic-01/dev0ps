@@ -83,6 +83,11 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-5: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-2: 340 75% 55%;
   }
   * {
     @apply border-border !scroll-smooth;
@@ -413,6 +418,16 @@
   color: #1a1d21;
 }
 @layer components {
+  .no-visible-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .no-visible-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   .radial {
     background: #1c1c1c;
     background: radial-gradient(at center top, #1c1c1c, #06081c);
