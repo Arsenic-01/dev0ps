@@ -15,6 +15,13 @@ declare interface CreateUserParams {
   password: string;
 }
 
+declare interface ContactFormParams {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
 declare interface LoginUserParams {
   email: string;
   password: string;

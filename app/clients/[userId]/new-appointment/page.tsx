@@ -6,6 +6,15 @@ import * as Sentry from '@sentry/nextjs';
 import { SearchParamProps } from '@/types';
 import { getLoggedInUser } from '@/lib/appwrite';
 import { redirect } from 'next/navigation';
+import Link from 'next/link';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
 
 const Appointment = async ({ params: { userId } }: SearchParamProps) => {
   const client = await getClient(userId);
@@ -22,7 +31,7 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
     <div className='flex h-screen max-h-screen'>
       <section className='remove-scrollbar container mt-20 my-auto'>
         <div className='sub-container max-w-[860px] flex-1 py-10 justify-between'>
-          <div className='md:inline-flex hidden  gap-2 justify-items-center items-center mb-12'>
+          {/* <div className='md:inline-flex hidden  gap-2 justify-items-center items-center mb-12'>
             <Image
               src='/nav.png'
               height={1000}
@@ -31,7 +40,8 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
               className=' h-10 w-fit'
             />
             <h2 className='text-24-bold'>SBA</h2>
-          </div>
+          </div> */}
+          <BreadcrumbWithCustomSeparator />
           <AppointmentForm
             clientId={client?.$id}
             userId={userId}
@@ -55,3 +65,21 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
 };
 
 export default Appointment;
+
+function BreadcrumbWithCustomSeparator() {
+  return (
+    <Breadcrumb className='mb-10 md:mb-16 xl:mb-20'>
+      <BreadcrumbList>
+        <BreadcrumbItem>
+          <BreadcrumbLink>
+            <Link href='/'>Home</Link>
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbPage>Appointments</BreadcrumbPage>
+        </BreadcrumbItem>
+      </BreadcrumbList>
+    </Breadcrumb>
+  );
+}

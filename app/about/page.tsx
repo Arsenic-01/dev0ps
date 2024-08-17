@@ -1,8 +1,7 @@
 'use client';
 import React from 'react';
 import WhoWeAre from '@/components/aboutui/WhoWeAre';
-import OurTeam from '@/components/aboutui/OurTeam';
-import Experience from '@/components/aboutui/Experience';
+
 import * as Sentry from '@sentry/nextjs';
 
 const About = () => {

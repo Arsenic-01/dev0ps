@@ -6,7 +6,7 @@ import { Providers } from './nextuiProvider';
 import NavbarComponent from '@/components/ui/Navbar';
 import FooterExp from '@/components/FooterExp';
 import { Toaster } from 'sonner';
-import { useState } from 'react';
+import { UserContextProvider } from '@/context/UserContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -32,12 +32,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Providers>
-            {children}
-            <Toaster />
-
-            <FooterExp />
-          </Providers>
+          <UserContextProvider>
+            <Providers>
+              <NavbarComponent />
+              {children}
+              <Toaster />
+              <FooterExp />
+            </Providers>
+          </UserContextProvider>
         </ThemeProvider>
       </body>
     </html>

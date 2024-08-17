@@ -2,9 +2,9 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { number, string, z } from 'zod';
+import { z } from 'zod';
 
 import { Form } from '@/components/ui/form';
 import { UserFormValidation } from '@/lib/validation';
@@ -12,16 +12,30 @@ import { UserFormValidation } from '@/lib/validation';
 import 'react-phone-number-input/style.css';
 import CustomFormField, { FormFieldType } from '../CustomFormField';
 import SubmitButton from '../SubmitButton';
-import { toast } from 'sonner';
+import { toast, Toaster } from 'sonner';
 import {
   createUser,
   registerUserDocument,
 } from '../../lib/actions/client.actions';
-import GeneratedUserId from '@/lib/actions/generateUserId';
+import { UserContext } from '@/context/UserContext';
 
 export const ClientForm = () => {
+  const userContext = useContext(UserContext);
+
+  // Handle the case when `userContext` is undefined
+  if (!userContext) {
+    throw new Error('ClientForm must be used within a UserContextProvider');
+  }
+
+  const { isLoggedIn, setIsLoggedIn } = userContext;
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      toast.warning('Hmm Looks like you are already logged in 🤔');
+    }
+  }, [isLoggedIn]);
 
   const form = useForm<z.infer<typeof UserFormValidation>>({
     resolver: zodResolver(UserFormValidation),
@@ -43,50 +57,55 @@ export const ClientForm = () => {
         phone: values.phone,
         password: values.password,
       };
+
+      // Create user and handle response
       const newUser = await createUser(user);
 
-      const email = user.email;
-      const password = user.password;
-
-      const response = fetch('/api/signin', {
+      const response = await fetch('/api/signin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email: user.email, password: user.password }),
       });
 
-      const data = await response;
-      console.log(data);
+      const data = await response.json();
 
-      const fetchData = async () => {
-        const promise = await fetch('/api/user'); // Replace with your API endpoint
-        const result = await promise.json();
+      if (data && data.status === 'success') {
+        const fetchData = async () => {
+          const result = await fetch('/api/user'); // Replace with your API endpoint
+          const userData = await result.json();
 
-        console.log(result);
-        if (result && result.status === 'success') {
-          const id: string | number = result?.user?.$id;
+          if (userData && userData.status === 'success') {
+            const id = userData?.user?.$id;
 
-          const newUser = {
-            userId: id,
-            name: values.name,
-            email: values.email,
-            phone: values.phone,
-            password: values.password,
-          };
-          registerUserDocument(newUser);
-          if (newUser.userId !== undefined) {
+            const newUserDoc = {
+              userId: id,
+              name: values.name,
+              email: values.email,
+              phone: values.phone,
+              password: values.password,
+            };
+
+            await registerUserDocument(newUserDoc);
+
+            setIsLoggedIn(true);
             router.push(`/clients/${id}/new-appointment`);
-            toast('Login Successful! 🎉');
+            toast.success('Login Successful! 🎉');
+          } else {
+            toast.error('User data fetch failed.');
           }
-        } else {
-          toast('Login Failed User Already Exists');
-        }
-      };
+        };
 
-      fetchData();
+        await fetchData();
+      } else {
+        toast.error(
+          'Login Failed: User already exists or credentials are incorrect.'
+        );
+      }
     } catch (error) {
-      console.log(error);
+      console.error('Error during user registration or login:', error);
+      toast.error('An error occurred. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -105,7 +124,7 @@ export const ClientForm = () => {
           control={form.control}
           name='name'
           label='Full name'
-          placeholder='Tony Stark'
+          placeholder='Enter your Name'
           iconSrc='/assets/icons/user.svg'
           iconAlt='user'
         />
@@ -115,7 +134,7 @@ export const ClientForm = () => {
           control={form.control}
           name='email'
           label='Email'
-          placeholder='tonystark@gmail.com'
+          placeholder='Enter your Email'
           iconSrc='/assets/icons/email.svg'
           iconAlt='email'
         />
@@ -125,7 +144,7 @@ export const ClientForm = () => {
           control={form.control}
           name='password'
           label='Password'
-          placeholder='somethingUnique@123'
+          placeholder='Enter your Password'
           iconSrc='/assets/icons/password.svg'
           iconAlt='password'
         />
@@ -135,11 +154,12 @@ export const ClientForm = () => {
           control={form.control}
           name='phone'
           label='Phone number'
-          placeholder='(555) 123-4567'
+          placeholder='Enter your Phone number'
         />
 
         <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
       </form>
+      <Toaster />
     </Form>
   );
 };

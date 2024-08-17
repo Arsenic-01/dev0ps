@@ -3,6 +3,7 @@
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
+import BlurFade from '../magicui/blur-fade';
 
 export const InfiniteMovingCards = ({
   items,
@@ -70,48 +71,53 @@ export const InfiniteMovingCards = ({
     }
   };
   return (
-    <section className='mb-20  lg:pb-32 xl:pb-36'>
-      <div className='flex flex-col gap-10'>
-        <h2 className='font-extralight z-50 text-lg text-center mb-5 text-white'>
-          Trusted partners by Industrial Leaders.
-        </h2>
+    <section className='mb-10 mt-4 sm:mt-0'>
+      <div className='flex flex-col gap-6'>
+        <BlurFade delay={0.1} inView>
+          <h2 className='font-extralight z-50 text-lg text-center mb-5 text-white'>
+            Trusted partners by Industrial Leaders.
+          </h2>
+        </BlurFade>
+
         <div>
-          <div
-            ref={containerRef}
-            className={cn(
-              // max-w-7xl to w-screen
-              'scroller relative z-20 w-screen overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
-              className
-            )}
-          >
-            <ul
-              ref={scrollerRef}
+          <BlurFade delay={0.1} inView>
+            <div
+              ref={containerRef}
               className={cn(
-                // change gap-16
-                ' flex min-w-full shrink-0 gap-16 py-4 w-max flex-nowrap',
-                start && 'animate-scroll ',
-                pauseOnHover && 'hover:[animation-play-state:paused]'
+                // max-w-7xl to w-screen
+                'scroller relative z-20 max-w-6xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
+                className
               )}
             >
-              {items.map((item, idx) => (
-                <div key={idx} className='flex items-center justify-center'>
-                  <div
-                    aria-hidden='true'
-                    className='user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]'
-                  ></div>
-                  <div className={`${item.imgClassname}  relative mx-14`}>
-                    <Image
-                      src={item.imgSrc}
-                      alt='img'
-                      className='h-full w-full user-select-none pointer-events-none object-fill '
-                      width={400}
-                      height={600}
-                    />
+              <ul
+                ref={scrollerRef}
+                className={cn(
+                  // change gap-16
+                  ' flex min-w-full shrink-0 gap-10 py-4 w-max flex-nowrap',
+                  start && 'animate-scroll ',
+                  pauseOnHover && 'hover:[animation-play-state:paused]'
+                )}
+              >
+                {items.map((item, idx) => (
+                  <div key={idx} className='flex items-center justify-center'>
+                    <div
+                      aria-hidden='true'
+                      className='user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]'
+                    ></div>
+                    <div className={`${item.imgClassname}  relative mx-14`}>
+                      <Image
+                        src={item.imgSrc}
+                        alt='img'
+                        className='h-full w-full user-select-none pointer-events-none object-fill '
+                        width={400}
+                        height={600}
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
-            </ul>
-          </div>
+                ))}
+              </ul>
+            </div>
+          </BlurFade>
         </div>
       </div>
     </section>

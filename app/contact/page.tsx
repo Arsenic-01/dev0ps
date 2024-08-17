@@ -1,61 +1,130 @@
+'use client';
 import { Button, Input, Textarea } from '@nextui-org/react';
-import React from 'react';
+import React, { useState } from 'react';
 import { FaEnvelope, FaLocationDot, FaPhone } from 'react-icons/fa6';
+import { toast } from 'sonner';
 import * as Sentry from '@sentry/nextjs';
 
 const page = () => {
   Sentry.metrics.set('user_view_contact', 'client');
 
+  const [formData, setFormData] = useState({
+    email: '',
+    name: '',
+    subject: '',
+    message: '',
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        toast.success('Email sent successfully.🎉');
+      } else {
+        toast.error('Failed to send email.');
+      }
+    } catch (error) {
+      console.error('Error occured while sending email :', error);
+      toast.error('An error occurred.');
+    } finally {
+      setFormData({
+        email: '',
+        name: '',
+        subject: '',
+        message: '',
+      });
+    }
+  };
+
   return (
     <div className='min-h-[100vh] relative sm:py-10 bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto '>
       <div className='mt-24 md:px-8'>
-        <h1 className='pointer-events-auto text-5xl md:text-6xl font-black text-center md:text-left text-slate-100 xl:text-7xl'>
-          Let&apos;s Work Together
-          <span className='text-[#EF4444]'>.</span>
+        <h1 className='pointer-events-auto text-5xl mt-8 sm:mt-0 lg:text-6xl xl:text-[69px] font-medium text-center md:text-left text-slate-100 px-8'>
+          Let&apos;s Work{' '}
+          <span className='bg-gradient-to-br from-slate-300 to-slate-400 bg-clip-text text-transparent'>
+            Together
+          </span>
+          <span className='text-[#EF4444] text-6xl lg:text-8xl select-none'>
+            .
+          </span>
         </h1>
         <div className='max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 sm:px-4 py-6'>
           <div className='px-5 sm:px-4 sm:py-3'>
-            <form className='mt-12' action={''} method='POST'>
+            <form className='mt-12' onSubmit={handleSubmit}>
               <div className='mt-10 relative'>
                 <Input
                   size='sm'
                   type='email'
                   isRequired
                   required
+                  name='email'
                   label='Email'
+                  value={formData.email}
+                  onChange={handleChange}
                 />
               </div>
               <div className='mt-10 relative'>
                 <Input
                   size='sm'
-                  type='name'
+                  type='text'
                   isRequired
                   required
+                  name='name'
                   label='Your Name'
+                  value={formData.name}
+                  onChange={handleChange}
                 />
               </div>
               <div className='mt-10 relative'>
                 <Input
                   size='sm'
-                  type='subject'
+                  type='text'
                   isRequired
                   required
+                  name='subject'
                   label='Subject'
+                  value={formData.subject}
+                  onChange={handleChange}
                 />
               </div>
               <div className='mt-10 relative'>
                 <Textarea
                   required
                   isRequired
-                  // label="Message"
+                  name='message'
                   labelPlacement='outside'
                   placeholder='Enter your Message'
                   className='w-full'
                   minRows={10}
+                  value={formData.message}
+                  onChange={handleChange}
                 />
               </div>
               <div className='mt-10 relative'>
-                <Button color='primary' type='submit' variant='shadow'>
+                <Button
+                  color='primary'
+                  type='submit'
+                  variant='shadow'
+                  className='max-sm:w-full text-sm'
+                >
                   Send 🚀
                 </Button>
               </div>
@@ -63,10 +132,12 @@ const page = () => {
           </div>
           <div className='grid-rows-2 gap-16	md:gap-10 px-5 sm:px-4 py-3'>
             <div className=' sm:px-3 py-4 mb-7'>
-              <h2 className='text-3xl font-semibold'>Contact Info</h2>
-              <div className='flex flex-col gap-4 mt-4'>
-                <p className='text-slate-300 inline-flex gap-5 items-center'>
-                  <FaLocationDot className='w-5 h-5' />
+              <h2 className='text-3xl text-center sm:text-left font-medium'>
+                Contact Details
+              </h2>
+              <div className='flex flex-col gap-6 sm:gap-4 mt-10 sm:mt-4'>
+                <p className='text-slate-300 inline-flex gap-7 lg:gap-5 items-center'>
+                  <FaLocationDot className='w-7 h-7 sm:w-5 md:w-10 md:h-10 sm:h-5 lg:h-5 lg:w-5' />
                   Regd. Office: 8, First Floor, Rambaug Society, Vidya Vikas
                   Circle,Gangapur Road, Nashik422013
                 </p>
@@ -77,14 +148,14 @@ const page = () => {
                   <FaEnvelope className='w-5 h-5' /> sba.nashik@gmail.com
                 </a>
 
-                <div className='text-slate-300 inline-flex gap-5 items-center'>
+                <div className='text-slate-300 flex flex-col lg:inline-flex lg:flex-row gap-5 items-start lg:items-center'>
                   <a
                     className='inline-flex gap-5 items-center'
                     href='tel:+919822377366'
                   >
                     <FaPhone className='w-5 h-5' /> +91 98223 77366
                   </a>
-                  <span className='text-slate-700 select-none pointer-events-none'>
+                  <span className='text-slate-700 hidden lg:inline-block select-none pointer-events-none'>
                     |
                   </span>{' '}
                   <a

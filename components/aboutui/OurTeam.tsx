@@ -4,12 +4,12 @@ import { organization } from '@/data/index';
 
 const OurTeam = () => {
   return (
-    <div className='max-w-7xl mt-3  mb-10 px-8'>
-      <div className='mt-24  grid-cols-1 sm:grid-cols-2 grid  md:grid-cols-3 xl:grid-cols-4 gap-7'>
+    <div className='max-w-7xl mt-5  mb-10 px-8'>
+      <div className='sm:mt-16 md:mt-24  grid-cols-1 sm:grid-cols-2 grid  md:grid-cols-3 xl:grid-cols-4 gap-7'>
         {organization.map((team, index) => {
           return (
             <div
-              className='border-[1px] cursor-pointer hover:border-gray-700 hover:shadow-sm transition-all ease-in-out rounded-lg  p-3'
+              className='cursor-pointer  snap-y bg-black border-[0.5px]	border-[#353535] md:border-[#1f1f1f] hover:border-collapse hover:bg-[#141414] transition-all active:bg-[#1F1F1F] active:border-collapse hover:shadow-sm  ease-in-out rounded-lg  p-3'
               key={index}
             >
               <Image

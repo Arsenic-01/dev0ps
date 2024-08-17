@@ -4,7 +4,7 @@ import { Query, ID } from 'node-appwrite';
 
 import { DATABASE_ID, CLIENT_ID, databases, users } from '../appwrite.config';
 import { parseStringify } from '../utils';
-import { CreateUserParams, LoginUserParams } from '@/types';
+import { CreateUserParams } from '@/types';
 import GeneratedUserId from './generateUserId';
 
 // CREATE APPWRITE USER
@@ -46,7 +46,7 @@ export const registerUserDocument = async ({ ...user }: CreateUserParams) => {
 
     return parseStringify(newUser);
   } catch (error) {
-    console.error('An error occurred while creating a new patient:', error);
+    console.error('An error occurred while creating a new user:', error);
   }
 };
 

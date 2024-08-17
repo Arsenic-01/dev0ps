@@ -8,29 +8,41 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   Button,
-  user,
 } from '@nextui-org/react';
-import Link from 'next/link';
 import { useContext, useEffect, useState } from 'react';
 import { navItems } from '@/data';
-
 import { deleteSessionClient, getLoggedInUser } from '@/lib/appwrite';
-import { redirect, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import { UserContext } from '@/context/UserContext';
+import { TransitionLink } from '../utils/TransitionLink';
+import Link from 'next/link';
 
 export default function NavbarComponent() {
+  const userContext = useContext(UserContext);
+
+  // Handle the case when `userContext` is undefined
+  if (!userContext) {
+    throw new Error('Navbar must be used within a UserContextProvider');
+  }
+  const { isLoggedIn, setIsLoggedIn } = userContext;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const [fetchuser, setfetchUser] = useState<any | null>(null);
-
-  // const { user, setUser } = useContext(AuthContext);
+  const [fetchUser, setFetchUser] = useState<any | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getLoggedInUser();
-      setfetchUser(result);
+      try {
+        const result = await getLoggedInUser();
+        setFetchUser(result);
+        setIsLoggedIn(!!result); // Update `isLoggedIn` state based on the result
+      } catch (error) {
+        console.error('Error fetching user:', error);
+        setFetchUser(null);
+        setIsLoggedIn(false);
+      }
     };
     fetchData();
-  }, []);
+  }, [isLoggedIn, setIsLoggedIn]);
+
   const router = useRouter();
 
   return (
@@ -44,7 +56,7 @@ export default function NavbarComponent() {
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           className='sm:hidden'
         />
-        <Link href={'/'}>
+        <TransitionLink href={'/'}>
           <NavbarBrand>
             <img
               src='/nav.png'
@@ -53,18 +65,19 @@ export default function NavbarComponent() {
             />
             <p className='font-bold text-xl'>SBA</p>
           </NavbarBrand>
-        </Link>
+        </TransitionLink>
       </NavbarContent>
 
       <NavbarContent className='hidden sm:flex gap-4' justify='center'>
         {navItems.map((link, index) => (
           <NavbarItem key={index}>
-            <Link href={link.path}>{link.display}</Link>
+            <TransitionLink href={link.path}>{link.display}</TransitionLink>
           </NavbarItem>
         ))}
       </NavbarContent>
+
       <NavbarContent justify='end'>
-        {fetchuser ? (
+        {fetchUser ? (
           <NavbarItem>
             <Button
               color='primary'
@@ -72,6 +85,8 @@ export default function NavbarComponent() {
               radius='full'
               onClick={async () => {
                 await deleteSessionClient();
+                setIsLoggedIn(false);
+                setFetchUser(null); // Clear user state on logout
                 router.push('/login');
               }}
             >
@@ -79,13 +94,11 @@ export default function NavbarComponent() {
             </Button>
           </NavbarItem>
         ) : (
-          <Link href='/login'>
-            <NavbarItem>
-              <Button color='primary' variant='shadow' radius='full'>
-                Login
-              </Button>
-            </NavbarItem>
-          </Link>
+          <NavbarItem>
+            <Button color='primary' variant='shadow' radius='full'>
+              <TransitionLink href='/login'>Login</TransitionLink>
+            </Button>
+          </NavbarItem>
         )}
       </NavbarContent>
 

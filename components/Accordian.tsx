@@ -1,5 +1,6 @@
 import React from 'react';
 import { Accordion, AccordionItem } from '@nextui-org/react';
+import BlurFade from './magicui/blur-fade';
 
 export default function FAQ() {
   const reply = [
@@ -9,35 +10,38 @@ export default function FAQ() {
   ];
   return (
     <div className='mt-12 md:mt-16 lg:mt-20 pb-14 md:py-16'>
-      <h2 className='font-semi-bold text-center leading-relaxed text-pretty text-4xl lg:text-5xl xl:text-6xl'>
-        FAQs
-      </h2>
-      <Accordion
-        className='mt-12 md:mt-16 lg:mt-28 xl:mt-32 bg-neutral-950/90 md:bg-zinc-900/90'
-        variant='bordered'
-      >
-        <AccordionItem
-          key='1'
-          aria-label='Accordion 1'
-          title='What services does SBA offer?'
+      <BlurFade delay={0.1} inView>
+        <h2 className='font-semi-bold text-center leading-relaxed text-pretty text-4xl lg:text-5xl xl:text-6xl'>
+          FAQs
+        </h2>
+        <Accordion
+          className='mt-12 md:mt-16 lg:mt-28 xl:mt-32 bg-black'
+          variant='light'
+          defaultExpandedKeys={['1']}
         >
-          {reply[0]}
-        </AccordionItem>
-        <AccordionItem
-          key='2'
-          aria-label='Accordion 2'
-          title='What sets SBA apart from other consultancy firms?'
-        >
-          {reply[1]}
-        </AccordionItem>
-        <AccordionItem
-          key='3'
-          aria-label='Accordion 3'
-          title='Can SBA handle projects of varying sizes and complexities?'
-        >
-          {reply[2]}
-        </AccordionItem>
-      </Accordion>
+          <AccordionItem
+            key='1'
+            aria-label='Accordion 1'
+            title='What services does SBA offer?'
+          >
+            {reply[0]}
+          </AccordionItem>
+          <AccordionItem
+            key='2'
+            aria-label='Accordion 2'
+            title='What sets SBA apart from other consultancy firms?'
+          >
+            {reply[1]}
+          </AccordionItem>
+          <AccordionItem
+            key='3'
+            aria-label='Accordion 3'
+            title='Can SBA handle projects of varying sizes and complexities?'
+          >
+            {reply[2]}
+          </AccordionItem>
+        </Accordion>
+      </BlurFade>
     </div>
   );
 }

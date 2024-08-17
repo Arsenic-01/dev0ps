@@ -1,9 +1,7 @@
 'use server';
 import { Client, Account } from 'node-appwrite';
 import { cookies } from 'next/headers';
-import { account } from './appwrite.config';
 import { createSessionClient1 } from './server/appwrite.actions';
-// import { , client } from './appwrite.config'
 
 const ENDPOINT = process.env.NEXT_PUBLIC_ENDPOINT;
 const PROJECT_ID = process.env.PROJECT_ID;
@@ -40,7 +38,7 @@ export async function getLoggedInUser() {
     const { account } = await createSessionClient1();
     return await account.get();
   } catch (error) {
-    console.log('error on getting user session wtf', error);
+    console.log('error on getting user session from appwrite client', error);
 
     return null;
   }

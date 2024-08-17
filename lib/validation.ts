@@ -38,6 +38,22 @@ export const ClientFormValidation = z.object({
     .string()
     .refine((phone) => /^\+\d{10,15}$/.test(phone), 'Invalid phone number'),
 });
+export const ContactFormValidation = z.object({
+  name: z
+    .string()
+    .min(2, 'Name must be at least 2 characters')
+    .max(50, 'Name must be at most 50 characters'),
+  email: z.string().email('Invalid email address'),
+  subject: z
+    .string()
+    .min(3, 'Name must be at least 3 characters')
+    .max(50, 'Name must be at most 50 characters'),
+
+  message: z
+    .string()
+    .min(10, 'Name must be at least 10 characters')
+    .max(50, 'Name must be at most 50 characters'),
+});
 
 export const CreateAppointmentSchema = z.object({
   schedule: z.coerce.date(),

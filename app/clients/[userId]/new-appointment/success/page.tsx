@@ -21,23 +21,10 @@ const RequestSuccess = async ({
   if (!user) redirect('/login');
 
   return (
-    <div className='pt-8 pb-10'>
+    <div className='min-h-[100vh] flex flex-col items-center justify-center bg-black'>
       <div className=' flex  px-[5%] mb-10'>
         <div className='success-img'>
-          <div className='pt-10'>
-            {/* <Link href='/'>
-              <div className='md:inline-flex hidden  gap-2 justify-items-center items-center mb-12'>
-                <Image
-                  src='/nav.png'
-                  height={1000}
-                  width={1000}
-                  alt='client'
-                  className=' h-10 w-fit'
-                />
-                <h2 className='text-24-bold'>SBA</h2>
-              </div>
-            </Link> */}
-          </div>
+          <div className='pt-10'></div>
           <section className='flex flex-col items-center'>
             <Image
               src='/assets/gifs/success.gif'

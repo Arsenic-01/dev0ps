@@ -12,11 +12,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <>
-      <NavbarComponent />
-      {children}
-      <Toaster />
-    </>
-  );
+  return <>{children}</>;
 }

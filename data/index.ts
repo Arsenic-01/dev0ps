@@ -5,6 +5,45 @@ export const navItems = [
   { path: '/contact', display: 'Contact', id: 4 },
 ];
 
+export const linkdata = [
+  {
+    id: 1,
+    link: '/about',
+    title: 'About',
+    next: true,
+  },
+  {
+    id: 2,
+    link: '/careers',
+    title: 'Careers',
+    next: false,
+  },
+  {
+    id: 3,
+    link: '/portfolio',
+    title: 'Portfolio',
+    next: false,
+  },
+  {
+    id: 4,
+    link: '/services',
+    title: 'Services',
+    next: true,
+  },
+  {
+    id: 5,
+    link: '/projects',
+    title: 'Projects',
+    next: true,
+  },
+  {
+    id: 6,
+    link: '/contact',
+    title: 'Contact',
+    next: true,
+  },
+];
+
 export const ServicegridItems = [
   {
     id: 1,
@@ -224,43 +263,43 @@ export const companies = [
 export const companieslogo = [
   {
     imgSrc: '/logos/State_Bank_of_India_logo.png',
-    imgClassname: 'w-auto h-14',
+    imgClassname: 'w-auto h-8',
   },
   {
     imgSrc: '/logos/mahindra-rise.png',
-    imgClassname: 'w-auto h-10',
+    imgClassname: 'w-auto h-8',
   },
   {
-    imgSrc: '/logos/everest.png',
-    imgClassname: 'w-auto h-24',
+    imgSrc: '/logos/everest1.png',
+    imgClassname: 'w-auto h-8',
   },
   {
     imgSrc: '/logos/Supreme_Industries_logo.svg.png',
-    imgClassname: 'w-auto h-20',
+    imgClassname: 'w-auto h-14',
   },
   {
     imgSrc: '/logos/parksyde.png',
-    imgClassname: 'w-28 h-auto',
+    imgClassname: 'w-20 h-auto',
   },
   {
-    imgSrc: '/logos/Seal_of_Maharashtra.svg.png',
-    imgClassname: 'w-28 h-auto',
+    imgSrc: '/logos/ub.png',
+    imgClassname: 'w-20 h-auto',
   },
   {
     imgSrc: '/logos/Indian_Oil_Logo.svg.png',
-    imgClassname: 'w-44 h-auto',
+    imgClassname: 'w-32 h-auto',
   },
   {
     imgSrc: '/logos/Bank-of-Baroda-Logo.png',
-    imgClassname: 'w-auto h-24',
+    imgClassname: 'w-auto h-20',
   },
   {
     imgSrc: '/logos/pernod_richard.png',
-    imgClassname: 'w-40 h-auto',
+    imgClassname: 'w-32 h-auto',
   },
   {
     imgSrc: '/logos/pals.png',
-    imgClassname: 'w-32 h-auto',
+    imgClassname: 'w-20 h-auto',
   },
 ];
 

@@ -7,6 +7,8 @@ const nextConfig = {
       'lh3.googleusercontent.com',
       'images.unsplash.com',
       'assets.aceternity.com',
+      'asset.cloudinary.com',
+      'res.cloudinary.com',
     ],
   },
 };

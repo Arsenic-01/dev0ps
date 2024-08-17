@@ -11,9 +11,9 @@ const Home = ({ searchParams }: SearchParamProps) => {
 
   const isAdmin = searchParams?.admin === 'true';
   const year = new Date().getFullYear();
-  isAdmin && console.log('im here');
+
   return (
-    <div className='flex min-h-screen'>
+    <div className='flex min-h-screen  bg-black'>
       {isAdmin && <PasskeyModal />}
 
       <section className='remove-scrollbar container my-auto py-14'>

@@ -14,8 +14,16 @@ import SubmitButton from '../SubmitButton';
 import { toast } from 'sonner';
 import { FaRightToBracket } from 'react-icons/fa6';
 import { useRouter } from 'next/navigation';
+import { UserContext } from '@/context/UserContext';
 
 export const ClientLoginForm = () => {
+  const userContext = useContext(UserContext);
+
+  // Handle the case when `userContext` is undefined
+  if (!userContext) {
+    throw new Error('Navbar must be used within a UserContextProvider');
+  }
+  const { isLoggedIn, setIsLoggedIn } = userContext;
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const form = useForm<z.infer<typeof LoginFormValidation>>({
@@ -28,7 +36,6 @@ export const ClientLoginForm = () => {
 
   const onSubmit = async (values: z.infer<typeof LoginFormValidation>) => {
     setIsLoading(true);
-
     const email = values.email;
     const password = values.password;
 
@@ -51,15 +58,15 @@ export const ClientLoginForm = () => {
           return;
         }
         const id = result.user.$id;
-        console.log(result);
         if (result) {
+          setIsLoggedIn(true);
           router.replace(`/clients/${id}/new-appointment`);
-          toast('Login Successful! 🎉');
+          toast.success('Login Successful! 🎉');
         } else {
-          toast('Login Failed');
+          toast.error('Login Failed');
         }
       } catch (error) {
-        toast('Login Failed');
+        toast.error('Login Failed');
       }
     };
     fetchData();
@@ -79,7 +86,7 @@ export const ClientLoginForm = () => {
           control={form.control}
           name='email'
           label='Email'
-          placeholder='tonystark@gmail.com'
+          placeholder='Enter your Email'
           iconSrc='/assets/icons/email.svg'
           iconAlt='email'
         />
@@ -89,7 +96,7 @@ export const ClientLoginForm = () => {
           control={form.control}
           name='password'
           label='Password'
-          placeholder='somethingUnique@123'
+          placeholder='Enter your Password'
           iconSrc='/assets/icons/password.svg'
           iconAlt='password'
         />

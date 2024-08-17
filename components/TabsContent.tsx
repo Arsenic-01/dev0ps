@@ -2,8 +2,7 @@
 
 import Image from 'next/image';
 import { Tabs } from './ui/tabs';
-import { BentoGrid, BentoGridItem } from './ui/BentoGrid';
-import Grid from './Grid';
+
 import ServiceGrid from './ServiceBento';
 
 export function TabsDemo() {
@@ -71,7 +70,7 @@ export function TabsDemo() {
   ];
 
   return (
-    <div className=' mb-10 py-10 sm:px-5 [perspective:200px] bg-black relative flex flex-col max-w-6xl max-h-screen w-full items-center justify-center'>
+    <div className=' mb-10 py-10 sm:px-5 z-10 [perspective:200px] bg-black relative flex flex-col max-w-6xl max-h-screen w-full items-center justify-center'>
       <Tabs tabs={tabs} />
     </div>
   );

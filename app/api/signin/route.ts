@@ -9,7 +9,6 @@ export async function POST(request) {
   const { email, password } = await request.json();
   try {
     const session = await account.createEmailPasswordSession(email, password);
-    console.log('im ahere');
 
     cookies().set('session', session.secret, {
       httpOnly: true,

@@ -1,7 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { toast } from 'sonner';
-import { useRouter } from 'next/navigation';
 import { PasskeyModal } from '@/components/PasskeyModal';
 import * as Sentry from '@sentry/nextjs';
 import { SearchParamProps } from '@/types';
@@ -12,27 +10,14 @@ const Home = async ({ searchParams }: SearchParamProps) => {
 
   const isAdmin = searchParams?.admin === 'true';
   const year = new Date().getFullYear();
-  isAdmin && console.log('im here');
 
   return (
-    <div className='flex h-screen min-h-screen'>
+    <div className='flex h-screen min-h-screen bg-black'>
       {isAdmin && <PasskeyModal />}
 
       <section className='remove-scrollbar container my-auto'>
         <div className='sub-container max-w-[496px]'>
-          {/* <div className='hidden xl:inline-flex gap-2 justify-items-center items-center mb-12'>
-            <Image
-              src='/nav.png'
-              height={1000}
-              width={1000}
-              alt='patient'
-              className=' h-10 w-fit'
-            />
-            <h2 className='text-24-bold'>SBA</h2>
-          </div> */}
-
           <ClientLoginForm />
-
           <div className='text-14-regular mt-20 flex justify-between'>
             <p className='justify-items-end text-dark-600 xl:text-left'>
               © {year} SBA
@@ -51,7 +36,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
           src='/side_img2.jpg'
           height={1000}
           width={1000}
-          alt='patient'
+          alt='Side image login'
           className='side-img select-none pointer-events-none  max-w-[100%]'
         />
       </div>

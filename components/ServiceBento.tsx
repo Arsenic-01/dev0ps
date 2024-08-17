@@ -10,8 +10,6 @@ const ServiceGrid = () => {
             id={item.id}
             className={item.className}
             key={i}
-            // remove icon prop
-            // remove original classname condition
           />
         ))}
       </ServiceBentoGrid>

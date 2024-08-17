@@ -86,7 +86,7 @@ export const AppointmentForm = ({
           router.push(
             `/clients/${userId}/new-appointment/success?appointmentId=${newAppointment.$id}`
           );
-          toast('Appointment Created Successful🎉');
+          toast.success('Appointment Created Successful🎉');
         }
       } else {
         const appointmentToUpdate = {
@@ -108,7 +108,8 @@ export const AppointmentForm = ({
         }
       }
     } catch (error) {
-      console.log(error);
+      console.log('Error while creating appointment', error);
+      toast.error('Error occured while creating appointment');
     }
     setIsLoading(false);
   };

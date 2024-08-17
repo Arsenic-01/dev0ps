@@ -87,14 +87,14 @@ export const ServiceBentoGridItem = ({
       )}
 
       {id === 2 && (
-        <div className='w-full border rounded-3xl h-full absolute py-10 flex flex-col gap-3 items-center justify-around text-white  px-4 pointer-events-none '>
-          <h1 className=' md:text-4xl text-3xl font-bold text-center'>
+        <div className='w-full border rounded-3xl h-full absolute py-10 flex flex-col items-start justify-center gap-10 text-white  px-4 pointer-events-none '>
+          <h1 className=' md:text-4xl text-3xl px-4 sm:px-10 xl:px-20 font-bold text-center'>
             How it Works
           </h1>
-          <ul className='list-none space-y-2 px-2'>
+          <ul className='list-none space-y-2 px-4 sm:px-10 xl:px-14'>
             {intern.map((item, i) => (
               <li
-                className='flex gap-1.5 items-center text-left text-base'
+                className='flex gap-4 items-center text-left text-base'
                 key={i}
               >
                 <FaCheck style={{ color: '#63E6BE' }} />
@@ -116,7 +116,7 @@ export const ServiceBentoGridItem = ({
 
       {id === 4 && (
         <div>
-          <div className='flex rounded-3xl border flex-col gap-3 px-5 py-10'>
+          <div className='flex rounded-3xl border flex-col gap-11 px-5 py-10'>
             <p className='text-lg	 '>
               Our firm offers comprehensive Funds & Cash Flow Analysis services,
               ensuring meticulous scrutiny and strategic planning to optimize

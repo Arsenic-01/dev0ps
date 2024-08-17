@@ -32,7 +32,6 @@ export const PasskeyModal = () => {
     typeof window !== 'undefined'
       ? window.localStorage.getItem('accessKey')
       : null;
-  console.log('IM HERE');
 
   useEffect(() => {
     const accessKey = encryptedKey && decryptKey(encryptedKey);
@@ -41,7 +40,7 @@ export const PasskeyModal = () => {
       if (accessKey === process.env.NEXT_PUBLIC_ADMIN_PASSKEY!.toString()) {
         setOpen(false);
         router.push('/admin');
-        toast('Admin Access Successful🎉');
+        toast.success('Admin Access Successful🎉');
       } else {
         setOpen(true);
       }
