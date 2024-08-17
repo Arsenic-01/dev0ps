@@ -28,7 +28,7 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
   if (!user) redirect('/login');
 
   return (
-    <div className='flex h-screen max-h-screen'>
+    <div className='flex h-screen bg-black max-h-screen'>
       <section className='remove-scrollbar container mt-20 my-auto'>
         <div className='sub-container max-w-[860px] flex-1 py-10 justify-between'>
           {/* <div className='md:inline-flex hidden  gap-2 justify-items-center items-center mb-12'>
