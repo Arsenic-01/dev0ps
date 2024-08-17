@@ -1,20 +1,6 @@
 import React from 'react';
-import Countup from 'react-countup';
-import VisibilitySensor from 'react-visibility-sensor';
-import { useState } from 'react';
-import { IoCopyOutline } from 'react-icons/io5';
-import { Playfair_Display } from 'next/font/google';
-const playfair = Playfair_Display({ subsets: ['latin'] });
-// Also install this npm i --save-dev @types/react-lottie
-import Lottie from 'react-lottie';
-
 import { cn } from '@/lib/utils';
-import { BackgroundGradientAnimation } from './GradientBg';
-import GridGlobe from './GridGlobe';
-import animationData from '@/data/confetti.json';
-import MagicButton from '../MagicButton';
-import { Check } from 'lucide-react';
-import { FaCheck, FaLocationArrow } from 'react-icons/fa6';
+import { FaCheck } from 'react-icons/fa6';
 import Image from 'next/image';
 import ChartComponent from './Charts';
 import { Button } from '@nextui-org/button';
