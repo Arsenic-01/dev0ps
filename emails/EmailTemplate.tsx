@@ -22,9 +22,7 @@ interface EmailProps {
 export const ContactEmail = ({ name, email, subject, message }: EmailProps) => (
   <Html>
     <Head />
-    <Preview>
-      A fine-grained personal access token has been added to your account
-    </Preview>
+    <Preview>{`New contact form submission from ${name}`}</Preview>
     <Body style={main}>
       <Container style={container}>
         <Section style={header}>
