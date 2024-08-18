@@ -20,7 +20,7 @@ export default function notFound() {
             Home
           </TransitionLink>
         </Button>
-        <TransitionLink className='text-lg md:text-xl' href={'/404'}>
+        <TransitionLink className='text-lg md:text-xl' href={'/cool404'}>
           <span className='text-lg md:text-xl underline underline-offset-8 hover:cursor-pointer hover:text-red-300  transition-all ease-in-out'>
             Cool 404?
           </span>{' '}

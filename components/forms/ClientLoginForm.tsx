@@ -54,7 +54,7 @@ export const ClientLoginForm = () => {
         const promise = await fetch('/api/user'); // Replace with your API endpoint
         const result = await promise.json();
         if (result?.error?.code === 401 || result?.status === 'error') {
-          toast('Login Failed Invalid Credentials 👀');
+          toast.error('Login Failed Invalid Credentials 👀');
           return;
         }
         const id = result.user.$id;
