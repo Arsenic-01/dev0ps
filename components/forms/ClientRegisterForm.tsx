@@ -12,28 +12,38 @@ import { UserFormValidation } from '@/lib/validation';
 import 'react-phone-number-input/style.css';
 import CustomFormField, { FormFieldType } from '../CustomFormField';
 import SubmitButton from '../SubmitButton';
-import { toast, Toaster } from 'sonner';
+import { toast } from 'sonner';
 import {
   createUser,
   registerUserDocument,
 } from '../../lib/actions/client.actions';
 import { UserContext } from '@/context/UserContext';
+import { getLoggedInUser } from '@/lib/appwrite';
 
 export const ClientForm = () => {
-  const userContext = useContext(UserContext);
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
-  // Handle the case when `userContext` is undefined
+  const userContext = useContext(UserContext);
   if (!userContext) {
     throw new Error('ClientForm must be used within a UserContextProvider');
   }
 
   const { isLoggedIn, setIsLoggedIn } = userContext;
-  const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (isLoggedIn) {
-      toast.warning('Hmm Looks like you are already logged in 🤔');
+      const fetchUserData = async () => {
+        const user = await getLoggedInUser();
+        if (user) {
+          toast.warning('Hmm Looks like you are already logged in 🤔');
+          toast.warning('Redirecting...');
+          router.push(`/clients/${user.$id}/new-appointment`);
+          toast.success('Login Successful! 🎉');
+          setIsLoggedIn(true);
+        }
+      };
+      fetchUserData();
     }
   }, [isLoggedIn]);
 
@@ -49,7 +59,6 @@ export const ClientForm = () => {
 
   const onSubmit = async (values: z.infer<typeof UserFormValidation>) => {
     setIsLoading(true);
-
     try {
       const user = {
         name: values.name,
@@ -58,50 +67,40 @@ export const ClientForm = () => {
         password: values.password,
       };
 
-      // Create user and handle response
-      const newUser = await createUser(user);
+      // Create the user
+      await createUser(user);
 
+      // Log in the user
       const response = await fetch('/api/signin', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: user.email, password: user.password }),
       });
 
-      const data = await response.json();
+      if (response.ok) {
+        const result = await fetch('/api/user');
+        const userData = await result.json();
 
-      if (data && data.status === 'success') {
-        const fetchData = async () => {
-          const result = await fetch('/api/user'); // Replace with your API endpoint
-          const userData = await result.json();
+        if (userData && userData.status === 'success') {
+          const newUserDoc = {
+            userId: userData.user.$id,
+            name: values.name,
+            email: values.email,
+            phone: values.phone,
+            password: values.password,
+          };
 
-          if (userData && userData.status === 'success') {
-            const id = userData?.user?.$id;
-
-            const newUserDoc = {
-              userId: id,
-              name: values.name,
-              email: values.email,
-              phone: values.phone,
-              password: values.password,
-            };
-
-            await registerUserDocument(newUserDoc);
-
-            setIsLoggedIn(true);
-            router.push(`/clients/${id}/new-appointment`);
-            toast.success('Login Successful! 🎉');
-          } else {
-            toast.error('User data fetch failed.');
-          }
-        };
-
-        await fetchData();
+          await registerUserDocument(newUserDoc);
+          toast('Login Successful! 🎉');
+          setIsLoggedIn(true);
+          router.push(`/clients/${userData.user.$id}/new-appointment`);
+        } else {
+          toast.error(
+            'Invalid user credentials, User already Exists or something went wrong.'
+          );
+        }
       } else {
-        toast.error(
-          'Login Failed: User already exists or credentials are incorrect.'
-        );
+        toast.error('Login Failed. Please try again.');
       }
     } catch (error) {
       console.error('Error during user registration or login:', error);
@@ -159,7 +158,6 @@ export const ClientForm = () => {
 
         <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
       </form>
-      <Toaster />
     </Form>
   );
 };

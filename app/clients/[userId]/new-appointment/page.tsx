@@ -29,8 +29,21 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
 
   return (
     <div className='flex h-screen bg-black sm:max-h-screen'>
-      <section className='remove-scrollbar container mt-20 my-auto'>
-        <div className='sub-container max-w-[860px] flex-1 py-10 justify-between'>
+      <section className='remove-scrollbar container mt-12 sm:mt-20 xl:mt-28 my-auto'>
+        <div className='sub-container max-w-[860px] flex-1 sm:py-10 justify-between'>
+          <div className='w-full h-full flex flex-col justify-center '>
+            <BreadcrumbWithCustomSeparator />
+            <div>
+              <AppointmentForm
+                clientId={client?.$id}
+                userId={userId}
+                type='create'
+              />
+              <p className='justify-items-end mt-10 text-dark-600 xl:text-left'>
+                © {year} SBA
+              </p>
+            </div>
+          </div>
           {/* <div className='md:inline-flex hidden  gap-2 justify-items-center items-center mb-12'>
             <Image
               src='/nav.png'
@@ -41,15 +54,6 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
             />
             <h2 className='text-24-bold'>SBA</h2>
           </div> */}
-          <BreadcrumbWithCustomSeparator />
-          <AppointmentForm
-            clientId={client?.$id}
-            userId={userId}
-            type='create'
-          />
-          <p className='justify-items-end mt-10 text-dark-600 xl:text-left'>
-            © {year} SBA
-          </p>{' '}
         </div>
       </section>
 
@@ -68,7 +72,7 @@ export default Appointment;
 
 function BreadcrumbWithCustomSeparator() {
   return (
-    <Breadcrumb className='mb-10 md:mb-16 xl:mb-20'>
+    <Breadcrumb className='mb-10'>
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink>
