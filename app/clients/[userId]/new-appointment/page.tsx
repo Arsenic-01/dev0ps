@@ -45,9 +45,6 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
             userId={userId}
             type='create'
           />
-          <p className='justify-items-end mt-10 text-dark-600 xl:text-left'>
-            © {year} SBA
-          </p>{' '}
         </div>
       </section>
 
