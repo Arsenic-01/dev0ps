@@ -139,7 +139,7 @@ const page = () => {
                 <p className='text-slate-300 inline-flex gap-7 lg:gap-5 items-center'>
                   <FaLocationDot className='w-7 h-7 sm:w-5 md:w-10 md:h-10 sm:h-5 lg:h-5 lg:w-5' />
                   Regd. Office: 8, First Floor, Rambaug Society, Vidya Vikas
-                  Circle,Gangapur Road, Nashik422013
+                  Circle,Gangapur Road, Nashik-422013
                 </p>
                 <a
                   href='mailto:sba.nashik@gmail.com?subject=Hey%20there!&body=I%20am%20_____%20and%20I%20want%20to%20Contact%20you%20for%20______'

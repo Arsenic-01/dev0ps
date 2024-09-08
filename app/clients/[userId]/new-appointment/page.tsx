@@ -27,18 +27,27 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
 
   return (
     <div className='flex h-screen bg-black sm:max-h-screen'>
-      <section className='remove-scrollbar container mt-12 sm:mt-20  my-auto'>
-        <div className='sub-container max-w-[860px] flex-1 sm:py-10 justify-between'>
-          <div className='w-full h-full flex flex-col justify-center '>
-            <BreadcrumbWithCustomSeparator />
-            <div>
-              <AppointmentForm
-                clientId={client?.$id}
-                userId={userId}
-                type='create'
-              />
-            </div>
-          </div>
+      <section className='remove-scrollbar container mt-20 my-auto'>
+        <div className='sub-container max-w-[860px] flex-1 py-10 justify-between'>
+          {/* <div className='md:inline-flex hidden  gap-2 justify-items-center items-center mb-12'>
+            <Image
+              src='/nav.png'
+              height={1000}
+              width={1000}
+              alt='patient'
+              className=' h-10 w-fit'
+            />
+            <h2 className='text-24-bold'>SBA</h2>
+          </div> */}
+          <BreadcrumbWithCustomSeparator />
+          <AppointmentForm
+            clientId={client?.$id}
+            userId={userId}
+            type='create'
+          />
+          <p className='justify-items-end mt-10 text-dark-600 xl:text-left'>
+            © {year} SBA
+          </p>{' '}
         </div>
       </section>
 
