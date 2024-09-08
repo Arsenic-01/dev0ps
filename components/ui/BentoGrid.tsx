@@ -5,10 +5,7 @@ import { IoCopyOutline } from 'react-icons/io5';
 import { Playfair_Display } from 'next/font/google';
 const playfair = Playfair_Display({ subsets: ['latin'] });
 // Also install this npm i --save-dev @types/react-lottie
-import dynamic from 'next/dynamic';
-
-const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
-
+import Lottie from 'react-lottie';
 import { cn } from '@/lib/utils';
 import { BackgroundGradientAnimation } from './GradientBg';
 import GridGlobe from './GridGlobe';
