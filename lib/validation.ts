@@ -12,7 +12,7 @@ export const UserFormValidation = z.object({
     .refine((phone) => /^\+\d{10,15}$/.test(phone), 'Invalid phone number'),
   password: z
     .string()
-    .min(7, 'Password must be at least 7 characters')
+    .min(8, 'Password must be at least 8 characters')
     .max(50, 'Password must be at most 50 characters'),
 });
 export const LoginFormValidation = z.object({

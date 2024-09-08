@@ -5,19 +5,22 @@ export const useOutsideClick = (
   callback: Function
 ) => {
   useEffect(() => {
-    const listener = (event: any) => {
-      if (!ref.current || ref.current.contains(event.target)) {
-        return;
-      }
-      callback(event);
-    };
+    if (typeof document !== 'undefined') {
+      // Ensure this runs only on the client
+      const listener = (event: any) => {
+        if (!ref.current || ref.current.contains(event.target)) {
+          return;
+        }
+        callback(event);
+      };
 
-    document.addEventListener('mousedown', listener);
-    document.addEventListener('touchstart', listener);
+      document.addEventListener('mousedown', listener);
+      document.addEventListener('touchstart', listener);
 
-    return () => {
-      document.removeEventListener('mousedown', listener);
-      document.removeEventListener('touchstart', listener);
-    };
+      return () => {
+        document.removeEventListener('mousedown', listener);
+        document.removeEventListener('touchstart', listener);
+      };
+    }
   }, [ref, callback]);
 };

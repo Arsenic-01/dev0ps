@@ -97,41 +97,76 @@ export const ServiceCards = [
   },
   {
     id: 5,
+    imgSrc: '/embla/tev.jpg',
+    title: 'TEV (Techno-Economic Viability Consultants)',
+    description:
+      'SBA provides TEV (Techno-Economic Viability) consultancy, offering comprehensive assessments of project feasibility, including technical, financial, and market analysis, ensuring informed decision-making for sustainable investments and project success.',
+  },
+  {
+    id: 6,
+    imgSrc: '/embla/lender.png',
+    title: 'Lender’s independent engineers',
+    description:
+      'At SBA, we offer Lender’s Independent Engineer services, providing impartial technical assessments, risk evaluations, and project monitoring to ensure lenders’ investments are secure and projects are executed efficiently and effectively.',
+  },
+  {
+    id: 7,
+    imgSrc: '/embla/realestate.jpg',
+    title: 'Real Estate Advisory',
+    description:
+      'Sunil Bhor and Associates offers expert Real Estate Advisory services, providing strategic guidance on property investments, market analysis, asset management, and maximizing returns to help clients make informed decisions.',
+  },
+  {
+    id: 8,
+    imgSrc: '/embla/plant-and-machinenery.jpg',
+    title: 'Plant and Machinery Valuation',
+    description:
+      'We offer comprehensive Plant and Machinery Valuation services, ensuring accurate asset valuation for financial reporting, insurance, and regulatory compliance with expert precision and industry knowledge.',
+  },
+  {
+    id: 9,
+    imgSrc: '/embla/blackmoney.jpg',
+    title: 'Black Money Valuation',
+    description:
+      'SBA offers specialized Black Money Valuation services for government contractors, ensuring accurate assessment and compliance. We provide discreet evaluations to mitigate risks and maintain transparency in financial operations.',
+  },
+  {
+    id: 10,
     imgSrc: '/embla/town-planning.png',
     title: 'Town planning Approvals',
     description:
       'Our consultancy specializes in obtaining town planning approvals from Municipal, MIDC, and NMRDA authorities. We ensure compliance with regulations, facilitating smooth and timely project approvals for our clients.',
   },
   {
-    id: 6,
+    id: 11,
     imgSrc: '/embla/tender.jpg',
     title: 'Tender & Specs Drafting',
     description:
       'SBA specializes in preparing thorough tender documents and drafting detailed specifications. We ensure precise requirements tailored to project needs, facilitating effective procurement and construction processes.',
   },
   {
-    id: 7,
+    id: 12,
     imgSrc: '/embla/testing.png',
     title: 'Quality control & NDT Testing',
     description:
       'Our consultancy specializes in quality control and NDT testing services, ensuring rigorous inspection and assessment for structural integrity and compliance with industry standards.We also facilitate Department of Industrial Safety & Health (DISH) approvals for businesses.',
   },
   {
-    id: 8,
+    id: 13,
     imgSrc: '/embla/analysis.jpg',
     title: 'Funds & Cash Flow Analysis',
     description:
       'Our firm offers comprehensive Funds & Cash Flow Analysis services, ensuring meticulous scrutiny and strategic planning to optimize financial resources and enhance project sustainability and profitability.',
   },
   {
-    id: 9,
+    id: 14,
     imgSrc: '/embla/certifications.png',
     title: 'Contractor Bill Certification',
     description:
       'We specialize in scrutinizing and certifying contractors bills to ensure accuracy and compliance with project specifications. Our meticulous process guarantees transparency and facilitates smooth project financial management.',
   },
   {
-    id: 10,
+    id: 15,
     imgSrc: '/embla/electrical.jpg',
     title: 'Electrical consultancy',
     description:
@@ -152,7 +187,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: 'We’re very flexible with time zone communications',
+    title: 'We provide services all over India.',
     description: '',
     className: 'lg:col-span-2 md:col-span-3 md:row-span-2',
     imgClassName: '',

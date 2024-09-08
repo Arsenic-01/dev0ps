@@ -18,14 +18,17 @@ const Home = async ({ searchParams }: SearchParamProps) => {
       <section className='remove-scrollbar container my-auto'>
         <div className='sub-container max-w-[496px]'>
           <ClientLoginForm />
-          <div className='text-14-regular mt-20 flex justify-between'>
+          <div className='text-14-regular  mt-20 flex justify-between'>
             <p className='justify-items-end text-dark-600 xl:text-left'>
               © {year} SBA
             </p>
-            <Link href='/register' className='text-green-500'>
+            <Link href='/register' className='text-green-500 mr-3 sm:mr-0'>
               Register
             </Link>
-            <Link href='/login/?admin=true' className='text-green-500'>
+            <Link
+              href='/login/?admin=true'
+              className='text-green-500 mr-3 sm:mr-0'
+            >
               Admin
             </Link>
           </div>

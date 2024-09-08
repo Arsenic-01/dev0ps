@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import EmblaCarousel from './ui/EmblaCarousel';
 import { EmblaOptionsType } from 'embla-carousel';

@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
@@ -145,8 +143,8 @@ export function Testimonials() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className='bg-black' />
+          <CarouselNext className='bg-black' />
         </Carousel>
       </BlurFade>
     </section>

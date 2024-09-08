@@ -1,3 +1,4 @@
+'use client';
 import React, { useCallback, useEffect, useState } from 'react';
 import { EmblaCarouselType, EmblaOptionsType } from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -66,6 +67,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                       <CardMedia
                         component='img'
                         width='200'
+                        height='100'
                         image={el.imgSrc}
                         alt=''
                       />

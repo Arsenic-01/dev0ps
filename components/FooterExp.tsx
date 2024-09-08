@@ -13,7 +13,7 @@ const FooterExp = () => {
   return (
     <footer className='w-full dark:bg-black'>
       <BlurFade delay={0.1} inView>
-        <div className=' px-5 py-16 sm:px-6 lg:px-8'>
+        <div className=' px-5 pt-16 pb-7 sm:px-6 lg:px-8'>
           <div className='flex justify-center text-teal-600 dark:text-teal-300'>
             {}
             <TransitionLink href={'/'}>
@@ -28,7 +28,7 @@ const FooterExp = () => {
           </div>
 
           <p className='mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 dark:text-gray-400'>
-            Innovate. Design. Construct.
+            Innovate. Value. Design.
           </p>
 
           <ul className='mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12'>
@@ -131,6 +131,10 @@ const FooterExp = () => {
               </a>
             </li>
           </ul>
+          <h1 className='text-sm text-neutral-400 mt-12 text-center mx-auto'>
+            &copy; {new Date().getFullYear()} Sunil Bhor & Associates. All
+            rights reserved.
+          </h1>
         </div>
       </BlurFade>
     </footer>

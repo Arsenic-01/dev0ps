@@ -1,5 +1,4 @@
 'use client';
-
 import Hero from '@/components/Hero';
 import Grid from '@/components/Grid';
 import CallToAction from '@/components/CallToAction';
@@ -23,7 +22,7 @@ const Home = () => {
         <Hero />
         {/* <Clients /> */}
         <InfiniteMovingCards items={companieslogo} />
-        <div className='xl:max-w-screen-2xl max-w-7xl  w-full sm:px-10 px-5'>
+        <div className=' max-w-7xl  w-full sm:px-10 px-5'>
           <Services />
           <LampDemo />
         </div>

@@ -1,10 +1,13 @@
+'use client';
 import React from 'react';
 import { useState } from 'react';
 import { IoCopyOutline } from 'react-icons/io5';
 import { Playfair_Display } from 'next/font/google';
 const playfair = Playfair_Display({ subsets: ['latin'] });
 // Also install this npm i --save-dev @types/react-lottie
-import Lottie from 'react-lottie';
+import dynamic from 'next/dynamic';
+
+const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
 
 import { cn } from '@/lib/utils';
 import { BackgroundGradientAnimation } from './GradientBg';
@@ -15,7 +18,6 @@ import { Check } from 'lucide-react';
 import { FaLocationArrow } from 'react-icons/fa6';
 import NumberTicker from '../magicui/number-ticker';
 import BlurFade from '../magicui/blur-fade';
-import { inView } from 'framer-motion';
 
 export const BentoGrid = ({
   className,
@@ -65,8 +67,6 @@ export const BentoGridItem = ({
     'Explore career paths and industry insights firsthand',
   ];
 
-  const [CounterOn, SetCounterOn] = useState(false);
-
   const [copied, setCopied] = useState(false);
 
   const defaultOptions = {
@@ -79,9 +79,11 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = 'sba.nashik@gmail.com';
-    navigator.clipboard.writeText(text);
-    setCopied(true);
+    if (typeof window !== 'undefined') {
+      const text = 'sba.nashik@gmail.com';
+      navigator.clipboard.writeText(text);
+      setCopied(true);
+    }
   };
 
   return (
@@ -148,7 +150,11 @@ export const BentoGridItem = ({
               {title}
             </div>
             {/* for the github 3d globe */}
-            {id === 2 && <GridGlobe />}
+            {id === 2 && (
+              <div className='translate-y-5 sm:translate-y-0 xl:-translate-y-4'>
+                <GridGlobe />
+              </div>
+            )}
 
             {id === 5 && (
               <>
@@ -170,6 +176,7 @@ export const BentoGridItem = ({
                   icon={<FaLocationArrow />}
                   position='right'
                   width={true}
+                  className='md:mt-5'
                   otherClasses=' bg-black '
                 />
               </>
@@ -219,7 +226,7 @@ export const BentoGridItem = ({
                   title={copied ? 'Email is Copied!' : 'Copy email address'}
                   icon={<IoCopyOutline />}
                   position='left'
-                  handleClick={handleCopy}
+                  handleClick={() => handleCopy()} // Call it directly inside the component
                   width={true}
                   otherClasses='!bg-[#161A31]'
                 />

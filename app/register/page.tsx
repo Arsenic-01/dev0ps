@@ -24,10 +24,13 @@ const Home = ({ searchParams }: SearchParamProps) => {
             <p className='justify-items-end text-dark-600 xl:text-left'>
               © {year} SBA
             </p>
-            <Link href='/login' className='text-green-500'>
+            <Link href='/login' className='text-green-500 mr-3 sm:mr-0'>
               Login
             </Link>
-            <Link href='/register/?admin=true' className='text-green-500'>
+            <Link
+              href='/register/?admin=true'
+              className='text-green-500 mr-3 sm:mr-0'
+            >
               Admin
             </Link>
           </div>

@@ -50,7 +50,7 @@ interface CustomProps {
 // };
 
 const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
-  const [startDate, setStartDate] = useState();
+  const [startDate, setStartDate] = useState<Date | null>(null);
   switch (props.fieldType) {
     case FormFieldType.INPUT:
       return (
@@ -115,32 +115,29 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
       );
     case FormFieldType.DATE_PICKER:
       return (
-        setHours(setMinutes(new Date(), 30), 17),
-        (
-          <div className='flex rounded-md border border-dark-500 bg-dark-400'>
-            <Image
-              src='/assets/icons/calendar.svg'
-              height={24}
-              width={24}
-              alt='user'
-              className='ml-2'
+        <div className='flex rounded-md border border-dark-500 bg-dark-400'>
+          <Image
+            src='/assets/icons/calendar.svg'
+            height={24}
+            width={24}
+            alt='calendar'
+            className='ml-2'
+          />
+          <FormControl>
+            <ReactDatePicker
+              selected={field.value}
+              onChange={(date: Date) => {
+                setStartDate(date);
+                field.onChange(date);
+              }}
+              showTimeSelect={props.showTimeSelect ?? false}
+              dateFormat={props.dateFormat ?? 'MMMM d, yyyy h:mm aa'}
+              minTime={setHours(setMinutes(new Date(), 0), 15)}
+              maxTime={setHours(setMinutes(new Date(), 30), 20)}
+              wrapperClassName='date-picker'
             />
-            <FormControl>
-              <ReactDatePicker
-                minTime={setHours(setMinutes(new Date(), 0), 15)}
-                maxTime={setHours(setMinutes(new Date(), 30), 20)}
-                showTimeSelect={props.showTimeSelect ?? false}
-                // showTimeSelect
-                selected={field.value}
-                onChange={(date: Date) => field.onChange(date)}
-                timeInputLabel='Time:'
-                // dateFormat={props.dateFormat ?? 'MM/dd/yyyy'}
-                dateFormat='MMMM d, yyyy h:mm aa'
-                wrapperClassName='date-picker'
-              />
-            </FormControl>
-          </div>
-        )
+          </FormControl>
+        </div>
       );
     case FormFieldType.SELECT:
       return (

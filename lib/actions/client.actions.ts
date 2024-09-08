@@ -6,6 +6,7 @@ import { DATABASE_ID, CLIENT_ID, databases, users } from '../appwrite.config';
 import { parseStringify } from '../utils';
 import { CreateUserParams } from '@/types';
 import GeneratedUserId from './generateUserId';
+import { NextResponse } from 'next/server';
 
 // CREATE APPWRITE USER
 export const createUser = async (user: CreateUserParams) => {
@@ -22,11 +23,11 @@ export const createUser = async (user: CreateUserParams) => {
     return parseStringify(newuser);
   } catch (error: any) {
     // Check existing user
+    console.error('An error occurred while creating a new user:', error);
+
     if (error.code === 409) {
       return error.message;
-    }
-
-    console.error('An error occurred while creating a new user:', error);
+    } else return NextResponse.json({ error: error.message }, { status: 400 });
   }
 };
 

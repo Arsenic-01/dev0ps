@@ -14,10 +14,8 @@ const RequestSuccess = async ({
 }: SearchParamProps) => {
   const appointmentId = (searchParams?.appointmentId as string) || '';
   const appointment = await getAppointment(appointmentId);
-  const year = new Date().getFullYear();
   Sentry.metrics.set('user_view_new-appointment_success', 'client');
   const user = await getLoggedInUser();
-
   if (!user) redirect('/login');
 
   return (
@@ -46,7 +44,7 @@ const RequestSuccess = async ({
                 alt='sba_chief'
                 width={100}
                 height={200}
-                className='w-6 h-8 rounded-full'
+                className='w-6 h-8 rounded-md'
               />
               <p className='whitespace-nowrap'>Sunil D. Bhor</p>
             </div>
@@ -65,9 +63,6 @@ const RequestSuccess = async ({
               New Appointment
             </Link>
           </Button>
-          {/* <p className='justify-items-end mt-10  text-dark-600 xl:text-left'>
-          © {year} SBA
-        </p>{' '} */}
         </div>
       </div>
     </div>

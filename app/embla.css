@@ -1,7 +1,7 @@
 .embla {
-  max-width: 35rem;
+  max-width: 30rem;
   --slide-spacing: 1rem;
-  --slide-size: 65%;
+  --slide-size: 70%;
 }
 @media (min-width: 1028px) {
   .embla {

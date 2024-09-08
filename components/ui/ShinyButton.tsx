@@ -1,5 +1,4 @@
-// @ts-nocheck
-
+'use client';
 import { motion } from 'framer-motion';
 import { TransitionLink } from '../utils/TransitionLink';
 
@@ -7,11 +6,11 @@ interface Props {
   otherclassNames?: string;
 }
 
-const ShinyButton = ({ Props }: Props) => {
+const ShinyButton = ({ otherclassNames }: Props) => {
   return (
     <motion.button
-      initial={{ '--x': '100%', scale: 1 }}
-      animate={{ '--x': '-100%' }}
+      initial={{ x: '100%', scale: 1 }} // Instead of animating --x, use x
+      animate={{ x: '-100%' }}
       whileTap={{ scale: 0.97 }}
       transition={{
         repeat: Infinity,
@@ -28,7 +27,8 @@ const ShinyButton = ({ Props }: Props) => {
           mass: 0.1,
         },
       }}
-      className={`px-8 py-2 sm:px-10 sm:py-3 mt-4 rounded-md relative radial-gradient sm:mt-5 z-10  hidden md:block ${Props && Props.otherclassNames}`}
+      className={`px-8 py-2 sm:px-10 sm:py-3 mt-4 rounded-md relative radial-gradient sm:mt-5 z-10 hidden md:block ${otherclassNames}`}
+      style={{ '--x': '100%' } as React.CSSProperties} // Add custom CSS property inline
     >
       <TransitionLink
         href='/contact'

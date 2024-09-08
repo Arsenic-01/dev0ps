@@ -24,6 +24,14 @@ export const columns: ColumnDef<Appointment>[] = [
     },
   },
   {
+    accessorKey: 'phone',
+    header: 'Phone no.',
+    cell: ({ row }) => {
+      const appointment = row.original;
+      return <p className='text-14-medium '>{appointment.client?.phone}</p>;
+    },
+  },
+  {
     accessorKey: 'status',
     header: 'Status',
     cell: ({ row }) => {

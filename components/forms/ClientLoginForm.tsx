@@ -15,6 +15,7 @@ import { toast } from 'sonner';
 import { FaRightToBracket } from 'react-icons/fa6';
 import { useRouter } from 'next/navigation';
 import { UserContext } from '@/context/UserContext';
+import { Button } from '@nextui-org/button';
 
 export const ClientLoginForm = () => {
   const userContext = useContext(UserContext);
@@ -85,7 +86,7 @@ export const ClientLoginForm = () => {
           fieldType={FormFieldType.INPUT}
           control={form.control}
           name='email'
-          label='Email'
+          // label='Email'
           placeholder='Enter your Email'
           iconSrc='/assets/icons/email.svg'
           iconAlt='email'
@@ -95,15 +96,21 @@ export const ClientLoginForm = () => {
           fieldType={FormFieldType.INPUT}
           control={form.control}
           name='password'
-          label='Password'
+          // label='Password'
           placeholder='Enter your Password'
           iconSrc='/assets/icons/password.svg'
           iconAlt='password'
         />
 
-        <SubmitButton isLoading={isLoading}>
-          Login <FaRightToBracket className='ml-2 w-4 h-4' />
-        </SubmitButton>
+        <Button
+          color='primary'
+          type='submit'
+          radius='sm'
+          isLoading={isLoading}
+          className={`bg-green-500 mt-4 text-white ' w-full`}
+        >
+          {isLoading ? 'Loading...' : 'Login'}
+        </Button>
       </form>
     </Form>
   );

@@ -6,7 +6,7 @@ export async function GET(request?: any | null) {
     const user = await account.get();
     return Response.json({ user: user, status: 'success' });
   } catch (error) {
-    console.log('error while getting user from appwrite', error);
+    console.log('error on user side wtf', error);
 
     return Response.json({ error: error, status: 'error' });
   }

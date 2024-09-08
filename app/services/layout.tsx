@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Sunil Bhor & Associates | Services',
+  title: 'Services | SBA',
   description: ' ',
 };
 
@@ -12,7 +12,7 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <main className='bg-black my-20'>{children}</main>
+      <main className='bg-black'>{children}</main>
     </>
   );
 }

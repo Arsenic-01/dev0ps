@@ -13,6 +13,12 @@ import {
 } from '../appwrite.config';
 import { formatDateTime, parseStringify } from '../utils';
 import { CreateAppointmentParams, UpdateAppointmentParams } from '@/types';
+import { getClient } from './client.actions';
+import { Resend } from 'resend';
+import { FollowUpEmail } from '@/emails/FollowUpEmail';
+import SendAdminEmail from '@/emails/SendAdminEmail';
+
+const resend = new Resend(process.env.RESEND_API_KEY!);
 
 //  CREATE APPOINTMENT
 export const createAppointment = async (
@@ -25,13 +31,37 @@ export const createAppointment = async (
       ID.unique(),
       appointment
     );
-
+    console.log('Appointment', newAppointment);
     revalidatePath('/admin');
     const smsMessage = `Greetings from SBA. A new Appointment has been scheduled on ${formatDateTime(appointment.schedule!).dateTime}. click the link below to view the details. https://sba-main.vercel.app/admin`;
     await sendSMSNotification(process.env.ADMIN_USER_ID!, smsMessage);
+    await sendAdminEmailNotification(newAppointment);
     return parseStringify(newAppointment);
   } catch (error) {
     console.error('An error occurred while creating a new appointment:', error);
+  }
+};
+
+export const sendAdminEmailNotification = async (appointment: any) => {
+  try {
+    const subject = `New Appointment form submission from ${appointment.client.name}`;
+
+    await resend.emails.send({
+      from: 'Acme <onboarding@resend.dev>', // Add the correct sender email address here
+      to: appointment.client.email, // Change to appointment.client.email when deploying
+      subject,
+      react: SendAdminEmail({
+        name: appointment.client.name,
+        email: appointment.client.email,
+        time: formatDateTime(appointment.schedule).dateTime, // Ensure correct date formatting
+        phone: appointment.client.phone,
+        message: appointment.reason || 'No message provided', // Default message
+      }),
+    });
+
+    console.log('Admin email sent successfully');
+  } catch (error) {
+    console.error('Error occurred while sending admin email:', error);
   }
 };
 
@@ -99,6 +129,36 @@ export const sendSMSNotification = async (userId: string, content: string) => {
   }
 };
 
+export const sendFollowUpEmailNotification = async (appointment: any) => {
+  try {
+    const subject =
+      appointment.status === 'scheduled'
+        ? `Appointment Scheduled: ${formatDateTime(appointment.schedule).dateTime}`
+        : `Appointment Cancelled: ${formatDateTime(appointment.schedule).dateTime}`;
+
+    const body =
+      appointment.status === 'scheduled'
+        ? `Greetings from SBA. Your appointment is confirmed for ${formatDateTime(appointment.schedule).dateTime} with Mr. Sunil D. Bhor.`
+        : `We regret to inform you that your appointment for ${formatDateTime(appointment.schedule).dateTime} is cancelled. Reason: ${appointment.cancellationReason || 'No reason provided.'}.`;
+
+    await resend.emails.send({
+      from: 'Acme <onboarding@resend.dev>', // Add the correct sender email address here
+      to: appointment.client.email, // Client's email
+      subject,
+      react: FollowUpEmail({
+        name: appointment.client.name,
+        time: formatDateTime(appointment.schedule).dateTime, // Ensure correct date formatting
+        message: appointment.cancellationReason || 'No reason provided',
+        type: appointment.status === 'scheduled' ? 'success' : 'cancelled',
+      }),
+    });
+
+    console.log('Follow-up email sent successfully');
+  } catch (error) {
+    console.error('Error occurred while sending follow-up email:', error);
+  }
+};
+
 //  UPDATE APPOINTMENT
 export const updateAppointment = async ({
   appointmentId,
@@ -116,10 +176,14 @@ export const updateAppointment = async ({
     );
 
     if (!updatedAppointment) throw Error;
+    const client = await getClient(userId);
+    console.log('client', client);
+    console.log('updatedAppointment', updatedAppointment);
 
+    // sendEmailNotification(client, appointment);
     const smsMessage = `Greetings from SBA. ${type === 'schedule' ? `Your appointment is confirmed for ${formatDateTime(appointment.schedule!).dateTime} with Mr. Sunil D. Bhor` : `We regret to inform that your appointment for ${formatDateTime(appointment.schedule!).dateTime} is cancelled. Reason:  ${appointment.cancellationReason}`}.`;
-    await sendSMSNotification(userId, smsMessage);
-
+    // await sendSMSNotification(userId, smsMessage);
+    await sendFollowUpEmailNotification(updatedAppointment);
     revalidatePath('/admin');
     return parseStringify(updatedAppointment);
   } catch (error) {

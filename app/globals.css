@@ -9,8 +9,8 @@
 }
 
 ::selection {
-  color: #fff;
-  background: #2e2e2e;
+  color: #cdfff2d3;
+  background: #18181858;
 }
 
 /* Firefox */
@@ -64,7 +64,9 @@
     )
     rgba(var(--solid-color-background), 1);
 }
-
+.custom-navbar {
+  backdrop-filter: blur(7px); /* Adjust this value to change blur */
+}
 .linear-mask {
   mask-image: linear-gradient(
     -75deg,
