@@ -1,13 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
-import { Button } from '@/components/ui/button';
 import { getAppointment } from '@/lib/actions/appointment.actions';
 import { formatDateTime } from '@/lib/utils';
 import * as Sentry from '@sentry/nextjs';
 import { SearchParamProps } from '@/types';
 import { redirect } from 'next/navigation';
 import { getLoggedInUser } from '@/lib/appwrite';
+import { Button } from '@nextui-org/button';
 const RequestSuccess = async ({
   searchParams,
   params: { userId },
@@ -29,12 +28,14 @@ const RequestSuccess = async ({
               height={300}
               width={280}
               alt='success'
+              unoptimized
+              className='select-none pointer-events-none'
             />
             <h2 className='header mb-6 max-w-[600px] text-center'>
               Your <span className='text-green-500'>appointment request</span>{' '}
               has been successfully submitted!
             </h2>
-            <p>We&apos;ll be in touch shortly to confirm.</p>
+            <p>We&apos;ll be in touch shortly to confirm (via email)</p>
           </section>
           <section className='request-details'>
             <p>Requested appointment details: </p>
@@ -44,7 +45,7 @@ const RequestSuccess = async ({
                 alt='sba_chief'
                 width={100}
                 height={200}
-                className='w-6 h-8 rounded-md'
+                className='w-6 h-8 rounded-md select-none pointer-events-none'
               />
               <p className='whitespace-nowrap'>Sunil D. Bhor</p>
             </div>
@@ -58,7 +59,12 @@ const RequestSuccess = async ({
               <p> {formatDateTime(appointment.schedule).dateTime}</p>
             </div>
           </section>
-          <Button variant='outline' className='shad-primary-btn' asChild>
+          <Button
+            color='primary'
+            type='submit'
+            radius='sm'
+            className={`bg-green-500 mt-4 text-white font-medium px-10 `}
+          >
             <Link href={`/clients/${userId}/new-appointment`}>
               New Appointment
             </Link>

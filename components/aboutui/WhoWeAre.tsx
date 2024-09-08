@@ -18,14 +18,14 @@ import BlurFade from '../magicui/blur-fade';
 const WhoWeAre = () => {
   return (
     <section className='relative '>
-      <div className='text-slat-100 min-h-[90vh] overflow-hidden px-8 pb-12 pt-14 md:pt-10 sm:py-20 md:px-12 lg:mr-10 pl-10 md:py-32'>
+      <div className='text-slat-100 min-h-[90vh] overflow-hidden px-8 pb-12 pt-12 md:pt-10 sm:py-20 md:px-12 lg:mr-10 pl-10 md:py-32'>
         <WaterDropGrid />
 
         <div className='relative mx-auto max-w-7xl '>
           <div className='pointer-events-none relative z-10'>
             <div className='opacity-1 transform:none'>
               <BoxReveal boxColor={'#fff'} duration={0.4}>
-                <h1 className='pointer-events-auto  mt-5 bg-gradient-to-br from-slate-300 to-slate-400 py-4 bg-clip-text text-left text-6xl md:text-7xl font-medium tracking-tight text-transparent'>
+                <h1 className='pointer-events-auto  sm:mt-5 bg-gradient-to-br from-slate-300 to-slate-400 py-4 bg-clip-text text-left text-5xl sm:text-6xl md:text-7xl font-medium tracking-tight text-transparent'>
                   Who We Are
                   <span className='text-[#b92d2d] text-6xl lg:text-8xl select-none'>
                     .
@@ -39,10 +39,10 @@ const WhoWeAre = () => {
               ></div>
             </div>
           </div>
-          <div className='pointer-events-auto relative mt-11 z-10 flex justify-between gap-20'>
+          <div className='pointer-events-auto relative mt-6 sm:mt-11 z-10 flex justify-between gap-20'>
             <div className='opacity-1 transform:none flex flex-col items-start gap-12'>
               <BoxReveal boxColor={'#fff'} duration={0.4}>
-                <p className='pointer-events-auto font-normal max-w-3xl text-base sm:text-lg  text-neutral-300 '>
+                <p className='pointer-events-auto font-normal max-w-3xl text-base sm:text-lg bg-black/80  text-neutral-300 '>
                   At Sunil Bhor & Associates, we&apos;re passionate about
                   turning your dreams into reality. As a professional
                   consultancy firm, we offer a wide range of services, including

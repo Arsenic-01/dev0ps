@@ -31,10 +31,10 @@ export const createAppointment = async (
       ID.unique(),
       appointment
     );
-    console.log('Appointment', newAppointment);
+    // console.log('Appointment', newAppointment);
     revalidatePath('/admin');
     const smsMessage = `Greetings from SBA. A new Appointment has been scheduled on ${formatDateTime(appointment.schedule!).dateTime}. click the link below to view the details. https://sba-main.vercel.app/admin`;
-    await sendSMSNotification(process.env.ADMIN_USER_ID!, smsMessage);
+    // await sendSMSNotification(process.env.ADMIN_USER_ID!, smsMessage);
     await sendAdminEmailNotification(newAppointment);
     return parseStringify(newAppointment);
   } catch (error) {
@@ -178,7 +178,7 @@ export const updateAppointment = async ({
     if (!updatedAppointment) throw Error;
     const client = await getClient(userId);
     console.log('client', client);
-    console.log('updatedAppointment', updatedAppointment);
+    // console.log('updatedAppointment', updatedAppointment);
 
     // sendEmailNotification(client, appointment);
     const smsMessage = `Greetings from SBA. ${type === 'schedule' ? `Your appointment is confirmed for ${formatDateTime(appointment.schedule!).dateTime} with Mr. Sunil D. Bhor` : `We regret to inform that your appointment for ${formatDateTime(appointment.schedule!).dateTime} is cancelled. Reason:  ${appointment.cancellationReason}`}.`;

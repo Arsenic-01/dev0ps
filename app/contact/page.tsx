@@ -57,7 +57,7 @@ const page = () => {
   return (
     <div className='min-h-[100vh] relative sm:py-10 bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto '>
       <div className='mt-24 md:px-8'>
-        <h1 className='pointer-events-auto text-5xl mt-8 sm:mt-0 lg:text-6xl xl:text-[69px] font-medium text-center md:text-left text-slate-100 px-8'>
+        <h1 className='pointer-events-auto text-5xl mt-8 sm:mt-0 lg:text-6xl  font-medium text-center md:text-left text-slate-100 px-8'>
           Let&apos;s Work{' '}
           <span className='bg-gradient-to-br from-slate-300 to-slate-400 bg-clip-text text-transparent'>
             Together
@@ -139,7 +139,7 @@ const page = () => {
                 <p className='text-slate-300 inline-flex gap-7 lg:gap-5 items-center'>
                   <FaLocationDot className='w-7 h-7 sm:w-5 md:w-10 md:h-10 sm:h-5 lg:h-5 lg:w-5' />
                   Regd. Office: 8, First Floor, Rambaug Society, Vidya Vikas
-                  Circle,Gangapur Road, Nashik-422013
+                  Circle, Gangapur Road, Nashik-422013
                 </p>
                 <a
                   href='mailto:sba.nashik@gmail.com?subject=Hey%20there!&body=I%20am%20_____%20and%20I%20want%20to%20Contact%20you%20for%20______'
