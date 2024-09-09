@@ -7,6 +7,7 @@ import { SearchParamProps } from '@/types';
 import { redirect } from 'next/navigation';
 import { getLoggedInUser } from '@/lib/appwrite';
 import { Button } from '@nextui-org/button';
+import AppointmentButton from '@/components/ui/AppointmentButton';
 const RequestSuccess = async ({
   searchParams,
   params: { userId },
@@ -15,7 +16,7 @@ const RequestSuccess = async ({
   const appointment = await getAppointment(appointmentId);
   Sentry.metrics.set('user_view_new-appointment_success', 'client');
   const user = await getLoggedInUser();
-  if (!user) redirect('/login');
+  // if (!user) redirect('/login');
 
   return (
     <div className='min-h-[100vh] flex flex-col items-center justify-center bg-black'>
@@ -59,16 +60,7 @@ const RequestSuccess = async ({
               <p> {formatDateTime(appointment.schedule).dateTime}</p>
             </div>
           </section>
-          <Button
-            color='primary'
-            type='submit'
-            radius='sm'
-            className={`bg-green-500 mt-4 text-white font-medium px-10 `}
-          >
-            <Link href={`/clients/${userId}/new-appointment`}>
-              New Appointment
-            </Link>
-          </Button>
+          <AppointmentButton userId={userId} name='New Appointment' />
         </div>
       </div>
     </div>

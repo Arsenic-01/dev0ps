@@ -23,12 +23,12 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
   if (typeof window !== 'undefined') {
     window.location.reload();
   }
-  if (!user) redirect('/login');
+  // if (!user) redirect('/login');
 
   return (
     <div className='flex h-screen bg-black sm:max-h-screen'>
-      <section className='remove-scrollbar container mt-20 my-auto'>
-        <div className='sub-container max-w-[860px] flex-1 py-10 justify-between'>
+      <section className='remove-scrollbar container sm:mt-20 my-auto'>
+        <div className='sub-container max-w-[860px] flex-1 py-5 sm:py-10 justify-between'>
           {/* <div className='md:inline-flex hidden  gap-2 justify-items-center items-center mb-12'>
             <Image
               src='/nav.png'
@@ -63,7 +63,7 @@ export default Appointment;
 
 function BreadcrumbWithCustomSeparator() {
   return (
-    <Breadcrumb className='mb-10'>
+    <Breadcrumb className='mb-5 sm:mb-10'>
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink>

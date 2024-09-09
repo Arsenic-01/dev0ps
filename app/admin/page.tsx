@@ -7,9 +7,14 @@ import * as Sentry from '@sentry/nextjs';
 const AdminPage = async () => {
   const appointments = await getRecentAppointmentList();
   Sentry.metrics.set('user_view_admin', 'client');
-  const date = new Date();
-  const currentTime = date.getHours();
-  const indianTime = currentTime + 9.5;
+
+  // Get the current time in IST
+  const currentISTTime = new Date().toLocaleString('en-US', {
+    timeZone: 'Asia/Kolkata',
+    hour: 'numeric',
+    hour12: false,
+  });
+  const indianTime = parseInt(currentISTTime, 10); // convert to an integer
 
   let greeting: string;
   let timeOfDay: string;
@@ -21,6 +26,7 @@ const AdminPage = async () => {
   } else {
     greeting = 'Good Evening 🌃';
   }
+
   if (indianTime >= 0 && indianTime <= 12) {
     timeOfDay = 'Start';
   } else if (indianTime > 12 && indianTime <= 18) {
@@ -28,14 +34,15 @@ const AdminPage = async () => {
   } else {
     timeOfDay = 'End';
   }
+
   return (
     <div className='w-full h-full  bg-black'>
       <div className='mx-auto flex max-w-7xl flex-col space-y-20'>
         <main className='admin-main mt-20 md:py-10'>
           <section className='w-full space-y-4'>
-            <h1 className='header'>Welcome 👋</h1>
+            <h1 className='header mt-2'>Welcome 👋</h1>
             <p className='text-dark-700'>
-              {greeting} ! {timeOfDay} the day with managing new appointments
+              {greeting}! {timeOfDay} the day with managing new appointments.
             </p>
           </section>
 

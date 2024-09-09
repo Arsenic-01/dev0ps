@@ -17,7 +17,7 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Select, SelectContent, SelectTrigger, SelectValue } from './ui/select';
 import { useState } from 'react';
-import { setHours, setMinutes } from 'date-fns';
+import { setHours, setMinutes, addMinutes } from 'date-fns';
 
 export enum FormFieldType {
   INPUT = 'input',
@@ -44,11 +44,11 @@ interface CustomProps {
   fieldType: FormFieldType;
 }
 
-// export const CustomTime = () => {
-
-//   return )
-// };
-
+const getCurrentISTTime = () => {
+  const currentUTC = new Date();
+  const ISTOffset = 5 * 60 + 30; // IST is UTC+5:30
+  return addMinutes(currentUTC, ISTOffset);
+};
 const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   switch (props.fieldType) {
@@ -132,8 +132,8 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
               }}
               showTimeSelect={props.showTimeSelect ?? false}
               dateFormat={props.dateFormat ?? 'MMMM d, yyyy h:mm aa'}
-              minTime={setHours(setMinutes(new Date(), 0), 15)}
-              maxTime={setHours(setMinutes(new Date(), 30), 20)}
+              minTime={setHours(setMinutes(getCurrentISTTime(), 0), 15)}
+              maxTime={setHours(setMinutes(getCurrentISTTime(), 0), 20)}
               wrapperClassName='date-picker'
             />
           </FormControl>

@@ -56,20 +56,20 @@ const page = () => {
 
   return (
     <div className='min-h-[100vh] relative sm:py-10 bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto '>
-      <div className='mt-24 md:px-8'>
-        <h1 className='pointer-events-auto text-5xl mt-8 sm:mt-0 lg:text-6xl  font-medium text-center md:text-left text-slate-100 px-8'>
+      <div className='mt-16 sm:mt-24 md:px-8'>
+        <h1 className='pointer-events-auto text-4xl font-semibold sm:text-5xl mt-8 sm:mt-0 lg:text-6xl  text-center md:text-left text-slate-100 px-8'>
           Let&apos;s Work{' '}
           <span className='bg-gradient-to-br from-slate-300 to-slate-400 bg-clip-text text-transparent'>
             Together
           </span>
-          <span className='text-[#EF4444] text-6xl lg:text-8xl select-none'>
+          <span className='text-[#EF4444] text-6xl lg:text-8xl select-none hidden sm:inline-block'>
             .
           </span>
         </h1>
         <div className='max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 sm:px-4 py-6'>
           <div className='px-5 sm:px-4 sm:py-3'>
-            <form className='mt-12' onSubmit={handleSubmit}>
-              <div className='mt-10 relative'>
+            <form className='sm:mt-12' onSubmit={handleSubmit}>
+              <div className='mt-4 sm:mt-10 relative'>
                 <Input
                   size='sm'
                   type='email'
