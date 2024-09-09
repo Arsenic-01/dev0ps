@@ -9,7 +9,7 @@ import { TransitionLink } from './utils/TransitionLink';
 import WordRotate from './magicui/word-rotate';
 const Hero = () => {
   return (
-    <div className='pb-20 mt-12 sm:pt-32 2xl:pt-[110px] md:pt-20 lg:pt-32 xl:pt-[13vh] xl:mt-[5vh] xl:px-16'>
+    <div className='pb-20 mt-12 sm:pt-14 2xl:pt-[110px] md:pt-20 lg:pt-32 xl:pt-[13vh] xl:mt-[5vh] xl:px-16'>
       {/**
        *  UI: Spotlights
        *  Link: https://ui.aceternity.com/components/spotlight
@@ -88,7 +88,7 @@ const Hero = () => {
             encompassing architectural planning, structural design, project
             management consultancy, and property valuation for residential,
             commercial, and industrial projects nationwide in India.'
-            className='mt-4 text-pretty hidden font-light	 sm:block text-lg leading-loose lg:text-base text-neutral-500  lg:max-w-[50vw]'
+            className='mt-4 text-pretty hidden font-light	 sm:block md:text-lg leading-loose lg:text-base text-neutral-500  lg:max-w-[50vw]'
           />
 
           <div className='md:mt-10 mt-8 flex flex-col sm:flex-row justify-center items-center gap-10 sm:gap-20'>
