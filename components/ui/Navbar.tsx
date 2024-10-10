@@ -64,7 +64,7 @@ export default function NavbarComponent() {
         <TransitionLink href={'/'}>
           <NavbarBrand>
             <img
-              src='/nav_red3.png'
+              src='/SBA_LOGO11-modified.png'
               className='select-none pointer-events-none w-7 sm:w-[30px] mr-2 rounded-md ml-2 sm:ml-0'
               alt='Logo'
             />

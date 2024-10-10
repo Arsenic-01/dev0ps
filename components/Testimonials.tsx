@@ -1,3 +1,4 @@
+'use client';
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
@@ -67,86 +68,82 @@ export function Testimonials() {
 
   return (
     <section className='mt-32 lg:p-16 h-full'>
-      <BlurFade delay={0.1} inView>
-        <h1 className='bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-5xl lg:text-6xl  font-medium tracking-tight text-transparent'>
-          Kind Words from Satisfied Clients
-        </h1>
-        <Carousel
-          opts={{
-            loop: true,
-          }}
-          plugins={[
-            Autoplay({
-              delay: 7000,
-            }),
-          ]}
-          className='w-full z-30 mt-20 md:mt-32 '
-        >
-          <CarouselContent className='-ml-1 hover:cursor-grab select-none	'>
-            {TestimonialData.map((item) => (
-              <CarouselItem
-                key={item.id}
-                className='pl-1 md:basis-1/2 lg:basis-1/3 rounded-lg'
-              >
-                <div className='p-1'>
-                  <Card>
-                    <CardContent className='bg-black flex aspect-square rounded-lg items-center justify-center p-6'>
-                      <div className='flex flex-auto flex-col gap-4 '>
-                        <div className='flex gap-0.5 mb-2'>
-                          {Array.from({ length: item.rating }).map(
-                            (_, index) => (
-                              <Star
+      <h1 className='bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-5xl lg:text-6xl  font-medium tracking-tight text-transparent'>
+        Kind Words from Satisfied Clients
+      </h1>
+      <Carousel
+        opts={{
+          loop: true,
+        }}
+        plugins={[
+          Autoplay({
+            delay: 7000,
+          }),
+        ]}
+        className='w-full z-30 mt-20 md:mt-32 '
+      >
+        <CarouselContent className='-ml-1 hover:cursor-grab select-none	'>
+          {TestimonialData.map((item) => (
+            <CarouselItem
+              key={item.id}
+              className='pl-1 md:basis-1/2 lg:basis-1/3 rounded-lg'
+            >
+              <div className='p-1'>
+                <Card>
+                  <CardContent className='bg-black flex aspect-square rounded-lg items-center justify-center p-6'>
+                    <div className='flex flex-auto flex-col gap-4 '>
+                      <div className='flex gap-0.5 mb-2'>
+                        {Array.from({ length: item.rating }).map((_, index) => (
+                          <Star
+                            className='h-5 w-5 text-green-600 fill-green-600'
+                            key={index}
+                          />
+                        ))}
+                        {item.halfrating !== undefined &&
+                          item.halfrating > 0 &&
+                          Array.from({ length: item.halfrating }).map(
+                            (_, index_half) => (
+                              <StarHalf
                                 className='h-5 w-5 text-green-600 fill-green-600'
-                                key={index}
+                                key={index_half}
                               />
                             )
                           )}
-                          {item.halfrating !== undefined &&
-                            item.halfrating > 0 &&
-                            Array.from({ length: item.halfrating }).map(
-                              (_, index_half) => (
-                                <StarHalf
-                                  className='h-5 w-5 text-green-600 fill-green-600'
-                                  key={index_half}
-                                />
-                              )
-                            )}
-                        </div>
-                        <div className='text-lg leading-8'>
-                          <p>
-                            &quot;
-                            {item.comment}
-                            <span className='p-0.5 bg-slate-800 text-white'>
-                              {item.secondComment}
-                            </span>
-                            &quot;
-                          </p>
-                        </div>
-                        <div className='flex gap-4 mt-2'>
-                          <img
-                            className='rounded-full h-12 w-12 object-cover'
-                            src={`${item.userImg}`}
-                            alt='user'
-                          />
-                          <div className='flex flex-col'>
-                            <p className='font-semibold'>{item.name}</p>
-                            <div className='flex gap-1.5 items-center text-zinc-600'>
-                              <Check className='h-4 w-4 stroke-[3px] text-green-600' />
-                              <p className='text-sm'>Verified Client</p>
-                            </div>
+                      </div>
+                      <div className='text-lg leading-8'>
+                        <p>
+                          &quot;
+                          {item.comment}
+                          <span className='p-0.5 bg-slate-800 text-white'>
+                            {item.secondComment}
+                          </span>
+                          &quot;
+                        </p>
+                      </div>
+                      <div className='flex gap-4 mt-2'>
+                        <img
+                          className='rounded-full h-12 w-12 object-cover'
+                          src={`${item.userImg}`}
+                          alt='user'
+                        />
+                        <div className='flex flex-col'>
+                          <p className='font-semibold'>{item.name}</p>
+                          <div className='flex gap-1.5 items-center text-zinc-600'>
+                            <Check className='h-4 w-4 stroke-[3px] text-green-600' />
+                            <p className='text-sm'>Verified Client</p>
                           </div>
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className='bg-black' />
-          <CarouselNext className='bg-black' />
-        </Carousel>
-      </BlurFade>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className='bg-black' />
+        <CarouselNext className='bg-black' />
+      </Carousel>
     </section>
   );
 }

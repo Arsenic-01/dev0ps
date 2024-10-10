@@ -1,4 +1,3 @@
-'use client';
 import Hero from '@/components/Hero';
 import Grid from '@/components/Grid';
 import CallToAction from '@/components/CallToAction';
@@ -19,23 +18,22 @@ const Home = () => {
   return (
     <>
       <main className='relative bg-black-100 flex z-0 justify-center items-center flex-col overflow-hidden mx-auto '>
-        <Hero />
+        <Hero /> {/* Mostly SSR */}
         {/* <Clients /> */}
-        <InfiniteMovingCards items={companieslogo} />
+        <InfiniteMovingCards items={companieslogo} /> {/* Client */}
         <div className=' max-w-7xl  w-full sm:px-10 px-5'>
-          <Services />
-          <LampDemo />
+          <Services /> {/* Mostly SSR */}
+          <LampDemo /> {/* Client */}
         </div>
         <div className='max-w-7xl w-full sm:px-10 px-5'>
-          <Work />
-          <Grid />
-          <Development />
+          <Work /> {/* SSR */}
+          <Grid /> {/* Mostly Client */}
+          <Development /> {/* SSR */}
         </div>
         <div className='xl:max-w-[1450px] max-w-7xl  w-full sm:px-10 px-5'>
-          <Values />
-          <Testimonials />
+          <Values /> {/* SSR */}
+          <Testimonials /> {/* Client */}
         </div>
-
         <div className='max-w-7xl w-full sm:px-10 px-5'>
           <CallToAction />
           <FAQ />

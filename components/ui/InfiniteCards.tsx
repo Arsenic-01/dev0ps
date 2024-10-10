@@ -1,16 +1,10 @@
 'use client';
 
-import { cn } from '@/lib/utils';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import { cn } from '@/lib/utils';
 
-export const InfiniteMovingCards = ({
-  items,
-  direction = 'left',
-  speed = 'fast',
-  pauseOnHover = true,
-  className,
-}: {
+interface InfiniteMovingCardsProps {
   items: {
     imgSrc: string;
     imgClassname?: string;
@@ -19,51 +13,64 @@ export const InfiniteMovingCards = ({
   speed?: 'fast' | 'normal' | 'slow';
   pauseOnHover?: boolean;
   className?: string;
+}
+
+export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
+  items,
+  direction = 'left',
+  speed = 'fast',
+  pauseOnHover = true,
+  className,
 }) => {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const scrollerRef = React.useRef<HTMLUListElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const scrollerRef = useRef<HTMLUListElement>(null);
   const [start, setStart] = useState(false);
 
   useEffect(() => {
-    if (scrollerRef.current) {
-      if (scrollerRef.current.childElementCount === items.length) {
-        addAnimation();
-      }
+    // Check if scroller is initialized and has the items.
+    if (
+      scrollerRef.current &&
+      scrollerRef.current.childElementCount === items.length
+    ) {
+      initializeCarousel();
     }
   }, []);
 
-  function addAnimation() {
-    if (containerRef.current && scrollerRef.current) {
+  const initializeCarousel = () => {
+    if (scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
 
+      // Clone the items to create a continuous scrolling effect
       scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
+        const clonedItem = item.cloneNode(true);
+        scrollerRef.current?.appendChild(clonedItem);
       });
 
-      getDirection();
-      getSpeed();
+      // Set direction and speed based on props
+      updateDirection();
+      updateSpeed();
+
+      // Start the animation
       setStart(true);
 
-      // Make carousel visible once fully initialized
+      // Ensure no layout shift by making the container visible after initialization
       if (containerRef.current) {
         containerRef.current.style.visibility = 'visible';
       }
     }
-  }
+  };
 
-  const getDirection = () => {
+  const updateDirection = () => {
     if (containerRef.current) {
+      const animationDirection = direction === 'left' ? 'forwards' : 'reverse';
       containerRef.current.style.setProperty(
         '--animation-direction',
-        direction === 'left' ? 'forwards' : 'reverse'
+        animationDirection
       );
     }
   };
 
-  const getSpeed = () => {
+  const updateSpeed = () => {
     if (containerRef.current) {
       const duration =
         speed === 'fast' ? '20s' : speed === 'normal' ? '40s' : '80s';
@@ -81,7 +88,7 @@ export const InfiniteMovingCards = ({
         <div>
           <div
             ref={containerRef}
-            style={{ visibility: 'hidden', height: 'auto' }} // Ensures the container is hidden initially
+            style={{ visibility: 'hidden' }} // Hidden initially to avoid flicker
             className={cn(
               'scroller relative z-20 max-w-6xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
               className
@@ -96,21 +103,21 @@ export const InfiniteMovingCards = ({
               )}
             >
               {items.map((item, idx) => (
-                <div key={idx} className='flex items-center justify-center'>
-                  <div
-                    aria-hidden='true'
-                    className='user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]'
-                  ></div>
-                  <div className={`${item.imgClassname}  relative mx-14`}>
+                <li key={idx} className='flex items-center justify-center'>
+                  <div className='relative mx-14'>
                     <Image
                       src={item.imgSrc}
-                      alt='img'
-                      className='h-full w-full user-select-none pointer-events-none object-fill'
-                      width={400}
-                      height={600}
+                      alt='logo'
+                      className={cn(
+                        item.imgClassname,
+                        'user-select-none pointer-events-none object-contain'
+                      )}
+                      width={200}
+                      height={100} // Fixed height and width to prevent layout shift
+                      priority={true} // Ensure images load quickly
                     />
                   </div>
-                </div>
+                </li>
               ))}
             </ul>
           </div>

@@ -12,7 +12,8 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Sunil Bhor & Associates',
-  description: ' ',
+  description:
+    'SBA is a distinguished consultancy firm with over 25 years of experience providing an array of services encompassing architectural planning, structural design, project management consultancy, and property valuation for residential, commercial, and industrial projects nationwide in India.',
 };
 
 export default function RootLayout({
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang='en' className='scroll-smooth' suppressHydrationWarning>
       <head>
-        <link rel='icon' href='/SBA_LOGO1-modified.png' sizes='any' />
+        <link rel='icon' href='/nav1.png' sizes='any' />
       </head>
       <body className={inter.className}>
         <ThemeProvider

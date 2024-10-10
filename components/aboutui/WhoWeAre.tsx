@@ -43,19 +43,18 @@ const WhoWeAre = () => {
             <div className='opacity-1 transform:none flex flex-col items-start gap-12'>
               <BoxReveal boxColor={'#fff'} duration={0.4}>
                 <p className='pointer-events-auto font-normal max-w-3xl text-base sm:text-lg bg-black/80  text-neutral-300 '>
-                  At Sunil Bhor & Associates, we&apos;re passionate about
-                  turning your dreams into reality. As a professional
-                  consultancy firm, we offer a wide range of services, including
-                  architectural planning, structural design, project management
-                  consultancy, and property valuation for residential,
-                  commercial, and industrial projects all over India.
-                  <br /> Our team is led by the talented Mr. Sunil Bhor, an
-                  architectural engineer with a wealth of experience in
-                  architectural engineering services. Based in Nashik with a
-                  branch in Thane, Mumbai, we are fully equipped with the latest
-                  infrastructure and technology to provide top-notch service.
-                  Our highly qualified and experienced professionals are here to
-                  ensure your projects are handled with expertise and care.
+                  At Sunil Bhor & Associates, we are dedicated and passionate
+                  about turning your dreams into reality. With over 25 years of
+                  experience, we offer a range of services including
+                  architectural planning, structural design, Chartered Engineer
+                  Certifications, Project Management Consultancy (PMC), and
+                  Asset Valuation for projects across India.
+                  <br /> Led by Mr. Sunil Bhor, an expert architectural
+                  engineer, our firm is based in Nashik, with branches in
+                  Chhatrapati Sambhajinagar, Thane, and Mumbai. Equipped with
+                  the latest infrastructure and technology, our highly skilled
+                  and experienced team ensures that your projects are handled
+                  with the utmost care and expertise.
                 </p>
               </BoxReveal>
               <BlurFade delay={0.1} inView>

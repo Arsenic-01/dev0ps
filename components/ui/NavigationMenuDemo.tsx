@@ -31,16 +31,22 @@ const aboutData = [
 
 const serviceData = [
   {
-    title: 'TEV (Techno-Economic Viability Consultants)',
-    href: '/services/tev',
+    title: 'Architectural Planning',
+    href: '/services/architectural-planning',
     description:
-      'TEV consultants assess the technical feasibility and economic viability of projects, ensuring they are sustainable, profitable, and risk-managed.',
+      'Plant and architectural planning involves designing facilities and structures to optimize efficiency, safety, and aesthetics in industrial or urban environments.',
   },
   {
-    title: 'Lender’s independent engineers',
-    href: '/services/lender-independent-engineers',
+    title: 'Structural Designing',
+    href: '/services/structural-designing',
     description:
-      'Lender’s independent engineers assess project feasibility, technical risks, and compliance to ensure loan security and project success.',
+      'Plant and Structural Designing involves creating safe, efficient layouts and frameworks for industrial facilities, ensuring stability and functionality.',
+  },
+  {
+    title: 'Town Planning Approvals',
+    href: '/services/town-planning-approvals',
+    description:
+      'Town Planning Approvals involve reviewing and authorizing construction or land use to ensure compliance with zoning and regulations.',
   },
   {
     title: 'Valuation Consultancy',
@@ -48,6 +54,19 @@ const serviceData = [
     description:
       'Valuation Consultancy assesses the value of assets, businesses, or properties, providing expert advice for investment, sale, or legal purposes.',
   },
+  {
+    title: 'Tender and specs drawing',
+    href: '/services/tender-and-specs-drawing',
+    description:
+      'A tender drawing details project requirements for bidding, while specs drawings outline technical and material specifics for construction.',
+  },
+  {
+    title: 'Lender’s independent engineers',
+    href: '/services/lender-independent-engineers',
+    description:
+      'Lender’s independent engineers assess project feasibility, technical risks, and compliance to ensure loan security and project success.',
+  },
+
   {
     title: 'Real Estate Advisory',
     href: '/services/real-estate-advisory',
@@ -61,46 +80,53 @@ const serviceData = [
       'Plant and Machinery Valuation determines the market or replacement value of industrial equipment for financial, insurance, or sale purposes.',
   },
   {
-    title: 'Structural Designing',
-    href: '/services/structural-designing',
-    description:
-      'Plant and Structural Designing involves creating safe, efficient layouts and frameworks for industrial facilities, ensuring stability and functionality.',
-  },
-  {
-    title: 'Architectural Planning',
-    href: '/services/architectural-planning',
-    description:
-      'Plant and architectural planning involves designing facilities and structures to optimize efficiency, safety, and aesthetics in industrial or urban environments.',
-  },
-  {
-    title: 'Property and Assets Valuation',
-    href: '/services/property-and-assets-valuation',
-    description:
-      'Property and assets valuation determines their worth using market data, condition, and comparable sales to guide buying, selling, or investment.',
-  },
-  {
-    title: 'Town Planning Approvals',
-    href: '/services/town-planning-approvals',
-    description:
-      'Town Planning Approvals involve reviewing and authorizing construction or land use to ensure compliance with zoning and regulations.',
-  },
-  {
     title: 'Black Money Valuation',
     href: '/services/black-money-valuation',
     description:
       'Black money valuation assesses hidden or unreported assets’ worth, often using forensic accounting to uncover illicit financial activity.',
   },
+
   {
-    title: 'Tender and specs drawing',
-    href: '/services/tender-and-specs-drawing',
-    description:
-      'A tender drawing details project requirements for bidding, while specs drawings outline technical and material specifics for construction.',
-  },
-  {
-    title: 'Quality Control and NDA Testing',
+    title: 'NDT Testing & Stability Certification',
     href: '/services/quality-control-and-nda-testing',
     description:
       'Quality Control and NDA Testing assesses the project’s quality, compliance with regulatory requirements, and compliance with NDA agreements.',
+  },
+  {
+    title: 'Surverying & Monitoring',
+    href: '/services/quality-control-and-nda-testing',
+    description:
+      'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
+  },
+  {
+    title: 'Chartered Engineer Certifications',
+    href: '/services/quality-control-and-nda-testing',
+    description:
+      'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
+  },
+  {
+    title: 'Industrial Safety Audits',
+    href: '/services/quality-control-and-nda-testing',
+    description:
+      'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
+  },
+  {
+    title: 'NA Conversion of Lands',
+    href: '/services/quality-control-and-nda-testing',
+    description:
+      'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
+  },
+  {
+    title: 'Factory Act Certification',
+    href: '/services/quality-control-and-nda-testing',
+    description:
+      'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
+  },
+  {
+    title: 'IPO Certification',
+    href: '/services/quality-control-and-nda-testing',
+    description:
+      'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
   },
   // Add more components here
 ];
@@ -144,7 +170,7 @@ function NavigationMenuContents() {
                   title={component.title}
                   href={component.href}
                 >
-                  {component.description}
+                  {/* {component.description} */}
                 </ListItem>
               ))}
             </ul>
