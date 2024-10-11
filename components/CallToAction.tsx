@@ -4,6 +4,7 @@ import { BackgroundBeams } from './ui/background-beams';
 import BlurFade from './magicui/blur-fade';
 import ShinyButton from './ui/ShinyButton';
 import { TransitionLink } from './utils/TransitionLink';
+import Link from 'next/link';
 
 const year = new Date().getFullYear();
 
@@ -32,7 +33,7 @@ const CallToAction = () => {
             Reach out to us today and let&apos;s discuss how we can help you
             achieve your goals.
           </p>
-          <TransitionLink href='/contact'>
+          <Link href='/contact'>
             <MagicButton
               className='mt-2 sm:mt-5 z-50 md:hidden'
               title="Let's talk"
@@ -40,7 +41,7 @@ const CallToAction = () => {
               position='right'
               otherClasses='bg-black'
             />
-          </TransitionLink>
+          </Link>
           <ShinyButton />
         </div>
         <BackgroundBeams />

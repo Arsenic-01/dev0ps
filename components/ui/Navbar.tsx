@@ -61,16 +61,19 @@ export default function NavbarComponent() {
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           className='sm:hidden'
         />
-        <TransitionLink href={'/'}>
-          <NavbarBrand>
+        <NavbarBrand>
+          <div
+            onClick={() => router.push('/')}
+            className='hover:cursor-pointer flex justify-center items-center'
+          >
             <img
               src='/SBA_LOGO11-modified.png'
               className='select-none pointer-events-none w-7 sm:w-[30px] mr-2 rounded-md ml-2 sm:ml-0'
               alt='Logo'
             />
             <p className='font-bold text-xl sm:text-[22px]'>SBA</p>
-          </NavbarBrand>
-        </TransitionLink>
+          </div>
+        </NavbarBrand>
       </NavbarContent>
 
       {/* <NavbarContent className='hidden sm:flex gap-4' justify='center'>

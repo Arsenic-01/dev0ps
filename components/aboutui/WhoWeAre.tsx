@@ -17,19 +17,17 @@ import BlurFade from '../magicui/blur-fade';
 
 const WhoWeAre = () => {
   return (
-    <section className='relative '>
-      <div className='text-slat-100 min-h-[90vh] overflow-hidden px-8 pb-12 pt-12 md:pt-10 sm:py-20 md:px-12 lg:mr-10 pl-10 md:py-32'>
+    <section className='relative'>
+      <div className='text-slat-100 min-h-[90vh] overflow-hidden px-8 pb-12 pt-12 md:pt-10 sm:py-20 md:px-12 lg:mr-10 pl-10 md:py-32 flex items-center justify-center'>
         <WaterDropGrid />
 
-        <div className='relative mx-auto max-w-7xl '>
+        <div className='relative mx-auto max-w-7xl'>
           <div className='pointer-events-none relative z-10'>
             <div className='opacity-1 transform:none'>
               <BoxReveal boxColor={'#fff'} duration={0.4}>
-                <h1 className='pointer-events-auto  sm:mt-5 bg-gradient-to-br from-slate-300 to-slate-400 py-4 bg-clip-text text-left text-5xl sm:text-6xl md:text-7xl font-medium tracking-tight text-transparent'>
+                <h1 className='text-5xl lg:text-6xl'>
                   Who We Are
-                  <span className='text-[#b92d2d] text-6xl lg:text-8xl select-none'>
-                    .
-                  </span>
+                  <span className='text-[#b92d2d] text-6xl select-none'>.</span>
                 </h1>
               </BoxReveal>
 

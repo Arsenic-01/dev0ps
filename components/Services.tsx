@@ -4,6 +4,7 @@ import { EmblaOptionsType } from 'embla-carousel';
 import '../app/embla.css';
 import { Button } from '@nextui-org/button';
 import { TransitionLink } from './utils/TransitionLink';
+import Link from 'next/link';
 
 const OPTIONS: EmblaOptionsType = { dragFree: true };
 const SLIDE_COUNT = 5;
@@ -34,7 +35,7 @@ const Services = () => {
                 radius='full'
                 className='w-24'
               >
-                <TransitionLink href={'/services'}>View All</TransitionLink>
+                <Link href={'/services'}>View All</Link>
               </Button>
               <Button
                 color='primary'
@@ -42,9 +43,7 @@ const Services = () => {
                 radius='full'
                 className='w-[165px]'
               >
-                <TransitionLink href={'/login'}>
-                  Book Appointment
-                </TransitionLink>
+                <Link href={'/login'}>Book Appointment</Link>
               </Button>
             </div>
           </div>

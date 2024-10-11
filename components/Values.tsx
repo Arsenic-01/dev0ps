@@ -3,6 +3,7 @@ import { Playfair_Display } from 'next/font/google';
 const playfair = Playfair_Display({ subsets: ['latin'] });
 import { TransitionLink } from './utils/TransitionLink';
 import CardStackDemo from './ui/CardStack';
+import Link from 'next/link';
 
 const Values = () => {
   return (
@@ -30,7 +31,7 @@ const Values = () => {
               deliver a better experience to architects and CRE developers
               across the country.
             </p>
-            <TransitionLink
+            <Link
               href='/about'
               className='text-[#F87171] hover:underline underline-offset-8 text-xl'
             >
@@ -59,7 +60,7 @@ const Values = () => {
                   ></path>
                 </svg>
               </span>
-            </TransitionLink>
+            </Link>
           </div>
         </div>
       </div>

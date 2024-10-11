@@ -6,10 +6,9 @@ import { TextGenerateEffect } from './ui/TextGenerateEffect';
 import { Star, StarHalf } from 'lucide-react';
 import { AnimatedTooltipPreview } from './ui/Tooltip';
 import { Button } from '@nextui-org/react';
-import { TransitionLink } from './utils/TransitionLink';
-import dynamic from 'next/dynamic';
 import { FlipWords } from './ui/flipword';
 import WordRotateEffect from './ui/wordRotate';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
@@ -87,7 +86,7 @@ const Hero = () => {
                   <span className='relative inline-flex rounded-full h-3 w-3 bg-[#0B879C]/90'></span>
                 </span>
               </span>
-              <TransitionLink href={'/register'}>Get Started</TransitionLink>
+              <Link href={'/register'}>Get Started</Link>
             </Button>
 
             <div className='flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center gap-5'>

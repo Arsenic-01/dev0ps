@@ -9,6 +9,7 @@ import BlurFade from './magicui/blur-fade';
 import Image from 'next/image';
 import { TransitionLink } from './utils/TransitionLink';
 import { linkdata } from '@/data';
+import Link from 'next/link';
 const FooterExp = () => {
   return (
     <footer className='w-full dark:bg-black'>
@@ -16,7 +17,7 @@ const FooterExp = () => {
         <div className=' px-5 pt-16 pb-7 sm:px-6 lg:px-8'>
           <div className='flex justify-center text-teal-600 dark:text-teal-300'>
             {}
-            <TransitionLink href={'/'}>
+            <Link href={'/'}>
               <Image
                 src='/nav.png'
                 width={150}
@@ -24,7 +25,7 @@ const FooterExp = () => {
                 className='w-12 select-none pointer-events-none'
                 alt=''
               />
-            </TransitionLink>
+            </Link>
           </div>
 
           <p className='mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 dark:text-gray-400'>
