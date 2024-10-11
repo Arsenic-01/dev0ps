@@ -106,8 +106,13 @@ export default function NavbarComponent() {
           </NavbarItem>
         ) : (
           <NavbarItem>
-            <Button color='primary' variant='shadow' radius='full'>
-              <TransitionLink href='/login'>Login</TransitionLink>
+            <Button
+              color='primary'
+              variant='shadow'
+              radius='full'
+              onClick={() => router.push('/login')}
+            >
+              Login
             </Button>
           </NavbarItem>
         )}

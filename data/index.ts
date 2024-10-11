@@ -72,105 +72,126 @@ export const ServiceCards = [
     imgSrc: '/embla/c1.jpg',
     title: 'Structural Designing',
     description:
-      'Our firm specializes in innovative structural design, ensuring safety and efficiency for residential, commercial, and industrial projects across India.',
+      'Structural designing involves creating safe, stable, and efficient structures by analyzing loads, materials, and environmental factors for construction.',
   },
   {
     id: 2,
     imgSrc: '/embla/architects.png',
     title: 'Architectural Planning',
     description:
-      'Our firm offers comprehensive architectural planning services, ensuring innovative and functional designs tailored to client needs. We integrate aesthetics, sustainability, and efficiency to create exceptional residential, commercial, and industrial spaces.',
+      'Architectural planning involves designing functional spaces, considering aesthetics, safety, and sustainability while meeting client needs and regulatory requirements.',
   },
   {
     id: 3,
     imgSrc: '/embla/interior.png',
     title: 'Interior designing',
     description:
-      'SBA offers exceptional interior design services, transforming spaces with innovative concepts, personalized aesthetics, and functional layouts. We create bespoke designs for residential, commercial, and industrial projects, ensuring style and practicality.',
+      'Interior designing focuses on enhancing indoor spaces through aesthetics, functionality, and comfort by selecting colors, furniture, and layouts effectively.',
   },
   {
     id: 4,
     imgSrc: '/embla/property.jpg',
     title: 'Property & Assets Valuation',
     description:
-      'Our firm offers comprehensive property valuation services for residential, commercial, and industrial properties. We provide accurate assessments for mortgages, loans, tax purposes, and legal matters, ensuring precise and reliable valuations.',
+      'Property and assets valuation is assessing the worth of real estate and financial assets based on market trends and conditions.',
   },
   {
     id: 5,
     imgSrc: '/embla/tev.jpg',
     title: 'TEV (Techno-Economic Viability Consultants)',
     description:
-      'SBA provides TEV (Techno-Economic Viability) consultancy, offering comprehensive assessments of project feasibility, including technical, financial, and market analysis, ensuring informed decision-making for sustainable investments and project success.',
+      'TEV (Techno-Economic Viability) Consultants evaluate project feasibility by analyzing technical, economic, and financial aspects to ensure successful implementation.',
   },
   {
     id: 6,
     imgSrc: '/embla/lender.png',
     title: 'Lender’s independent engineers',
     description:
-      'At SBA, we offer Lender’s Independent Engineer services, providing impartial technical assessments, risk evaluations, and project monitoring to ensure lenders’ investments are secure and projects are executed efficiently and effectively.',
+      'Lender’s independent engineers assess project feasibility, compliance, and risks, ensuring loan security through thorough evaluations of construction and operational standards.',
   },
   {
     id: 7,
     imgSrc: '/embla/realestate.jpg',
     title: 'Real Estate Advisory',
     description:
-      'Sunil Bhor and Associates offers expert Real Estate Advisory services, providing strategic guidance on property investments, market analysis, asset management, and maximizing returns to help clients make informed decisions.',
+      'Real estate advisory provides expert guidance on property investments, market trends, and development strategies to maximize returns and minimize risks.',
   },
   {
     id: 8,
     imgSrc: '/embla/plant-and-machinenery.jpg',
     title: 'Plant and Machinery Valuation',
     description:
-      'We offer comprehensive Plant and Machinery Valuation services, ensuring accurate asset valuation for financial reporting, insurance, and regulatory compliance with expert precision and industry knowledge.',
+      'Plant and machinery valuation assesses the worth of industrial equipment and assets, considering factors like condition, age, market demand, and functionality.',
   },
   {
     id: 9,
     imgSrc: '/embla/blackmoney.jpg',
     title: 'Black Money Valuation',
     description:
-      'SBA offers specialized Black Money Valuation services for government contractors, ensuring accurate assessment and compliance. We provide discreet evaluations to mitigate risks and maintain transparency in financial operations.',
+      'Black money valuation estimates the worth of illicit funds, assessing hidden assets and financial activities to aid in recovery and regulation.',
   },
   {
     id: 10,
     imgSrc: '/embla/town-planning.png',
     title: 'Town planning Approvals',
     description:
-      'Our consultancy specializes in obtaining town planning approvals from Municipal, MIDC, and NMRDA authorities. We ensure compliance with regulations, facilitating smooth and timely project approvals for our clients.',
+      'Town planning approvals involve obtaining permissions for land use and development, ensuring compliance with regulations and community standards for urban planning.',
   },
   {
     id: 11,
     imgSrc: '/embla/tender.jpg',
     title: 'Tender & Specs Drafting',
     description:
-      'SBA specializes in preparing thorough tender documents and drafting detailed specifications. We ensure precise requirements tailored to project needs, facilitating effective procurement and construction processes.',
+      'Tender and specs drafting involves creating detailed documents outlining project requirements, evaluation criteria, and contractual terms to facilitate competitive bidding.',
   },
   {
     id: 12,
     imgSrc: '/embla/testing.png',
-    title: 'Quality control & NDT Testing',
+    title: 'NDT Testing & Stability Certification',
     description:
-      'Our consultancy specializes in quality control and NDT testing services, ensuring rigorous inspection and assessment for structural integrity and compliance with industry standards.We also facilitate Department of Industrial Safety & Health (DISH) approvals for businesses.',
+      'NDT testing and stability certification assess material integrity and structural safety, ensuring compliance with standards and verifying performance without damaging components.',
   },
   {
     id: 13,
     imgSrc: '/embla/analysis.jpg',
-    title: 'Funds & Cash Flow Analysis',
+    title: 'Surverying & Monitoring',
     description:
-      'Our firm offers comprehensive Funds & Cash Flow Analysis services, ensuring meticulous scrutiny and strategic planning to optimize financial resources and enhance project sustainability and profitability.',
+      'Surveying and monitoring involve measuring land, structures, and environmental conditions to ensure compliance, assess changes, and support effective project management and planning.',
   },
   {
     id: 14,
     imgSrc: '/embla/certifications.png',
-    title: 'Contractor Bill Certification',
+    title: 'Chartered Engineer Certifications',
     description:
-      'We specialize in scrutinizing and certifying contractors bills to ensure accuracy and compliance with project specifications. Our meticulous process guarantees transparency and facilitates smooth project financial management.',
+      'Chartered Engineer certifications validate professional expertise in engineering. These credentials enhance credibility, demonstrating adherence to industry standards and commitment to ongoing professional development.',
   },
   {
     id: 15,
     imgSrc: '/embla/electrical.jpg',
-    title: 'Electrical consultancy',
+    title: 'Industrial Safety Audits',
     description:
-      'Our consultancy specializes in electrical systems for diverse projects, offering expert guidance on design, installation, and compliance. We ensure efficient, safe, and sustainable solutions tailored to client needs.',
+      'Industrial safety audits evaluate workplace safety practices and compliance with regulations, identifying hazards, improving safety protocols, and ensuring employee protection.',
+  },
+  {
+    id: 16,
+    imgSrc: '/embla/NA.webp',
+    title: 'NA Conversion of Lands',
+    description:
+      'NA conversion of lands involves changing land use from agricultural to non-agricultural purposes, allowing for development and construction while ensuring compliance with regulatory requirements.',
+  },
+  {
+    id: 17,
+    imgSrc: '/embla/factory.webp',
+    title: 'Factory Act Certification',
+    description:
+      'Factory Act certification ensures compliance with safety, health, and welfare regulations in industrial establishments, promoting worker protection and maintaining operational standards.',
+  },
+  {
+    id: 18,
+    imgSrc: '/embla/ipo.webp',
+    title: 'IPO Certification',
+    description:
+      'IPO certification validates a company’s readiness for an Initial Public Offering, ensuring compliance with regulatory requirements and enhancing investor confidence in financial disclosures.',
   },
 ];
 
@@ -203,17 +224,17 @@ export const gridItems = [
     imgClassName: '',
     titleClassName: 'justify-center',
     img: '',
-    spareImg: '',
+    spareImg: '/grid.svg',
   },
   {
     id: 4,
-    title: 'Architect passionate about visionary and cutting-edge design.',
+    title: '',
     description: '',
     className: 'lg:col-span-2 md:col-span-3 md:row-span-1',
-    imgClassName: '',
+    imgClassName: 'w-20 h-auto',
     titleClassName: 'justify-start',
-    img: '/grid.svg',
-    spareImg: '/b4.svg',
+    img: '',
+    spareImg: '/grid.svg',
   },
 
   {

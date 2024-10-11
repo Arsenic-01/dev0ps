@@ -188,6 +188,14 @@ const config = {
             transform: 'rotate(1800deg)',
           },
         },
+        ripple: {
+          '0%, 100%': {
+            transform: 'translate(-50%, -50%) scale(1)',
+          },
+          '50%': {
+            transform: 'translate(-50%, -50%) scale(0.9)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -202,6 +210,7 @@ const config = {
         scroll:
           'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
         ldshourglass: 'ldshourglass 1.2s lds-in lds-out infinite',
+        ripple: 'ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite',
       },
     },
     darkMode: 'class',

@@ -2,7 +2,6 @@ import Hero from '@/components/Hero';
 import Grid from '@/components/Grid';
 import CallToAction from '@/components/CallToAction';
 import Work from '@/components/ui/Work';
-import Values from '@/components/Values';
 import Development from '@/components/Development';
 import { Testimonials } from '@/components/Testimonials';
 import FAQ from '@/components/Accordian';
@@ -31,7 +30,6 @@ const Home = () => {
           <Development /> {/* SSR */}
         </div>
         <div className='xl:max-w-[1450px] max-w-7xl  w-full sm:px-10 px-5'>
-          <Values /> {/* SSR */}
           <Testimonials /> {/* Client */}
         </div>
         <div className='max-w-7xl w-full sm:px-10 px-5'>

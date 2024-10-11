@@ -1,11 +1,11 @@
-import { Boxes } from '@/components/ui/background-boxes';
+import Ripple from '@/components/magicui/ripple';
 import { Button } from '@/components/ui/button';
 import CoolModeProvider from '@/components/ui/CoolModeProvider';
 import { TransitionLink } from '@/components/utils/TransitionLink';
 
 export default function notFound() {
   return (
-    <div className='px-4 h-screen w-full flex flex-col justify-center select-none items-center text-center gap-10 relative'>
+    <div className='px-4 h-screen w-full flex flex-col justify-center select-none items-center text-center gap-10 relative overflow-hidden'>
       <div className='flex flex-col gap-3'>
         <h1 className='text-7xl 2xl:text-[120px] font-bold z-10'>
           404 Not Found
@@ -27,9 +27,7 @@ export default function notFound() {
         </TransitionLink>
         <CoolModeProvider />
       </div>
-      <div className='w-full h-full bg-black absolute inset-0 top-0 left-0 overflow-hidden'>
-        <Boxes />
-      </div>
+      <Ripple />
     </div>
   );
 }

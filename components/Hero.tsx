@@ -8,11 +8,8 @@ import { AnimatedTooltipPreview } from './ui/Tooltip';
 import { Button } from '@nextui-org/react';
 import { TransitionLink } from './utils/TransitionLink';
 import dynamic from 'next/dynamic';
-
-// Dynamically import WordRotateEffect with Suspense for lazy loading
-const WordRotateEffect = dynamic(() => import('./ui/wordRotate'), {
-  suspense: true,
-});
+import { FlipWords } from './ui/flipword';
+import WordRotateEffect from './ui/wordRotate';
 
 const Hero = () => {
   return (
@@ -33,11 +30,22 @@ const Hero = () => {
       <div className='flex max-w-[80vw] mt-12 sm:mt-0 justify-between items-center relative lg:mb-5 z-10'>
         <div className='lg:text-left max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center sm:items-start justify-center'>
           <span className='mt-3 sm:mt-5 text-5xl lg:text-6xl'>
-            <span className='font-normal'>
-              <Suspense fallback={<div>Loading...</div>}>
-                <WordRotateEffect />
-              </Suspense>
-            </span>
+            <div className='font-normal my-1'>
+              {/* <Suspense fallback={<div>Loading...</div>}>
+              </Suspense> */}
+              {/* <FlipWords
+                words={[
+                  'Chartered Engineers',
+                  'Structural Engineers',
+                  'Architects',
+                  'Govt. Reg. Valuers',
+                  'Industrial Consultants',
+                  'Arbitrators',
+                  'Auctioneers',
+                ]}
+              /> */}
+              <WordRotateEffect />
+            </div>
             <span className='text-[#ED5F5F] font-semibold'>actually</span>
             <span className='font-normal'> focused</span>
             <br className='md:block hidden' />
