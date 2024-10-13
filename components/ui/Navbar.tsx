@@ -18,6 +18,7 @@ import { useRouter } from 'next/navigation';
 import { UserContext } from '@/context/UserContext';
 import { TransitionLink } from '../utils/TransitionLink';
 import NavigationMenuContents from './NavigationMenuDemo';
+import Image from 'next/image';
 
 export default function NavbarComponent() {
   const userContext = useContext(UserContext);
@@ -66,12 +67,15 @@ export default function NavbarComponent() {
             onClick={() => router.push('/')}
             className='hover:cursor-pointer flex justify-center items-center'
           >
-            <img
-              src='/SBA_LOGO11-modified.png'
+            <Image
+              src='/SBA_LOGO11-modified.webp'
+              width={30}
+              height={30}
+              priority
               className='select-none pointer-events-none w-7 sm:w-[30px] mr-2 rounded-md ml-2 sm:ml-0'
               alt='Logo'
             />
-            <p className='font-bold text-xl sm:text-[22px]'>SBA</p>
+            <p className='font-bold text-xl sm:text-[22px] select-none '>SBA</p>
           </div>
         </NavbarBrand>
       </NavbarContent>

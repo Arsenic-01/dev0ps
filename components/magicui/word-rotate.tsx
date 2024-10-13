@@ -1,26 +1,16 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { AnimatePresence, HTMLMotionProps, motion } from 'framer-motion';
-
-import { cn } from '@/lib/utils';
 
 interface WordRotateProps {
   words: string[];
   duration?: number;
-  framerProps?: HTMLMotionProps<'h1'>;
   className?: string;
 }
 
 export default function WordRotate({
   words,
-  duration = 2500,
-  framerProps = {
-    initial: { opacity: 0, y: -50 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: 50 },
-    transition: { duration: 0.25, ease: 'easeOut' },
-  },
+  duration = 2000, // Speed up switching time
   className,
 }: WordRotateProps) {
   const [index, setIndex] = useState(0);
@@ -30,21 +20,13 @@ export default function WordRotate({
       setIndex((prevIndex) => (prevIndex + 1) % words.length);
     }, duration);
 
-    // Clean up interval on unmount
+    // Clean up interval on component unmount
     return () => clearInterval(interval);
   }, [words, duration]);
 
   return (
-    <div className='overflow-hidden sm:py-2'>
-      <AnimatePresence mode='wait'>
-        <motion.h1
-          key={words[index]}
-          className={cn(className)}
-          {...framerProps}
-        >
-          {words[index]}
-        </motion.h1>
-      </AnimatePresence>
+    <div className={`overflow-hidden ${className}`}>
+      <h1 className='word-rotate-text'>{words[index]}</h1>
     </div>
   );
 }

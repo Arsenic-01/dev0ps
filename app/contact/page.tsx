@@ -55,13 +55,16 @@ const page = () => {
   };
 
   return (
-    <div className='min-h-[100vh] relative sm:py-10 bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto '>
+    <div className='min-h-[100vh] relative  bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto '>
       <div className='mt-16 sm:mt-24 md:px-8'>
-        <h1 className='pointer-events-auto text-4xl font-semibold sm:text-5xl mt-8 sm:mt-0 lg:text-6xl  text-center md:text-left text-slate-100 px-8'>
-          Let&apos;s Work{' '}
-          <span className='bg-gradient-to-br from-slate-300 to-slate-400 bg-clip-text text-transparent'>
-            Together
+        <h1 className='hidden sm:block sm:text-5xl lg:text-6xl mt-8 sm:mt-0  text-center md:text-left px-8'>
+          Let&apos;s Work Together
+          <span className='text-[#EF4444] text-6xl lg:text-8xl select-none hidden sm:inline-block'>
+            .
           </span>
+        </h1>
+        <h1 className='text-4xl sm:hidden mt-8 sm:mt-0  text-center md:text-left px-8'>
+          Get in Touch
           <span className='text-[#EF4444] text-6xl lg:text-8xl select-none hidden sm:inline-block'>
             .
           </span>
@@ -125,7 +128,7 @@ const page = () => {
                   variant='shadow'
                   className='max-sm:w-full text-sm'
                 >
-                  Send 🚀
+                  Send Message 🚀
                 </Button>
               </div>
             </form>

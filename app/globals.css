@@ -13,6 +13,14 @@
   background: #18181858;
 }
 
+.word-rotate-text {
+  line-height: 1.2; /* Increase line height */
+  transition: opacity 0.1s ease-in-out;
+  opacity: 1;
+  -webkit-font-smoothing: antialiased; /* Enable font smoothing for WebKit */
+  -moz-osx-font-smoothing: grayscale; /* Enable font smoothing for Firefox */
+}
+
 /* Firefox */
 * {
   scrollbar-width: thin;

@@ -233,8 +233,8 @@ export const gridItems = [
     className: 'lg:col-span-2 md:col-span-3 md:row-span-1',
     imgClassName: 'w-20 h-auto',
     titleClassName: 'justify-start',
-    img: '',
-    spareImg: '/grid.svg',
+    img: '/grid.svg',
+    spareImg: '/b4.svg',
   },
 
   {

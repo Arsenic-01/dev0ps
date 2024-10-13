@@ -14,6 +14,7 @@ const WordRotateEffect = () => {
           'Arbitrators',
           'Auctioneers',
         ]}
+        duration={5000} // Fast switch duration
       />
     </div>
   );

@@ -204,14 +204,15 @@ export const BentoGridItem = ({
                 <div
                   className={`font-sans text-lg lg:text-3xl font-bold z-10 `}
                 >
+                  <span className='text-red-400'>25 Years</span> of Experience
+                  <br />
                   Providing Exceptional Value Since{' '}
                   <span className='text-red-400'>1999</span>
                   <br />
-                  <span className='text-red-400'>25 Years</span> of Experience
                 </div>
                 <MagicButton
                   handleClick={handlerAbout}
-                  title='Our Journey'
+                  title='About Us'
                   icon={<FaLocationArrow />}
                   position='right'
                   width={true}
