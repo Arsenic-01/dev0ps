@@ -152,7 +152,7 @@ export const BentoGridItem = ({
                 <ul className='list-none space-y-3'>
                   {intern.map((item, i) => (
                     <li
-                      className='flex gap-1.5 items-center text-left text-base'
+                      className='flex gap-1.5 items-center text-left text-sm sm:text-base'
                       key={i}
                     >
                       <Check className='h-5 w-5 shrink-0' />

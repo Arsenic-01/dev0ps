@@ -20,7 +20,7 @@ const Services = () => {
         <EmblaCarousel slides={SLIDES} options={OPTIONS} />
 
         <div className='flex flex-col gap-9'>
-          <p className='text-base text-pretty sm:text-lg z-10 pt-10'>
+          <p className='text-base text-pretty lg:text-lg z-10 pt-10'>
             Our consultancy offers a wide range of services, including
             architectural planning, structural design, project management
             consultancy, and property valuation for residential, commercial, and

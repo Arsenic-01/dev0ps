@@ -6,13 +6,12 @@ import { TextGenerateEffect } from './ui/TextGenerateEffect';
 import { Star, StarHalf } from 'lucide-react';
 import { AnimatedTooltipPreview } from './ui/Tooltip';
 import { Button } from '@nextui-org/react';
-import { FlipWords } from './ui/flipword';
 import WordRotateEffect from './ui/wordRotate';
 import Link from 'next/link';
 
 const Hero = () => {
   return (
-    <div className='pb-20 mt-12 sm:pt-14 2xl:pt-[110px] md:pt-20 lg:pt-32 xl:pt-[13vh] xl:mt-[5vh] xl:px-16'>
+    <div className='pb-20 mt-9 sm:pt-14 2xl:pt-[110px] md:pt-20 lg:pt-32 xl:pt-[13vh] xl:mt-[5vh] xl:px-16'>
       {/* UI: Spotlights */}
       <div>
         <Spotlight
@@ -28,7 +27,7 @@ const Hero = () => {
 
       <div className='flex max-w-[80vw] mt-12 sm:mt-0 justify-between items-center relative lg:mb-5 z-10'>
         <div className='lg:text-left max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center sm:items-start justify-center'>
-          <span className='mt-3 sm:mt-5 text-5xl lg:text-6xl sm:leading-tight'>
+          <span className='mt-2 sm:mt-5 text-5xl lg:text-6xl sm:leading-tight'>
             <div className='font-normal my-1'>
               <WordRotateEffect />
             </div>
@@ -42,17 +41,8 @@ const Hero = () => {
             className='mt-7 sm:mt-12 text-pretty text-[#BDBDBD] block leading-relaxed sm:hidden sm:text-left text-center text-base'
             words='SBA offers expert consultancy in architecture, structural design, project management, and property valuation nationwide.'
           />
-          {/*
-          <TextGenerateEffect
-            words='SBA is a distinguished consultancy firm with
-            over 25 years of experience providing an array of services
-            encompassing architectural planning, structural design, project
-            management consultancy, and property valuation for residential,
-            commercial, and industrial projects nationwide in India.'
-            className='mt-4 text-pretty hidden font-light sm:block md:text-lg leading-loose lg:text-base text-neutral-500 lg:max-w-[50vw]'
-          /> */}
 
-          <div className='mt-4 text-pretty hidden font-light sm:block md:text-lg leading-loose lg:text-base text-neutral-300 lg:max-w-[50vw]'>
+          <div className='mt-4 text-pretty hidden font-light sm:block leading-loose md:text-base text-neutral-300 lg:max-w-[50vw]'>
             SBA is a distinguished consultancy firm with over 25 years of
             experience providing an array of services encompassing architectural
             planning, structural design, project management consultancy, and

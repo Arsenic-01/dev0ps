@@ -47,8 +47,9 @@ interface CustomProps {
 const getCurrentISTTime = () => {
   const currentUTC = new Date();
   const ISTOffset = 5 * 60 + 30; // IST is UTC+5:30
-  return addMinutes(currentUTC, ISTOffset);
+  return new Date(currentUTC.getTime() + ISTOffset * 60 * 1000);
 };
+
 const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   switch (props.fieldType) {
@@ -132,8 +133,8 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
               }}
               showTimeSelect={props.showTimeSelect ?? false}
               dateFormat={props.dateFormat ?? 'MMMM d, yyyy h:mm aa'}
-              minTime={setHours(setMinutes(getCurrentISTTime(), 0), 15)}
-              maxTime={setHours(setMinutes(getCurrentISTTime(), 0), 20)}
+              minTime={setHours(setMinutes(getCurrentISTTime(), 0), 15)} // 3:00 PM IST
+              maxTime={setHours(setMinutes(getCurrentISTTime(), 0), 20)} // 8:00 PM IST
               wrapperClassName='date-picker'
             />
           </FormControl>

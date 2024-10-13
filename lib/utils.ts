@@ -11,54 +11,54 @@ export const convertFileToUrl = (file: File) => URL.createObjectURL(file);
 
 // FORMAT DATE TIME
 export const formatDateTime = (dateString: Date | string) => {
+  // IST Offset (UTC+5:30)
+  const IST_OFFSET = 5 * 60 + 30;
+
+  // Create a date object from the input dateString
+  const date = new Date(dateString);
+
+  // Convert the date to UTC and then to IST
+  const utcTime = date.getTime() + date.getTimezoneOffset() * 60000; // UTC time in milliseconds
+  const istDate = new Date(utcTime + IST_OFFSET * 60000); // IST time in milliseconds
+
   const dateTimeOptions: Intl.DateTimeFormatOptions = {
-    // weekday: "short", // abbreviated weekday name (e.g., 'Mon')
-    month: 'short', // abbreviated month name (e.g., 'Oct')
-    day: 'numeric', // numeric day of the month (e.g., '25')
-    year: 'numeric', // numeric year (e.g., '2023')
-    hour: 'numeric', // numeric hour (e.g., '8')
-    minute: 'numeric', // numeric minute (e.g., '30')
-    hour12: true, // use 12-hour clock (true) or 24-hour clock (false)
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
   };
 
   const dateDayOptions: Intl.DateTimeFormatOptions = {
-    weekday: 'short', // abbreviated weekday name (e.g., 'Mon')
-    year: 'numeric', // numeric year (e.g., '2023')
-    month: '2-digit', // abbreviated month name (e.g., 'Oct')
-    day: '2-digit', // numeric day of the month (e.g., '25')
+    weekday: 'short',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
   };
 
   const dateOptions: Intl.DateTimeFormatOptions = {
-    month: 'short', // abbreviated month name (e.g., 'Oct')
-    year: 'numeric', // numeric year (e.g., '2023')
-    day: 'numeric', // numeric day of the month (e.g., '25')
+    month: 'short',
+    year: 'numeric',
+    day: 'numeric',
   };
 
   const timeOptions: Intl.DateTimeFormatOptions = {
-    hour: 'numeric', // numeric hour (e.g., '8')
-    minute: 'numeric', // numeric minute (e.g., '30')
-    hour12: true, // use 12-hour clock (true) or 24-hour clock (false)
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
   };
 
-  const formattedDateTime: string = new Date(dateString).toLocaleString(
-    'en-US',
+  const formattedDateTime: string = istDate.toLocaleString(
+    'en-IN',
     dateTimeOptions
   );
-
-  const formattedDateDay: string = new Date(dateString).toLocaleString(
-    'en-US',
+  const formattedDateDay: string = istDate.toLocaleString(
+    'en-IN',
     dateDayOptions
   );
-
-  const formattedDate: string = new Date(dateString).toLocaleString(
-    'en-US',
-    dateOptions
-  );
-
-  const formattedTime: string = new Date(dateString).toLocaleString(
-    'en-US',
-    timeOptions
-  );
+  const formattedDate: string = istDate.toLocaleString('en-IN', dateOptions);
+  const formattedTime: string = istDate.toLocaleString('en-IN', timeOptions);
 
   return {
     dateTime: formattedDateTime,

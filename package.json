@@ -48,6 +48,7 @@
     "@tanstack/react-table": "^8.17.0",
     "@types/lodash": "^4.17.6",
     "@types/three": "^0.163.0",
+    "@vercel/speed-insights": "^1.0.12",
     "animejs": "^3.2.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

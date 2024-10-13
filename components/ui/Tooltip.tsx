@@ -28,8 +28,8 @@ const people = [
   },
   {
     id: 5,
-    name: 'Emily Davis',
-    designation: 'UX Designer',
+    name: 'Emily nah',
+    designation: 'Front End Developer',
     image: '/users/user-5.jpg',
   },
 ];

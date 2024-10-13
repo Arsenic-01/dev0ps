@@ -47,15 +47,15 @@ export const sendAdminEmailNotification = async (appointment: any) => {
     const subject = `New Appointment form submission from ${appointment.client.name}`;
 
     await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>', // Add the correct sender email address here
-      to: appointment.client.email, // Change to appointment.client.email when deploying
+      from: 'Acme <onboarding@resend.dev>', // Replace with the actual sender email
+      to: appointment.client.email, // The recipient's email
       subject,
       react: SendAdminEmail({
         name: appointment.client.name,
         email: appointment.client.email,
-        time: formatDateTime(appointment.schedule).dateTime, // Ensure correct date formatting
+        time: formatDateTime(appointment.schedule).dateTime, // Ensure correct IST formatting
         phone: appointment.client.phone,
-        message: appointment.reason || 'No message provided', // Default message
+        message: appointment.reason || 'No message provided',
       }),
     });
 

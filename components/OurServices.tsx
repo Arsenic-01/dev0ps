@@ -1,18 +1,9 @@
 import Image from 'next/image';
 import React from 'react';
 import { ServiceCards } from '@/data/index';
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog';
-import { Button } from '@nextui-org/button';
-import ModalContent from './ModalDescription';
+
+import EnquireExpanded from './ui/EnquiryModel';
+import ServicesExpanded from './ui/ServicesExpanded';
 
 const OurServices = () => {
   return (
@@ -63,101 +54,3 @@ const OurServices = () => {
 };
 
 export default OurServices;
-
-function ServicesExpanded({ Modaltitle, ModalDescription, id, service }) {
-  return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button
-          color='primary'
-          size='sm'
-          variant='faded'
-          radius='full'
-          className='w-full'
-        >
-          View Details
-        </Button>
-      </DialogTrigger>
-      <DialogContent className='max-w-7xl overflow-y-scroll remove-scrollbar max-h-[80vh] scrollbar-hide'>
-        <DialogHeader className='mt-5'>
-          <DialogTitle className='font-bold text-3xl text-center lg:text-4xl xl:text-5xl'>
-            {Modaltitle}
-          </DialogTitle>
-        </DialogHeader>
-        <DialogDescription className='text-center'>
-          {ModalDescription}
-        </DialogDescription>
-        <ModalContent id={id} />
-        <DialogFooter>
-          <div className='flex flex-col sm:flex-row gap-4 sm:justify-end '>
-            <Button color='secondary' variant='shadow' radius='lg'>
-              Enquire Now 📞
-            </Button>
-            <Button color='secondary' variant='shadow' radius='lg'>
-              Whatsapp 📩
-            </Button>
-            <Button color='secondary' variant='shadow' radius='lg'>
-              Email 📧
-            </Button>
-            <DialogClose asChild>
-              <Button radius='lg' size='md' variant='ghost' type='submit'>
-                Close
-              </Button>
-            </DialogClose>
-          </div>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
-  );
-}
-function EnquireExpanded() {
-  return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button
-          color='primary'
-          size='sm'
-          variant='shadow'
-          radius='full'
-          className='w-full'
-        >
-          Enquire Now
-        </Button>
-      </DialogTrigger>
-      <DialogContent className='max-w-xs overflow-y-scroll remove-scrollbar max-h-[80vh] scrollbar-hide'>
-        <DialogHeader className='mt-10'>
-          <DialogTitle className='font-bold text-3xl text-center lg:text-4xl xl:text-5xl'>
-            Enquire Now
-          </DialogTitle>
-        </DialogHeader>
-        <div className='flex flex-col gap-4 sm:justify-end py-14'>
-          <Button
-            color='secondary'
-            variant='shadow'
-            radius='lg'
-            className='w-full'
-          >
-            Call us 📞
-          </Button>
-          <Button
-            color='secondary'
-            variant='shadow'
-            radius='lg'
-            className='w-full'
-          >
-            Whatsapp 📩
-          </Button>
-          <Button
-            color='secondary'
-            variant='shadow'
-            radius='lg'
-            className='w-full'
-          >
-            Email 📧
-          </Button>
-        </div>
-        <DialogFooter></DialogFooter>
-      </DialogContent>
-    </Dialog>
-  );
-}
