@@ -8,6 +8,7 @@ import { AnimatedTooltipPreview } from './ui/Tooltip';
 import { Button } from '@nextui-org/react';
 import WordRotateEffect from './ui/wordRotate';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Hero = () => {
   return (
@@ -56,6 +57,7 @@ const Hero = () => {
               variant='shadow'
               radius='full'
               className='w-32 relative overflow-visible'
+              aria-description='Get Started Button'
             >
               <span className='absolute top-0 right-0'>
                 <span className='relative flex h-3 w-3'>
@@ -88,10 +90,17 @@ const Hero = () => {
         </div>
 
         {/* Construction image */}
-        <img
+        <Image
           src='/construction.webp'
           className='rounded-lg greyscale select-none pointer-events-none lg:w-[20%] hidden lg:block'
-          alt='Construction'
+          alt='Hero Image'
+          aria-label='Hero Image'
+          aria-description='Hero Image of a crane on a construction site'
+          width={1000}
+          height={600}
+          priority={true} // Only set to true for important images to improve lazy loading
+          sizes='(max-width: 768px) 40vw),(max-width: 1200px) 30vw,
+         20vw' // Adjust the size for large screens only since it's hidden on smaller ones
         />
       </div>
     </div>

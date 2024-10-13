@@ -52,6 +52,11 @@ export const FollowUpEmail = ({
             <strong>{time}</strong>
           </Text>
           <Text style={text}>
+            {type === 'success'
+              ? 'Venue : Regd. Office: 8, First Floor, Rambaug Society, Vidya Vikas Circle, Gangapur Road, Nashik-422013'
+              : null}
+          </Text>
+          <Text style={text}>
             {type !== 'success' ? `Cancellation Reason : ${message}` : null}
           </Text>
         </Section>

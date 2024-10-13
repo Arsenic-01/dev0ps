@@ -41,7 +41,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
           src='/side_img2.jpg'
           height={1000}
           width={1000}
-          alt='patient'
+          alt='Register side image'
           className='side-img select-none pointer-events-none max-w-[100%]'
         />
       </div>

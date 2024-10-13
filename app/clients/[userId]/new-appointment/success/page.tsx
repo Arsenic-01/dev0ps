@@ -28,7 +28,7 @@ const RequestSuccess = async ({
               src='/assets/gifs/success.gif'
               height={300}
               width={280}
-              alt='success'
+              alt='success gif'
               unoptimized
               className='select-none pointer-events-none'
             />
@@ -36,14 +36,16 @@ const RequestSuccess = async ({
               Your <span className='text-green-500'>appointment request</span>{' '}
               has been successfully submitted!
             </h2>
-            <p>We&apos;ll be in touch shortly to confirm (via email)</p>
+            <p className='text-center'>
+              We&apos;ll be in touch shortly to confirm (via email)
+            </p>
           </section>
           <section className='request-details'>
             <p>Requested appointment details: </p>
             <div className='flex items-center gap-3'>
               <Image
                 src={'/person1.png'}
-                alt='sba_chief'
+                alt='person'
                 width={100}
                 height={200}
                 className='w-6 h-8 rounded-md select-none pointer-events-none'
@@ -55,7 +57,7 @@ const RequestSuccess = async ({
                 src='/assets/icons/calendar.svg'
                 height={24}
                 width={24}
-                alt='calendar'
+                alt='calendar icon'
               />
               <p> {formatDateTime(appointment.schedule).dateTime}</p>
             </div>

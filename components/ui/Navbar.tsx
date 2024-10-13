@@ -73,7 +73,7 @@ export default function NavbarComponent() {
               height={30}
               priority
               className='select-none pointer-events-none w-7 sm:w-[30px] mr-2 rounded-md ml-2 sm:ml-0'
-              alt='Logo'
+              alt='Navbar Company Logo'
             />
             <p className='font-bold text-xl sm:text-[22px] select-none '>SBA</p>
           </div>
@@ -107,6 +107,8 @@ export default function NavbarComponent() {
                   console.error('Error during logout:', error);
                 }
               }}
+              aria-label='Logout'
+              aria-description='Logout from the appointment booking app'
             >
               Logout
             </Button>
@@ -118,6 +120,8 @@ export default function NavbarComponent() {
               variant='shadow'
               radius='full'
               onClick={() => router.push('/login')}
+              aria-label='Login'
+              aria-description='Login to the appointment booking app'
             >
               Login
             </Button>

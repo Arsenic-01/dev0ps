@@ -70,7 +70,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                         height='100'
                         image={el.imgSrc}
                         loading='lazy'
-                        alt=''
+                        alt='services images'
                       />
                       <CardContent>
                         <Typography gutterBottom variant='h5' component='div'>

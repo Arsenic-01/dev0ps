@@ -20,7 +20,7 @@ const OurServices = () => {
                   <div className='w-full h-48 relative overflow-hidden rounded-md'>
                     <Image
                       src={service.imgSrc}
-                      alt='alt'
+                      alt={service.imgAlt}
                       className='w-full absolute rounded-md object-cover select-none pointer-events-none'
                       width={1000}
                       height={600}

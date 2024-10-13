@@ -107,7 +107,8 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
                   <div className='relative mx-14'>
                     <Image
                       src={item.imgSrc}
-                      alt='logo'
+                      alt='company logos'
+                      aria-description='company logos'
                       className={cn(
                         item.imgClassname,
                         'user-select-none pointer-events-none object-contain'

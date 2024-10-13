@@ -3,6 +3,7 @@ import {
   FaInstagram,
   FaLinkedin,
   FaWhatsapp,
+  FaFacebook,
   FaXTwitter,
 } from 'react-icons/fa6';
 import BlurFade from './magicui/blur-fade';
@@ -10,48 +11,68 @@ import Image from 'next/image';
 import { TransitionLink } from './utils/TransitionLink';
 import { linkdata } from '@/data';
 import Link from 'next/link';
+
 const FooterExp = () => {
+  const currentYear = new Date().getFullYear();
+  const socialLinks = [
+    {
+      href: 'https://www.facebook.com/sunil.bhor.31/',
+      icon: FaFacebook,
+      label: 'Facebook',
+    },
+    {
+      href: 'https://www.instagram.com/sdbhor/',
+      icon: FaInstagram,
+      label: 'Instagram',
+    },
+    { href: 'https://x.com/sdbhor/', icon: FaXTwitter, label: 'Twitter' },
+    {
+      href: 'https://www.linkedin.com/in/sdbhor/',
+      icon: FaLinkedin,
+      label: 'LinkedIn',
+    },
+    {
+      href: 'https://wa.me/+919822377366',
+      icon: FaWhatsapp,
+      label: 'Whatsapp',
+    },
+  ];
+
+  const iconClass =
+    'text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75';
+
   return (
     <footer className='w-full dark:bg-black'>
       <BlurFade delay={0.1} inView>
-        <div className=' px-5 pt-16 pb-7 sm:px-6 lg:px-8'>
+        <div className='px-5 pt-16 pb-7 sm:px-6 lg:px-8'>
+          {/* Logo Section */}
           <div className='flex justify-center text-teal-600 dark:text-teal-300'>
-            {}
-            <Link href={'/'}>
+            <Link href='/'>
               <Image
-                src='/nav.png'
-                width={150}
-                height={150}
+                src='/nav_red3.png'
+                width={48}
+                height={48}
                 className='w-12 select-none pointer-events-none'
-                alt=''
+                alt='company logo'
               />
             </Link>
           </div>
 
+          {/* Tagline */}
           <p className='mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 dark:text-gray-400'>
             Innovate. Value. Design.
           </p>
 
+          {/* Navigation Links */}
           <ul className='mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12'>
             {linkdata.map((item) => (
-              <li
-                key={item.id}
-                className='text-gray-700 dark:text-white transition hover:text-gray-700/75 dark:hover:text-white/75'
-              >
-                {item.next && (
-                  <TransitionLink
-                    className='text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75'
-                    href={item.link}
-                  >
+              <li key={item.id} className={iconClass}>
+                {item.next ? (
+                  <TransitionLink className={iconClass} href={item.link}>
                     {item.title}
                   </TransitionLink>
-                )}
-
-                {!item.next && (
-                  <a
-                    className='text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75'
-                    href={item.link}
-                  >
+                ) : (
+                  <a className={iconClass} href={item.link}>
                     {item.title}
                   </a>
                 )}
@@ -59,83 +80,27 @@ const FooterExp = () => {
             ))}
           </ul>
 
+          {/* Social Icons */}
           <ul className='mt-12 flex justify-center items-center gap-6 md:gap-8'>
-            <li>
-              <a
-                href='https://www.facebook.com/sunil.bhor.31/'
-                rel='noreferrer'
-                target='_blank'
-                className='text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75'
-              >
-                <span className='sr-only'>Facebook</span>
-                <svg
-                  className='h-6 w-6'
-                  fill='currentColor'
-                  viewBox='0 0 24 24'
-                  aria-hidden='true'
+            {socialLinks.map(({ href, icon: Icon, label }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  rel='noreferrer'
+                  target='_blank'
+                  className={iconClass}
                 >
-                  <path
-                    fillRule='evenodd'
-                    d='M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z'
-                    clipRule='evenodd'
-                  />
-                </svg>
-              </a>
-            </li>
-
-            <li>
-              <a
-                href='https://www.instagram.com/sdbhor/'
-                rel='noreferrer'
-                target='_blank'
-                className='text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75'
-              >
-                <span className='sr-only'>Instagram</span>
-
-                <FaInstagram className='w-5 h-5 select-none pointer-events-none' />
-              </a>
-            </li>
-
-            <li>
-              <a
-                href='https://x.com/sdbhor/'
-                rel='noreferrer'
-                target='_blank'
-                className='text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75'
-              >
-                <span className='sr-only'>Twitter</span>
-                <FaXTwitter className='w-5 h-5 select-none pointer-events-none' />
-              </a>
-            </li>
-
-            <li>
-              <a
-                href='https://www.linkedin.com/in/sdbhor/'
-                rel='noreferrer'
-                target='_blank'
-                className='text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75'
-              >
-                <span className='sr-only'>Linkdin</span>
-                <FaLinkedin className='w-5 h-5 select-none pointer-events-none' />
-              </a>
-            </li>
-
-            <li>
-              <a
-                href='#'
-                rel='noreferrer'
-                target='_blank'
-                className='text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75'
-              >
-                <span className='sr-only'>Whatsapp</span>
-                <FaWhatsapp className='w-5 h-5 select-none pointer-events-none' />
-              </a>
-            </li>
+                  <span className='sr-only'>{label}</span>
+                  <Icon className='w-5 h-5 select-none pointer-events-none' />
+                </a>
+              </li>
+            ))}
           </ul>
-          <h1 className='text-sm text-neutral-400 mt-12 text-center mx-auto'>
-            &copy; {new Date().getFullYear()} Sunil Bhor & Associates. All
-            rights reserved.
-          </h1>
+
+          {/* Copyright */}
+          <p className='text-sm text-neutral-400 mt-12 text-center mx-auto'>
+            &copy; {currentYear} Sunil Bhor & Associates. All rights reserved.
+          </p>
         </div>
       </BlurFade>
     </footer>

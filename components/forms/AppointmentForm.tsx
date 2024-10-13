@@ -21,6 +21,13 @@ import { Form } from '../ui/form';
 import { toast } from 'sonner';
 import { Status } from '@/types';
 
+// Helper function to get 3:30 PM IST
+const getDefaultAppointmentTime = () => {
+  const now = new Date();
+  now.setUTCHours(10, 0, 0, 0); // 10:00 AM UTC = 3:30 PM IST
+  return now;
+};
+
 export const AppointmentForm = ({
   userId,
   clientId,
@@ -39,10 +46,13 @@ export const AppointmentForm = ({
 
   const AppointmentFormValidation = getAppointmentSchema(type);
 
+  // Set default time to 3:30 PM IST or use the existing appointment time if available
   const form = useForm<z.infer<typeof AppointmentFormValidation>>({
     resolver: zodResolver(AppointmentFormValidation),
     defaultValues: {
-      schedule: appointment ? new Date(appointment.schedule) : new Date(),
+      schedule: appointment
+        ? new Date(appointment.schedule)
+        : getDefaultAppointmentTime(),
       reason: appointment?.reason || '',
       note: appointment?.note || '',
       cancellationReason: appointment?.cancellationReason || '',
@@ -84,7 +94,7 @@ export const AppointmentForm = ({
           router.push(
             `/clients/${userId}/new-appointment/success?appointmentId=${newAppointment.$id}`
           );
-          toast.success('Appointment Created Successful🎉');
+          toast.success('Appointment Created Successfully🎉');
         }
       } else {
         const appointmentToUpdate = {
@@ -107,7 +117,7 @@ export const AppointmentForm = ({
       }
     } catch (error) {
       console.log('Error while creating appointment', error);
-      toast.error('Error occured while creating appointment');
+      toast.error('Error occurred while creating appointment');
     }
     setIsLoading(false);
   };
@@ -121,7 +131,7 @@ export const AppointmentForm = ({
       buttonLabel = 'Schedule Appointment';
       break;
     default:
-      buttonLabel = 'Submit Apppointment';
+      buttonLabel = 'Submit Appointment';
   }
 
   return (
@@ -142,7 +152,7 @@ export const AppointmentForm = ({
               fieldType={FormFieldType.DATE_PICKER}
               control={form.control}
               name='schedule'
-              label='Expected appointment date and time (Working days only)'
+              label='Preferred appointment date and time (weekdays only, anytime between 3:30pm and 8:00pm).'
               showTimeSelect
               dateFormat='MM/dd/yyyy  -  h:mm aa'
             />

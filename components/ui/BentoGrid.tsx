@@ -17,7 +17,6 @@ const GridGlobe = dynamic(() => import('./GridGlobe'), { ssr: false });
 const playfair = Playfair_Display({ subsets: ['latin'] });
 import animationData from '@/data/confetti.json';
 import Lottie from 'lottie-react'; // Import Lottie
-import Image from 'next/image';
 
 // BentoGrid component
 export const BentoGrid = ({

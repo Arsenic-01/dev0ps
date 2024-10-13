@@ -73,6 +73,7 @@ export const ServiceCards = [
     title: 'Structural Designing',
     description:
       'Structural designing involves creating safe, stable, and efficient structures by analyzing loads, materials, and environmental factors for construction.',
+    imgAlt: 'Structural Designing',
   },
   {
     id: 2,
@@ -80,6 +81,7 @@ export const ServiceCards = [
     title: 'Architectural Planning',
     description:
       'Architectural planning involves designing functional spaces, considering aesthetics, safety, and sustainability while meeting client needs and regulatory requirements.',
+    imgAlt: 'Architectural Planning',
   },
   {
     id: 3,
@@ -87,6 +89,7 @@ export const ServiceCards = [
     title: 'Interior designing',
     description:
       'Interior designing focuses on enhancing indoor spaces through aesthetics, functionality, and comfort by selecting colors, furniture, and layouts effectively.',
+    imgAlt: 'Interior designing',
   },
   {
     id: 4,
@@ -94,6 +97,7 @@ export const ServiceCards = [
     title: 'Property & Assets Valuation',
     description:
       'Property and assets valuation is assessing the worth of real estate and financial assets based on market trends and conditions.',
+    imgAlt: 'Property & Assets Valuation',
   },
   {
     id: 5,
@@ -101,6 +105,7 @@ export const ServiceCards = [
     title: 'TEV (Techno-Economic Viability Consultants)',
     description:
       'TEV (Techno-Economic Viability) Consultants evaluate project feasibility by analyzing technical, economic, and financial aspects to ensure successful implementation.',
+    imgAlt: 'TEV (Techno-Economic Viability)',
   },
   {
     id: 6,
@@ -108,6 +113,7 @@ export const ServiceCards = [
     title: 'Lender’s independent engineers',
     description:
       'Lender’s independent engineers assess project feasibility, compliance, and risks, ensuring loan security through thorough evaluations of construction and operational standards.',
+    imgAlt: 'Lender’s independent engineers',
   },
   {
     id: 7,
@@ -115,6 +121,7 @@ export const ServiceCards = [
     title: 'Real Estate Advisory',
     description:
       'Real estate advisory provides expert guidance on property investments, market trends, and development strategies to maximize returns and minimize risks.',
+    imgAlt: 'Real Estate Advisory',
   },
   {
     id: 8,
@@ -122,6 +129,7 @@ export const ServiceCards = [
     title: 'Plant and Machinery Valuation',
     description:
       'Plant and machinery valuation assesses the worth of industrial equipment and assets, considering factors like condition, age, market demand, and functionality.',
+    imgAlt: 'Plant and Machinery Valuation',
   },
   {
     id: 9,
@@ -129,6 +137,7 @@ export const ServiceCards = [
     title: 'Black Money Valuation',
     description:
       'Black money valuation estimates the worth of illicit funds, assessing hidden assets and financial activities to aid in recovery and regulation.',
+    imgAlt: 'Black Money Valuation',
   },
   {
     id: 10,
@@ -136,6 +145,7 @@ export const ServiceCards = [
     title: 'Town planning Approvals',
     description:
       'Town planning approvals involve obtaining permissions for land use and development, ensuring compliance with regulations and community standards for urban planning.',
+    imgAlt: 'Town planning Approvals',
   },
   {
     id: 11,
@@ -143,6 +153,7 @@ export const ServiceCards = [
     title: 'Tender & Specs Drafting',
     description:
       'Tender and specs drafting involves creating detailed documents outlining project requirements, evaluation criteria, and contractual terms to facilitate competitive bidding.',
+    imgAlt: 'Tender & Specs Drafting',
   },
   {
     id: 12,
@@ -150,6 +161,7 @@ export const ServiceCards = [
     title: 'NDT Testing & Stability Certification',
     description:
       'NDT testing and stability certification assess material integrity and structural safety, ensuring compliance with standards and verifying performance without damaging components.',
+    imgAlt: 'NDT Testing & Stability Certification',
   },
   {
     id: 13,
@@ -157,6 +169,7 @@ export const ServiceCards = [
     title: 'Surverying & Monitoring',
     description:
       'Surveying and monitoring involve measuring land, structures, and environmental conditions to ensure compliance, assess changes, and support effective project management and planning.',
+    imgAlt: 'Surverying & Monitoring',
   },
   {
     id: 14,
@@ -164,6 +177,7 @@ export const ServiceCards = [
     title: 'Chartered Engineer Certifications',
     description:
       'Chartered Engineer certifications validate professional expertise in engineering. These credentials enhance credibility, demonstrating adherence to industry standards and commitment to ongoing professional development.',
+    imgAlt: 'Chartered Engineer Certifications',
   },
   {
     id: 15,
@@ -171,6 +185,7 @@ export const ServiceCards = [
     title: 'Industrial Safety Audits',
     description:
       'Industrial safety audits evaluate workplace safety practices and compliance with regulations, identifying hazards, improving safety protocols, and ensuring employee protection.',
+    imgAlt: 'Industrial Safety Audits',
   },
   {
     id: 16,
@@ -178,6 +193,7 @@ export const ServiceCards = [
     title: 'NA Conversion of Lands',
     description:
       'NA conversion of lands involves changing land use from agricultural to non-agricultural purposes, allowing for development and construction while ensuring compliance with regulatory requirements.',
+    imgAlt: 'NA Conversion of Lands',
   },
   {
     id: 17,
@@ -185,6 +201,7 @@ export const ServiceCards = [
     title: 'Factory Act Certification',
     description:
       'Factory Act certification ensures compliance with safety, health, and welfare regulations in industrial establishments, promoting worker protection and maintaining operational standards.',
+    imgAlt: 'Factory Act Certification',
   },
   {
     id: 18,
@@ -192,6 +209,7 @@ export const ServiceCards = [
     title: 'IPO Certification',
     description:
       'IPO certification validates a company’s readiness for an Initial Public Offering, ensuring compliance with regulatory requirements and enhancing investor confidence in financial disclosures.',
+    imgAlt: 'IPO Certification',
   },
 ];
 

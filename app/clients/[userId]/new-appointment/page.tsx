@@ -29,16 +29,6 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
     <div className='flex h-screen bg-black sm:max-h-screen'>
       <section className='remove-scrollbar container sm:mt-20 my-auto'>
         <div className='sub-container max-w-[860px] flex-1 py-5 sm:py-10 justify-between'>
-          {/* <div className='md:inline-flex hidden  gap-2 justify-items-center items-center mb-12'>
-            <Image
-              src='/nav.png'
-              height={1000}
-              width={1000}
-              alt='patient'
-              className=' h-10 w-fit'
-            />
-            <h2 className='text-24-bold'>SBA</h2>
-          </div> */}
           <BreadcrumbWithCustomSeparator />
           <AppointmentForm
             clientId={client?.$id}

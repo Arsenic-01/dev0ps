@@ -1,11 +1,20 @@
 'use client';
 import { Button, Input, Textarea } from '@nextui-org/react';
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { FaEnvelope, FaLocationDot, FaPhone } from 'react-icons/fa6';
 import { toast } from 'sonner';
 import * as Sentry from '@sentry/nextjs';
+import { z } from 'zod';
 
-const page = () => {
+// Define the validation schema using Zod
+const contactSchema = z.object({
+  email: z.string().email('Please enter a valid email address'),
+  name: z.string().min(1, 'Name is required'),
+  subject: z.string().min(1, 'Subject is required'),
+  message: z.string().min(10, 'Message should be at least 10 characters long'),
+});
+
+const ContactPage = () => {
   Sentry.metrics.set('user_view_contact', 'client');
 
   const [formData, setFormData] = useState({
@@ -15,17 +24,42 @@ const page = () => {
     message: '',
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const [errors, setErrors] = useState({
+    email: '',
+    name: '',
+    subject: '',
+    message: '',
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value,
+      });
+    },
+    [formData]
+  );
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
+
+    // Validate form data
+    const validation = contactSchema.safeParse(formData);
+    if (!validation.success) {
+      const formErrors = validation.error.flatten().fieldErrors;
+      setErrors({
+        email: formErrors.email?.[0] || '',
+        name: formErrors.name?.[0] || '',
+        subject: formErrors.subject?.[0] || '',
+        message: formErrors.message?.[0] || '',
+      });
+      setIsLoading(false);
+      return;
+    }
 
     try {
       const res = await fetch('/api/send', {
@@ -37,13 +71,13 @@ const page = () => {
       });
 
       if (res.ok) {
-        toast.success('Email sent successfully.🎉');
+        toast.success('Email sent successfully. 🎉');
       } else {
         toast.error('Failed to send email.');
       }
     } catch (error) {
-      console.error('Error occured while sending email :', error);
-      toast.error('An error occurred.');
+      console.error('Error occurred while sending email:', error);
+      toast.error('An error occurred. Please try again.');
     } finally {
       setFormData({
         email: '',
@@ -51,116 +85,135 @@ const page = () => {
         subject: '',
         message: '',
       });
+      setErrors({
+        email: '',
+        name: '',
+        subject: '',
+        message: '',
+      });
+      setIsLoading(false);
     }
   };
 
   return (
-    <div className='min-h-[100vh] relative  bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto '>
+    <div className='min-h-screen bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto'>
       <div className='mt-16 sm:mt-24 md:px-8'>
-        <h1 className='hidden sm:block sm:text-5xl lg:text-6xl mt-8 sm:mt-0  text-center md:text-left px-8'>
-          Let&apos;s Work Together
-          <span className='text-[#EF4444] text-6xl lg:text-8xl select-none hidden sm:inline-block'>
-            .
-          </span>
+        <h1 className='hidden sm:block sm:text-5xl lg:text-6xl text-center md:text-left px-8'>
+          Let's Work Together
+          <span className='text-[#EF4444] text-6xl lg:text-8xl'>.</span>
         </h1>
-        <h1 className='text-4xl sm:hidden mt-8 sm:mt-0  text-center md:text-left px-8'>
+        <h1 className='text-4xl sm:hidden mt-8 text-center md:text-left px-8'>
           Get in Touch
-          <span className='text-[#EF4444] text-6xl lg:text-8xl select-none hidden sm:inline-block'>
-            .
-          </span>
+          <span className='text-[#EF4444] text-6xl lg:text-8xl'>.</span>
         </h1>
-        <div className='max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 sm:px-4 py-6'>
-          <div className='px-5 sm:px-4 sm:py-3'>
-            <form className='sm:mt-12' onSubmit={handleSubmit}>
-              <div className='mt-4 sm:mt-10 relative'>
+
+        <div className='max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-10 sm:px-4 py-5'>
+          {/* Contact Form */}
+          <div className='px-5 sm:px-4 py-2'>
+            <form className='mt-12' onSubmit={handleSubmit}>
+              <div className='mt-4 relative'>
                 <Input
                   size='sm'
                   type='email'
                   isRequired
-                  required
                   name='email'
                   label='Email'
                   value={formData.email}
                   onChange={handleChange}
+                  aria-label='Your email address'
+                  isInvalid={errors.email !== ''}
                 />
+                {errors.email && (
+                  <div className='text-red-500 text-sm'>{errors.email}</div>
+                )}
               </div>
-              <div className='mt-10 relative'>
+              <div className='mt-8 relative'>
                 <Input
                   size='sm'
                   type='text'
                   isRequired
-                  required
                   name='name'
                   label='Your Name'
                   value={formData.name}
                   onChange={handleChange}
+                  aria-label='Your full name'
+                  isInvalid={errors.name !== ''}
                 />
+                {errors.name && (
+                  <div className='text-red-500 text-sm'>{errors.name}</div>
+                )}
               </div>
-              <div className='mt-10 relative'>
+              <div className='mt-8 relative'>
                 <Input
                   size='sm'
                   type='text'
                   isRequired
-                  required
                   name='subject'
                   label='Subject'
                   value={formData.subject}
                   onChange={handleChange}
+                  aria-label='Subject of your message'
+                  isInvalid={errors.subject !== ''}
                 />
+                {errors.subject && (
+                  <div className='text-red-500 text-sm'>{errors.subject}</div>
+                )}
               </div>
-              <div className='mt-10 relative'>
+              <div className='mt-8 relative'>
                 <Textarea
-                  required
                   isRequired
                   name='message'
-                  labelPlacement='outside'
-                  placeholder='Enter your Message'
-                  className='w-full'
-                  minRows={10}
+                  label='Message'
                   value={formData.message}
                   onChange={handleChange}
+                  aria-label='Your message'
+                  isInvalid={errors.message !== ''}
+                  minRows={6}
                 />
+                {errors.message && (
+                  <div className='text-red-500 text-sm'>{errors.message}</div>
+                )}
               </div>
-              <div className='mt-10 relative'>
+              <div className='mt-8 relative'>
                 <Button
                   color='primary'
                   type='submit'
                   variant='shadow'
-                  className='max-sm:w-full text-sm'
+                  className='w-full text-sm'
+                  isDisabled={isLoading}
                 >
-                  Send Message 🚀
+                  {isLoading ? 'Sending...' : 'Send Message 🚀'}
                 </Button>
               </div>
             </form>
           </div>
-          <div className='grid-rows-2 gap-16	md:gap-10 px-5 sm:px-4 py-3'>
-            <div className=' sm:px-3 py-4 mb-7'>
+
+          {/* Contact Details */}
+          <div className='px-5 sm:px-4 py-3 md:mt-5'>
+            <div className='py-4 mb-7'>
               <h2 className='text-3xl text-center sm:text-left font-medium'>
                 Contact Details
               </h2>
-              <div className='flex flex-col gap-6 sm:gap-4 mt-10 sm:mt-4'>
-                <p className='text-slate-300 inline-flex gap-7 lg:gap-5 items-center'>
-                  <FaLocationDot className='w-7 h-7 sm:w-5 md:w-10 md:h-10 sm:h-5 lg:h-5 lg:w-5' />
+              <div className='flex flex-col gap-6 mt-6'>
+                <p className='text-slate-300 inline-flex gap-4 items-center'>
+                  <FaLocationDot className='w-6 h-6' />
                   Regd. Office: 8, First Floor, Rambaug Society, Vidya Vikas
                   Circle, Gangapur Road, Nashik-422013
                 </p>
                 <a
-                  href='mailto:sba.nashik@gmail.com?subject=Hey%20there!&body=I%20am%20_____%20and%20I%20want%20to%20Contact%20you%20for%20______'
+                  href='mailto:sba.nashik@gmail.com'
                   className='text-slate-300 inline-flex gap-5 items-center'
                 >
                   <FaEnvelope className='w-5 h-5' /> sba.nashik@gmail.com
                 </a>
 
-                <div className='text-slate-300 flex flex-col lg:inline-flex lg:flex-row gap-5 items-start lg:items-center'>
+                <div className='text-slate-300 flex flex-col gap-5 items-start'>
                   <a
                     className='inline-flex gap-5 items-center'
                     href='tel:+919822377366'
                   >
                     <FaPhone className='w-5 h-5' /> +91 98223 77366
                   </a>
-                  <span className='text-slate-700 hidden lg:inline-block select-none pointer-events-none'>
-                    |
-                  </span>{' '}
                   <a
                     className='inline-flex gap-5 items-center'
                     href='tel:+917972418920'
@@ -170,6 +223,7 @@ const page = () => {
                 </div>
               </div>
             </div>
+            {/* Google Maps Embed */}
             <div className='text-center mx-auto'>
               <iframe
                 className='rounded-lg w-full'
@@ -180,6 +234,8 @@ const page = () => {
                 allowFullScreen={true}
                 loading='lazy'
                 referrerPolicy='no-referrer-when-downgrade'
+                aria-label='Google Maps showing office location'
+                title='Office Location'
               />
             </div>
           </div>
@@ -189,4 +245,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ContactPage;
