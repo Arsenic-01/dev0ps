@@ -3,7 +3,6 @@ import EmblaCarousel from './ui/EmblaCarousel';
 import { EmblaOptionsType } from 'embla-carousel';
 import '../app/embla.css';
 import { Button } from '@nextui-org/button';
-import { TransitionLink } from './utils/TransitionLink';
 import Link from 'next/link';
 
 const OPTIONS: EmblaOptionsType = { dragFree: true };

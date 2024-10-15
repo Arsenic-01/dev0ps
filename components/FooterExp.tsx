@@ -8,7 +8,6 @@ import {
 } from 'react-icons/fa6';
 import BlurFade from './magicui/blur-fade';
 import Image from 'next/image';
-import { TransitionLink } from './utils/TransitionLink';
 import { linkdata } from '@/data';
 import Link from 'next/link';
 
@@ -51,8 +50,8 @@ const FooterExp = () => {
               <Image
                 src='/nav_red3.png'
                 width={48}
-                height={48}
-                className='w-12 select-none pointer-events-none'
+                height={72}
+                className='w-12 h-auto select-none pointer-events-none'
                 alt='company logo'
               />
             </Link>
@@ -68,9 +67,9 @@ const FooterExp = () => {
             {linkdata.map((item) => (
               <li key={item.id} className={iconClass}>
                 {item.next ? (
-                  <TransitionLink className={iconClass} href={item.link}>
+                  <Link className={iconClass} href={item.link}>
                     {item.title}
-                  </TransitionLink>
+                  </Link>
                 ) : (
                   <a className={iconClass} href={item.link}>
                     {item.title}

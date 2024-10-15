@@ -38,10 +38,14 @@ const Hero = () => {
             <span className='font-normal'> on your results.</span>
           </span>
 
-          <TextGenerateEffect
-            className='mt-7 sm:mt-12 text-pretty text-[#BDBDBD] block leading-relaxed sm:hidden sm:text-left text-center text-base'
+          {/* <TextGenerateEffect
             words='SBA offers expert consultancy in architecture, structural design, project management, and property valuation nationwide.'
-          />
+          /> */}
+
+          <div className='mt-7 sm:mt-12 text-pretty text-[#BDBDBD] block leading-relaxed sm:hidden sm:text-left text-center text-base'>
+            SBA offers expert consultancy in architecture, structural design,
+            project management, and property valuation nationwide.
+          </div>
 
           <div className='mt-4 text-pretty hidden font-light sm:block leading-loose md:text-base text-neutral-300 lg:max-w-[50vw]'>
             SBA is a distinguished consultancy firm with over 25 years of

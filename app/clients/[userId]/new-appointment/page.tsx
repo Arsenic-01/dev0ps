@@ -10,7 +10,6 @@ import Link from 'next/link';
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
@@ -20,11 +19,12 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
   const client = await getClient(userId);
   Sentry.metrics.set('user_view_new-appointment', 'client');
   const user = await getLoggedInUser();
-  if (typeof window !== 'undefined') {
-    window.location.reload();
-  }
-  if (!user) redirect('/login');
 
+  // validate user id against logged in user
+  if (!user) redirect('/login');
+  else if (user.$id !== userId) {
+    redirect('/login');
+  }
   return (
     <div className='flex h-screen bg-black sm:max-h-screen'>
       <section className='remove-scrollbar container sm:mt-20 my-auto'>
@@ -56,9 +56,7 @@ function BreadcrumbWithCustomSeparator() {
     <Breadcrumb className='mb-5 sm:mb-10'>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink>
-            <Link href='/'>Home</Link>
-          </BreadcrumbLink>
+          <Link href='/'>Home</Link>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>

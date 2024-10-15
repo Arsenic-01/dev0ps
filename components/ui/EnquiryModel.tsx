@@ -31,6 +31,9 @@ export default function EnquireExpanded() {
           <DialogTitle className='font-bold text-3xl text-center lg:text-4xl xl:text-5xl'>
             Enquire Now
           </DialogTitle>
+          <DialogDescription className='text-center'>
+            95% Reponse Rate ✅
+          </DialogDescription>
         </DialogHeader>
         <div className='flex flex-col gap-4 sm:justify-end py-14'>
           <Button

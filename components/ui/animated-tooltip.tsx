@@ -81,6 +81,7 @@ export const AnimatedTooltip = ({
             onMouseMove={handleMouseMove}
             height={100}
             width={100}
+            loading='eager'
             src={item.image}
             alt={item.name}
             className='object-cover !m-0 !p-0 object-top rounded-full h-12 w-12 border-2 group-hover:scale-105 group-hover:z-30 border-transparent  relative transition duration-500'

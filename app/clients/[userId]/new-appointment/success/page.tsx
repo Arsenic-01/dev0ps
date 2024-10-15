@@ -1,13 +1,12 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { getAppointment } from '@/lib/actions/appointment.actions';
 import { formatDateTime } from '@/lib/utils';
 import * as Sentry from '@sentry/nextjs';
 import { SearchParamProps } from '@/types';
 import { redirect } from 'next/navigation';
 import { getLoggedInUser } from '@/lib/appwrite';
-import { Button } from '@nextui-org/button';
 import AppointmentButton from '@/components/ui/AppointmentButton';
+
 const RequestSuccess = async ({
   searchParams,
   params: { userId },
@@ -16,7 +15,12 @@ const RequestSuccess = async ({
   const appointment = await getAppointment(appointmentId);
   Sentry.metrics.set('user_view_new-appointment_success', 'client');
   const user = await getLoggedInUser();
+
+  // validate user id against logged in user
   if (!user) redirect('/login');
+  else if (user.$id !== userId) {
+    redirect('/login');
+  }
 
   return (
     <div className='min-h-[100vh] flex flex-col items-center justify-center bg-black'>
