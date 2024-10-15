@@ -4,7 +4,6 @@ import { revalidatePath } from 'next/cache';
 import { ID, Query } from 'node-appwrite';
 
 import { Appointment } from '@/types/appwrite.types';
-
 import {
   APPOINTMENT_COLLECTION_ID,
   DATABASE_ID,
@@ -20,7 +19,32 @@ import SendAdminEmail from '@/emails/SendAdminEmail';
 
 const resend = new Resend(process.env.RESEND_API_KEY!);
 
-//  CREATE APPOINTMENT
+// Utility for sending email notifications
+const sendEmail = async ({
+  to,
+  subject,
+  reactComponent,
+  from = 'Acme <onboarding@resend.dev>',
+}: {
+  to: string;
+  subject: string;
+  reactComponent: JSX.Element;
+  from?: string;
+}) => {
+  try {
+    await resend.emails.send({
+      from,
+      to,
+      subject,
+      react: reactComponent,
+    });
+    console.log(`Email sent successfully to ${to}`);
+  } catch (error) {
+    console.error(`Error sending email to ${to}:`, error);
+  }
+};
+
+// CREATE APPOINTMENT
 export const createAppointment = async (
   appointment: CreateAppointmentParams
 ) => {
@@ -31,41 +55,36 @@ export const createAppointment = async (
       ID.unique(),
       appointment
     );
-    // console.log('Appointment', newAppointment);
+
     revalidatePath('/admin');
-    const smsMessage = `Greetings from SBA. A new Appointment has been scheduled on ${formatDateTime(appointment.schedule!).dateTime}. click the link below to view the details. https://sba-main.vercel.app/admin`;
-    // await sendSMSNotification(process.env.ADMIN_USER_ID!, smsMessage);
-    await sendAdminEmailNotification(newAppointment);
+
+    await Promise.all([sendAdminEmailNotification(newAppointment)]);
+
     return parseStringify(newAppointment);
   } catch (error) {
-    console.error('An error occurred while creating a new appointment:', error);
+    console.error('Error creating new appointment:', error);
   }
 };
 
+// SEND ADMIN EMAIL NOTIFICATION
 export const sendAdminEmailNotification = async (appointment: any) => {
-  try {
-    const subject = `New Appointment form submission from ${appointment.client.name}`;
+  const subject = `New Appointment from ${appointment.client.name}`;
+  const emailContent = SendAdminEmail({
+    name: appointment.client.name,
+    email: appointment.client.email,
+    time: formatDateTime(appointment.schedule).dateTime,
+    phone: appointment.client.phone,
+    message: appointment.reason || 'No message provided',
+  });
 
-    await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>', // Replace with the actual sender email
-      to: appointment.client.email, // The recipient's email
-      subject,
-      react: SendAdminEmail({
-        name: appointment.client.name,
-        email: appointment.client.email,
-        time: formatDateTime(appointment.schedule).dateTime, // Ensure correct IST formatting
-        phone: appointment.client.phone,
-        message: appointment.reason || 'No message provided',
-      }),
-    });
-
-    console.log('Admin email sent successfully');
-  } catch (error) {
-    console.error('Error occurred while sending admin email:', error);
-  }
+  await sendEmail({
+    to: appointment.client.email,
+    subject,
+    reactComponent: emailContent,
+  });
 };
 
-//  GET RECENT APPOINTMENTS
+// GET RECENT APPOINTMENTS
 export const getRecentAppointmentList = async () => {
   try {
     const appointments = await databases.listDocuments(
@@ -74,34 +93,34 @@ export const getRecentAppointmentList = async () => {
       [Query.orderDesc('$createdAt')]
     );
 
+    // Type assertion to ensure the documents are treated as an array of Appointment
+    const appointmentDocs = appointments.documents as Appointment[];
+
     const initialCounts = {
       scheduledCount: 0,
       pendingCount: 0,
       cancelledCount: 0,
     };
 
-    const counts = (appointments.documents as Appointment[]).reduce(
-      (acc, appointment) => {
-        switch (appointment.status) {
-          case 'scheduled':
-            acc.scheduledCount++;
-            break;
-          case 'pending':
-            acc.pendingCount++;
-            break;
-          case 'cancelled':
-            acc.cancelledCount++;
-            break;
-        }
-        return acc;
-      },
-      initialCounts
-    );
+    const counts = appointmentDocs.reduce((acc, appointment) => {
+      switch (appointment.status) {
+        case 'scheduled':
+          acc.scheduledCount++;
+          break;
+        case 'pending':
+          acc.pendingCount++;
+          break;
+        case 'cancelled':
+          acc.cancelledCount++;
+          break;
+      }
+      return acc;
+    }, initialCounts);
 
     const data = {
       totalCount: appointments.total,
       ...counts,
-      documents: appointments.documents,
+      documents: appointmentDocs,
     };
 
     return parseStringify(data);
@@ -113,53 +132,29 @@ export const getRecentAppointmentList = async () => {
   }
 };
 
-//  SEND SMS NOTIFICATION
-export const sendSMSNotification = async (userId: string, content: string) => {
-  try {
-    // https://appwrite.io/docs/references/1.5.x/server-nodejs/messaging#createSms
-    const message = await messaging.createSms(
-      ID.unique(),
-      content,
-      [],
-      [userId]
-    );
-    return parseStringify(message);
-  } catch (error) {
-    console.error('An error occurred while sending sms:', error);
-  }
-};
-
+// SEND FOLLOW-UP EMAIL NOTIFICATION
 export const sendFollowUpEmailNotification = async (appointment: any) => {
-  try {
-    const subject =
-      appointment.status === 'scheduled'
-        ? `Appointment Scheduled: ${formatDateTime(appointment.schedule).dateTime}`
-        : `Appointment Cancelled: ${formatDateTime(appointment.schedule).dateTime}`;
+  const isScheduled = appointment.status === 'scheduled';
+  const subject = `Appointment ${isScheduled ? 'Scheduled' : 'Cancelled'}: ${formatDateTime(appointment.schedule).dateTime}`;
+  const body = isScheduled
+    ? `Greetings from SBA. Your appointment is confirmed for ${formatDateTime(appointment.schedule).dateTime} with Mr. Sunil D. Bhor.`
+    : `We regret to inform you that your appointment for ${formatDateTime(appointment.schedule).dateTime} is cancelled. Reason: ${appointment.cancellationReason || 'No reason provided.'}`;
 
-    const body =
-      appointment.status === 'scheduled'
-        ? `Greetings from SBA. Your appointment is confirmed for ${formatDateTime(appointment.schedule).dateTime} with Mr. Sunil D. Bhor.`
-        : `We regret to inform you that your appointment for ${formatDateTime(appointment.schedule).dateTime} is cancelled. Reason: ${appointment.cancellationReason || 'No reason provided.'}.`;
+  const emailContent = FollowUpEmail({
+    name: appointment.client.name,
+    time: formatDateTime(appointment.schedule).dateTime,
+    message: appointment.cancellationReason || 'No message provided',
+    type: isScheduled ? 'success' : 'cancelled',
+  });
 
-    await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>', // Add the correct sender email address here
-      to: appointment.client.email, // Client's email
-      subject,
-      react: FollowUpEmail({
-        name: appointment.client.name,
-        time: formatDateTime(appointment.schedule).dateTime, // Ensure correct date formatting
-        message: appointment.cancellationReason || 'No reason provided',
-        type: appointment.status === 'scheduled' ? 'success' : 'cancelled',
-      }),
-    });
-
-    console.log('Follow-up email sent successfully');
-  } catch (error) {
-    console.error('Error occurred while sending follow-up email:', error);
-  }
+  await sendEmail({
+    to: appointment.client.email,
+    subject,
+    reactComponent: emailContent,
+  });
 };
 
-//  UPDATE APPOINTMENT
+// UPDATE APPOINTMENT
 export const updateAppointment = async ({
   appointmentId,
   userId,
@@ -167,7 +162,6 @@ export const updateAppointment = async ({
   type,
 }: UpdateAppointmentParams) => {
   try {
-    // Update appointment to scheduled -> https://appwrite.io/docs/references/cloud/server-nodejs/databases#updateDocument
     const updatedAppointment = await databases.updateDocument(
       DATABASE_ID!,
       APPOINTMENT_COLLECTION_ID!,
@@ -175,19 +169,15 @@ export const updateAppointment = async ({
       appointment
     );
 
-    if (!updatedAppointment) throw Error;
-    const client = await getClient(userId);
-    console.log('client', client);
-    // console.log('updatedAppointment', updatedAppointment);
+    if (!updatedAppointment) throw new Error('Appointment update failed');
 
-    // sendEmailNotification(client, appointment);
-    const smsMessage = `Greetings from SBA. ${type === 'schedule' ? `Your appointment is confirmed for ${formatDateTime(appointment.schedule!).dateTime} with Mr. Sunil D. Bhor` : `We regret to inform that your appointment for ${formatDateTime(appointment.schedule!).dateTime} is cancelled. Reason:  ${appointment.cancellationReason}`}.`;
-    // await sendSMSNotification(userId, smsMessage);
-    await sendFollowUpEmailNotification(updatedAppointment);
+    const client = await getClient(userId);
+    await Promise.all([sendFollowUpEmailNotification(updatedAppointment)]);
+
     revalidatePath('/admin');
     return parseStringify(updatedAppointment);
   } catch (error) {
-    console.error('An error occurred while scheduling an appointment:', error);
+    console.error('Error updating appointment:', error);
   }
 };
 
@@ -199,12 +189,8 @@ export const getAppointment = async (appointmentId: string) => {
       APPOINTMENT_COLLECTION_ID!,
       appointmentId
     );
-
     return parseStringify(appointment);
   } catch (error) {
-    console.error(
-      'An error occurred while retrieving the existing client:',
-      error
-    );
+    console.error('Error retrieving appointment:', error);
   }
 };

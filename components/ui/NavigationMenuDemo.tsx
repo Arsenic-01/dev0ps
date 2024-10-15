@@ -3,7 +3,6 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import services from '../../app/services/page';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -130,48 +129,29 @@ const serviceData = [
   },
   // Add more components here
 ];
-{
-  /* <NavigationMenuItem>
-<NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
-<NavigationMenuContent>
-  <ul className='grid gap-3 py-4 px-1 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]'>
-    <li className='row-span-4'>
-      <NavigationMenuLink asChild>
-        <a
-          className='flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md'
-          href='/'
-        >
-          <div className='mb-2 mt-4 text-lg font-medium'>
-            shadcn/ui
-          </div>
-          <p className='text-sm leading-tight text-muted-foreground'>
-            Beautifully designed components built with Radix UI and
-            Tailwind CSS.
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  </ul>
-</NavigationMenuContent>
-</NavigationMenuItem> */
-}
 
 function NavigationMenuContents() {
   return (
-    <NavigationMenu>
+    <NavigationMenu
+      role='navigation'
+      aria-label='Service and information links'
+    >
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+          <NavigationMenuTrigger aria-haspopup='true'>
+            Services
+          </NavigationMenuTrigger>
           <NavigationMenuContent className='left-0'>
-            <ul className='grid  gap-1 p-4 w-[500px] grid-cols-2 lg:w-[600px]'>
+            <ul
+              className='grid gap-1 p-4 w-[500px] grid-cols-2 lg:w-[600px]'
+              aria-label='Service list'
+            >
               {serviceData.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
                   href={component.href}
-                >
-                  {/* {component.description} */}
-                </ListItem>
+                />
               ))}
             </ul>
           </NavigationMenuContent>
@@ -222,11 +202,14 @@ const ListItem = React.forwardRef<
           className
         )}
         {...props}
+        aria-label={`View details for ${title}`}
       >
         <div className='text-sm font-medium leading-none'>{title}</div>
-        <p className='line-clamp-2 text-sm leading-snug text-muted-foreground'>
-          {children}
-        </p>
+        {children && (
+          <p className='line-clamp-2 text-sm leading-snug text-muted-foreground'>
+            {children}
+          </p>
+        )}
       </a>
     </NavigationMenuLink>
   </li>

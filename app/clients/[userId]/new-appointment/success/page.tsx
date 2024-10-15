@@ -16,7 +16,7 @@ const RequestSuccess = async ({
   const appointment = await getAppointment(appointmentId);
   Sentry.metrics.set('user_view_new-appointment_success', 'client');
   const user = await getLoggedInUser();
-  // if (!user) redirect('/login');
+  if (!user) redirect('/login');
 
   return (
     <div className='min-h-[100vh] flex flex-col items-center justify-center bg-black'>

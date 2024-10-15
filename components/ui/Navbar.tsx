@@ -51,93 +51,102 @@ export default function NavbarComponent() {
   }, [isLoggedIn, setIsLoggedIn]);
 
   return (
-    <Navbar
-      maxWidth='lg'
-      isBordered
-      onMenuOpenChange={setIsMenuOpen}
-      className='fixed custom-navbar'
-    >
-      <NavbarContent>
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className='sm:hidden'
-        />
-        <NavbarBrand>
-          <div
-            onClick={() => router.push('/')}
-            className='hover:cursor-pointer flex justify-center items-center'
-          >
-            <Image
-              src='/SBA_LOGO11-modified.webp'
-              width={30}
-              height={30}
-              priority
-              className='select-none pointer-events-none w-7 sm:w-[30px] mr-2 rounded-md ml-2 sm:ml-0'
-              alt='Navbar Company Logo'
-            />
-            <p className='font-bold text-xl sm:text-[22px] select-none '>SBA</p>
-          </div>
-        </NavbarBrand>
-      </NavbarContent>
-
-      {/* <NavbarContent className='hidden sm:flex gap-4' justify='center'>
-        {navItems.map((link, index) => (
-          <NavbarItem key={index}>
-          </NavbarItem>
-        ))}
-      </NavbarContent> */}
-      <NavbarContent className='hidden sm:flex gap-4' justify='center'>
-        <NavigationMenuContents />
-      </NavbarContent>
-
-      <NavbarContent justify='end'>
-        {user ? (
-          <NavbarItem>
-            <Button
-              color='primary'
-              variant='shadow'
-              radius='full'
-              onClick={async () => {
-                try {
-                  await deleteSessionClient();
-                  setIsLoggedIn(false);
-                  setUser(null);
-                  router.push('/login');
-                } catch (error) {
-                  console.error('Error during logout:', error);
-                }
-              }}
-              aria-label='Logout'
-              aria-description='Logout from the appointment booking app'
+    <header role='banner'>
+      <Navbar
+        maxWidth='lg'
+        isBordered
+        onMenuOpenChange={setIsMenuOpen}
+        className='fixed custom-navbar'
+      >
+        <NavbarContent>
+          <NavbarMenuToggle
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            className='sm:hidden'
+          />
+          <NavbarBrand>
+            <div
+              onClick={() => router.push('/')}
+              className='hover:cursor-pointer flex justify-center items-center'
+              role='link'
+              aria-label='Navigate to homepage'
             >
-              Logout
-            </Button>
-          </NavbarItem>
-        ) : (
-          <NavbarItem>
-            <Button
-              color='primary'
-              variant='shadow'
-              radius='full'
-              onClick={() => router.push('/login')}
-              aria-label='Login'
-              aria-description='Login to the appointment booking app'
-            >
-              Login
-            </Button>
-          </NavbarItem>
-        )}
-      </NavbarContent>
+              <Image
+                src='/SBA_LOGO11-modified.webp'
+                width={30}
+                height={30}
+                priority
+                className='select-none pointer-events-none w-7 sm:w-[30px] mr-2 rounded-md ml-2 sm:ml-0'
+                alt='Company logo: SBA'
+              />
+              <h1 className='font-bold text-xl sm:text-[22px] select-none'>
+                SBA
+              </h1>
+            </div>
+          </NavbarBrand>
+        </NavbarContent>
 
-      <NavbarMenu>
-        {navItems.map((link, index) => (
-          <NavbarMenuItem className='mt-5' key={index}>
-            <Link href={link.path} className='w-full text-4xl'>
-              {link.display}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
-    </Navbar>
+        <NavbarContent
+          className='hidden sm:flex gap-4'
+          justify='center'
+          role='navigation'
+          aria-label='Primary navigation'
+        >
+          <NavigationMenuContents />
+        </NavbarContent>
+
+        <NavbarContent justify='end'>
+          {user ? (
+            <NavbarItem>
+              <Button
+                color='primary'
+                variant='shadow'
+                radius='full'
+                onClick={async () => {
+                  try {
+                    await deleteSessionClient();
+                    setIsLoggedIn(false);
+                    setUser(null);
+                    router.push('/login');
+                  } catch (error) {
+                    console.error('Error during logout:', error);
+                  }
+                }}
+                aria-label='Logout'
+                aria-description='Log out of the application'
+              >
+                Logout
+              </Button>
+            </NavbarItem>
+          ) : (
+            <NavbarItem>
+              <Button
+                color='primary'
+                variant='shadow'
+                radius='full'
+                onClick={() => router.push('/login')}
+                aria-label='Login'
+                aria-description='Log in to the application'
+              >
+                Login
+              </Button>
+            </NavbarItem>
+          )}
+        </NavbarContent>
+
+        <NavbarMenu>
+          {navItems.map((link, index) => (
+            <NavbarMenuItem className='mt-5' key={index}>
+              <Link
+                href={link.path}
+                className='w-full text-4xl'
+                aria-label={`Navigate to ${link.display}`}
+              >
+                {link.display}
+              </Link>
+            </NavbarMenuItem>
+          ))}
+        </NavbarMenu>
+      </Navbar>
+    </header>
   );
 }

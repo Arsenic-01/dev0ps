@@ -81,7 +81,7 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
   return (
     <section className='mb-10 mt-4 sm:mt-0'>
       <div className='flex flex-col gap-6'>
-        <h2 className='font-extralight z-50 text-base sm:text-lg text-center mb-5 text-white'>
+        <h2 className='font-normal z-50 text-base text-center mb-5 text-white'>
           Trusted partners by Industrial Leaders.
         </h2>
 

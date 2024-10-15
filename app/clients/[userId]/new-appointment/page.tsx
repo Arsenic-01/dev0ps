@@ -23,7 +23,7 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
   if (typeof window !== 'undefined') {
     window.location.reload();
   }
-  // if (!user) redirect('/login');
+  if (!user) redirect('/login');
 
   return (
     <div className='flex h-screen bg-black sm:max-h-screen'>
