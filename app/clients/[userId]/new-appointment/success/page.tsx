@@ -41,7 +41,8 @@ const RequestSuccess = async ({
               has been successfully submitted!
             </h2>
             <p className='text-center'>
-              We&apos;ll be in touch shortly to confirm (via email)
+              We&apos;ll be in touch shortly to confirm{' '}
+              <br className='md:hidden' /> (via email)
             </p>
           </section>
           <section className='request-details'>

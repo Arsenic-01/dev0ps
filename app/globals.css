@@ -248,6 +248,17 @@
   .sub-header {
     @apply text-18-bold md:text-24-bold;
   }
+  .container1 {
+    @apply relative flex flex-1 justify-center items-center  h-screen; /* Ensure it's full screen */
+  }
+
+  .sub-container1 {
+    @apply flex flex-col size-full py-10;
+  }
+
+  .side-img1 {
+    @apply hidden h-full object-cover md:block; /* Adjust image */
+  }
 
   .container {
     @apply relative flex-1 overflow-y-auto px-[5%];

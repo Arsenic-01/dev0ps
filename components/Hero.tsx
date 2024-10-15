@@ -7,10 +7,11 @@ import { Star, StarHalf } from 'lucide-react';
 import { AnimatedTooltipPreview } from './ui/Tooltip';
 import { Button } from '@nextui-org/react';
 import WordRotateEffect from './ui/wordRotate';
-import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const Hero = () => {
+  const router = useRouter();
   return (
     <div className='pb-20 mt-9 sm:pt-14 2xl:pt-[110px] md:pt-20 lg:pt-32 xl:pt-[13vh] xl:mt-[5vh] xl:px-16'>
       {/* UI: Spotlights */}
@@ -39,14 +40,13 @@ const Hero = () => {
           </span>
 
           {/* <TextGenerateEffect
-            words='SBA offers expert consultancy in architecture, structural design, project management, and property valuation nationwide.'
+            words=''
           /> */}
 
           <div className='mt-7 sm:mt-12 text-pretty text-[#BDBDBD] block leading-relaxed sm:hidden sm:text-left text-center text-base'>
             SBA offers expert consultancy in architecture, structural design,
             project management, and property valuation nationwide.
           </div>
-
           <div className='mt-4 text-pretty hidden font-light sm:block leading-loose md:text-base text-neutral-300 lg:max-w-[50vw]'>
             SBA is a distinguished consultancy firm with over 25 years of
             experience providing an array of services encompassing architectural
@@ -62,6 +62,7 @@ const Hero = () => {
               radius='full'
               className='w-32 relative overflow-visible'
               aria-description='Get Started Button'
+              onClick={() => router.push('/register')}
             >
               <span className='absolute top-0 right-0'>
                 <span className='relative flex h-3 w-3'>
@@ -69,7 +70,7 @@ const Hero = () => {
                   <span className='relative inline-flex rounded-full h-3 w-3 bg-[#0B879C]/90'></span>
                 </span>
               </span>
-              <Link href={'/register'}>Get Started</Link>
+              Get Started{' '}
             </Button>
 
             <div className='flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center gap-5'>

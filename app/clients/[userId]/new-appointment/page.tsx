@@ -26,25 +26,24 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
     redirect('/login');
   }
   return (
-    <div className='flex h-screen bg-black sm:max-h-screen'>
-      <section className='remove-scrollbar container sm:mt-20 my-auto'>
-        <div className='sub-container max-w-[860px] flex-1 py-5 sm:py-10 justify-between'>
-          <BreadcrumbWithCustomSeparator />
-          <AppointmentForm
-            clientId={client?.$id}
-            userId={userId}
-            type='create'
-          />
-        </div>
-      </section>
+    // <div className='flex h-screen bg-black sm:max-h-screen'>
+    //   <section className='remove-scrollbar container sm:mt-20 my-auto'>
 
-      <Image
-        src='/assets/images/appointment-img.png'
-        height={1500}
-        width={1500}
-        alt='appointment'
-        className='side-img max-w-[390px] bg-bottom'
-      />
+    //   </section>
+
+    //   <Image
+    //     src='/assets/images/appointment-img.png'
+    //     height={1500}
+    //     width={1500}
+    //     alt='appointment'
+    //     className='side-img max-w-[200px] lg:max-w-[390px] bg-bottom'
+    //   />
+    // </div>
+    <div className='flex h-screen items-center justify-center'>
+      <div className='max-w-5xl py-5 sm:py-10 w-full px-5'>
+        <BreadcrumbWithCustomSeparator />
+        <AppointmentForm clientId={client?.$id} userId={userId} type='create' />
+      </div>
     </div>
   );
 };
