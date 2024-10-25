@@ -1,8 +1,7 @@
 'use client';
 
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Spotlight } from './ui/Spotlight';
-import { TextGenerateEffect } from './ui/TextGenerateEffect';
 import { Star, StarHalf } from 'lucide-react';
 import { AnimatedTooltipPreview } from './ui/Tooltip';
 import { Button } from '@nextui-org/react';
@@ -12,8 +11,9 @@ import { useRouter } from 'next/navigation';
 
 const Hero = () => {
   const router = useRouter();
+
   return (
-    <div className='pb-20 mt-9 sm:pt-14 2xl:pt-[110px] md:pt-20 lg:pt-32 xl:pt-[13vh] xl:mt-[5vh] xl:px-16'>
+    <div className='pb-20 mt-9 sm:pt-14 2xl:pt-[110px] md:pt-20 lg:pt-32 xl:pt-[13vh] xl:mt-[5vh] xl:px-16 h-[97svh] sm:h-auto max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center'>
       {/* UI: Spotlights */}
       <div>
         <Spotlight
@@ -27,7 +27,7 @@ const Hero = () => {
         <div className='absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]'></div>
       </div>
 
-      <div className='flex max-w-[80vw] mt-12 sm:mt-0 justify-between items-center relative lg:mb-5 z-10'>
+      <div className='flex max-w-[80vw] mt-12 sm:mt-0 justify-center sm:justify-between items-center relative lg:mb-5 z-10'>
         <div className='lg:text-left max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center sm:items-start justify-center'>
           <span className='mt-2 sm:mt-5 text-5xl lg:text-6xl sm:leading-tight'>
             <div className='font-normal my-1'>
@@ -40,13 +40,14 @@ const Hero = () => {
           </span>
 
           {/* <TextGenerateEffect
-            words=''
+            words='SBA offers expert consultancy in architecture, structural design, project management, and property valuation nationwide.'
           /> */}
 
           <div className='mt-7 sm:mt-12 text-pretty text-[#BDBDBD] block leading-relaxed sm:hidden sm:text-left text-center text-base'>
             SBA offers expert consultancy in architecture, structural design,
             project management, and property valuation nationwide.
           </div>
+
           <div className='mt-4 text-pretty hidden font-light sm:block leading-loose md:text-base text-neutral-300 lg:max-w-[50vw]'>
             SBA is a distinguished consultancy firm with over 25 years of
             experience providing an array of services encompassing architectural
@@ -70,7 +71,7 @@ const Hero = () => {
                   <span className='relative inline-flex rounded-full h-3 w-3 bg-[#0B879C]/90'></span>
                 </span>
               </span>
-              Get Started{' '}
+              Get Started
             </Button>
 
             <div className='flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center gap-5'>
