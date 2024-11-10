@@ -9,26 +9,34 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from '@/components/ui/dialog';
 import { Button } from '@nextui-org/button';
 import ModalContent from '../ModalDescription';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/Tooltip';
 
-const ServicesExpanded = ({ Modaltitle, ModalDescription, id, service }) => {
+interface ServicesExpandedProps {
+  Modaltitle: string | undefined;
+  ModalDescription: string | undefined;
+  id: number | undefined;
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const ServicesExpanded: React.FC<ServicesExpandedProps> = ({
+  Modaltitle,
+  ModalDescription,
+  id,
+  isOpen,
+  onClose,
+}) => {
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button
-          color='primary'
-          size='sm'
-          variant='faded'
-          radius='full'
-          className='w-full'
-        >
-          View Details
-        </Button>
-      </DialogTrigger>
-      <DialogContent className='max-w-7xl overflow-y-scroll remove-scrollbar max-h-[80vh] scrollbar-hide'>
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className='max-w-7xl max-h-[80vh] scrollbar-hide'>
         <DialogHeader className='mt-5'>
           <DialogTitle className='font-bold text-3xl text-center lg:text-4xl xl:text-5xl'>
             {Modaltitle}
@@ -40,68 +48,93 @@ const ServicesExpanded = ({ Modaltitle, ModalDescription, id, service }) => {
         <ModalContent id={id} />
         <DialogFooter>
           <div className='flex flex-col sm:flex-row gap-4 sm:justify-end '>
-            <Button
-              color='secondary'
-              variant='shadow'
-              radius='lg'
-              className='w-full'
-              onClick={() => {
-                window.open(
-                  'https://www.google.com/maps/place/Sunil+Bhor+and+Associates/@20.0096498,73.7639052,17z/data=!3m1!4b1!4m6!3m5!1s0x3bddea4d3d397d1f:0x69841f86cbb89521!8m2!3d20.0096448!4d73.7664801!16s%2Fg%2F11b7dyj_dn?entry=ttu&g_ep=EgoyMDI0MTAwOS4wIKXMDSoASAFQAw%3D%3D',
-                  '_blank',
-                  'noopener,noreferrer'
-                );
-              }}
-            >
-              Visit us 🏢
-            </Button>
-            <Button
-              color='secondary'
-              variant='shadow'
-              radius='lg'
-              className='w-full'
-              onClick={() => {
-                window.open(
-                  'tel:+917972418920',
-                  '_blank',
-                  'noopener,noreferrer'
-                );
-              }}
-            >
-              Call us 📞
-            </Button>
-            <Button
-              color='secondary'
-              variant='shadow'
-              radius='lg'
-              className='w-full'
-              onClick={() => {
-                window.open(
-                  'https://wa.me/+919822377366',
-                  '_blank',
-                  'noopener,noreferrer'
-                );
-              }}
-            >
-              Whatsapp 📩
-            </Button>
-            <Button
-              color='secondary'
-              variant='shadow'
-              radius='lg'
-              className='w-full'
-              onClick={() => {
-                window.open(
-                  'mailto:sba.nashik@gmail.com?subject=Hey%20there!&body=I%20am%20_____%20and%20I%20want%20to%20Contact%20you%20for%20______',
-                  '_blank',
-                  'noopener,noreferrer'
-                );
-              }}
-            >
-              Email 📧
-            </Button>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Button
+                    color='secondary'
+                    variant='shadow'
+                    radius='lg'
+                    className='w-full'
+                    onClick={() =>
+                      window.open('https://www.google.com/maps', '_blank')
+                    }
+                  >
+                    Visit us 🏢
+                  </Button>{' '}
+                </TooltipTrigger>
+                <TooltipContent>
+                  Office Timing : 10:00 AM - 08:00 PM
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  {' '}
+                  <Button
+                    color='secondary'
+                    variant='shadow'
+                    radius='lg'
+                    className='w-full'
+                    onClick={() => window.open('tel:+917972418920', '_blank')}
+                  >
+                    Call us 📞
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p className='text-center text-green-400'>
+                    95% Response Rate ✅
+                  </p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  {' '}
+                  <Button
+                    color='secondary'
+                    variant='shadow'
+                    radius='lg'
+                    className='w-full'
+                    onClick={() =>
+                      window.open('https://wa.me/+919822377366', '_blank')
+                    }
+                  >
+                    Whatsapp 📩
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>+919822377366</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  {' '}
+                  <Button
+                    color='secondary'
+                    variant='shadow'
+                    radius='lg'
+                    className='w-full'
+                    onClick={() =>
+                      window.open('mailto:sba.nashik@gmail.com', '_blank')
+                    }
+                  >
+                    Email 📧
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>sba.nashik@gmail.com</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
             <DialogClose asChild>
-              <Button radius='lg' size='md' variant='ghost' type='submit'>
+              <Button radius='lg' size='md' variant='ghost'>
                 Close
               </Button>
             </DialogClose>

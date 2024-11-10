@@ -7,11 +7,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
-import { Check, Star, StarHalf } from 'lucide-react';
 import Autoplay from 'embla-carousel-autoplay';
-import BlurFade from './magicui/blur-fade';
+import { Check, Star, StarHalf } from 'lucide-react';
 
-export function Testimonials() {
+export default function Testimonials() {
   const TestimonialData = [
     {
       id: 1,
@@ -67,7 +66,7 @@ export function Testimonials() {
   ];
 
   return (
-    <section className='mt-32 lg:p-16 h-full'>
+    <section className='mt-12 lg:p-16 h-full'>
       <h1 className='bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-5xl lg:text-6xl  font-medium tracking-tight text-transparent'>
         Kind Words from Satisfied Clients
       </h1>
@@ -90,7 +89,7 @@ export function Testimonials() {
             >
               <div className='p-1'>
                 <Card>
-                  <CardContent className='bg-black flex aspect-square rounded-lg items-center justify-center p-6'>
+                  <CardContent className='bg-black flex  md:aspect-square rounded-lg items-center justify-center p-6'>
                     <div className='flex flex-auto flex-col gap-4 '>
                       <div className='flex gap-0.5 mb-2'>
                         {Array.from({ length: item.rating }).map((_, index) => (

@@ -19,14 +19,14 @@ export default function EnquireExpanded() {
         <Button
           color='primary'
           size='sm'
-          variant='shadow'
+          variant='flat'
           radius='full'
-          className='w-full'
+          className='w-28'
         >
-          Enquire Now
+          Enquire
         </Button>
       </DialogTrigger>
-      <DialogContent className='max-w-xs overflow-y-scroll remove-scrollbar max-h-[80vh] scrollbar-hide'>
+      <DialogContent className='max-w-full overflow-y-scroll remove-scrollbar scrollbar-hide'>
         <DialogHeader className='mt-10'>
           <DialogTitle className='font-bold text-3xl text-center lg:text-4xl xl:text-5xl'>
             Enquire Now

@@ -98,18 +98,18 @@ const ContactPage = () => {
   return (
     <div className='min-h-screen bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto'>
       <div className='mt-16 sm:mt-24 md:px-8'>
-        <h1 className='hidden sm:block sm:text-5xl lg:text-6xl text-center md:text-left px-8'>
+        <h1 className='hidden sm:block sm:text-5xl lg:text-[56px] text-center md:text-left px-8'>
           Let's Work Together
           <span className='text-[#EF4444] text-6xl lg:text-8xl'>.</span>
         </h1>
-        <h1 className='text-4xl sm:hidden mt-8 text-center md:text-left px-8'>
+        <h1 className='text-4xl font-medium sm:hidden mt-8 text-center md:text-left px-8'>
           Get in Touch
           <span className='text-[#EF4444] text-6xl lg:text-8xl'>.</span>
         </h1>
 
         <div className='max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-10 sm:px-4 py-5'>
           {/* Contact Form */}
-          <div className='px-5 sm:px-4 py-2'>
+          <div className='px-5 sm:px-4 sm:py-2 pb-2'>
             <form className='mt-12' onSubmit={handleSubmit}>
               <div className='mt-4 relative'>
                 <Input
@@ -165,10 +165,11 @@ const ContactPage = () => {
                   name='message'
                   label='Message'
                   value={formData.message}
+                  placeholder='What Are You Looking For, Features / Specifications, Application / Usage, Minimum Order Quantity, etc'
                   onChange={handleChange}
                   aria-label='Your message'
                   isInvalid={errors.message !== ''}
-                  minRows={6}
+                  minRows={10}
                 />
                 {errors.message && (
                   <div className='text-red-500 text-sm'>{errors.message}</div>
@@ -190,18 +191,23 @@ const ContactPage = () => {
 
           {/* Contact Details */}
           <div className='px-5 sm:px-4 py-3 md:mt-5'>
-            <div className='py-4 mb-7'>
-              <h2 className='text-3xl text-center sm:text-left font-medium'>
+            <div className='py-4 mb-7 bg-neutral-900 px-4 rounded-xl'>
+              <h2 className='text-2xl sm:text-3xl text-center sm:text-left font-medium'>
                 Contact Details
               </h2>
-              <div className='flex flex-col gap-6 mt-6'>
-                <p className='text-slate-300 inline-flex gap-4 items-center'>
-                  <FaLocationDot className='w-6 h-6' />
-                  Regd. Office: 8, First Floor, Rambaug Society, Vidya Vikas
-                  Circle, Gangapur Road, Nashik-422013
-                </p>
+              <div className='flex flex-col gap-6 mt-8 sm:mt-6'>
+                <div className='text-slate-300 inline-flex gap-7 items-center'>
+                  <FaLocationDot className='sm:w-6 sm:h-6 h-10 w-10' />
+                  <p className='text-pretty tracking-tight	'>
+                    Regd. Office: 8, First Floor, Rambaug Society, Vidya Vikas
+                    Circle, Gangapur Road, Nashik-422013
+                  </p>
+                </div>
                 <a
                   href='mailto:sba.nashik@gmail.com'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label='sba.nashik@gmail.com'
                   className='text-slate-300 inline-flex gap-5 items-center'
                 >
                   <FaEnvelope className='w-5 h-5' /> sba.nashik@gmail.com
@@ -211,12 +217,16 @@ const ContactPage = () => {
                   <a
                     className='inline-flex gap-5 items-center'
                     href='tel:+919822377366'
+                    target='_blank'
+                    rel='noopener noreferrer'
                   >
                     <FaPhone className='w-5 h-5' /> +91 98223 77366
                   </a>
                   <a
                     className='inline-flex gap-5 items-center'
                     href='tel:+917972418920'
+                    target='_blank'
+                    rel='noopener noreferrer'
                   >
                     <FaPhone className='w-5 h-5' /> +91 79724 18920
                   </a>

@@ -17,6 +17,7 @@ const GridGlobe = dynamic(() => import('./GridGlobe'), { ssr: false });
 const playfair = Playfair_Display({ subsets: ['latin'] });
 import animationData from '@/data/confetti.json';
 import Lottie from 'lottie-react'; // Import Lottie
+import { CardSpotlight } from './card-spotlight';
 
 // BentoGrid component
 export const BentoGrid = ({
@@ -101,6 +102,7 @@ export const BentoGridItem = ({
         {img && (
           <div className='w-full h-full absolute'>
             <img
+              loading='lazy'
               src={img}
               alt={img}
               className={cn(imgClassName, 'object-cover object-center')}
@@ -115,8 +117,8 @@ export const BentoGridItem = ({
         <div
           className={cn(
             titleClassName,
-            'group-hover/bento:translate-x-1 transition duration-200 relative md:h-full min-h-40 flex flex-col',
-            id === 3 ? 'p-3' : 'px-5 p-5 lg:p-10'
+            `${id === 4 ? '' : id === 5 ? '' : 'group-hover/bento:translate-x-1'} transition duration-200 relative md:h-full min-h-40 flex flex-col`,
+            id === 3 ? 'p-3' : id === 4 ? 'p-0' : 'px-5 p-5 lg:p-10'
           )}
         >
           <div
@@ -124,6 +126,7 @@ export const BentoGridItem = ({
           >
             {spareImg && (
               <img
+                loading='lazy'
                 src={spareImg}
                 alt={spareImg}
                 className='object-cover object-center w-full h-full'
@@ -147,7 +150,7 @@ export const BentoGridItem = ({
 
           {id === 5 && (
             <>
-              <div className='flex flex-col gap-1 space-y-2 my-2.5 sm:p-3 p-2'>
+              <div className='flex flex-col gap-1 space-y-2 my-2.5 sm:py-3 py-2'>
                 <ul className='list-none space-y-3'>
                   {intern.map((item, i) => (
                     <li
@@ -199,26 +202,28 @@ export const BentoGridItem = ({
 
           {id === 4 && (
             <>
-              <div className='relative'>
-                <div
-                  className={`font-sans text-lg lg:text-3xl font-bold z-10 `}
-                >
-                  <span className='text-red-400'>25 Years</span> of Experience
-                  <br />
-                  Providing Exceptional Value Since{' '}
-                  <span className='text-red-400'>1999</span>
-                  <br />
+              <CardSpotlight className='rounded-xl md:rounded-3xl '>
+                <div className='relative'>
+                  <div
+                    className={`font-sans text-lg lg:text-3xl font-bold z-10 `}
+                  >
+                    <span className='text-red-400'>25 Years</span> of Experience
+                    <br />
+                    Providing Exceptional Value Since{' '}
+                    <span className='text-red-400'>1999</span>
+                    <br />
+                  </div>
+                  <MagicButton
+                    handleClick={handlerAbout}
+                    title='About Us'
+                    icon={<FaLocationArrow />}
+                    position='right'
+                    width={true}
+                    className='mt-7'
+                    otherClasses='bg-black'
+                  />
                 </div>
-                <MagicButton
-                  handleClick={handlerAbout}
-                  title='About Us'
-                  icon={<FaLocationArrow />}
-                  position='right'
-                  width={true}
-                  className='mt-7'
-                  otherClasses='bg-black'
-                />
-              </div>
+              </CardSpotlight>
             </>
           )}
 

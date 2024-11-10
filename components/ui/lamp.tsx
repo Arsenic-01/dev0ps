@@ -25,6 +25,7 @@ export function LampDemo() {
     </section>
   );
 }
+export default LampDemo;
 
 export const LampContainer = ({
   children,

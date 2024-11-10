@@ -7,6 +7,12 @@ import {
   PrevButton,
   usePrevNextButtons,
 } from './EmblaCarouselArrowButtons';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/Tooltip';
 
 type PropType = {
   slides: number[];
@@ -14,18 +20,19 @@ type PropType = {
 };
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ServiceCards } from '@/data';
+import Image from 'next/image';
 
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
   },
 });
+
 const EmblaCarousel: React.FC<PropType> = (props) => {
   const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
@@ -59,31 +66,32 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className='embla__container'>
           {ServiceCards.map((el) => (
             <div className='embla__slide' key={el.id}>
-              <div className='embla__slide__number'>
-                <ThemeProvider theme={darkTheme}>
-                  <CssBaseline />
-                  <Card sx={{ maxWidth: 350 }}>
-                    <CardActionArea>
-                      <CardMedia
-                        component='img'
-                        width='200'
-                        height='100'
-                        image={el.imgSrc}
-                        loading='lazy'
+              <ThemeProvider theme={darkTheme}>
+                <CssBaseline />
+                <Card sx={{ maxWidth: 350 }}>
+                  <CardActionArea>
+                    <div className='w-full h-48 relative overflow-hidden rounded-md'>
+                      <Image
+                        src={el.imgSrc}
                         alt='services images'
+                        className='w-full h-full absolute rounded-md object-cover select-none pointer-events-none'
+                        width={1000}
+                        height={600}
+                        loading='lazy'
                       />
-                      <CardContent>
-                        <Typography gutterBottom variant='h5' component='div'>
-                          {el.title}
-                        </Typography>
-                        <Typography variant='body2' color='text.secondary'>
-                          {el.description}
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                  </Card>
-                </ThemeProvider>{' '}
-              </div>
+                    </div>
+
+                    <CardContent>
+                      <Typography gutterBottom variant='h5' component='div'>
+                        {el.title}
+                      </Typography>
+                      <Typography variant='body2' color='text.secondary'>
+                        {el.description}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </ThemeProvider>
             </div>
           ))}
         </div>
@@ -91,8 +99,36 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
       <div className='embla__controls'>
         <div className='embla__buttons'>
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div>
+                  <PrevButton
+                    onClick={onPrevButtonClick}
+                    disabled={prevBtnDisabled}
+                  />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Previous</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div>
+                  <NextButton
+                    onClick={onNextButtonClick}
+                    disabled={nextBtnDisabled}
+                  />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Next</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
 
         <div className='embla__progress'>

@@ -57,6 +57,7 @@ export default function NavbarComponent() {
         isBordered
         onMenuOpenChange={setIsMenuOpen}
         className='fixed custom-navbar'
+        disableAnimation={true}
       >
         <NavbarContent>
           <NavbarMenuToggle

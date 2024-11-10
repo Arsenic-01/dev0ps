@@ -1,10 +1,10 @@
-import { FaLocationArrow } from 'react-icons/fa6';
-import MagicButton from './MagicButton';
-import { BackgroundBeams } from './ui/background-beams';
-import BlurFade from './magicui/blur-fade';
 import ShinyButton from './ui/ShinyButton';
-import { TransitionLink } from './utils/TransitionLink';
-import Link from 'next/link';
+import MagicButtonCTA from './utils/Misc';
+import dynamic from 'next/dynamic';
+const BackgroundBeams = dynamic(
+  () => import('@/components/ui/background-beams'),
+  { ssr: false }
+);
 
 const year = new Date().getFullYear();
 
@@ -23,7 +23,6 @@ const CallToAction = () => {
             className='w-full h-full user-select-none  '
           />
         </div>
-
         <div className='flex flex-col items-center z-30'>
           <h1 className='font-semibold text-center text-pretty text-4xl sm:text-5xl lg:text-6xl w-full lg:max-w-[45vw]'>
             Ready to take <span className='text-red-400'>your</span> ideas to
@@ -33,18 +32,12 @@ const CallToAction = () => {
             Reach out to us today and let&apos;s discuss how we can help you
             achieve your goals.
           </p>
-          <Link href='/contact'>
-            <MagicButton
-              className='mt-2 sm:mt-5 z-50 md:hidden'
-              title="Let's talk"
-              icon={<FaLocationArrow />}
-              position='right'
-              otherClasses='bg-black'
-            />
-          </Link>
+          <MagicButtonCTA />
           <ShinyButton />
         </div>
-        <BackgroundBeams />
+        <div className='hidden md:block'>
+          <BackgroundBeams />
+        </div>{' '}
       </div>
     </div>
   );

@@ -1,15 +1,13 @@
-import React from 'react';
+import { linkdata } from '@/data';
+import Image from 'next/image';
+import Link from 'next/link';
 import {
+  FaFacebook,
   FaInstagram,
   FaLinkedin,
   FaWhatsapp,
-  FaFacebook,
   FaXTwitter,
 } from 'react-icons/fa6';
-import BlurFade from './magicui/blur-fade';
-import Image from 'next/image';
-import { linkdata } from '@/data';
-import Link from 'next/link';
 
 const FooterExp = () => {
   const currentYear = new Date().getFullYear();
@@ -42,66 +40,64 @@ const FooterExp = () => {
 
   return (
     <footer className='w-full dark:bg-black'>
-      <BlurFade delay={0.1} inView>
-        <div className='px-5 pt-16 pb-7 sm:px-6 lg:px-8'>
-          {/* Logo Section */}
-          <div className='flex justify-center text-teal-600 dark:text-teal-300'>
-            <Link href='/'>
-              <Image
-                src='/nav_red3.png'
-                width={48}
-                height={72}
-                className='w-12 h-auto select-none pointer-events-none'
-                alt='company logo'
-              />
-            </Link>
-          </div>
-
-          {/* Tagline */}
-          <p className='mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 dark:text-gray-400'>
-            Innovate. Value. Design.
-          </p>
-
-          {/* Navigation Links */}
-          <ul className='mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12'>
-            {linkdata.map((item) => (
-              <li key={item.id} className={iconClass}>
-                {item.next ? (
-                  <Link className={iconClass} href={item.link}>
-                    {item.title}
-                  </Link>
-                ) : (
-                  <a className={iconClass} href={item.link}>
-                    {item.title}
-                  </a>
-                )}
-              </li>
-            ))}
-          </ul>
-
-          {/* Social Icons */}
-          <ul className='mt-12 flex justify-center items-center gap-6 md:gap-8'>
-            {socialLinks.map(({ href, icon: Icon, label }) => (
-              <li key={label}>
-                <a
-                  href={href}
-                  rel='noreferrer'
-                  target='_blank'
-                  className={iconClass}
-                >
-                  <span className='sr-only'>{label}</span>
-                  <Icon className='w-5 h-5 select-none pointer-events-none' />
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          {/* Copyright */}
-          <p className='text-sm text-neutral-400 mt-12 text-center mx-auto'>
-            &copy; {currentYear} Sunil Bhor & Associates. All rights reserved.
-          </p>
+      <div className='px-5 pt-16 pb-7 sm:px-6 lg:px-8'>
+        {/* Logo Section */}
+        <div className='flex justify-center text-teal-600 dark:text-teal-300'>
+          <Link href='/'>
+            <Image
+              src='/nav_red3.png'
+              width={48}
+              height={72}
+              className='w-12 h-auto select-none pointer-events-none'
+              alt='company logo'
+            />
+          </Link>
         </div>
-      </BlurFade>
+
+        {/* Tagline */}
+        <p className='mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 dark:text-gray-400'>
+          Innovate. Value. Design.
+        </p>
+
+        {/* Navigation Links */}
+        <ul className='mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12'>
+          {linkdata.map((item) => (
+            <li key={item.id} className={iconClass}>
+              {item.next ? (
+                <Link className={iconClass} href={item.link}>
+                  {item.title}
+                </Link>
+              ) : (
+                <a className={iconClass} href={item.link}>
+                  {item.title}
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        {/* Social Icons */}
+        <ul className='mt-12 flex justify-center items-center gap-6 md:gap-8'>
+          {socialLinks.map(({ href, icon: Icon, label }) => (
+            <li key={label}>
+              <a
+                href={href}
+                rel='noreferrer'
+                target='_blank'
+                className={iconClass}
+              >
+                <span className='sr-only'>{label}</span>
+                <Icon className='w-5 h-5 select-none pointer-events-none' />
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* Copyright */}
+        <p className='text-sm text-neutral-400 mt-12 text-center mx-auto'>
+          &copy; {currentYear} Sunil Bhor & Associates. All rights reserved.
+        </p>
+      </div>
     </footer>
   );
 };

@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
@@ -116,6 +115,7 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
                       width={200}
                       height={100} // Fixed height and width to prevent layout shift
                       priority={true} // Ensure images load quickly
+                      loading='eager'
                     />
                   </div>
                 </li>
@@ -127,3 +127,5 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
     </section>
   );
 };
+
+export default InfiniteMovingCards;

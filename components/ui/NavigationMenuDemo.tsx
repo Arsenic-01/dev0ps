@@ -13,6 +13,7 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 
+import { useRouter } from 'next/navigation';
 const aboutData = [
   {
     title: '🌐 About Company',
@@ -30,107 +31,130 @@ const aboutData = [
 
 const serviceData = [
   {
+    id: 1,
     title: 'Architectural Planning',
-    href: '/services/architectural-planning',
+    href: '/services#architectural-planning',
     description:
       'Plant and architectural planning involves designing facilities and structures to optimize efficiency, safety, and aesthetics in industrial or urban environments.',
   },
   {
+    id: 2,
     title: 'Structural Designing',
-    href: '/services/structural-designing',
+    href: '/services#structural-designing',
     description:
       'Plant and Structural Designing involves creating safe, efficient layouts and frameworks for industrial facilities, ensuring stability and functionality.',
   },
   {
+    id: 3,
     title: 'Town Planning Approvals',
-    href: '/services/town-planning-approvals',
+    href: '/services#town-planning-approvals',
     description:
       'Town Planning Approvals involve reviewing and authorizing construction or land use to ensure compliance with zoning and regulations.',
   },
   {
+    id: 4,
     title: 'Valuation Consultancy',
-    href: '/services/valuation-consultancy',
+    href: '/services#valuation-consultancy',
     description:
       'Valuation Consultancy assesses the value of assets, businesses, or properties, providing expert advice for investment, sale, or legal purposes.',
   },
   {
+    id: 5,
     title: 'Tender and specs drawing',
-    href: '/services/tender-and-specs-drawing',
+    href: '/services#tender-and-specs-drawing',
     description:
       'A tender drawing details project requirements for bidding, while specs drawings outline technical and material specifics for construction.',
   },
   {
+    id: 6,
     title: 'Lender’s independent engineers',
-    href: '/services/lender-independent-engineers',
+    href: '/services#lender-independent-engineers',
     description:
       'Lender’s independent engineers assess project feasibility, technical risks, and compliance to ensure loan security and project success.',
   },
 
   {
+    id: 7,
     title: 'Real Estate Advisory',
-    href: '/services/real-estate-advisory',
+    href: '/services#real-estate-advisory',
     description:
       'Real Estate Advisory provides expert guidance on property investments, development, market analysis, and strategy to maximize clients’ returns.',
   },
   {
+    id: 8,
     title: 'Plant and Machinery Valuation',
-    href: '/services/plant-and-machinery-valuation',
+    href: '/services#plant-and-machinery-valuation',
     description:
       'Plant and Machinery Valuation determines the market or replacement value of industrial equipment for financial, insurance, or sale purposes.',
   },
   {
+    id: 9,
     title: 'Black Money Valuation',
-    href: '/services/black-money-valuation',
+    href: '/services#black-money-valuation',
     description:
       'Black money valuation assesses hidden or unreported assets’ worth, often using forensic accounting to uncover illicit financial activity.',
   },
 
   {
+    id: 10,
     title: 'NDT Testing & Stability Certification',
-    href: '/services/quality-control-and-nda-testing',
+    href: '/services#quality-control-and-nda-testing',
     description:
       'Quality Control and NDA Testing assesses the project’s quality, compliance with regulatory requirements, and compliance with NDA agreements.',
   },
   {
+    id: 11,
     title: 'Surverying & Monitoring',
-    href: '/services/quality-control-and-nda-testing',
+    href: '/services#quality-control-and-nda-testing',
     description:
       'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
   },
   {
+    id: 12,
     title: 'Chartered Engineer Certifications',
-    href: '/services/quality-control-and-nda-testing',
+    href: '/services#quality-control-and-nda-testing',
     description:
       'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
   },
   {
+    id: 13,
     title: 'Industrial Safety Audits',
-    href: '/services/quality-control-and-nda-testing',
+    href: '/services#quality-control-and-nda-testing',
     description:
       'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
   },
   {
+    id: 14,
     title: 'NA Conversion of Lands',
-    href: '/services/quality-control-and-nda-testing',
+    href: '/services#quality-control-and-nda-testing',
     description:
       'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
   },
   {
+    id: 15,
     title: 'Factory Act Certification',
-    href: '/services/quality-control-and-nda-testing',
+    href: '/services#quality-control-and-nda-testing',
     description:
       'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
   },
   {
+    id: 16,
     title: 'IPO Certification',
-    href: '/services/quality-control-and-nda-testing',
+    href: '/services#quality-control-and-nda-testing',
     description:
       'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
   },
   // Add more components here
 ];
 
-function NavigationMenuContents() {
+const NavigationMenuContents = () => {
+  const router = useRouter();
+
+  const handleLinkClick = (id: number) => {
+    // Redirect to /services with service ID as query parameter
+    router.push(`/services?serviceId=${id}`);
+  };
+
   return (
     <NavigationMenu
       role='navigation'
@@ -146,16 +170,19 @@ function NavigationMenuContents() {
               className='grid gap-1 p-4 w-[500px] grid-cols-2 lg:w-[600px]'
               aria-label='Service list'
             >
-              {serviceData.map((component) => (
+              {serviceData.map((service) => (
                 <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
+                  key={service.id}
+                  title={service.title}
+                  // description={service.description}
+                  className='hover:cursor-pointer'
+                  onClick={() => handleLinkClick(service.id)}
                 />
               ))}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
           <Link href='/projects' legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -163,20 +190,15 @@ function NavigationMenuContents() {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
-          <NavigationMenuTrigger>About</NavigationMenuTrigger>
-          <NavigationMenuContent className='right-0'>
-            <ul className='grid w-[300px] gap-1 p-4 grid-cols-1 '>
-              {aboutData.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                ></ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
+          <Link href='/about' legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              About
+            </NavigationMenuLink>
+          </Link>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
           <Link href='/contact' legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -187,27 +209,31 @@ function NavigationMenuContents() {
       </NavigationMenuList>
     </NavigationMenu>
   );
-}
+};
+
+export default NavigationMenuContents;
 
 const ListItem = React.forwardRef<
   React.ElementRef<'a'>,
-  React.ComponentPropsWithoutRef<'a'>
->(({ className, title, children, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<'a'> & {
+    title: string;
+    description?: string;
+    onClick: () => void;
+  }
+>(({ title, description, onClick, className, ...props }, ref) => (
   <li>
     <NavigationMenuLink asChild>
       <a
         ref={ref}
-        className={cn(
-          'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
-          className
-        )}
+        onClick={onClick}
+        className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground ${className}`}
         {...props}
         aria-label={`View details for ${title}`}
       >
         <div className='text-sm font-medium leading-none'>{title}</div>
-        {children && (
+        {description && (
           <p className='line-clamp-2 text-sm leading-snug text-muted-foreground'>
-            {children}
+            {description}
           </p>
         )}
       </a>
@@ -215,5 +241,3 @@ const ListItem = React.forwardRef<
   </li>
 ));
 ListItem.displayName = 'ListItem';
-
-export default NavigationMenuContents;

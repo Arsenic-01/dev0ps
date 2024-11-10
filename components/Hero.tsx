@@ -1,26 +1,49 @@
-'use client';
-
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Spotlight } from './ui/Spotlight';
 import { Star, StarHalf } from 'lucide-react';
-import { AnimatedTooltipPreview } from './ui/Tooltip';
+// import { AnimatedTooltipPreview } from './ui/Tooltip';
 import { Button } from '@nextui-org/react';
 import WordRotateEffect from './ui/wordRotate';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { AnimatedTooltipPreview } from './ui/Tooltip-wrapper';
+import { HeroButtonGetStarted } from './utils/Misc';
+import loading from '@/app/loading';
 
 const Hero = () => {
-  const router = useRouter();
-
+  const rotatedWords = useMemo(() => <WordRotateEffect />, []);
+  const people = [
+    {
+      id: 1,
+      name: 'John Doe',
+      designation: 'Software Engineer',
+      image: '/users/user-1.png',
+    },
+    {
+      id: 2,
+      name: 'Robert Johnson',
+      designation: 'Product Manager',
+      image: '/users/user-2.png',
+    },
+    {
+      id: 3,
+      name: 'Jane Smith',
+      designation: 'Data Scientist',
+      image: '/users/user-3.png',
+    },
+    {
+      id: 4,
+      name: 'Emily Davis',
+      designation: 'UX Designer',
+      image: '/users/user-4.jpg',
+    },
+  ];
   return (
     <div className='pb-20 mt-9 sm:pt-14 2xl:pt-[110px] md:pt-20 lg:pt-32 xl:pt-[13vh] xl:mt-[5vh] xl:px-16 h-[97svh] sm:h-auto max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center'>
       {/* UI: Spotlights */}
-      <div>
-        <Spotlight
-          className='top-0 left-0 sm:-top-40 sm:-left-10 lg:-top-20 h-[100vh] w-[100vw]'
-          fill='white'
-        />
-      </div>
+      {/* <Spotlight
+        className='top-0 left-0 sm:-top-40 sm:-left-10 lg:-top-20 h-[100vh] w-[100vw] md:block hidden'
+        fill='white'
+      /> */}
 
       {/* Radial gradient background */}
       <div className='h-screen w-full dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2] absolute flex top-0 left-0 items-center justify-center'>
@@ -29,10 +52,8 @@ const Hero = () => {
 
       <div className='flex max-w-[80vw] mt-12 sm:mt-0 justify-center sm:justify-between items-center relative lg:mb-5 z-10'>
         <div className='lg:text-left max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center sm:items-start justify-center'>
-          <span className='mt-2 sm:mt-5 text-5xl lg:text-6xl sm:leading-tight'>
-            <div className='font-normal my-1'>
-              <WordRotateEffect />
-            </div>
+          <span className='mt-2 sm:mt-5 text-5xl lg:text-6xl md:leading-tight'>
+            <div className='font-normal my-1'>{rotatedWords} </div>
             <span className='text-[#ED5F5F] font-semibold'>actually</span>
             <span className='font-normal'> focused</span>
             <br className='md:block hidden' />
@@ -48,7 +69,7 @@ const Hero = () => {
             project management, and property valuation nationwide.
           </div>
 
-          <div className='mt-4 text-pretty hidden font-light sm:block leading-loose md:text-base text-neutral-300 lg:max-w-[50vw]'>
+          <div className='mt-4 text-pretty hidden font-light sm:block  md:text-base text-neutral-300 lg:max-w-[50vw]'>
             SBA is a distinguished consultancy firm with over 25 years of
             experience providing an array of services encompassing architectural
             planning, structural design, project management consultancy, and
@@ -57,26 +78,22 @@ const Hero = () => {
           </div>
 
           <div className='md:mt-10 mt-8 flex flex-col sm:flex-row justify-center items-center gap-10 sm:gap-20'>
-            <Button
-              color='primary'
-              variant='shadow'
-              radius='full'
-              className='w-32 relative overflow-visible'
-              aria-description='Get Started Button'
-              onClick={() => router.push('/register')}
-            >
-              <span className='absolute top-0 right-0'>
-                <span className='relative flex h-3 w-3'>
-                  <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-600 opacity-75'></span>
-                  <span className='relative inline-flex rounded-full h-3 w-3 bg-[#0B879C]/90'></span>
-                </span>
-              </span>
-              Get Started
-            </Button>
+            <HeroButtonGetStarted />
 
             <div className='flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center gap-5'>
               <div className='flex -space-x-3'>
-                <AnimatedTooltipPreview />
+                {/* <AnimatedTooltipPreview /> */}
+                {people.map((person) => (
+                  <Image
+                    key={person.id}
+                    src={person.image}
+                    alt={person.name}
+                    width={40}
+                    height={40}
+                    loading='eager'
+                    className='rounded-full inline-block h-full w-full object-cover select-none pointer-events-none'
+                  />
+                ))}
               </div>
 
               <div className='flex flex-col justify-between items-center sm:items-start'>
@@ -105,6 +122,7 @@ const Hero = () => {
           width={1000}
           height={600}
           priority={true} // Only set to true for important images to improve lazy loading
+          loading='eager'
           sizes='(max-width: 768px) 40vw),(max-width: 1200px) 30vw,
          20vw' // Adjust the size for large screens only since it's hidden on smaller ones
         />

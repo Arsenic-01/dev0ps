@@ -51,28 +51,49 @@ const ModalContent = ({ id }) => {
 
       {/* Modal for Architectural Planning (id: 2) */}
       {id === 2 && (
-        <div className='flex justify-center items-center gap-20 px-3 py-20'>
+        <div className='flex justify-center items-center gap-20 px-3 py-9'>
           <div className='flex flex-col gap-9 max-w-4xl'>
-            <h1 className='text-2xl mb-4'>Architectural Planning Services</h1>
             <p>
-              We offer comprehensive architectural planning services, ensuring
-              that your spaces are functional, aesthetically pleasing, and
-              sustainable. Our designs focus on optimizing space usage while
-              meeting client preferences and adhering to regulatory standards.
+              Sunil Bhor & Associates (SBA) offers comprehensive architectural
+              design services, enabling clients to fully leverage our
+              expertise—all under one roof. Every design is crafted and
+              developed using 3D imaging to maximize each building’s design
+              potential. This approach also helps us refine the lighting
+              concept, enhancing the building’s aesthetic appeal. Careful
+              material selection plays a crucial role in achieving the design
+              vision, and we emphasize a balance between functionality and form,
+              creating harmony between people and their environment.
             </p>
-            <h2 className='text-xl'>Key Areas of Architectural Planning</h2>
+            <p>
+              Our professional architectural design services cater to a diverse
+              range of construction needs across residential, commercial, and
+              industrial sectors. These services are in line with current
+              trends, ensuring efficient space management and a positive
+              atmosphere.
+            </p>
+            <h2 className='text-xl'>
+              Our architectural design services include the following:
+            </h2>
             <ul className='pl-5'>
               <li className='list-disc'>
-                <b>Space Optimization:</b> Effective planning for maximum
-                functionality.
+                <b>Site analysis</b>
               </li>
               <li className='list-disc'>
-                <b>Aesthetic Considerations:</b> Designs that balance
-                functionality with aesthetic appeal.
+                <b>Structural feasibility studies</b>
               </li>
               <li className='list-disc'>
-                <b>Sustainability:</b> Incorporating eco-friendly materials and
-                practices into the planning process.
+                <b>
+                  Preliminary drawings to help clients visualize their buildings
+                </b>
+              </li>
+              <li className='list-disc'>
+                <b>3D imaging</b>
+              </li>
+              <li className='list-disc'>
+                <b>Detailed construction drawings</b>
+              </li>
+              <li className='list-disc'>
+                <b>Post-construction development of interior spaces</b>
               </li>
             </ul>
           </div>
