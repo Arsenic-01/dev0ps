@@ -105,7 +105,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           <div
             className={cn(
               'flex flex-row justify-start gap-4 pl-4',
-              'max-w-screen-2xl mx-auto' // remove max-w-4xl if you want the carousel to span the full width of its container
+              'max-w-7xl mx-auto' // remove max-w-4xl if you want the carousel to span the full width of its container
             )}
           >
             {items.map((item, index) => (
@@ -239,7 +239,7 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className='rounded-3xl bg-gray-100 dark:bg-neutral-900 h-96 w-80 md:h-[30rem] md:w-96 xl:w-[500px] overflow-hidden flex flex-col items-start justify-start relative z-10'
+        className='rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10'
       >
         <div className='absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none' />
         <div className='relative z-40 p-8'>
@@ -287,7 +287,7 @@ export const BlurImage = ({
       src={src}
       width={width}
       height={height}
-      loading='eager'
+      loading='lazy'
       decoding='async'
       blurDataURL={typeof src === 'string' ? src : undefined}
       alt={alt ? alt : 'Background of a beautiful view'}

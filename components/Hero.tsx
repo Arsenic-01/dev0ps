@@ -51,7 +51,7 @@ const Hero = () => {
       </div>
 
       <div className='flex max-w-[80vw] mt-12 sm:mt-0 justify-center sm:justify-between items-center relative lg:mb-5 z-10'>
-        <div className='lg:text-left max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center sm:items-start justify-center'>
+        <div className='lg:text-left max-w-[89vw] md:max-w-2xl lg:max-w-[100vw] xl:max-w-[60vw] flex flex-col items-center sm:items-start justify-center'>
           <span className='mt-2 sm:mt-5 text-5xl lg:text-6xl md:leading-tight'>
             <div className='font-normal my-1'>{rotatedWords} </div>
             <span className='text-[#ED5F5F] font-semibold'>actually</span>
@@ -80,7 +80,7 @@ const Hero = () => {
           <div className='md:mt-10 mt-8 flex flex-col sm:flex-row justify-center items-center gap-10 sm:gap-20'>
             <HeroButtonGetStarted />
 
-            <div className='flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center gap-5'>
+            <div className='flex flex-col sm:flex-row items-center gap-5'>
               <div className='flex -space-x-3'>
                 {/* <AnimatedTooltipPreview /> */}
                 {people.map((person) => (
@@ -115,16 +115,14 @@ const Hero = () => {
         {/* Construction image */}
         <Image
           src='/construction.webp'
-          className='rounded-lg greyscale select-none pointer-events-none lg:w-[20%] hidden lg:block'
+          className='rounded-lg greyscale select-none pointer-events-none hidden xl:block xl:mx-5'
           alt='Hero Image'
           aria-label='Hero Image'
           aria-description='Hero Image of a crane on a construction site'
-          width={1000}
-          height={600}
+          width={250}
+          height={100}
           priority={true} // Only set to true for important images to improve lazy loading
           loading='eager'
-          sizes='(max-width: 768px) 40vw),(max-width: 1200px) 30vw,
-         20vw' // Adjust the size for large screens only since it's hidden on smaller ones
         />
       </div>
     </div>
