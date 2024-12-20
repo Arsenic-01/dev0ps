@@ -138,7 +138,6 @@ export default function NavbarComponent() {
           {navItems.map((link, index) => (
             <NavbarMenuItem className='mt-5' key={index}>
               <Link
-                onClick={() => setIsMenuOpen(false)}
                 href={link.path}
                 className='w-full text-3xl md:text-4xl'
                 aria-label={`Navigate to ${link.display}`}

@@ -97,7 +97,7 @@ const ContactPage = () => {
 
   return (
     <div className='min-h-screen bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto'>
-      <div className='mt-16 sm:mt-24 md:px-8'>
+      <div className='pt-20 pb-24 sm:mt-24 md:px-8'>
         <h1 className='hidden sm:block sm:text-5xl lg:text-[52px] text-center md:text-left px-8'>
           let's work together
           <span className='text-[#EF4444] sm:text-5xl lg:text-[52px]'>.</span>
@@ -107,7 +107,7 @@ const ContactPage = () => {
           <span className='text-[#EF4444] sm:text-5xl lg:text-[52px]'>.</span>
         </h1>
 
-        <div className='max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-10 sm:px-4 py-5'>
+        <div className='max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-10 sm:px-4 py-2 sm:py-5'>
           {/* Contact Form */}
           <div className='px-5 sm:px-4 sm:py-2 pb-2'>
             <form className='mt-12' onSubmit={handleSubmit}>
@@ -165,7 +165,7 @@ const ContactPage = () => {
                   name='message'
                   label='Message'
                   value={formData.message}
-                  placeholder='What Are You Looking For, Features / Specifications, Application / Usage, Minimum Order Quantity, etc'
+                  placeholder='What Are You Looking For, Features / Specifications, Application / Usage, site location, etc'
                   onChange={handleChange}
                   aria-label='Your message'
                   isInvalid={errors.message !== ''}
@@ -239,7 +239,7 @@ const ContactPage = () => {
                 className='rounded-lg w-full'
                 src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14995.89229266695!2d73.7664801!3d20.0096448!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddea4d3d397d1f%3A0x69841f86cbb89521!2sSunil%20Bhor%20and%20Associates!5e0!3m2!1sen!2sin!4v1719696639207!5m2!1sen!2sin'
                 width={400}
-                height={300}
+                height={228}
                 style={{ border: 0, borderRadius: 20 }}
                 allowFullScreen={true}
                 loading='lazy'
