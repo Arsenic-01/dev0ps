@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Sunil Bhor & Associates | About',
+  title: 'SBA | Admin',
   description: ' ',
 };
 

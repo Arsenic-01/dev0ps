@@ -4,8 +4,8 @@ import { organization } from '@/data/index';
 
 const OurTeam = () => {
   return (
-    <div className='max-w-7xl mt-5  mb-10 px-8'>
-      <div className='sm:mt-16 md:mt-24  grid-cols-1 sm:grid-cols-2 grid  md:grid-cols-3 xl:grid-cols-4 gap-7'>
+    <div className='max-w-screen-2xl  mb-10 px-8'>
+      <div className='sm:mt-16 md:mt-24  grid-cols-1 sm:grid-cols-2 grid gap-7'>
         {organization.map((team, index) => {
           return (
             <div

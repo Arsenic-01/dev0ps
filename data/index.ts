@@ -1,3 +1,127 @@
+export const ProjectData = [
+  {
+    id: 1,
+    imgSrc: '/embla/c1.jpg',
+    title: 'something',
+    type: 'commericial',
+    loc: 'somewhere',
+    duration: '3 months',
+    description:
+      'Structural designing involves creating safe, stable, and efficient structures by analyzing loads, materials, and environmental factors for construction.',
+    imgAlt: 'Structural Designing',
+  },
+  {
+    id: 2,
+    imgSrc: '/embla/c1.jpg',
+    title: 'something',
+    type: 'commericial',
+    loc: 'somewhere',
+    duration: '3 months',
+    description:
+      'Structural designing involves creating safe, stable, and efficient structures by analyzing loads, materials, and environmental factors for construction.',
+    imgAlt: 'Structural Designing',
+  },
+  {
+    id: 3,
+    imgSrc: '/embla/c1.jpg',
+    title: 'something',
+    type: 'commericial',
+    loc: 'somewhere',
+    duration: '3 months',
+    description:
+      'Structural designing involves creating safe, stable, and efficient structures by analyzing loads, materials, and environmental factors for construction.',
+    imgAlt: 'Structural Designing',
+  },
+  {
+    id: 4,
+    imgSrc: '/embla/c1.jpg',
+    title: 'something',
+    type: 'commericial',
+    loc: 'somewhere',
+    duration: '3 months',
+    description:
+      'Structural designing involves creating safe, stable, and efficient structures by analyzing loads, materials, and environmental factors for construction.',
+    imgAlt: 'Structural Designing',
+  },
+  {
+    id: 5,
+    imgSrc: '/embla/c1.jpg',
+    title: 'something',
+    type: 'commericial',
+    loc: 'somewhere',
+    duration: '3 months',
+    description:
+      'Structural designing involves creating safe, stable, and efficient structures by analyzing loads, materials, and environmental factors for construction.',
+    imgAlt: 'Structural Designing',
+  },
+  {
+    id: 6,
+    imgSrc: '/embla/c1.jpg',
+    title: 'something',
+    type: 'commericial',
+    loc: 'somewhere',
+    duration: '3 months',
+    description:
+      'Structural designing involves creating safe, stable, and efficient structures by analyzing loads, materials, and environmental factors for construction.',
+    imgAlt: 'Structural Designing',
+  },
+  {
+    id: 7,
+    imgSrc: '/embla/c1.jpg',
+    title: 'something',
+    type: 'commericial',
+    loc: 'somewhere',
+    duration: '3 months',
+    description:
+      'Structural designing involves creating safe, stable, and efficient structures by analyzing loads, materials, and environmental factors for construction.',
+    imgAlt: 'Structural Designing',
+  },
+  {
+    id: 8,
+    imgSrc: '/embla/c1.jpg',
+    title: 'something',
+    type: 'commericial',
+    loc: 'somewhere',
+    duration: '3 months',
+    description:
+      'Structural designing involves creating safe, stable, and efficient structures by analyzing loads, materials, and environmental factors for construction.',
+    imgAlt: 'Structural Designing',
+  },
+  {
+    id: 9,
+    imgSrc: '/embla/c1.jpg',
+    title: 'something',
+    type: 'commericial',
+    loc: 'somewhere',
+    duration: '3 months',
+    description:
+      'Structural designing involves creating safe, stable, and efficient structures by analyzing loads, materials, and environmental factors for construction.',
+    imgAlt: 'Structural Designing',
+  },
+  {
+    id: 10,
+    imgSrc: '/embla/c1.jpg',
+    title: 'something',
+    type: 'commericial',
+    loc: 'somewhere',
+    duration: '3 months',
+    description:
+      'Structural designing involves creating safe, stable, and efficient structures by analyzing loads, materials, and environmental factors for construction.',
+    imgAlt: 'Structural Designing',
+  },
+  {
+    id: 11,
+    imgSrc: '/embla/c1.jpg',
+    title: 'something',
+    type: 'commericial',
+    loc: 'somewhere',
+    duration: '3 months',
+    description:
+      'Structural designing involves creating safe, stable, and efficient structures by analyzing loads, materials, and environmental factors for construction.',
+    imgAlt: 'Structural Designing',
+  },
+];
+
 export const navItems = [
   { path: '/services', display: 'Services', id: 1 },
   { path: '/projects', display: 'Projects', id: 2 },

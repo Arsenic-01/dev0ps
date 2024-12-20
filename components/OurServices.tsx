@@ -23,6 +23,26 @@ interface Service {
   imgAlt: string;
 }
 
+export const BreadcrumbWithCustomSeparator = ({
+  currentPage,
+}: {
+  currentPage: string;
+}) => {
+  return (
+    <Breadcrumb className='mt-10 md:mt-16 pl-2 '>
+      <BreadcrumbList>
+        <BreadcrumbItem>
+          <Link href='/'>Home</Link>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbPage>{currentPage}</BreadcrumbPage>
+        </BreadcrumbItem>
+      </BreadcrumbList>
+    </Breadcrumb>
+  );
+};
+
 const OurServices = () => {
   const searchParams = useSearchParams();
   const serviceId = searchParams.get('serviceId');
@@ -51,25 +71,10 @@ const OurServices = () => {
     setSelectedService(null);
     setIsModalOpen(false);
   };
-  function BreadcrumbWithCustomSeparator() {
-    return (
-      <Breadcrumb className='mt-10 md:mt-16 pl-2 '>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <Link href='/'>Home</Link>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>Services</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
-    );
-  }
 
   return (
     <div className='max-w-7xl mb-10 px-8'>
-      <BreadcrumbWithCustomSeparator />
+      <BreadcrumbWithCustomSeparator currentPage='Services' />
       <div className='mt-10 grid-cols-1 sm:grid-cols-2 grid md:grid-cols-3 gap-7'>
         {ServiceCards.map((service) => (
           <div
