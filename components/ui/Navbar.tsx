@@ -9,7 +9,6 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   Button,
-  Link,
 } from '@nextui-org/react';
 import { useContext, useEffect, useState } from 'react';
 import { navItems } from '@/data';
@@ -19,6 +18,7 @@ import { UserContext } from '@/context/UserContext';
 import { TransitionLink } from '../utils/TransitionLink';
 import NavigationMenuContents from './NavigationMenuDemo';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function NavbarComponent() {
   const userContext = useContext(UserContext);
@@ -76,7 +76,7 @@ export default function NavbarComponent() {
                 width={30}
                 height={30}
                 priority
-                className='select-none pointer-events-none w-7 sm:w-[30px] mr-2 rounded-md ml-2 sm:ml-0'
+                className='w-7 sm:w-[30px] mr-2 ml-2 sm:ml-0 hover:animate-hovereffect transition-all duration-100 ease-in-out'
                 alt='Company logo: SBA'
               />
               <h1 className='font-bold text-xl sm:text-[22px] select-none'>
@@ -139,7 +139,7 @@ export default function NavbarComponent() {
             <NavbarMenuItem className='mt-5' key={index}>
               <Link
                 href={link.path}
-                className='w-full text-4xl'
+                className='w-full text-3xl md:text-4xl'
                 aria-label={`Navigate to ${link.display}`}
               >
                 {link.display}

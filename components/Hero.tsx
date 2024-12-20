@@ -50,7 +50,7 @@ const Hero = () => {
         <div className='absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]'></div>
       </div>
 
-      <div className='flex max-w-[80vw] mt-12 sm:mt-0 justify-center sm:justify-between items-center relative lg:mb-5 z-10'>
+      <div className='flex max-w-[80vw] mt-12 sm:mt-0 justify-center sm:justify-between items-center xl:gap-x-40 relative lg:mb-5 z-10'>
         <div className='lg:text-left max-w-[89vw] md:max-w-2xl lg:max-w-[100vw] xl:max-w-[60vw] flex flex-col items-center sm:items-start justify-center'>
           <span className='mt-2 sm:mt-5 text-5xl lg:text-6xl md:leading-tight'>
             <div className='font-normal my-1'>{rotatedWords} </div>
@@ -69,7 +69,7 @@ const Hero = () => {
             project management, and property valuation nationwide.
           </div>
 
-          <div className='mt-4 text-pretty hidden font-light sm:block  md:text-base text-neutral-300 lg:max-w-[50vw]'>
+          <div className='mt-4 text-pretty hidden font-light sm:block  md:text-base text-neutral-300 lg:max-w-[50vw] xl:max-w-[45vw]'>
             SBA is a distinguished consultancy firm with over 25 years of
             experience providing an array of services encompassing architectural
             planning, structural design, project management consultancy, and

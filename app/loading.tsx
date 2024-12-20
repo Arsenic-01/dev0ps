@@ -4,7 +4,7 @@ import styled, { keyframes, css } from 'styled-components';
 
 export default function Loading() {
   return (
-    <div className='flex-center size-full h-screen gap-3 text-white'>
+    <div className='flex-center size-full bg-black h-screen gap-3 text-white'>
       <Loadingdiv />
     </div>
   );

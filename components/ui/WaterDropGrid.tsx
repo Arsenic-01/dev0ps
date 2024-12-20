@@ -1,5 +1,6 @@
 // @ts-nocheck
 import anime from 'animejs';
+import { useRef } from 'react';
 
 const WaterDropGrid = () => {
   return (
@@ -13,25 +14,34 @@ const GRID_WIDTH = 25;
 const GRID_HEIGHT = 20;
 
 const DotGrid = () => {
+  const animationInProgress = useRef(false);
+
   const handleDotClick = (e) => {
+    if (animationInProgress.current) return;
+
+    animationInProgress.current = true;
+
     anime({
       targets: '.dot-point',
       scale: [
-        { value: 1.35, easing: 'easeOutSine', duration: 250 },
-        { value: 1, easing: 'easeInOutQuad', duration: 500 },
+        { value: 1.25, easing: 'easeOutCubic', duration: 200 },
+        { value: 1, easing: 'easeInOutCubic', duration: 300 },
       ],
       translateY: [
-        { value: -15, easing: 'easeOutSine', duration: 250 },
-        { value: 0, easing: 'easeInOutQuad', duration: 500 },
+        { value: -10, easing: 'easeOutCubic', duration: 200 },
+        { value: 0, easing: 'easeInOutCubic', duration: 300 },
       ],
       opacity: [
-        { value: 1, easing: 'easeOutSine', duration: 250 },
-        { value: 0.5, easing: 'easeInOutQuad', duration: 500 },
+        { value: 1, easing: 'easeOutCubic', duration: 200 },
+        { value: 0.6, easing: 'easeInOutCubic', duration: 300 },
       ],
-      delay: anime.stagger(100, {
+      delay: anime.stagger(50, {
         grid: [GRID_WIDTH, GRID_HEIGHT],
         from: e.target.dataset.index,
       }),
+      complete: () => {
+        animationInProgress.current = false;
+      },
     });
   };
 
@@ -42,12 +52,12 @@ const DotGrid = () => {
     for (let j = 0; j < GRID_HEIGHT; j++) {
       dots.push(
         <div
-          className='group cursor-crosshair rounded-full p-2 transition-colors hover:bg-slate-600'
+          className='group cursor-crosshair rounded-full p-2'
           data-index={index}
           key={`${i}-${j}`}
         >
           <div
-            className='dot-point h-2 w-2 rounded-full bg-gradient-to-b from-slate-900 to-gray-700	 opacity-50 group-hover:from-indigo-600 group-hover:to-white'
+            className='dot-point h-2 w-2 rounded-full bg-gradient-to-b from-slate-900 to-gray-700 opacity-50 group-hover:from-indigo-600 group-hover:to-white'
             data-index={index}
           />
         </div>
@@ -55,7 +65,7 @@ const DotGrid = () => {
       index++;
     }
   }
-  //  from-slate-700 to-slate-400 opacity-50 group-hover:from-indigo-600 group-hover:to-whi
+
   return (
     <div
       onClick={handleDotClick}

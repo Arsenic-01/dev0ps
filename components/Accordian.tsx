@@ -9,7 +9,7 @@ export default function FAQ() {
   ];
 
   return (
-    <div className='mt-12 md:mt-16 lg:mt-20 pb-14 md:py-16'>
+    <div className='mt-12 md:mt-16 lg:mt-20 pb-14 md:py-16 md:mb-20 lg:my-24'>
       <h2 className='font-semi-bold text-center leading-relaxed text-pretty text-4xl lg:text-5xl xl:text-6xl'>
         FAQs
       </h2>

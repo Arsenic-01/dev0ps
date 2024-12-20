@@ -39,7 +39,7 @@ const FooterExp = () => {
     'text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75';
 
   return (
-    <footer className='w-full dark:bg-black'>
+    <footer className='w-full dark:border-t-stone-800 border dark:bg-black'>
       <div className='px-5 pt-16 pb-7 sm:px-6 lg:px-8'>
         {/* Logo Section */}
         <div className='flex justify-center text-teal-600 dark:text-teal-300'>

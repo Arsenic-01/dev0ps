@@ -113,6 +113,10 @@ const config = {
         'lds-out': 'cubic-bezier(0.215, 0.61, 0.355, 1)',
       },
       keyframes: {
+        hovereffect: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.1)' },
+        },
         'accordion-down': {
           from: { height: '0' },
           to: { height: 'var(--radix-accordion-content-height)' },
@@ -200,6 +204,7 @@ const config = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        hovereffect: 'hovereffect 1s ease-in-out infinite',
         spotlight: 'spotlight 2s ease .75s 1 forwards',
         shimmer: 'shimmer 2s linear infinite',
         first: 'moveVertical 30s ease infinite',

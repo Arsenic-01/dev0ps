@@ -98,13 +98,13 @@ const ContactPage = () => {
   return (
     <div className='min-h-screen bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto'>
       <div className='mt-16 sm:mt-24 md:px-8'>
-        <h1 className='hidden sm:block sm:text-5xl lg:text-[56px] text-center md:text-left px-8'>
-          Let's Work Together
-          <span className='text-[#EF4444] text-6xl lg:text-8xl'>.</span>
+        <h1 className='hidden sm:block sm:text-5xl lg:text-[52px] text-center md:text-left px-8'>
+          let's work together
+          <span className='text-[#EF4444] sm:text-5xl lg:text-[52px]'>.</span>
         </h1>
         <h1 className='text-4xl font-medium sm:hidden mt-8 text-center md:text-left px-8'>
-          Get in Touch
-          <span className='text-[#EF4444] text-6xl lg:text-8xl'>.</span>
+          get in touch
+          <span className='text-[#EF4444] sm:text-5xl lg:text-[52px]'>.</span>
         </h1>
 
         <div className='max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-10 sm:px-4 py-5'>
