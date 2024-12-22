@@ -39,7 +39,6 @@ export async function getLoggedInUser() {
     return await account.get();
   } catch (error) {
     console.log('error on getting user session from appwrite client', error);
-
     return null;
   }
 }

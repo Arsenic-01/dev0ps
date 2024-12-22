@@ -48,6 +48,7 @@ const FooterExp = () => {
               src='/nav_red3.png'
               width={48}
               height={72}
+              loading='eager'
               className='w-12 h-auto select-none pointer-events-none'
               alt='company logo'
             />

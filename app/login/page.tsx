@@ -36,9 +36,10 @@ const Home = async ({ searchParams }: SearchParamProps) => {
       </section>
       <div className='w-[50%] hidden md:block'>
         <Image
-          src='/side_img2.jpg'
-          height={1000}
-          width={1000}
+          src='/side_img.jpg'
+          height={1739}
+          width={1895}
+          loading='eager'
           alt='Side image login'
           className='side-img select-none pointer-events-none  max-w-[100%]'
         />
