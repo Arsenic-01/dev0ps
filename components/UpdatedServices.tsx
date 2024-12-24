@@ -11,7 +11,7 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
 const Services = () => {
   return (
-    <div className='2xl:hidden mt-20 py-10 px-4 md:p-10 lg:mb-28  flex flex-col'>
+    <div className='xl:hidden mt-20 py-10 px-4 md:p-10 lg:mb-28  flex flex-col'>
       <h1 className='text-5xl lg:text-6xl xl:text-7xl mb-7 z-50'>
         Our Prime Services
       </h1>

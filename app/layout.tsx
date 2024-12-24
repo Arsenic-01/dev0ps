@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang='en' className='scroll-smooth' suppressHydrationWarning>
       <head>
-        <link rel='icon' href='/nav1.png' sizes='any' />
+        <link rel='icon' href='/SBA_LOGO11-modified.webp' sizes='any' />
       </head>
       <body className={inter.className}>
         <ThemeProvider

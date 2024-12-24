@@ -97,7 +97,7 @@ const ContactPage = () => {
 
   return (
     <div className='min-h-screen bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto'>
-      <div className='pt-20 pb-24 sm:mt-24 md:px-8'>
+      <div className='pt-20 pb-24 sm:mt-24 xl:mt-10 2xl:mt-24 md:px-8'>
         <h1 className='hidden sm:block sm:text-5xl lg:text-[52px] text-center md:text-left px-8'>
           let's work together
           <span className='text-[#EF4444] sm:text-5xl lg:text-[52px]'>.</span>

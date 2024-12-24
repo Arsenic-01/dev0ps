@@ -26,20 +26,7 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
     redirect('/login');
   }
   return (
-    // <div className='flex h-screen bg-black sm:max-h-screen'>
-    //   <section className='remove-scrollbar container sm:mt-20 my-auto'>
-
-    //   </section>
-
-    //   <Image
-    //     src='/assets/images/appointment-img.png'
-    //     height={1500}
-    //     width={1500}
-    //     alt='appointment'
-    //     className='side-img max-w-[200px] lg:max-w-[390px] bg-bottom'
-    //   />
-    // </div>
-    <div className='flex h-screen items-center justify-center'>
+    <div className='flex h-screen items-center bg-black justify-center'>
       <div className='max-w-5xl py-5 sm:py-10 w-full px-5'>
         <BreadcrumbWithCustomSeparator />
         <AppointmentForm clientId={client?.$id} userId={userId} type='create' />
@@ -52,7 +39,7 @@ export default Appointment;
 
 function BreadcrumbWithCustomSeparator() {
   return (
-    <Breadcrumb className='mb-5 sm:mb-10'>
+    <Breadcrumb className='mb-5 sm:mb-10 xl:mt-8 2xl:mt-0'>
       <BreadcrumbList>
         <BreadcrumbItem>
           <Link href='/'>Home</Link>

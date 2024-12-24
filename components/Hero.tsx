@@ -38,7 +38,7 @@ const Hero = () => {
     },
   ];
   return (
-    <div className='pb-20 mt-9 sm:pt-14 2xl:pt-[110px] md:pt-20 lg:pt-32 xl:pt-[13vh] xl:mt-[5vh] xl:px-16 h-[97svh] sm:h-auto max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center'>
+    <div className='pb-20 mt-9 sm:pt-14 xl:pt-[80px] 2xl:pt-[110px] md:pt-20 lg:pt-32 2xl:mt-[5vh] xl:px-16 h-[97svh] xl:h-[100vh] sm:h-auto max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center'>
       {/* UI: Spotlights */}
       {/* <Spotlight
         className='top-0 left-0 sm:-top-40 sm:-left-10 lg:-top-20 h-[100vh] w-[100vw] md:block hidden'
@@ -50,7 +50,7 @@ const Hero = () => {
         <div className='absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]'></div>
       </div>
 
-      <div className='flex max-w-[80vw] mt-12 sm:mt-0 justify-center sm:justify-between items-center xl:gap-x-40 relative lg:mb-5 z-10'>
+      <div className='flex max-w-[80vw] mt-12 sm:mt-0 justify-center sm:justify-between items-center xl:gap-x-20 2xl:gap-x-40 relative lg:mb-5 z-10'>
         <div className='lg:text-left max-w-[89vw] md:max-w-2xl lg:max-w-[100vw] xl:max-w-[60vw] flex flex-col items-center sm:items-start justify-center'>
           <span className='mt-2 sm:mt-5 text-5xl lg:text-6xl md:leading-tight'>
             <div className='font-normal my-1'>{rotatedWords} </div>

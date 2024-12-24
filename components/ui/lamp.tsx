@@ -6,7 +6,7 @@ import Services from '../Services';
 
 export function LampDemo() {
   return (
-    <section className='hidden mt-10 2xl:block'>
+    <section className='hidden mt-10 xl:block'>
       <LampContainer>
         <motion.h1
           initial={{ opacity: 0.5, y: 100 }}
