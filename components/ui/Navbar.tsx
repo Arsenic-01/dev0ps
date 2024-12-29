@@ -137,13 +137,13 @@ export default function NavbarComponent() {
         <NavbarMenu>
           {navItems.map((link, index) => (
             <NavbarMenuItem className='mt-5' key={index}>
-              <Link
+              <a
                 href={link.path}
                 className='w-full text-3xl md:text-4xl'
                 aria-label={`Navigate to ${link.display}`}
               >
                 {link.display}
-              </Link>
+              </a>
             </NavbarMenuItem>
           ))}
         </NavbarMenu>
