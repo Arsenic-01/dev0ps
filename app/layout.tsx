@@ -8,6 +8,7 @@ import FooterExp from '@/components/FooterExp';
 import { Toaster } from 'sonner';
 import { UserContextProvider } from '@/context/UserContext';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -38,6 +39,7 @@ export default function RootLayout({
             <Providers>
               <NavbarComponent />
               {children}
+              <Analytics />
               <SpeedInsights />
               <Toaster />
               <FooterExp />
