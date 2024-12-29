@@ -11,12 +11,12 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
 const Services = () => {
   return (
-    <div className='xl:hidden mt-20 py-10 px-4 md:p-10 lg:mb-28  flex flex-col'>
-      <h1 className='text-5xl lg:text-6xl xl:text-7xl mb-7 z-50'>
+    <div className='xl:hidden py-10 px-2 sm:px-4 md:p-10 lg:mb-28 flex flex-col'>
+      <h1 className='text-4xl text-center sm:text-5xl lg:text-6xl xl:text-7xl mb-7 z-50'>
         Our Prime Services
       </h1>
 
-      <div className='flex flex-col lg:flex-row mt-0 sm:mt-16 lg:mt-20 justify-center  gap-16 xl:gap-20'>
+      <div className='flex px-4 flex-col lg:flex-row mt-10 sm:mt-16 lg:mt-20 justify-center  gap-16 xl:gap-20'>
         <EmblaCarousel slides={SLIDES} options={OPTIONS} />
 
         <div className='flex flex-col gap-9'>

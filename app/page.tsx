@@ -19,8 +19,8 @@ const Home = () => {
       <main className='relative bg-black-100 flex z-0 justify-center items-center flex-col overflow-hidden mx-auto '>
         <Hero /> {/* Mostly SSR */}
         {/* <Clients /> */}
-        <InfiniteMovingCards items={companieslogo} /> {/* Client */}
-        <div className=' max-w-7xl  w-full sm:px-10 px-5'>
+        {/* Client */}
+        <div className=' max-w-7xl  w-full sm:px-10 px-2'>
           <Services /> {/* Mostly SSR */}
           <LampDemo /> {/* Client */}
         </div>

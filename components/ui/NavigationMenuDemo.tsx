@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -32,117 +31,75 @@ const aboutData = [
 const serviceData = [
   {
     id: 1,
-    title: 'Architectural Planning',
-    href: '/services#architectural-planning',
-    description:
-      'Plant and architectural planning involves designing facilities and structures to optimize efficiency, safety, and aesthetics in industrial or urban environments.',
+    title: 'Structural Designing',
   },
   {
     id: 2,
-    title: 'Structural Designing',
-    href: '/services#structural-designing',
-    description:
-      'Plant and Structural Designing involves creating safe, efficient layouts and frameworks for industrial facilities, ensuring stability and functionality.',
+    title: 'Architectural Planning',
   },
   {
     id: 3,
-    title: 'Town Planning Approvals',
-    href: '/services#town-planning-approvals',
-    description:
-      'Town Planning Approvals involve reviewing and authorizing construction or land use to ensure compliance with zoning and regulations.',
+    title: 'Interior Designing',
   },
   {
     id: 4,
     title: 'Valuation Consultancy',
-    href: '/services#valuation-consultancy',
-    description:
-      'Valuation Consultancy assesses the value of assets, businesses, or properties, providing expert advice for investment, sale, or legal purposes.',
   },
   {
     id: 5,
-    title: 'Tender and specs drawing',
-    href: '/services#tender-and-specs-drawing',
-    description:
-      'A tender drawing details project requirements for bidding, while specs drawings outline technical and material specifics for construction.',
+    title: 'TEV Consultancy',
   },
   {
     id: 6,
     title: 'Lender’s independent engineers',
-    href: '/services#lender-independent-engineers',
-    description:
-      'Lender’s independent engineers assess project feasibility, technical risks, and compliance to ensure loan security and project success.',
   },
-
   {
     id: 7,
     title: 'Real Estate Advisory',
-    href: '/services#real-estate-advisory',
-    description:
-      'Real Estate Advisory provides expert guidance on property investments, development, market analysis, and strategy to maximize clients’ returns.',
   },
   {
     id: 8,
     title: 'Plant and Machinery Valuation',
-    href: '/services#plant-and-machinery-valuation',
-    description:
-      'Plant and Machinery Valuation determines the market or replacement value of industrial equipment for financial, insurance, or sale purposes.',
   },
   {
     id: 9,
     title: 'Black Money Valuation',
-    href: '/services#black-money-valuation',
-    description:
-      'Black money valuation assesses hidden or unreported assets’ worth, often using forensic accounting to uncover illicit financial activity.',
   },
-
   {
     id: 10,
-    title: 'NDT Testing & Stability Certification',
-    href: '/services#quality-control-and-nda-testing',
-    description:
-      'Quality Control and NDA Testing assesses the project’s quality, compliance with regulatory requirements, and compliance with NDA agreements.',
+    title: 'Town planning Approvals',
   },
   {
     id: 11,
-    title: 'Surverying & Monitoring',
-    href: '/services#quality-control-and-nda-testing',
-    description:
-      'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
+    title: 'Tender and specs drawing',
   },
   {
     id: 12,
-    title: 'Chartered Engineer Certifications',
-    href: '/services#quality-control-and-nda-testing',
-    description:
-      'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
+    title: 'NDT Testing & Stability Certification',
   },
   {
     id: 13,
-    title: 'Industrial Safety Audits',
-    href: '/services#quality-control-and-nda-testing',
-    description:
-      'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
+    title: 'Surverying & Monitoring',
   },
   {
     id: 14,
-    title: 'NA Conversion of Lands',
-    href: '/services#quality-control-and-nda-testing',
-    description:
-      'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
+    title: 'Chartered Engineer Certifications',
   },
   {
     id: 15,
-    title: 'Factory Act Certification',
-    href: '/services#quality-control-and-nda-testing',
-    description:
-      'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
+    title: 'Industrial Safety Audits',
   },
   {
     id: 16,
+    title: 'NA Conversion of Lands',
+  },
+  {
+    id: 17,
+    title: 'Factory Act Certification',
+  },
+  {
+    id: 18,
     title: 'IPO Certification',
-    href: '/services#quality-control-and-nda-testing',
-    description:
-      'Surveying measures land features. PT sheets ensure boundary accuracy, while contour surveys map elevation changes for construction planning.',
   },
   // Add more components here
 ];

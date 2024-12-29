@@ -20,7 +20,6 @@ const ModalContent = ({ id }) => {
       {id === 1 && (
         <div className='flex justify-center items-center gap-20 px-3 py-20'>
           <div className='flex flex-col gap-9 max-w-4xl'>
-            <h1 className='text-2xl mb-4'>Structural Designing Services</h1>
             <p>
               Our structural designing services ensure the creation of stable
               and safe structures. By analyzing various factors such as load,
