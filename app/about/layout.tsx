@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Sunil Bhor & Associates | About',
-  description: ' ',
+  title: 'About | SBA',
+  description: 'About Sunil Bhor & Associates',
 };
 
 export default function RootLayout({

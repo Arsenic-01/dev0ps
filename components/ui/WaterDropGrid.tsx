@@ -1,4 +1,3 @@
-// @ts-nocheck
 import anime from 'animejs';
 import { useRef } from 'react';
 
@@ -15,9 +14,16 @@ const GRID_HEIGHT = 20;
 
 const DotGrid = () => {
   const animationInProgress = useRef(false);
+  const dots: JSX.Element[] = [];
+  let index = 0;
 
-  const handleDotClick = (e) => {
+  const handleDotClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (animationInProgress.current) return;
+
+    const target = e.target as HTMLElement;
+    const index = target.dataset.index;
+
+    if (!index) return;
 
     animationInProgress.current = true;
 
@@ -37,16 +43,13 @@ const DotGrid = () => {
       ],
       delay: anime.stagger(50, {
         grid: [GRID_WIDTH, GRID_HEIGHT],
-        from: e.target.dataset.index,
+        from: parseInt(index, 10),
       }),
       complete: () => {
         animationInProgress.current = false;
       },
     });
   };
-
-  const dots = [];
-  let index = 0;
 
   for (let i = 0; i < GRID_WIDTH; i++) {
     for (let j = 0; j < GRID_HEIGHT; j++) {
@@ -55,6 +58,7 @@ const DotGrid = () => {
           className='group cursor-crosshair rounded-full p-2'
           data-index={index}
           key={`${i}-${j}`}
+          onClick={(e) => handleDotClick(e)} // Ensure event handler is bound
         >
           <div
             className='dot-point h-2 w-2 rounded-full bg-gradient-to-b from-slate-900 to-gray-700 opacity-50 group-hover:from-indigo-600 group-hover:to-white'

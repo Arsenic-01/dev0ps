@@ -1,16 +1,17 @@
 import React from 'react';
-import { Playfair_Display } from 'next/font/google';
+import { Playfair_Display, Bitter } from 'next/font/google';
 
+const bitter = Bitter({ subsets: ['latin'] });
 const playfair = Playfair_Display({ subsets: ['latin'] });
 
 function Work() {
   return (
     <section className='mt-20 rounded-xl bg-black border-[0.5px]	border-[#353535] md:border-[#1f1f1f] '>
-      <div className='flex flex-col gap-10 rounded-3xl py-10 px-4 text-white  h-3/6 w-full '>
+      <div className='flex flex-col gap-10 rounded-3xl py-10 md:py-14 px-4 text-white  h-3/6 w-full '>
         <h2
-          className={`${playfair.className} text-center text-[33px] sm:text-4xl lg:text-5xl`}
+          className={` ${bitter.className} text-center text-3xl md:text-4xl xl:text-5xl`}
         >
-          Who do we <span className='text-red-400 font-bold'>work for</span>
+          who do we <span className='text-red-400 font-medium'>work for</span>
         </h2>
         <div className='mt-4 sm:mt-7 flex flex-col lg:flex-row justify-center px-0 sm:px-8 gap-6 lg:text-4xl'>
           {/* Section 1: Individuals and Real Estate Developers */}
@@ -20,10 +21,10 @@ function Work() {
                 key={index}
                 className='text-left flex flex-col gap-7 sm:gap-10 rounded-lg p-5 bg-zinc-950 border-[0.5px] duration-300 border-[#353535] md:border-[#1f1f1f] hover:border-collapse hover:bg-[#1F1F1F] transition-all active:bg-[#1F1F1F] active:border-collapse hover:cursor-pointer'
               >
-                <h2 className='text-red-400 text-3xl sm:text-4xl lg:text-5xl font-semibold'>
+                <h2 className='text-red-400 text-3xl md:text-4xl font-semibold'>
                   {data.id}
                 </h2>
-                <p className='uppercase text-2xl sm:text-3xl'>{data.title}</p>
+                <p className='capitalize text-2xl md:text-3xl'>{data.title}</p>
 
                 <p className='text-base'>{data.description}</p>
               </div>

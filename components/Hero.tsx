@@ -1,15 +1,8 @@
 import React, { useMemo } from 'react';
-import { Spotlight } from './ui/Spotlight';
 import { Star, StarHalf } from 'lucide-react';
-// import { AnimatedTooltipPreview } from './ui/Tooltip';
-import { Button } from '@nextui-org/react';
 import WordRotateEffect from './ui/wordRotate';
 import Image from 'next/image';
-import { AnimatedTooltipPreview } from './ui/Tooltip-wrapper';
 import { HeroButtonGetStarted } from './utils/Misc';
-import loading from '@/app/loading';
-import InfiniteMovingCards from './ui/InfiniteCards';
-import { companieslogo } from '@/data';
 
 const Hero = () => {
   const rotatedWords = useMemo(() => <WordRotateEffect />, []);
@@ -40,29 +33,29 @@ const Hero = () => {
     },
   ];
   return (
-    <div className='relative flex flex-col items-center justify-center min-h-screen w-full gap-16 my-10'>
+    <div className='relative flex flex-col items-center justify-center w-full gap-16 my-10'>
       <div className=''>
         {/* Radial gradient background */}
-        <div className='h-screen w-full dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2] absolute flex top-0 left-0 items-center justify-center'>
+        <div className='h-screen w-full dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.05] absolute flex top-0 left-0 items-center justify-center'>
           <div className='absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]'></div>
         </div>
 
-        <div className='flex max-w-[80vw] mt-12 mb-6 sm:mb-0 sm:mt-0 justify-center sm:justify-between items-center xl:gap-x-20 2xl:gap-x-40 relative lg:mb-5 z-10'>
+        <div className='flex max-w-[80vw] mt-12 mb-6 sm:my-10 md:my-20 lg:my-24 xl:my-16  2xl:my-[120px] justify-center sm:justify-between items-center xl:gap-x-20 2xl:gap-x-40 relative lg:mb-5 z-10'>
           <div className='xl:text-left max-w-[89vw] md:max-w-2xl lg:w-full lg:max-w-[100vw]  xl:max-w-[60vw] flex flex-col items-center sm:items-start justify-center'>
-            <span className='mt-2 sm:mt-5 text-5xl lg:text-6xl md:leading-tight'>
+            <span className='mt-2 sm:mt-5 text-[42px] leading-tight lg:text-5xl 2xl:text-6xl md:leading-tight'>
               <div className='font-normal my-1'>{rotatedWords} </div>
-              <span className='text-[#ED5F5F] font-semibold'>actually</span>
+              <span className='text-[#ED5F5F] font-medium'>actually</span>
               <span className='font-normal'> focused</span>
               <br className='md:block hidden' />
               <span className='font-normal'> on your results.</span>
             </span>
 
-            <div className='mt-7 sm:mt-12 text-pretty text-[#BDBDBD] block leading-relaxed sm:hidden sm:text-left text-center text-base'>
+            <div className='mt-10 sm:mt-14 text-pretty text-[#BDBDBD] block leading-relaxed sm:hidden sm:text-left text-center text-base'>
               SBA offers expert consultancy in architecture, structural design,
               project management, and property valuation nationwide.
             </div>
 
-            <div className='mt-4 text-pretty hidden font-light sm:block  md:text-base text-neutral-300 lg:max-w-[80vw] xl:max-w-[45vw]'>
+            <div className='mt-4 text-pretty hidden font-light sm:block  md:text-base text-white/70 lg:max-w-[80vw] xl:max-w-[45vw]'>
               SBA is a distinguished consultancy firm with over 25 years of
               experience providing an array of services encompassing
               architectural planning, structural design, project management
@@ -119,7 +112,6 @@ const Hero = () => {
           />
         </div>
       </div>
-      <InfiniteMovingCards items={companieslogo} />
     </div>
   );
 };

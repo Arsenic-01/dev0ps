@@ -4,9 +4,10 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 interface InfiniteMovingCardsProps {
-  items: {
+  logos: {
     imgSrc: string;
     imgClassname?: string;
+    alt?: string;
   }[];
   direction?: 'left' | 'right';
   speed?: 'fast' | 'normal' | 'slow';
@@ -15,7 +16,7 @@ interface InfiniteMovingCardsProps {
 }
 
 export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
-  items,
+  logos,
   direction = 'left',
   speed = 'fast',
   pauseOnHover = true,
@@ -29,7 +30,7 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
     // Check if scroller is initialized and has the items.
     if (
       scrollerRef.current &&
-      scrollerRef.current.childElementCount === items.length
+      scrollerRef.current.childElementCount === logos.length
     ) {
       initializeCarousel();
     }
@@ -78,8 +79,8 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
   };
 
   return (
-    <section className='mb-10 mt-4 sm:mt-0'>
-      <div className='flex flex-col gap-6'>
+    <section className='mb-16 mt-8 lg:mt-20 2xl:mt-0'>
+      <div className='flex flex-col '>
         <h2 className='font-normal z-50 text-base text-center mb-5 text-white'>
           Trusted partners by Industrial Leaders.
         </h2>
@@ -101,7 +102,7 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
                 pauseOnHover && 'hover:[animation-play-state:paused]'
               )}
             >
-              {items.map((item, idx) => (
+              {logos.map((item, idx) => (
                 <li key={idx} className='flex items-center justify-center'>
                   <div className='relative mx-14'>
                     <Image

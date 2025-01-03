@@ -9,8 +9,8 @@ export default function FAQ() {
   ];
 
   return (
-    <div className='mt-12 md:mt-16 lg:mt-20 pb-14 md:py-16 md:mb-20 lg:my-24'>
-      <h2 className='font-semi-bold text-center leading-relaxed text-pretty text-4xl lg:text-5xl xl:text-6xl'>
+    <div className='my-12 md:mt-16 lg:mt-20 pb-14 md:py-16 md:mb-20 lg:my-24'>
+      <h2 className='font-semi-bold text-center leading-relaxed text-pretty text-4xl lg:text-5xl'>
         FAQs
       </h2>
       <Accordion
@@ -22,22 +22,24 @@ export default function FAQ() {
           key='1'
           aria-label='Accordion 1'
           title='What services does SBA offer?'
+          className='text-base'
         >
-          {reply[0]}
+          <p className='text-base'>{reply[0]}</p>
         </AccordionItem>
         <AccordionItem
           key='2'
           aria-label='Accordion 2'
           title='What sets SBA apart from other consultancy firms?'
+          className='text-base'
         >
-          {reply[1]}
+          <p className='text-base'>{reply[1]}</p>
         </AccordionItem>
         <AccordionItem
           key='3'
           aria-label='Accordion 3'
           title='Can SBA handle projects of varying sizes and complexities?'
         >
-          {reply[2]}
+          <p className='text-base'>{reply[2]}</p>
         </AccordionItem>
       </Accordion>
     </div>

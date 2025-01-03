@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Services | SBA',
-  description: ' ',
+  description: 'Services provided by SBA',
 };
 
 export default function RootLayout({

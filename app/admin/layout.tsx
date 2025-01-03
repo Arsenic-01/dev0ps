@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'SBA | Admin',
-  description: ' ',
+  title: 'Admin | SBA',
+  description: 'Admin Dashboard of SBA',
 };
 
 export default function RootLayout({

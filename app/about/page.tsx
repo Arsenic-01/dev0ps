@@ -8,9 +8,8 @@ const About = () => {
   Sentry.metrics.set('user_view_contact', 'client');
 
   return (
-    <div className='relative pt-2 pb-10 md:py-10 bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto '>
+    <div className='relative flex justify-center bg-black items-center flex-col overflow-hidden mx-auto '>
       <WhoWeAre />
-      {/* <Experience /> */}
     </div>
   );
 };

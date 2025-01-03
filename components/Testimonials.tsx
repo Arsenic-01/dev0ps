@@ -66,8 +66,8 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className='mt-12 lg:p-16 h-full'>
-      <h1 className='bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-5xl lg:text-6xl  font-medium tracking-tight text-transparent'>
+    <section className=' h-full py-10'>
+      <h1 className='bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl lg:text-5xl font-medium tracking-tight text-transparent'>
         Kind Words from Satisfied Clients
       </h1>
       <Carousel
@@ -79,7 +79,7 @@ export default function Testimonials() {
             delay: 7000,
           }),
         ]}
-        className='w-full z-30 mt-20 md:mt-32 '
+        className='w-full z-30 mt-20 '
       >
         <CarouselContent className='-ml-1 hover:cursor-grab select-none	'>
           {TestimonialData.map((item) => (
@@ -109,7 +109,7 @@ export default function Testimonials() {
                             )
                           )}
                       </div>
-                      <div className='text-lg leading-8'>
+                      <div className='text-base leading-6 2xl:leading-7 2xl:text-lg'>
                         <p>
                           &quot;
                           {item.comment}

@@ -42,10 +42,10 @@ const ServicesExpanded: React.FC<ServicesExpandedProps> = ({
             {Modaltitle}
           </DialogTitle>
         </DialogHeader>
-        <DialogDescription className='text-center'>
+        <DialogDescription className='text-center mt-5 sm:mt-0 max-w-screen-md text-pretty text-white/40'>
           {ModalDescription}
         </DialogDescription>
-        <ModalContent id={id} />
+        <ModalContent id={id!} />
         <DialogFooter>
           <div className='flex flex-col sm:flex-row gap-4 sm:justify-end '>
             <TooltipProvider>
@@ -114,21 +114,20 @@ const ServicesExpanded: React.FC<ServicesExpandedProps> = ({
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>
-                  {' '}
                   <Button
                     color='secondary'
                     variant='shadow'
                     radius='lg'
                     className='w-full'
                     onClick={() =>
-                      window.open('mailto:sba.nashik@gmail.com', '_blank')
+                      window.open('mailto:sdbhor@gmail.com', '_blank')
                     }
                   >
                     Email 📧
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>sba.nashik@gmail.com</p>
+                  <p>sdbhor@gmail.com</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>

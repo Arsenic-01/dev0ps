@@ -137,13 +137,13 @@ export const BentoGridItem = ({
             {description}
           </div>
           <div
-            className={`font-sans text-lg ${id === 2 ? 'lg:text-2xl' : 'lg:text-3xl'} max-w-96 font-bold z-10 ${id === 5 ? 'text-xl' : ''}`}
+            className={`font-sans text-lg lg:text-2xl max-w-96 font-bold z-10`}
           >
             {title}
           </div>
 
           {id === 2 && (
-            <div className='translate-y-5 sm:translate-y-0 xl:-translate-y-4'>
+            <div className='translate-y-5 sm:translate-y-0 md:-translate-y-9 xl:-translate-y-4'>
               <GridGlobe />
             </div>
           )}
@@ -154,7 +154,7 @@ export const BentoGridItem = ({
                 <ul className='list-none space-y-3'>
                   {intern.map((item, i) => (
                     <li
-                      className='flex gap-1.5 items-center text-left text-sm sm:text-base'
+                      className='flex gap-1.5 items-center text-left text-sm sm:text-base xl:bg-black/70 rounded-lg px-2 max-w-fit'
                       key={i}
                     >
                       <Check className='h-5 w-5 shrink-0' />
@@ -177,13 +177,13 @@ export const BentoGridItem = ({
           {id === 3 && (
             <div className='flex flex-col gap-10 py-3'>
               <h2
-                className={`text-xl md:text-2xl font-bold lg:text-3xl px-4 ${playfair.className}`}
+                className={`text-lg lg:text-2xl  font-bold  px-4 ${playfair.className}`}
               >
                 We Know what we are doing
               </h2>
               <div className='flex justify-center gap-5 sm:px-5'>
                 <div className='flex flex-col gap-5'>
-                  <h2 className='text-3xl sm:text-4xl font-bold text-green-400'>
+                  <h2 className='text-3xl xl:text-4xl font-bold text-green-400'>
                     <NumberTicker value={4500} />
                     Cr+
                   </h2>
@@ -191,7 +191,7 @@ export const BentoGridItem = ({
                 </div>
 
                 <div className='flex flex-col gap-5'>
-                  <h2 className='text-3xl sm:text-4xl font-bold text-green-400'>
+                  <h2 className='text-3xl xl:text-4xl font-bold text-green-400'>
                     <NumberTicker value={1500} />+
                   </h2>
                   <span>Happy Clients</span>
@@ -205,7 +205,7 @@ export const BentoGridItem = ({
               <CardSpotlight className='rounded-xl md:rounded-3xl '>
                 <div className='relative'>
                   <div
-                    className={`font-sans text-lg lg:text-3xl font-bold z-10 `}
+                    className={`font-sans text-lg lg:text-2xl font-bold z-10 `}
                   >
                     <span className='text-red-400'>25 Years</span> of Experience
                     <br />

@@ -5,6 +5,9 @@ import { FaEnvelope, FaLocationDot, FaPhone } from 'react-icons/fa6';
 import { toast } from 'sonner';
 import * as Sentry from '@sentry/nextjs';
 import { z } from 'zod';
+import { Bitter } from 'next/font/google';
+
+const bitter = Bitter({ subsets: ['latin'] });
 
 // Define the validation schema using Zod
 const contactSchema = z.object({
@@ -96,18 +99,20 @@ const ContactPage = () => {
   };
 
   return (
-    <div className='min-h-screen bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto'>
-      <div className='pt-20 pb-24 sm:mt-24 xl:mt-10 2xl:mt-24 md:px-8'>
-        <h1 className='hidden sm:block sm:text-5xl lg:text-[52px] text-center md:text-left px-8'>
+    <div className='bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto'>
+      <div className='py-20 sm:py-28 2xl:py-36 md:px-8'>
+        <h1
+          className={`${bitter.className} hidden sm:block sm:text-4xl text-center lg:text-left px-8`}
+        >
           let's work together
-          <span className='text-[#EF4444] sm:text-5xl lg:text-[52px]'>.</span>
+          <span className='text-[#EF4444] sm:text-5xl xl:text-[52px]'>.</span>
         </h1>
         <h1 className='text-4xl font-medium sm:hidden mt-8 text-center md:text-left px-8'>
           get in touch
           <span className='text-[#EF4444] sm:text-5xl lg:text-[52px]'>.</span>
         </h1>
 
-        <div className='max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-10 sm:px-4 py-2 sm:py-5'>
+        <div className='xl:max-w-5xl 2xl:max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10 sm:px-4 '>
           {/* Contact Form */}
           <div className='px-5 sm:px-4 sm:py-2 pb-2'>
             <form className='mt-12' onSubmit={handleSubmit}>
@@ -121,7 +126,6 @@ const ContactPage = () => {
                   value={formData.email}
                   onChange={handleChange}
                   aria-label='Your email address'
-                  isInvalid={errors.email !== ''}
                 />
                 {errors.email && (
                   <div className='text-red-500 text-sm'>{errors.email}</div>
@@ -137,7 +141,6 @@ const ContactPage = () => {
                   value={formData.name}
                   onChange={handleChange}
                   aria-label='Your full name'
-                  isInvalid={errors.name !== ''}
                 />
                 {errors.name && (
                   <div className='text-red-500 text-sm'>{errors.name}</div>
@@ -153,7 +156,6 @@ const ContactPage = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   aria-label='Subject of your message'
-                  isInvalid={errors.subject !== ''}
                 />
                 {errors.subject && (
                   <div className='text-red-500 text-sm'>{errors.subject}</div>
@@ -168,14 +170,13 @@ const ContactPage = () => {
                   placeholder='What Are You Looking For, Features / Specifications, Application / Usage, site location, etc'
                   onChange={handleChange}
                   aria-label='Your message'
-                  isInvalid={errors.message !== ''}
-                  minRows={10}
+                  minRows={20}
                 />
                 {errors.message && (
                   <div className='text-red-500 text-sm'>{errors.message}</div>
                 )}
               </div>
-              <div className='mt-8 relative'>
+              <div className='mt-8 md:mt-10 relative'>
                 <Button
                   color='primary'
                   type='submit'
@@ -192,7 +193,7 @@ const ContactPage = () => {
           {/* Contact Details */}
           <div className='px-5 sm:px-4 py-3 md:mt-5'>
             <div className='py-4 mb-7 px-4 rounded-xl'>
-              <h2 className='text-2xl sm:text-3xl text-center sm:text-left font-medium'>
+              <h2 className='text-2xl 2xl:text-3xl text-center sm:text-left font-medium'>
                 Contact Details
               </h2>
               <div className='flex flex-col gap-6 mt-8 sm:mt-6'>
@@ -203,6 +204,15 @@ const ContactPage = () => {
                     Circle, Gangapur Road, Nashik-422013
                   </p>
                 </div>
+                <a
+                  href='mailto:sdbhor@gmail.com'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label='sdbhor@gmail.com'
+                  className='text-slate-300 inline-flex gap-5 items-center'
+                >
+                  <FaEnvelope className='w-5 h-5' /> sdbhor@gmail.com
+                </a>
                 <a
                   href='mailto:sba.nashik@gmail.com'
                   target='_blank'
@@ -239,7 +249,7 @@ const ContactPage = () => {
                 className='rounded-lg w-full'
                 src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14995.89229266695!2d73.7664801!3d20.0096448!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddea4d3d397d1f%3A0x69841f86cbb89521!2sSunil%20Bhor%20and%20Associates!5e0!3m2!1sen!2sin!4v1719696639207!5m2!1sen!2sin'
                 width={400}
-                height={228}
+                height={200}
                 style={{ border: 0, borderRadius: 20 }}
                 allowFullScreen={true}
                 loading='lazy'

@@ -68,13 +68,21 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             <div className='embla__slide' key={el.id}>
               <ThemeProvider theme={darkTheme}>
                 <CssBaseline />
-                <Card sx={{ maxWidth: 350 }}>
+                <Card
+                  sx={{
+                    maxWidth: 350,
+                    backgroundColor: 'black',
+                    color: 'white',
+                    border: '1px solid #252525',
+                    borderRadius: '6px',
+                  }}
+                >
                   <CardActionArea>
-                    <div className='w-full h-48 relative overflow-hidden rounded-md'>
+                    <div className='w-full h-48 relative overflow-hidden rounded-t-md'>
                       <Image
                         src={el.imgSrc}
                         alt='services images'
-                        className='w-full h-full absolute rounded-md object-cover select-none pointer-events-none'
+                        className='w-full h-full absolute rounded-t-md object-cover select-none pointer-events-none'
                         width={1000}
                         height={600}
                         loading='lazy'
