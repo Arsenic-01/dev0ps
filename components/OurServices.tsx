@@ -5,7 +5,6 @@ import { Button } from '@nextui-org/button';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import EnquireExpanded from './ui/EnquiryModel';
 import ServicesExpanded from './ui/ServicesExpanded';
 import {
   Breadcrumb,
@@ -15,6 +14,7 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import Link from 'next/link';
+import ModalDescription from './ModalDescription';
 interface Service {
   id: number;
   imgSrc: string;
@@ -48,6 +48,7 @@ const OurServices = () => {
   const serviceId = searchParams.get('serviceId');
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isInvalid, setIsInvalid] = useState(false);
   const [selectedService, setSelectedService] = useState<Service | null>(null);
 
   useEffect(() => {
@@ -58,6 +59,19 @@ const OurServices = () => {
       if (service) {
         setSelectedService(service);
         setIsModalOpen(true);
+      } else {
+        setIsInvalid(true);
+        setIsModalOpen(true);
+        const service = {
+          id: 0,
+          imgSrc: '/404_img.png',
+          title: 'Service not available',
+          description:
+            'Hmm, seems like the service you are looking for is not available.',
+          imgAlt: 'Service not available',
+        };
+        setSelectedService(service);
+        setIsInvalid(true);
       }
     }
   }, [serviceId]);
@@ -70,6 +84,7 @@ const OurServices = () => {
   const handleCloseModal = () => {
     setSelectedService(null);
     setIsModalOpen(false);
+    window.history.pushState({}, '', '/services'); // Reset URL
   };
 
   return (
@@ -135,6 +150,7 @@ const OurServices = () => {
           id={selectedService.id}
           isOpen={isModalOpen}
           onClose={handleCloseModal}
+          isInvalid={isInvalid}
         />
       )}
     </div>

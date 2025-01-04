@@ -25,6 +25,7 @@ interface ServicesExpandedProps {
   id: number | undefined;
   isOpen: boolean;
   onClose: () => void;
+  isInvalid?: boolean;
 }
 
 const ServicesExpanded: React.FC<ServicesExpandedProps> = ({
@@ -32,20 +33,21 @@ const ServicesExpanded: React.FC<ServicesExpandedProps> = ({
   ModalDescription,
   id,
   isOpen,
+  isInvalid,
   onClose,
 }) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className='max-w-7xl max-h-[80vh] scrollbar-hide'>
+      <DialogContent className='max-w-7xl max-h-[80vh] scrollbar-hide '>
         <DialogHeader className='mt-5'>
-          <DialogTitle className='font-bold text-3xl text-center lg:text-4xl xl:text-5xl'>
+          <DialogTitle className='font-bold text-3xl text-center lg:text-4xl lg:px-5'>
             {Modaltitle}
           </DialogTitle>
         </DialogHeader>
-        <DialogDescription className='text-center mt-5 sm:mt-0 max-w-screen-md text-pretty text-white/40'>
-          {ModalDescription}
+        <DialogDescription className='text-center mt-5 sm:mt-0 lg:px-5'>
+          <span className='text-white/40 max-w-md'>{ModalDescription}</span>
         </DialogDescription>
-        <ModalContent id={id!} />
+        <ModalContent id={id!} isInvalid={isInvalid} />
         <DialogFooter>
           <div className='flex flex-col sm:flex-row gap-4 sm:justify-end '>
             <TooltipProvider>
