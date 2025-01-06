@@ -4,8 +4,10 @@ import React from 'react';
 const CopyRightPage = () => {
   return (
     <div className='py-24 md:py-28 px-5 flex justify-center items-center mx-auto'>
-      <div className='max-w-4xl flex flex-col items-center justify-center gap-5 md:gap-10'>
-        <h2 className='text-2xl font-bold md:text-3xl'>Copyright Policy</h2>
+      <div className='max-w-4xl flex flex-col items-center justify-center gap-12'>
+        <h2 className='text-2xl font-bold md:text-3xl text-center'>
+          Copyright Policy
+        </h2>
         <div className='flex flex-col gap-5'>
           <p>
             The images displayed on this website are used to enhance the
@@ -21,9 +23,11 @@ const CopyRightPage = () => {
             to our domain, we have not sought explicit permission from the
             respective copyright holders.
           </p>
-          <p className='flex flex-col gap-3'>
-            To ensure transparency and avoid unintended disputes, we wish to
-            clarify the following:
+          <div className='flex flex-col gap-3'>
+            <p>
+              To ensure transparency and avoid unintended disputes, we wish to
+              clarify the following:
+            </p>
             <ul className='list-disc pl-4'>
               <li>
                 <span className='font-semibold'>Ownership</span>: All rights to
@@ -43,7 +47,7 @@ const CopyRightPage = () => {
                 attribution, as necessary.
               </li>
             </ul>
-          </p>
+          </div>
           <p>
             We deeply value the rights of content creators and strive to
             maintain ethical practices in all our endeavors. Thank you for your
