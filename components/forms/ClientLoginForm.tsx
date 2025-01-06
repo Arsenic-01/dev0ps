@@ -1,18 +1,15 @@
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { redirect } from 'next/navigation';
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 import { Form } from '@/components/ui/form';
-import { LoginFormValidation, UserFormValidation } from '@/lib/validation';
+import { LoginFormValidation } from '@/lib/validation';
 
 import 'react-phone-number-input/style.css';
 import CustomFormField, { FormFieldType } from '../CustomFormField';
-import SubmitButton from '../SubmitButton';
 import { toast } from 'sonner';
-import { FaRightToBracket } from 'react-icons/fa6';
 import { useRouter } from 'next/navigation';
 import { UserContext } from '@/context/UserContext';
 import { Button } from '@nextui-org/button';

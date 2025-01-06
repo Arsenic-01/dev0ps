@@ -56,11 +56,11 @@ export const ContactEmail = ({ name, email, subject, message }: EmailProps) => (
         </Section>
         <Hr />
         <Text style={links}>
-          <Link href='https://sba-main.vercel.app/' style={link}>
+          <Link href='https://sunilbhor.com/' style={link}>
             Website Link
           </Link>{' '}
           ・{' '}
-          <Link href='https://sba-main.vercel.app/admin' style={link}>
+          <Link href='https://sunilbhor.com/admin' style={link}>
             Admin Link
           </Link>
         </Text>

@@ -24,7 +24,7 @@ const sendEmail = async ({
   to,
   subject,
   reactComponent,
-  from = 'Acme <onboarding@resend.dev>',
+  from = 'Appointment@sunilbhor.com',
 }: {
   to: string;
   subject: string;
@@ -78,7 +78,7 @@ export const sendAdminEmailNotification = async (appointment: any) => {
   });
 
   await sendEmail({
-    to: appointment.client.email,
+    to: 'vedbhor25@gmail.com',
     subject,
     reactComponent: emailContent,
   });

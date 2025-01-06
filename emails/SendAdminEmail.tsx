@@ -33,7 +33,7 @@ export const SendAdminEmail = ({
     <Body style={main}>
       <Container style={container}>
         <Section style={header}>
-          <Link href='https://sba-main.vercel.app/'>
+          <Link href='https://sunilbhor.com/'>
             <Img
               src='https://res.cloudinary.com/dmdci86wv/image/upload/fl_preserve_transparency/v1725786410/nav_red_ro2bcc.jpg?_s=public-apps'
               width='50'
@@ -67,11 +67,11 @@ export const SendAdminEmail = ({
         </Section>
         <Hr />
         <Text style={links}>
-          <Link href='https://sba-main.vercel.app/' style={link}>
+          <Link href='https://sunilbhor.com/' style={link}>
             Website Link
           </Link>{' '}
           ・{' '}
-          <Link href='https://sba-main.vercel.app/admin' style={link}>
+          <Link href='https://sunilbhor.com/admin' style={link}>
             Admin Link
           </Link>
         </Text>

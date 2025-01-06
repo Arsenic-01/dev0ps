@@ -91,7 +91,7 @@ export const ClientForm = () => {
           };
 
           await registerUserDocument(newUserDoc);
-          toast('Login Successful! 🎉');
+          toast.success('Login Successful! 🎉');
           setIsLoggedIn(true);
           router.push(`/clients/${userData.user.$id}/new-appointment`);
         } else {
