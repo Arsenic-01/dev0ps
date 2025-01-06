@@ -8,6 +8,7 @@ import {
   FaWhatsapp,
   FaXTwitter,
 } from 'react-icons/fa6';
+import { twMerge } from 'tailwind-merge';
 
 const FooterExp = () => {
   const currentYear = new Date().getFullYear();
@@ -36,7 +37,7 @@ const FooterExp = () => {
   ];
 
   const iconClass =
-    'text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75';
+    'text-gray-700 text-base hover:text-gray-700/75 dark:text-white dark:hover:text-white/75';
 
   return (
     <footer className='w-full dark:border-t-1 border-t-white/10 dark:bg-black'>
@@ -56,14 +57,17 @@ const FooterExp = () => {
         </div>
 
         {/* Tagline */}
-        <p className='mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 dark:text-gray-400'>
+        <p className='mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 dark:text-white/60'>
           Innovate. Value. Design.
         </p>
 
         {/* Navigation Links */}
-        <ul className='mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12'>
+        <ul className='mt-12 max-w-md mx-auto flex flex-wrap justify-center gap-6 md:gap-8'>
           {linkdata.map((item) => (
-            <li key={item.id} className={iconClass}>
+            <li
+              key={item.id}
+              className={twMerge(iconClass, 'transition-all ease-in-out')}
+            >
               {item.next ? (
                 <Link className={iconClass} href={item.link}>
                   {item.title}
@@ -96,7 +100,14 @@ const FooterExp = () => {
 
         {/* Copyright */}
         <p className='text-sm text-neutral-400 mt-12 text-center mx-auto'>
-          &copy; {currentYear} Sunil Bhor & Associates. All rights reserved.
+          &copy; {currentYear} Sunil Bhor & Associates.{' '}
+          <Link
+            className='hover:underline hover:underline-offset-4 hover:text-neutral-100 transition-all'
+            href='/copyright'
+          >
+            All rights reserved
+          </Link>
+          .
         </p>
       </div>
     </footer>

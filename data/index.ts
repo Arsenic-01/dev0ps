@@ -37,7 +37,7 @@ export const ProjectData = [
     loc: 'mahatma nagar',
     duration: '3 months',
     description:
-      'Provided only structural plans and architectural solutions. This was not constructed by us.',
+      'We provided the structural plans and innovative architectural solutions for this stunning skyscraper, contributing significantly to its design, though not involved in construction.',
   },
   {
     id: 5,
@@ -173,6 +173,12 @@ export const linkdata = [
     id: 6,
     link: '/contact',
     title: 'Contact',
+    next: true,
+  },
+  {
+    id: 7,
+    link: '/copyright',
+    title: 'Copyright',
     next: true,
   },
 ];

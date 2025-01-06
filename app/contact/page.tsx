@@ -100,7 +100,7 @@ const ContactPage = () => {
 
   return (
     <div className='bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto'>
-      <div className='py-20 sm:py-28 2xl:py-36 md:px-8'>
+      <div className='py-20 sm:py-28 md:px-8'>
         <h1
           className={`${bitter.className} hidden sm:block sm:text-4xl text-center lg:text-left px-8`}
         >
