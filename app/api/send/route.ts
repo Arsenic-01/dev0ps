@@ -9,13 +9,22 @@ export async function POST(request: Request) {
   const { email, name, subject, message } = await request.json();
 
   try {
-    const data = await resend.emails.send({
-      from: 'Appointment@sunilbhor.com',
-      to: 'vedbhor25@gmail.com',
-      subject: subject,
-      text: message,
-      react: ContactEmail({ name, email, subject, message }),
-    });
+    const data = await resend.batch.send([
+      {
+        from: 'Appointment@sunilbhor.com',
+        to: 'vedbhor25@gmail.com',
+        subject: subject,
+        text: message,
+        react: ContactEmail({ name, email, subject, message }),
+      },
+      {
+        from: 'Appointment@sunilbhor.com',
+        to: 'sdbhor@gmail.com',
+        subject: subject,
+        text: message,
+        react: ContactEmail({ name, email, subject, message }),
+      },
+    ]);
 
     return NextResponse.json({ data });
   } catch (error: any) {

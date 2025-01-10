@@ -27,51 +27,38 @@ const aboutData = [
     href: '/about/certifications-and-licenses',
   },
 ];
-
 const serviceData = [
-  {
-    id: 1,
-    title: 'Structural Designing',
-  },
   {
     id: 2,
     title: 'Architectural Planning',
   },
   {
-    id: 3,
-    title: 'Interior Designing',
+    id: 10,
+    title: 'Town Planning Approvals',
   },
   {
-    id: 4,
-    title: 'Valuation Consultancy',
-  },
-  {
-    id: 5,
-    title: 'TEV Consultancy',
-  },
-  {
-    id: 6,
-    title: 'Lender’s independent engineers',
+    id: 16,
+    title: 'NA Conversion of Lands',
   },
   {
     id: 7,
     title: 'Real Estate Advisory',
   },
   {
+    id: 5,
+    title: 'Valuation Consultancy',
+  },
+  {
     id: 8,
     title: 'Plant and Machinery Valuation',
   },
   {
-    id: 9,
-    title: 'Black Money Valuation',
+    id: 14,
+    title: 'Chartered Engineer Certifications',
   },
   {
-    id: 10,
-    title: 'Town planning Approvals',
-  },
-  {
-    id: 11,
-    title: 'Tender and specs drawing',
+    id: 17,
+    title: 'Factory Act Certification',
   },
   {
     id: 12,
@@ -79,29 +66,48 @@ const serviceData = [
   },
   {
     id: 13,
-    title: 'Surverying & Monitoring',
-  },
-  {
-    id: 14,
-    title: 'Chartered Engineer Certifications',
+    title: 'Surveying & Monitoring',
   },
   {
     id: 15,
     title: 'Industrial Safety Audits',
   },
   {
-    id: 16,
-    title: 'NA Conversion of Lands',
-  },
-  {
-    id: 17,
-    title: 'Factory Act Certification',
-  },
-  {
     id: 18,
     title: 'IPO Certification',
   },
-  // Add more components here
+  {
+    id: 6,
+    title: 'TEV Consultancy',
+  },
+  {
+    id: 1,
+    title: 'Structural Designing',
+  },
+  {
+    id: 3,
+    title: 'Interior Designing',
+  },
+  {
+    id: 9,
+    title: 'Black Money Valuation',
+  },
+  {
+    id: 11,
+    title: 'Tender and specs drawing',
+  },
+  {
+    id: 4,
+    title: 'Lender’s independent engineers',
+  },
+  {
+    id: 19,
+    title: 'Mould certification',
+  },
+  {
+    id: 20,
+    title: 'Import Machinery certification',
+  },
 ];
 
 const NavigationMenuContents = () => {

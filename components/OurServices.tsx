@@ -118,13 +118,15 @@ const OurServices = () => {
               <div className='flex flex-col gap-3 px-3'>
                 <div>
                   <Button
+                    as={Link}
+                    href={`/contact`}
                     color='primary'
                     size='sm'
                     variant='solid'
                     radius='full'
                     className='w-full'
                   >
-                    Pricing
+                    Request Quote
                   </Button>
                 </div>
 

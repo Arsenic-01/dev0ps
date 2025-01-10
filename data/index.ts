@@ -41,13 +41,13 @@ export const ProjectData = [
   },
   {
     id: 5,
-    imgSrc: '/projects/Ramnath_Jadhav.webp',
-    title: 'Ramnath Complex',
+    imgSrc: '/projects/galaxy.jpg',
+    title: 'Galaxy Gold Star Heights',
     type: 'residential',
-    loc: '-',
+    loc: 'Amrutdham',
     duration: '3 months',
     description:
-      'We oversaw the entire residential project, handling structure, architecture, and interiors to create a modern, safe, and functional living space.',
+      'We designed and developed a stunning skyscraper, overseeing its architecture and ensuring a modern, functional, and visually striking living space.',
   },
   {
     id: 6,
@@ -104,10 +104,10 @@ export const ProjectData = [
     imgSrc: '/projects/ghat.webp',
     title: 'Bathing Ghat (Kumbh Mela 2015)',
     type: 'public use',
-    loc: 'ram kund',
+    loc: 'nandur manur',
     duration: '3 months',
     description:
-      'We helped in the construction of the bathing ghat near Ram Kund for the Simhastha Kumbh Mela 2015, providing structural design and support for the project.',
+      'We designed and supported the construction of bathing ghats at Vansda, Nandur Manur, and Aila Ganga Godavari Ghat, including safe visitor railings for festive traffic.',
   },
   {
     id: 12,
@@ -124,10 +124,20 @@ export const ProjectData = [
     imgSrc: '/projects/sahyadri.webp',
     title: 'Sahyadri Agro Mall',
     type: 'industrial',
+    loc: 'Vansda',
+    duration: '3 months',
+    description:
+      'We provided structural design and architectural solutions to create a modern, functional mall with complete project execution.',
+  },
+  {
+    id: 14,
+    imgSrc: '/projects/Ramnath_Jadhav.webp',
+    title: 'Ramnath Complex',
+    type: 'residential',
     loc: '-',
     duration: '3 months',
     description:
-      'Provided needed structural plan for the construction of the mall. This was not constructed by us.',
+      'We oversaw the entire residential project, handling structure, architecture, and interiors to create a modern, safe, and functional living space.',
   },
 ];
 
@@ -327,6 +337,22 @@ export const ServiceCards = [
     description:
       'IPO certification validates a company’s readiness for an Initial Public Offering, ensuring compliance with regulatory requirements and enhancing investor confidence in financial disclosures.',
     imgAlt: 'IPO Certification',
+  },
+  {
+    id: 19,
+    imgSrc: '/embla/mould.png',
+    title: 'Mould certification',
+    description:
+      'Mould certification ensures compliance with safety, quality, and performance standards for imported machinery, protecting consumers and maintaining international trade integrity.',
+    imgAlt: 'Mould certification',
+  },
+  {
+    id: 20,
+    imgSrc: '/embla/import.jpg',
+    title: 'Import Machinery certification',
+    description:
+      'Import Machinery certification ensures compliance with safety, quality, and performance standards for imported machinery, protecting consumers and maintaining international trade integrity.',
+    imgAlt: 'Import Machinery certification',
   },
 ];
 
@@ -2109,6 +2135,206 @@ export const ServiceCardsDescription = [
         title: 'Telecommunications: ',
         description:
           'Helping telecommunications companies navigate the IPO process by ensuring regulatory compliance and conducting the necessary financial audits.',
+      },
+    ],
+  },
+  {
+    id: 19,
+    title: 'Mould Certification in Structural and Architectural Fields',
+    description:
+      'We provide Mould Certification services tailored for the structural and architectural sectors. These services ensure that moulds used in the construction of structural components and architectural elements meet quality, safety, and regulatory standards. Our certification process encompasses design evaluation, material testing, dimensional accuracy checks, and performance testing to support efficient, sustainable, and safe construction practices.',
+    list: [
+      {
+        title: 'Design Evaluation: ',
+        description:
+          'Assessing mould designs for structural and architectural applications to ensure they meet intended specifications and comply with relevant standards.',
+      },
+      {
+        title: 'Material Quality Verification: ',
+        description:
+          'Testing mould materials to confirm durability, resilience, and suitability for creating structural and architectural elements.',
+      },
+      {
+        title: 'Precision and Accuracy Testing: ',
+        description:
+          'Validating the dimensional accuracy of moulds to ensure precise manufacturing of architectural or structural components.',
+      },
+      {
+        title: 'Load-Bearing Performance Analysis: ',
+        description:
+          'Testing moulds under simulated load conditions to verify their ability to produce components capable of meeting structural strength requirements.',
+      },
+      {
+        title: 'Surface Finish Quality Assessment: ',
+        description:
+          'Ensuring that the mould produces components with the desired surface finishes, especially for visible architectural elements.',
+      },
+      {
+        title: 'Regulatory Compliance: ',
+        description:
+          'Certifying that moulds adhere to building codes, safety standards, and environmental regulations specific to structural and architectural industries.',
+      },
+      {
+        title: 'Custom Component Adaptation: ',
+        description:
+          'Certifying moulds designed for unique or custom architectural features, ensuring their alignment with project specifications.',
+      },
+      {
+        title: 'Durability and Lifecycle Assessment: ',
+        description:
+          'Analyzing the expected lifecycle of the mould to ensure consistent and reliable use over its intended lifespan.',
+      },
+      {
+        title: 'Eco-Friendly Design Certification: ',
+        description:
+          'Ensuring that mould designs promote sustainability by reducing material waste and enabling eco-friendly construction practices.',
+      },
+      {
+        title: 'Documentation and Certification Reports: ',
+        description:
+          "Providing comprehensive documentation to validate the mould's compliance with all structural and architectural standards.",
+      },
+    ],
+    sectors: [
+      {
+        title: 'High-Rise Structures: ',
+        description:
+          'Certifying moulds used in the construction of high-rise buildings, ensuring structural integrity and compliance with safety regulations.',
+      },
+      {
+        title: 'Bridges and Flyovers: ',
+        description:
+          'Providing mould certification for components used in bridge construction, focusing on load-bearing capacity and precision.',
+      },
+      {
+        title: 'Architectural Façades: ',
+        description:
+          'Certifying moulds used to create intricate architectural facades, ensuring accuracy and aesthetic quality.',
+      },
+      {
+        title: 'Precast Concrete Components: ',
+        description:
+          'Ensuring that moulds for precast concrete elements meet quality standards for durability and dimensional precision.',
+      },
+      {
+        title: 'Urban Infrastructure: ',
+        description:
+          'Providing certification for moulds used in the construction of urban infrastructure like metro stations, flyovers, and public buildings.',
+      },
+      {
+        title: 'Industrial Buildings: ',
+        description:
+          'Certifying moulds used in the construction of warehouses and industrial buildings to ensure compliance with structural requirements.',
+      },
+      {
+        title: 'Residential Complexes: ',
+        description:
+          'Assessing moulds used in the construction of residential buildings, ensuring compliance with design and safety standards.',
+      },
+      {
+        title: 'Landscape and Public Spaces: ',
+        description:
+          'Certifying moulds for architectural elements used in parks, plazas, and other public spaces to ensure aesthetic and structural quality.',
+      },
+    ],
+  },
+  {
+    id: 20,
+    title: 'Import Machinery Certification',
+    description:
+      'We provide Import Machinery Certification services to ensure that machinery imported from international markets meets quality, safety, and compliance standards. Our services focus on evaluating machinery for its suitability, efficiency, and adherence to domestic regulatory requirements. This certification process helps industries minimize operational risks, ensure compliance, and integrate imported machinery seamlessly into their operations.',
+    list: [
+      {
+        title: 'Pre-Import Feasibility Assessment: ',
+        description:
+          'Analyzing the specifications, functionality, and compatibility of the machinery with local operational and regulatory requirements before import.',
+      },
+      {
+        title: 'Technical Compliance Verification: ',
+        description:
+          'Ensuring that the machinery meets technical and safety standards applicable in the importing country.',
+      },
+      {
+        title: 'Customs and Regulatory Documentation: ',
+        description:
+          'Assisting with the preparation of required documentation for customs clearance and regulatory approvals.',
+      },
+      {
+        title: 'Performance and Efficiency Testing: ',
+        description:
+          "Conducting tests to verify the machinery's operational efficiency and performance under local conditions.",
+      },
+      {
+        title: 'Material and Durability Analysis: ',
+        description:
+          'Assessing the materials used in the machinery to ensure durability and resistance to wear and tear under local environmental conditions.',
+      },
+      {
+        title: 'Safety Compliance Assessment: ',
+        description:
+          'Ensuring that the machinery adheres to domestic safety standards, minimizing risks during operation.',
+      },
+      {
+        title: 'Environmental Standards Certification: ',
+        description:
+          'Certifying that the machinery complies with environmental regulations, including emissions, noise levels, and waste management standards.',
+      },
+      {
+        title: 'Installation and Integration Support: ',
+        description:
+          'Providing guidance on the installation and seamless integration of the machinery into existing operational setups.',
+      },
+      {
+        title: 'Training and Operational Guidance: ',
+        description:
+          'Offering training for personnel on the safe and efficient operation of the imported machinery.',
+      },
+      {
+        title: 'Post-Certification Maintenance Support: ',
+        description:
+          'Providing recommendations for routine maintenance and servicing to ensure long-term reliability and efficiency of the machinery.',
+      },
+    ],
+    sectors: [
+      {
+        title: 'Manufacturing: ',
+        description:
+          'Certifying imported machinery used in manufacturing processes to ensure efficiency, safety, and compliance.',
+      },
+      {
+        title: 'Construction: ',
+        description:
+          'Providing certification for heavy machinery used in construction, ensuring adherence to safety and performance standards.',
+      },
+      {
+        title: 'Energy and Power: ',
+        description:
+          'Certifying machinery for energy generation and distribution, focusing on operational reliability and environmental compliance.',
+      },
+      {
+        title: 'Healthcare: ',
+        description:
+          'Ensuring that imported medical equipment meets stringent healthcare standards and safety regulations.',
+      },
+      {
+        title: 'Automotive Industry: ',
+        description:
+          'Certifying machinery used in automotive manufacturing to ensure precision and adherence to quality standards.',
+      },
+      {
+        title: 'Food and Beverage: ',
+        description:
+          'Certifying machinery used in food processing and packaging, ensuring hygiene and safety compliance.',
+      },
+      {
+        title: 'Textile Industry: ',
+        description:
+          'Certifying imported textile machinery for performance, efficiency, and adherence to industry standards.',
+      },
+      {
+        title: 'Chemical and Pharmaceuticals: ',
+        description:
+          'Certifying machinery used in chemical and pharmaceutical production, focusing on safety and regulatory compliance.',
       },
     ],
   },

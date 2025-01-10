@@ -193,7 +193,7 @@ const ContactPage = () => {
           {/* Contact Details */}
           <div className='px-5 sm:px-4 py-3 md:mt-5'>
             <div className='py-4 mb-7 px-4 rounded-xl'>
-              <h2 className='text-2xl 2xl:text-3xl text-center sm:text-left font-medium'>
+              <h2 className='text-2xl text-center sm:text-left font-medium'>
                 Contact Details
               </h2>
               <div className='flex flex-col gap-6 mt-8 sm:mt-6'>

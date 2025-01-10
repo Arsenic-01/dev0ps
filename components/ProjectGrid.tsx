@@ -1,9 +1,24 @@
+'use client';
+import { useState } from 'react';
 import { ProjectData } from '@/data';
 import Image from 'next/image';
 import React from 'react';
 import { BreadcrumbWithCustomSeparator } from './OurServices';
 
 const ProjectGrid = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState('');
+
+  const openModal = (imgSrc) => {
+    setCurrentImage(imgSrc);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setCurrentImage('');
+  };
+
   return (
     <div className='xl:max-w-5xl 2xl:max-w-6xl mb-10 px-8'>
       <BreadcrumbWithCustomSeparator currentPage='Recent Projects' />
@@ -15,24 +30,24 @@ const ProjectGrid = () => {
           >
             <div className='flex flex-col gap-8 justify-between w-full h-full'>
               <div>
-                <div className='w-full h-48 xl:h-36 2xl:h-44 relative overflow-hidden rounded-t-lg'>
+                <div
+                  className='w-full h-48 xl:h-36 2xl:h-44 relative overflow-hidden rounded-t-lg'
+                  onClick={() => openModal(project.imgSrc)} // Open modal on click
+                >
                   <Image
                     src={project.imgSrc}
                     alt={project.title}
-                    className='w-full h-full absolute rounded-t-lg object-cover'
+                    className='w-full h-full absolute rounded-t-lg object-cover select-none pointer-events-none'
                     width={1000}
                     height={600}
-                    quality={100}
                     loading='eager'
+                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                   />
                 </div>
                 <h1 className='mt-3 text-lg lg:text-xl px-3'>
                   {project.title}
                 </h1>
                 <div className='flex gap-2 font-semibold text-sm mt-2 flex-wrap mb-5 px-3'>
-                  {/* <div className='bg-red-900/70 text-red-500 rounded-md px-2 py-1'>
-                    {project.type}
-                  </div> */}
                   <div className='bg-blue-900/50 text-blue-400 rounded-md px-2 py-1'>
                     {project.loc}
                   </div>
@@ -48,6 +63,31 @@ const ProjectGrid = () => {
           </div>
         ))}
       </div>
+
+      {/* Modal for Fullscreen Image */}
+      {isModalOpen && (
+        <div
+          className='fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50'
+          onClick={closeModal} // Close modal on backdrop click
+        >
+          <div className='relative'>
+            <Image
+              src={currentImage}
+              alt='Full Screen Image'
+              className='rounded-lg select-none pointer-events-none'
+              width={1000}
+              height={600}
+              quality={100}
+            />
+            <button
+              className='absolute top-3 right-3 text-black bg-white px-3 py-2 rounded-full font-black'
+              onClick={closeModal} // Close modal on button click
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -10,12 +10,12 @@ import {
 import Autoplay from 'embla-carousel-autoplay';
 import { Check, Star, StarHalf } from 'lucide-react';
 
-export default function Testimonials() {
+export default function testimonials() {
   const TestimonialData = [
     {
       id: 1,
-      name: 'Rajesh Sharma',
-      userImg: '/users/user-1.png',
+      name: 'Naseem Ansari',
+      userImg: '/users/testimonials/user1.png',
       rating: 5,
       comment:
         'SBA exceeded our expectations with their architectural planning and structural design. Our commercial project was completed on time, and the final result was beyond what we imagined.',
@@ -24,8 +24,8 @@ export default function Testimonials() {
     },
     {
       id: 2,
-      name: 'Priya Verma',
-      userImg: '/users/user-2.png',
+      name: 'Anand Mutha',
+      userImg: '/users/testimonials/user2.png',
       rating: 4,
       halfrating: 1,
       comment:
@@ -35,8 +35,8 @@ export default function Testimonials() {
     },
     {
       id: 3,
-      name: 'Sunita Joshi',
-      userImg: '/users/user-3.png',
+      name: 'Mukund Joshi',
+      userImg: '/users/testimonials/user3.png',
       rating: 5,
       comment:
         'Working with SBA for the structural design of our industrial project was a great experience. They provided innovative solutions and ensured everything was in line with our budget.',
@@ -45,8 +45,8 @@ export default function Testimonials() {
     },
     {
       id: 4,
-      name: 'Amit Patil',
-      userImg: '/users/user-4.jpg',
+      name: 'Prafful Deore',
+      userImg: '/users/testimonials/user4.png',
       rating: 5,
       comment:
         'SBA’s property valuation services were spot on. They provided a detailed and accurate assessment for our commercial property, helping us make informed decisions.',
@@ -55,8 +55,8 @@ export default function Testimonials() {
     },
     {
       id: 5,
-      name: 'Vikram Singh',
-      userImg: '/users/user-5.jpg',
+      name: 'Aftab Ansari',
+      userImg: '/users/testimonials/user5.png',
       rating: 4,
       comment:
         'SBA handled the architectural planning and structural design for our residential project in Nashik. The entire process was smooth, and the end result was a beautifully designed home.',

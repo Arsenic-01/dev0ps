@@ -82,6 +82,11 @@ export const sendAdminEmailNotification = async (appointment: any) => {
     subject,
     reactComponent: emailContent,
   });
+  await sendEmail({
+    to: 'sdbhor@gmail.com',
+    subject,
+    reactComponent: emailContent,
+  });
 };
 
 // GET RECENT APPOINTMENTS
