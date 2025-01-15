@@ -1,11 +1,5 @@
 'use client';
 
-import { ServiceCards } from '@/data/index';
-import { Button } from '@nextui-org/button';
-import Image from 'next/image';
-import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import ServicesExpanded from './ui/ServicesExpanded';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -13,8 +7,13 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
+import { ServicePageCards } from '@/data/index';
+import { Button } from '@nextui-org/button';
+import Image from 'next/image';
 import Link from 'next/link';
-import ModalDescription from './ModalDescription';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import ServicesExpanded from './ui/ServicesExpanded';
 interface Service {
   id: number;
   imgSrc: string;
@@ -53,7 +52,7 @@ const OurServices = () => {
 
   useEffect(() => {
     if (serviceId) {
-      const service = ServiceCards.find(
+      const service = ServicePageCards.find(
         (service) => service.id.toString() === serviceId
       );
       if (service) {
@@ -91,7 +90,7 @@ const OurServices = () => {
     <div className='xl:max-w-5xl 2xl:max-w-6xl  mb-10 px-8'>
       <BreadcrumbWithCustomSeparator currentPage='Services' />
       <div className='mt-10 grid-cols-1 sm:grid-cols-2 grid md:grid-cols-3 gap-7'>
-        {ServiceCards.map((service) => (
+        {ServicePageCards.map((service) => (
           <div
             key={service.id}
             className='cursor-pointer snap-y bg-black border-[0.5px] border-[#353535] md:border-[#1f1f1f] hover:bg-[#141414] transition-all active:bg-[#1F1F1F] rounded-lg pb-3'

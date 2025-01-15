@@ -1,15 +1,15 @@
-import Hero from '@/components/Hero';
-import Grid from '@/components/Grid';
-import CallToAction from '@/components/CallToAction';
-import Work from '@/components/ui/Work';
-import Development from '@/components/Development';
-import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/Accordian';
-import * as Sentry from '@sentry/nextjs';
-import { LampDemo } from '@/components/ui/lamp';
-import Services from '@/components/UpdatedServices';
+import CallToAction from '@/components/CallToAction';
+import Development from '@/components/Development';
+import Grid from '@/components/Grid';
+import Hero from '@/components/Hero';
+import Testimonials from '@/components/Testimonials';
 import InfiniteMovingCards from '@/components/ui/InfiniteCards';
+import { LampDemo } from '@/components/ui/lamp';
+import Work from '@/components/ui/Work';
+import Services from '@/components/UpdatedServices';
 import { companieslogo } from '@/data';
+import * as Sentry from '@sentry/nextjs';
 
 const Home = () => {
   Sentry.metrics.set('user_view_home', 'client');

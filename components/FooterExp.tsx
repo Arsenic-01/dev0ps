@@ -40,13 +40,13 @@ const FooterExp = () => {
     'text-gray-700 text-base hover:text-gray-700/75 dark:text-white dark:hover:text-white/75';
 
   return (
-    <footer className='w-full dark:border-t-1 border-t-white/10 dark:bg-black'>
+    <footer className='w-full dark:border-t-1 border-t-white/10 dark:bg-black z-50'>
       <div className='px-5 pt-16 pb-7 sm:px-6 lg:px-8'>
         {/* Logo Section */}
         <div className='flex justify-center text-teal-600 dark:text-teal-300'>
           <Link href='/'>
             <Image
-              src='/SBA_LOGO11-modified.webp'
+              src='/logo.webp'
               width={48}
               height={72}
               loading='eager'

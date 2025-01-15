@@ -75,6 +75,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     color: 'white',
                     border: '1px solid #252525',
                     borderRadius: '6px',
+                    paddingBottom: '10px',
                   }}
                 >
                   <CardActionArea>

@@ -1,37 +1,53 @@
+import FooterExp from '@/components/FooterExp';
+import NavbarComponent from '@/components/ui/Navbar';
+import { UserContextProvider } from '@/context/UserContext';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import { DM_Sans } from 'next/font/google';
-import './globals.css';
-import { ThemeProvider } from './provider';
-import { Providers } from './nextuiProvider';
-import NavbarComponent from '@/components/ui/Navbar';
-import FooterExp from '@/components/FooterExp';
 import { Toaster } from 'sonner';
-import { UserContextProvider } from '@/context/UserContext';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/react';
+import './globals.css';
+import { Providers } from './nextuiProvider';
+import { ThemeProvider } from './provider';
+import WhatsAppButton from '@/components/ui/WhatsappButton';
 
 const dmSans = DM_Sans({ subsets: ['latin'], weight: ['400', '500', '700'] });
 
 export const metadata: Metadata = {
   icons: {
-    icon: '/SBA_LOGO11-modified.webp',
+    icon: '/logo.webp',
   },
 
   keywords: [
     'Sunil Bhor & Associates',
-    'Sunil Bhor',
-    'Sunil Bhor Associates',
-    'Sunil Bhor & Associates',
-    'SBA',
-    'sba',
+    'Property Valuation Experts',
+    'Architectural Planning India',
+    'Structural Design Services',
+    'Real Estate Advisory Nashik',
+    'Industrial Project Management',
+    'SBA Consultancy Services',
+    'Residential and Commercial Planning',
+    'Nashik Valuation Experts',
+    'Industrial Safety Audits India',
+    'Land Conversion Consultants',
   ],
 
   openGraph: {
-    images: '/SBA_LOGO11-modified.webp',
+    title: 'Sunil Bhor & Associates - Premier Consultancy Firm in India',
+    description:
+      'Leading consultancy firm offering services like architectural planning, structural design, project management consultancy, and property valuation for residential, commercial, and industrial projects across India.',
+    images: '/logo.webp',
+    type: 'website',
+    url: 'https://www.sunilbhor.com',
   },
 
   twitter: {
-    images: '/SBA_LOGO11-modified.webp',
+    card: 'summary_large_image',
+    site: '@SunilBhorSBA',
+    title: 'Sunil Bhor & Associates',
+    description:
+      'Over 25 years of excellence in architectural planning, structural design, project management consultancy, and property valuation in India.',
+    images: '/logo.webp',
   },
 
   robots: {
@@ -41,13 +57,16 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: 'https://www.sunilbhor.com',
+    languages: {
+      'en-IN': 'https://www.sunilbhor.com',
+    },
   },
 
-  creator: 'Vedamt Bhor',
+  creator: 'Vedant Bhor',
 
-  title: 'Sunil Bhor & Associates',
+  title: 'Sunil Bhor & Associates - Valuation & Consultancy Experts',
   description:
-    'SBA is a distinguished consultancy firm with over 25 years of experience providing an array of services encompassing architectural planning, structural design, project management consultancy, and property valuation for residential, commercial, and industrial projects nationwide in India.',
+    'Discover Sunil Bhor & Associates, a consultancy firm with over 25 years of experience in architectural planning, structural design, and property valuation for diverse projects across India. Contact us for expert solutions.',
 };
 
 export default function RootLayout({
@@ -58,7 +77,7 @@ export default function RootLayout({
   return (
     <html lang='en' className='scroll-smooth' suppressHydrationWarning>
       <head>
-        <link rel='icon' href='/SBA_LOGO11-modified.webp' sizes='any' />
+        <link rel='icon' href='/logo.webp' sizes='any' />
       </head>
       <body className={dmSans.className}>
         <ThemeProvider
@@ -75,6 +94,7 @@ export default function RootLayout({
               <SpeedInsights />
               <Toaster />
               <FooterExp />
+              <WhatsAppButton />
             </Providers>
           </UserContextProvider>
         </ThemeProvider>

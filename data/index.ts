@@ -355,106 +355,183 @@ export const ServiceCards = [
     imgAlt: 'Import Machinery certification',
   },
 ];
+export const ServicePageCards = [
+  {
+    id: 1,
+    imgSrc: '/embla/architects.png',
+    title: 'Architectural Planning',
+    description:
+      'Architectural planning involves designing functional spaces, considering aesthetics, safety, and sustainability while meeting client needs and regulatory requirements.',
+    imgAlt: 'Architectural Planning',
+  },
+  {
+    id: 2,
+    imgSrc: '/embla/town-planning.png',
+    title: 'Town planning Approvals',
+    description:
+      'Town planning approvals involve obtaining permissions for land use and development, ensuring compliance with regulations and community standards for urban planning.',
+    imgAlt: 'Town planning Approvals',
+  },
+  {
+    id: 3,
+    imgSrc: '/embla/NA.webp',
+    title: 'NA Conversion of Lands',
+    description:
+      'NA conversion of lands involves changing land use from agricultural to non-agricultural purposes, allowing for development and construction while ensuring compliance with regulatory requirements.',
+    imgAlt: 'NA Conversion of Lands',
+  },
+  {
+    id: 4,
+    imgSrc: '/embla/realestate.jpg',
+    title: 'Real Estate Advisory',
+    description:
+      'Real estate advisory provides expert guidance on property investments, market trends, and development strategies to maximize returns and minimize risks.',
+    imgAlt: 'Real Estate Advisory',
+  },
+
+  {
+    id: 5,
+    imgSrc: '/embla/property.jpg',
+    title: 'Property & Assets Valuation',
+    description:
+      'Property and assets valuation is assessing the worth of real estate and financial assets based on market trends and conditions.',
+    imgAlt: 'Property & Assets Valuation',
+  },
+
+  {
+    id: 6,
+    imgSrc: '/embla/plant-and-machinenery.jpg',
+    title: 'Plant and Machinery Valuation',
+    description:
+      'Plant and machinery valuation assesses the worth of industrial equipment and assets, considering factors like condition, age, market demand, and functionality.',
+    imgAlt: 'Plant and Machinery Valuation',
+  },
+  {
+    id: 7,
+    imgSrc: '/embla/certifications.png',
+    title: 'Chartered Engineer Certifications',
+    description:
+      'Chartered Engineer certifications validate professional expertise in engineering. These credentials enhance credibility, demonstrating adherence to industry standards and commitment to ongoing professional development.',
+    imgAlt: 'Chartered Engineer Certifications',
+  },
+
+  {
+    id: 8,
+    imgSrc: '/embla/factory.webp',
+    title: 'Factory Act Certification',
+    description:
+      'Factory Act certification ensures compliance with safety, health, and welfare regulations in industrial establishments, promoting worker protection and maintaining operational standards.',
+    imgAlt: 'Factory Act Certification',
+  },
+  {
+    id: 9,
+    imgSrc: '/embla/testing.png',
+    title: 'NDT Testing & Stability Certification',
+    description:
+      'NDT testing and stability certification assess material integrity and structural safety, ensuring compliance with standards and verifying performance without damaging components.',
+    imgAlt: 'NDT Testing & Stability Certification',
+  },
+  {
+    id: 10,
+    imgSrc: '/embla/analysis.jpg',
+    title: 'Surverying & Monitoring',
+    description:
+      'Surveying and monitoring involve measuring land, structures, and environmental conditions to ensure compliance, assess changes, and support effective project management and planning.',
+    imgAlt: 'Surverying & Monitoring',
+  },
+
+  {
+    id: 11,
+    imgSrc: '/embla/electrical.jpg',
+    title: 'Industrial Safety Audits',
+    description:
+      'Industrial safety audits evaluate workplace safety practices and compliance with regulations, identifying hazards, improving safety protocols, and ensuring employee protection.',
+    imgAlt: 'Industrial Safety Audits',
+  },
+
+  {
+    id: 12,
+    imgSrc: '/embla/ipo.webp',
+    title: 'IPO Certification',
+    description:
+      'IPO certification validates a company’s readiness for an Initial Public Offering, ensuring compliance with regulatory requirements and enhancing investor confidence in financial disclosures.',
+    imgAlt: 'IPO Certification',
+  },
+  {
+    id: 13,
+    imgSrc: '/embla/tev.jpg',
+    title: 'TEV (Techno-Economic Viability Consultants)',
+    description:
+      'TEV (Techno-Economic Viability) Consultants evaluate project feasibility by analyzing technical, economic, and financial aspects to ensure successful implementation.',
+    imgAlt: 'TEV (Techno-Economic Viability)',
+  },
+
+  {
+    id: 14,
+    imgSrc: '/embla/c1.jpg',
+    title: 'Structural Designing',
+    description:
+      'Structural designing involves creating safe, stable, and efficient structures by analyzing loads, materials, and environmental factors for construction.',
+    imgAlt: 'Structural Designing',
+  },
+  {
+    id: 15,
+    imgSrc: '/embla/interior.png',
+    title: 'Interior designing',
+    description:
+      'Interior designing focuses on enhancing indoor spaces through aesthetics, functionality, and comfort by selecting colors, furniture, and layouts effectively.',
+    imgAlt: 'Interior designing',
+  },
+  {
+    id: 16,
+    imgSrc: '/embla/blackmoney.jpg',
+    title: 'Black Money Valuation',
+    description:
+      'Black money valuation estimates the worth of illicit funds, assessing hidden assets and financial activities to aid in recovery and regulation.',
+    imgAlt: 'Black Money Valuation',
+  },
+
+  {
+    id: 17,
+    imgSrc: '/embla/tender.jpg',
+    title: 'Tender & Specs Drafting',
+    description:
+      'Tender and specs drafting involves creating detailed documents outlining project requirements, evaluation criteria, and contractual terms to facilitate competitive bidding.',
+    imgAlt: 'Tender & Specs Drafting',
+  },
+  {
+    id: 18,
+    imgSrc: '/embla/lender.png',
+    title: 'Lender’s independent engineers',
+    description:
+      'Lender’s independent engineers assess project feasibility, compliance, and risks, ensuring loan security through thorough evaluations of construction and operational standards.',
+    imgAlt: 'Lender’s independent engineers',
+  },
+  {
+    id: 19,
+    imgSrc: '/embla/mould.png',
+    title: 'Mould certification',
+    description:
+      'Mould certification ensures compliance with safety, quality, and performance standards for imported machinery, protecting consumers and maintaining international trade integrity.',
+    imgAlt: 'Mould certification',
+  },
+  {
+    id: 20,
+    imgSrc: '/embla/import.jpg',
+    title: 'Import Machinery certification',
+    description:
+      'Import Machinery certification ensures compliance with safety, quality, and performance standards for imported machinery, protecting consumers and maintaining international trade integrity.',
+    imgAlt: 'Import Machinery certification',
+  },
+];
 
 export const ServiceCardsDescription = [
   {
     id: 1,
-    title: 'Structural Designing',
-    description:
-      'We provide structural designing services for a wide range of projects, ensuring the creation of safe, efficient, and cost-effective structural systems. Our expertise spans across residential, commercial, industrial, and infrastructure projects, where we focus on delivering innovative designs that comply with local building codes and international standards. We use advanced engineering techniques and software to provide reliable structural solutions for every phase of construction.',
-    list: [
-      {
-        title: 'Structural Design Analysis: ',
-        description:
-          'Conducting detailed analysis to determine the most efficient and safe structural system, based on the nature of the project, materials, and load-bearing requirements.',
-      },
-      {
-        title: 'Building Design: ',
-        description:
-          'Designing structural systems for buildings, including foundations, beams, columns, and slabs, ensuring safety, stability, and compliance with local regulations.',
-      },
-      {
-        title: 'Reinforced Concrete Design: ',
-        description:
-          'Specializing in the design of reinforced concrete structures, including foundations, floors, and walls, to withstand dynamic and static loads.',
-      },
-      {
-        title: 'Steel Structure Design: ',
-        description:
-          'Designing steel-framed structures for industrial and commercial buildings, ensuring durability, efficiency, and cost-effectiveness.',
-      },
-      {
-        title: 'Seismic Design: ',
-        description:
-          'Providing seismic design solutions for earthquake-prone regions, ensuring that structures are resilient to seismic forces and comply with seismic design codes.',
-      },
-      {
-        title: 'Foundation Design: ',
-        description:
-          'Designing foundations that support buildings and structures, considering soil conditions, load distribution, and construction methods.',
-      },
-      {
-        title: 'Masonry Structure Design: ',
-        description:
-          'Designing masonry structures, including brick and stone buildings, ensuring stability and structural integrity in compliance with construction codes.',
-      },
-      {
-        title: 'Timber Structure Design: ',
-        description:
-          'Designing sustainable and efficient timber structures, focusing on load distribution, material strength, and environmental impact.',
-      },
-      {
-        title: 'Retrofitting and Strengthening: ',
-        description:
-          'Providing design solutions for retrofitting and strengthening existing structures to meet current safety standards and accommodate modern requirements.',
-      },
-      {
-        title: 'Structural Detailing: ',
-        description:
-          'Creating detailed construction drawings and specifications for all structural components, including reinforcement detailing and material specifications.',
-      },
-    ],
-    sectors: [
-      {
-        title: 'Residential Construction: ',
-        description:
-          'Designing structural systems for residential buildings, ensuring safety, aesthetic appeal, and compliance with local building codes.',
-      },
-      {
-        title: 'Commercial and Office Buildings: ',
-        description:
-          'Providing structural design solutions for commercial and office spaces, ensuring functionality, stability, and cost-effectiveness.',
-      },
-      {
-        title: 'Industrial Buildings: ',
-        description:
-          'Designing robust structural systems for industrial buildings, including factories, warehouses, and manufacturing facilities.',
-      },
-      {
-        title: 'Infrastructure Projects: ',
-        description:
-          'Designing structural components for large-scale infrastructure projects, including bridges, roads, tunnels, and dams.',
-      },
-      {
-        title: 'Public Buildings: ',
-        description:
-          'Providing structural design services for public buildings such as schools, hospitals, and government facilities.',
-      },
-      {
-        title: 'Retail and Hospitality: ',
-        description:
-          'Designing structural systems for retail outlets, hotels, and restaurants, ensuring aesthetics, functionality, and safety.',
-      },
-      {
-        title: 'Sports and Entertainment Facilities: ',
-        description:
-          'Designing structures for stadiums, arenas, and other entertainment venues, focusing on capacity, load-bearing, and safety.',
-      },
-    ],
-  },
-  {
-    id: 2,
     title: 'Architectural Planning',
+    imgSrc: '/embla/architects.png',
+    imgAlt: 'Architectural Planning',
+
     description:
       'We offer architectural planning services that ensure a perfect balance between functionality, aesthetics, and sustainability. Our experienced architects work closely with clients to create innovative and efficient designs that reflect their vision while adhering to regulatory requirements and budget constraints. From concept to completion, we guide clients through every step of the planning process, providing solutions that enhance the user experience and maximize the potential of each space.',
     list: [
@@ -553,108 +630,276 @@ export const ServiceCardsDescription = [
     ],
   },
   {
-    id: 3,
-    title: 'Interior Designing',
+    id: 2,
+    title: 'Town Planning Approvals',
+    imgSrc: '/embla/town-planning.png',
+    imgAlt: 'Town Planning Approvals',
     description:
-      'We offer comprehensive interior designing services that transform spaces into functional, aesthetic, and personalized environments. Our approach blends creativity with practicality, ensuring every design element enhances the user experience. We work closely with clients to understand their preferences and vision, while adhering to budget, timeline, and space constraints. From residential to commercial projects, our team ensures that each space is thoughtfully designed to suit the purpose and style of its occupants.',
+      'We provide comprehensive services for obtaining town planning approvals, ensuring compliance with local regulations and municipal requirements. Our expertise helps clients navigate the approval process for various types of development projects, from residential and commercial to industrial. We assist with project planning, zoning, land use permits, and legal documentation to ensure timely approval and successful project execution.',
     list: [
       {
-        title: 'Space Planning: ',
+        title: 'Zoning and Land Use Approvals: ',
         description:
-          'Optimizing the layout of interior spaces to ensure functional flow and maximize the usability of each area.',
+          'Assisting clients with obtaining zoning and land use approvals to ensure that their development projects comply with municipal regulations.',
       },
       {
-        title: 'Furniture Design and Selection: ',
+        title: 'Building Permits: ',
         description:
-          'Designing custom furniture pieces or selecting the right furniture to complement the overall interior design theme and functionality.',
+          'Helping clients secure the necessary building permits for construction, renovation, or redevelopment projects, ensuring compliance with safety and code standards.',
       },
       {
-        title: 'Lighting Design: ',
+        title: 'Environmental Clearances: ',
         description:
-          'Designing lighting solutions that enhance the ambiance, highlight architectural features, and create a comfortable atmosphere.',
+          'Guiding clients through the process of obtaining environmental clearances, ensuring that projects comply with environmental regulations and sustainability standards.',
       },
       {
-        title: 'Color Schemes and Material Selection: ',
+        title: 'Master Plan Approvals: ',
         description:
-          'Choosing appropriate color palettes, textures, and materials that reflect the desired aesthetic and complement the space.',
+          'Assisting in obtaining approvals for master plans related to large-scale development projects, including residential, commercial, and mixed-use developments.',
       },
       {
-        title: '3D Visualization and Renderings: ',
+        title: 'Development Control Regulations (DCR) Compliance: ',
         description:
-          'Using advanced 3D modeling software to create realistic visualizations of interior designs, allowing clients to visualize the space before implementation.',
+          'Ensuring that projects comply with Development Control Regulations (DCR) for height, density, setbacks, and other planning parameters.',
       },
       {
-        title: 'Interior Styling: ',
+        title: 'Building Code Compliance: ',
         description:
-          'Adding final decorative touches, such as artworks, textiles, and accessories, to complete the design and create a cohesive look.',
+          'Assisting with compliance to building codes, including structural, safety, and accessibility standards required by local authorities.',
       },
       {
-        title: 'Custom Design Solutions: ',
+        title: 'Land Subdivision Approvals: ',
         description:
-          'Providing tailored design solutions for unique spaces or specific client needs, including custom-built furniture and feature walls.',
+          'Guiding clients through the land subdivision approval process, ensuring that new plots meet municipal standards and are ready for development.',
       },
       {
-        title: 'Project Management: ',
+        title: 'Infrastructure and Utility Approvals: ',
         description:
-          'Overseeing the entire design process from concept to execution, ensuring that the project is completed on time, within budget, and according to design specifications.',
+          'Assisting with the approval process for the installation of utilities such as water, electricity, sewage, and road infrastructure for development projects.',
       },
       {
-        title: 'Sustainable Interior Design: ',
+        title: 'Heritage and Conservation Approvals: ',
         description:
-          'Incorporating eco-friendly materials, energy-efficient solutions, and sustainable practices into interior design to minimize environmental impact.',
+          'Providing guidance on obtaining approvals for projects involving heritage sites or conservation areas, ensuring adherence to preservation guidelines.',
       },
       {
-        title: 'Renovation and Remodeling: ',
+        title: 'Legal Documentation and Representation: ',
         description:
-          'Providing design services for the renovation or remodeling of existing spaces to enhance functionality, aesthetics, and value.',
+          'Offering legal support in preparing and submitting the necessary documentation, as well as representing clients before municipal or planning authorities.',
       },
     ],
     sectors: [
       {
-        title: 'Residential Interiors: ',
+        title: 'Residential Development: ',
         description:
-          'Designing personalized interiors for homes, apartments, and villas, ensuring comfort, style, and functionality.',
+          'Helping developers secure approvals for residential projects, including single-family homes, multi-family complexes, and gated communities.',
       },
       {
-        title: 'Commercial Interiors: ',
+        title: 'Commercial Development: ',
         description:
-          'Creating office spaces, retail stores, and restaurants that enhance productivity, brand identity, and customer experience.',
+          'Assisting clients with approvals for commercial properties such as office buildings, retail spaces, hotels, and shopping malls.',
       },
       {
-        title: 'Hospitality Interiors: ',
+        title: 'Industrial Development: ',
         description:
-          'Designing hotels, resorts, and other hospitality spaces that create a welcoming, luxurious, and memorable guest experience.',
+          'Providing guidance on obtaining approvals for industrial projects, including factories, warehouses, and manufacturing units.',
       },
       {
-        title: 'Healthcare Interiors: ',
+        title: 'Mixed-Use Developments: ',
         description:
-          'Designing hospital rooms, clinics, and healthcare facilities with a focus on comfort, functionality, and patient well-being.',
+          'Helping clients navigate the approval process for mixed-use developments that combine residential, commercial, and recreational spaces.',
       },
       {
-        title: 'Education Interiors: ',
+        title: 'Government and Institutional Projects: ',
         description:
-          'Creating learning environments for schools, universities, and training centers that foster creativity, engagement, and functionality.',
+          'Assisting government bodies, educational institutions, hospitals, and other public sector entities in obtaining planning approvals for public infrastructure projects.',
       },
       {
-        title: 'Retail Interiors: ',
+        title: 'Urban Infrastructure Projects: ',
         description:
-          'Designing retail stores, showrooms, and boutiques that enhance the shopping experience and align with brand identity.',
+          'Guiding clients through the approval process for urban infrastructure projects such as roads, bridges, parks, and utility installations.',
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: 'NA Conversion of Lands',
+    imgSrc: '/embla/NA.webp',
+    imgAlt: 'NA Conversion of Lands',
+    description:
+      'We offer services for the conversion of agricultural lands to non-agricultural (NA) land, assisting property owners in complying with legal procedures for land use change. Our expertise ensures smooth conversion processes, helping clients unlock the full potential of their land for residential, commercial, or industrial development while adhering to local zoning laws and regulatory requirements.',
+    list: [
+      {
+        title: 'Eligibility Assessment: ',
+        description:
+          'Evaluating whether the land meets the necessary criteria for NA conversion based on location, zoning regulations, and land type.',
       },
       {
-        title: 'Corporate Offices: ',
+        title: 'Documentation Support: ',
         description:
-          'Designing office spaces for businesses that enhance employee productivity, collaboration, and comfort.',
+          'Assisting with the preparation and submission of required documents, including land ownership proofs, agricultural records, and legal declarations.',
       },
       {
-        title: 'Luxury Interiors: ',
+        title: 'Application Filing: ',
         description:
-          'Creating high-end, luxurious interiors for clients who seek exclusive, bespoke designs with premium finishes and materials.',
+          'Filing applications with the local authorities and following up with the relevant departments to ensure the timely processing of NA conversion requests.',
+      },
+      {
+        title: 'Land Use Compliance: ',
+        description:
+          'Ensuring that the proposed non-agricultural use complies with the applicable local zoning laws, municipal plans, and master plans.',
+      },
+      {
+        title: 'Land Survey and Mapping: ',
+        description:
+          'Conducting land surveys and preparing detailed maps required for submission to authorities for NA conversion approval.',
+      },
+      {
+        title: 'Government Liaison: ',
+        description:
+          'Managing communication with government agencies, urban planning departments, and local authorities to expedite the conversion process.',
+      },
+      {
+        title: 'Legal Verification: ',
+        description:
+          'Verifying the legal status of the land, ensuring there are no encumbrances or legal disputes preventing the NA conversion.',
+      },
+      {
+        title: 'Zoning and Land Use Strategy: ',
+        description:
+          'Providing recommendations on the most profitable and compliant land use after conversion, whether for residential, commercial, or industrial development.',
+      },
+      {
+        title: 'NA Conversion Approval: ',
+        description:
+          'Assisting clients in obtaining the formal approval for NA conversion and ensuring all legalities are complied with for future land use.',
+      },
+      {
+        title: 'Post-Conversion Documentation: ',
+        description:
+          'Helping with post-conversion documentation, including updating land records and obtaining relevant land titles and permissions for new development.',
+      },
+    ],
+    sectors: [
+      {
+        title: 'Residential Development: ',
+        description:
+          'Assisting landowners in converting agricultural land into residential zones for building housing projects and residential complexes.',
+      },
+      {
+        title: 'Commercial Development: ',
+        description:
+          'Supporting clients in converting agricultural land into commercial spaces for retail, office buildings, or mixed-use developments.',
+      },
+      {
+        title: 'Industrial Development: ',
+        description:
+          'Facilitating the conversion of agricultural land into industrial plots for factories, manufacturing units, or warehouses.',
+      },
+      {
+        title: 'Real Estate Investment: ',
+        description:
+          "Helping real estate developers and investors with the conversion process to unlock the land's potential for large-scale development.",
+      },
+      {
+        title: 'Agricultural Landowners: ',
+        description:
+          'Assisting agricultural landowners in converting their properties to non-agricultural use for better returns or diversification.',
       },
     ],
   },
   {
     id: 4,
+    title: 'Real Estate Advisory',
+    imgSrc: '/embla/realestate.jpg',
+    imgAlt: 'Real Estate Advisory',
+    description:
+      'We provide comprehensive real estate advisory services, offering expert guidance in property valuations, transactions, and development. Our goal is to help clients make informed decisions, optimize portfolios, and achieve their real estate objectives across various sectors.',
+    list: [
+      {
+        title: 'Real Estate Valuation: ',
+        description:
+          'Offering accurate valuations for residential, commercial, and industrial properties to assist with buying, selling, and investment decisions.',
+      },
+      {
+        title: 'Commercial Property Valuation: ',
+        description:
+          'Specialized in valuing commercial properties including office buildings, retail spaces, and industrial facilities for investment or lending purposes.',
+      },
+      {
+        title: 'Valuation for Visa and Immigration: ',
+        description:
+          'Providing property valuations for individuals applying for visas or immigration, ensuring compliance with all necessary regulations.',
+      },
+      {
+        title: 'Buying and Selling Advisory: ',
+        description:
+          'Assisting clients with buying and selling properties by providing market insights, price optimization, and negotiation support.',
+      },
+      {
+        title: 'Joint Ventures (JVs) and Joint Developments (JDs): ',
+        description:
+          'Facilitating strategic partnerships for large-scale property developments, ensuring value creation for all parties involved.',
+      },
+      {
+        title: 'Development Management (DM): ',
+        description:
+          'Overseeing the entire property development process, from planning to execution, ensuring projects are completed on time and within budget.',
+      },
+      {
+        title: 'Redevelopment Advisory: ',
+        description:
+          'Guiding clients through the process of redeveloping properties to enhance value, maximize returns, and comply with local regulations.',
+      },
+      {
+        title: 'Land Portfolio Optimization: ',
+        description:
+          'Providing strategies for optimizing land holdings, ensuring that land investments are maximized through buying, selling, or development.',
+      },
+      {
+        title: 'Distress Property Transactions: ',
+        description:
+          'Advising clients on buying or selling distressed properties, identifying opportunities for favorable returns in challenging market conditions.',
+      },
+      {
+        title: 'Ancestral Property Management: ',
+        description:
+          'Providing services related to managing, valuing, and transitioning ancestral properties, ensuring their preservation and wealth optimization.',
+      },
+    ],
+    sectors: [
+      {
+        title: 'Financial Sector: ',
+        description:
+          'Serving banks, asset funds, and asset reconstruction companies with property valuations, risk assessments, and portfolio management.',
+      },
+      {
+        title: 'Government and Institutional Sector: ',
+        description:
+          'Advising government bodies, quasi-government institutions, schools, and hospitals on real estate investment, valuation, and development.',
+      },
+      {
+        title: 'Corporate Sector: ',
+        description:
+          'Offering real estate solutions for both Indian and multinational corporations, including portfolio management, acquisitions, and strategic development.',
+      },
+      {
+        title: 'Trusts and Family Offices: ',
+        description:
+          'Providing tailored advisory services for trusts and family offices to help manage, value, and optimize real estate assets.',
+      },
+      {
+        title: 'Individual and Family Advisory: ',
+        description:
+          'Helping individuals and families with property buying, selling, investment decisions, and legacy planning, ensuring long-term wealth growth.',
+      },
+    ],
+  },
+  {
+    id: 5,
     title: 'Property & Assets Valuation',
+    imgSrc: '/embla/property.jpg',
+    imgAlt: 'Property & Assets Valuation',
     description:
       'Our property and assets valuation services offer precise and reliable assessments to determine the true worth of real estate and financial assets. We employ market analysis, regulatory compliance, and expert methodologies to deliver accurate valuations, supporting informed decision-making for buying, selling, lending, and investment purposes.',
     list: [
@@ -753,278 +998,10 @@ export const ServiceCardsDescription = [
     ],
   },
   {
-    id: 5,
-    title: 'Techno-Economic Viability (TEV) Consultants',
-    description:
-      'We are a leading firm offering Techno-Economic Viability (TEV) consulting services to assist clients in evaluating the feasibility of projects from both a technical and economic perspective. Our services help banks, regulatory bodies, and sanctioning authorities assess the risk levels and make informed decisions regarding lending, investment, and project acceptance.',
-    list: [
-      {
-        title: 'Feasibility Studies: ',
-        description:
-          'Conducting in-depth techno-economic feasibility studies to assess the viability and potential success of projects before implementation.',
-      },
-      {
-        title: 'Risk Assessment: ',
-        description:
-          'Identifying and evaluating potential risks associated with projects, including financial, technical, and market-related risks, to ensure informed decision-making.',
-      },
-      {
-        title: 'Financial Viability Analysis: ',
-        description:
-          'Analyzing financial aspects of the project, including capital requirements, revenue projections, and return on investment (ROI), to assess the economic viability.',
-      },
-      {
-        title: 'Technical Viability Analysis: ',
-        description:
-          'Evaluating the technical feasibility of a project, including infrastructure requirements, technology, and resources to ensure the project can be executed successfully.',
-      },
-      {
-        title: 'Project Appraisal: ',
-        description:
-          'Providing detailed evaluations and appraisals of projects, considering both technical and economic factors to assess whether the project is worth pursuing.',
-      },
-      {
-        title: 'Regulatory Compliance: ',
-        description:
-          'Ensuring that projects comply with local and international regulations, standards, and laws to avoid legal or operational issues.',
-      },
-      {
-        title: 'Market Assessment: ',
-        description:
-          'Evaluating market conditions, demand, competition, and pricing strategies to ensure the project is economically viable and has growth potential.',
-      },
-      {
-        title: 'Financial Modeling: ',
-        description:
-          'Developing financial models to project future financial performance, including cash flows, profitability, and financial sustainability.',
-      },
-      {
-        title: 'Cost-Benefit Analysis: ',
-        description:
-          'Performing a cost-benefit analysis to weigh the potential benefits of a project against the associated costs and risks.',
-      },
-      {
-        title: 'Report Preparation: ',
-        description:
-          'Providing comprehensive, detailed reports that outline findings, recommendations, and the overall viability of the project, helping stakeholders make informed decisions.',
-      },
-    ],
-    sectors: [
-      {
-        title: 'Banking and Financial Institutions: ',
-        description:
-          'Assisting banks, non-banking financial companies (NBFCs), and asset reconstruction companies in evaluating the financial viability and risk levels of projects.',
-      },
-      {
-        title: 'Government and Regulatory Bodies: ',
-        description:
-          'Supporting government and regulatory bodies in assessing the acceptability of projects for public funding, lending, and compliance.',
-      },
-      {
-        title: 'Corporate Sector: ',
-        description:
-          'Helping corporations in evaluating large-scale projects, including infrastructure, manufacturing, and technology-based ventures.',
-      },
-      {
-        title: 'Investors and Private Equity Firms: ',
-        description:
-          'Providing TEV assessments to investors and private equity firms to make informed investment decisions based on the technical and financial viability of projects.',
-      },
-      {
-        title: 'Real Estate and Infrastructure: ',
-        description:
-          'Evaluating the feasibility of real estate developments and large infrastructure projects, including commercial, residential, and mixed-use developments.',
-      },
-      {
-        title: 'Energy and Renewable Sectors: ',
-        description:
-          'Assessing the viability of energy and renewable energy projects, including solar, wind, and power plants, ensuring technical feasibility and economic returns.',
-      },
-      {
-        title: 'Healthcare and Education: ',
-        description:
-          'Providing TEV services for healthcare and educational projects, ensuring financial sustainability, and technical implementation capabilities.',
-      },
-    ],
-  },
-  {
     id: 6,
-    title: 'TEV Consultancy',
-    description:
-      "As Lender's Independent Engineers specializing in civil engineering for buildings, we offer technical evaluation services to lenders and investors to ensure that construction projects meet structural, safety, and regulatory standards. Our goal is to assess the viability, monitor the progress, and mitigate risks associated with building projects to ensure successful project delivery.",
-    list: [
-      {
-        title: 'Structural Due Diligence: ',
-        description:
-          'Performing comprehensive structural assessments to evaluate the design, stability, and safety of building projects, ensuring compliance with local and international standards.',
-      },
-      {
-        title: 'Construction Progress Monitoring: ',
-        description:
-          'Regular site inspections to track construction progress, assess adherence to the approved plans, and ensure that quality standards are maintained throughout the project.',
-      },
-      {
-        title: 'Site Inspections and Quality Control: ',
-        description:
-          'Conducting detailed site inspections to evaluate construction quality, materials, and workmanship to ensure that the project meets the lender’s requirements.',
-      },
-      {
-        title: 'Risk Assessment and Mitigation: ',
-        description:
-          'Identifying potential risks related to structural design, construction methods, and materials, and providing mitigation strategies to ensure the safety and feasibility of the project.',
-      },
-      {
-        title: 'Budget Review and Cost Control: ',
-        description:
-          'Reviewing project budgets, cost estimates, and actual expenditures to ensure financial control, efficient resource allocation, and adherence to budget constraints.',
-      },
-      {
-        title: 'Contractor Evaluation and Compliance: ',
-        description:
-          'Assessing the qualifications and reliability of contractors and subcontractors, ensuring that the construction team has the expertise and financial stability to execute the project as planned.',
-      },
-      {
-        title: 'Design and Engineering Compliance: ',
-        description:
-          'Ensuring that the project design and engineering plans are in compliance with local building codes, safety regulations, and environmental standards.',
-      },
-      {
-        title: 'Progress and Final Reporting: ',
-        description:
-          'Providing detailed reports at various project stages, summarizing the construction status, risks, and any necessary corrective actions to be taken.',
-      },
-      {
-        title: 'Final Inspection and Handover: ',
-        description:
-          'Overseeing the final inspection process, ensuring that the building is ready for handover to the client, and meets all necessary requirements for occupancy and safety.',
-      },
-      {
-        title: 'Independent Engineering Reports for Lenders: ',
-        description:
-          'Preparing independent engineering reports for lenders, outlining the technical and structural aspects of the project, progress, compliance with safety standards, and financial viability.',
-      },
-    ],
-    sectors: [
-      {
-        title: 'Residential Building Projects: ',
-        description:
-          'Providing independent engineering assessments for residential buildings, including multi-story apartments, villas, and residential complexes.',
-      },
-      {
-        title: 'Commercial and Office Buildings: ',
-        description:
-          'Assessing the technical and structural feasibility of office buildings, retail spaces, and commercial developments to ensure compliance with safety and design standards.',
-      },
-      {
-        title: 'Industrial and Factory Buildings: ',
-        description:
-          'Offering technical evaluations for industrial buildings, warehouses, and factories to ensure that structural integrity and safety standards are met.',
-      },
-      {
-        title: 'Mixed-Use Developments: ',
-        description:
-          'Conducting due diligence and monitoring the progress of mixed-use developments, including residential, commercial, and recreational spaces.',
-      },
-      {
-        title: 'Institutional Buildings (Schools, Hospitals, etc.): ',
-        description:
-          'Assessing the design and construction of educational institutions, healthcare facilities, and other public buildings for compliance with safety, regulatory, and operational requirements.',
-      },
-      {
-        title: 'Infrastructure for Buildings (Foundations, Roads, Utilities): ',
-        description:
-          'Providing technical support for the construction of essential infrastructure related to buildings, such as foundations, access roads, and utility systems.',
-      },
-    ],
-  },
-  {
-    id: 7,
-    title: 'Real Estate Advisory',
-    description:
-      'We provide comprehensive real estate advisory services, offering expert guidance in property valuations, transactions, and development. Our goal is to help clients make informed decisions, optimize portfolios, and achieve their real estate objectives across various sectors.',
-    list: [
-      {
-        title: 'Real Estate Valuation: ',
-        description:
-          'Offering accurate valuations for residential, commercial, and industrial properties to assist with buying, selling, and investment decisions.',
-      },
-      {
-        title: 'Commercial Property Valuation: ',
-        description:
-          'Specialized in valuing commercial properties including office buildings, retail spaces, and industrial facilities for investment or lending purposes.',
-      },
-      {
-        title: 'Valuation for Visa and Immigration: ',
-        description:
-          'Providing property valuations for individuals applying for visas or immigration, ensuring compliance with all necessary regulations.',
-      },
-      {
-        title: 'Buying and Selling Advisory: ',
-        description:
-          'Assisting clients with buying and selling properties by providing market insights, price optimization, and negotiation support.',
-      },
-      {
-        title: 'Joint Ventures (JVs) and Joint Developments (JDs): ',
-        description:
-          'Facilitating strategic partnerships for large-scale property developments, ensuring value creation for all parties involved.',
-      },
-      {
-        title: 'Development Management (DM): ',
-        description:
-          'Overseeing the entire property development process, from planning to execution, ensuring projects are completed on time and within budget.',
-      },
-      {
-        title: 'Redevelopment Advisory: ',
-        description:
-          'Guiding clients through the process of redeveloping properties to enhance value, maximize returns, and comply with local regulations.',
-      },
-      {
-        title: 'Land Portfolio Optimization: ',
-        description:
-          'Providing strategies for optimizing land holdings, ensuring that land investments are maximized through buying, selling, or development.',
-      },
-      {
-        title: 'Distress Property Transactions: ',
-        description:
-          'Advising clients on buying or selling distressed properties, identifying opportunities for favorable returns in challenging market conditions.',
-      },
-      {
-        title: 'Ancestral Property Management: ',
-        description:
-          'Providing services related to managing, valuing, and transitioning ancestral properties, ensuring their preservation and wealth optimization.',
-      },
-    ],
-    sectors: [
-      {
-        title: 'Financial Sector: ',
-        description:
-          'Serving banks, asset funds, and asset reconstruction companies with property valuations, risk assessments, and portfolio management.',
-      },
-      {
-        title: 'Government and Institutional Sector: ',
-        description:
-          'Advising government bodies, quasi-government institutions, schools, and hospitals on real estate investment, valuation, and development.',
-      },
-      {
-        title: 'Corporate Sector: ',
-        description:
-          'Offering real estate solutions for both Indian and multinational corporations, including portfolio management, acquisitions, and strategic development.',
-      },
-      {
-        title: 'Trusts and Family Offices: ',
-        description:
-          'Providing tailored advisory services for trusts and family offices to help manage, value, and optimize real estate assets.',
-      },
-      {
-        title: 'Individual and Family Advisory: ',
-        description:
-          'Helping individuals and families with property buying, selling, investment decisions, and legacy planning, ensuring long-term wealth growth.',
-      },
-    ],
-  },
-  {
-    id: 8,
     title: 'Plant & Machinery Valuation',
+    imgSrc: '/embla/plant-and-machinenery.jpg',
+    imgAlt: 'Plant & Machinery Valuation',
     description:
       'We offer expert plant and machinery valuation services across various industries including Real Estate, Hospitality, Healthcare, Power, Oil & Gas, FMCG, Pharmaceuticals, and more. Our clients include multinational corporates, government bodies, financial institutions, and legal entities. We assist in asset valuation for various purposes like financing, litigation support, and acquisitions.',
     list: [
@@ -1159,483 +1136,10 @@ export const ServiceCardsDescription = [
     },
   },
   {
-    id: 9,
-    title: 'Black Money Valuation',
-    description:
-      'We offer specialized services in the valuation of black money and assets acquired through illegal or unaccounted means. Our approach helps clients with risk assessment, financial compliance, and structuring of corrective measures in line with legal frameworks. We support investigations, regulatory bodies, and financial institutions in uncovering illicit wealth and ensuring compliance with anti-money laundering laws.',
-    list: [
-      {
-        title: 'Asset Identification and Valuation: ',
-        description:
-          'Identifying and valuing assets acquired through unaccounted means, including real estate, financial instruments, and offshore holdings.',
-      },
-      {
-        title: 'Cash Flow Analysis: ',
-        description:
-          'Conducting forensic analysis of cash flows to track illicit income sources and quantify hidden assets.',
-      },
-      {
-        title: 'Offshore and Cross-border Asset Valuation: ',
-        description:
-          'Valuing assets held in offshore accounts or across borders, ensuring compliance with international regulations.',
-      },
-      {
-        title: 'Regulatory Compliance Assessment: ',
-        description:
-          'Assessing the level of compliance with financial regulations, including KYC (Know Your Customer) and AML (Anti-Money Laundering) norms.',
-      },
-      {
-        title: 'Financial Restitution and Asset Recovery: ',
-        description:
-          'Assisting in the recovery of assets obtained through illegal means and providing strategies for financial restitution.',
-      },
-      {
-        title: 'Risk Assessment for Financial Institutions: ',
-        description:
-          'Helping financial institutions assess the risk associated with black money and identifying potential compliance gaps.',
-      },
-      {
-        title: 'Legal Support and Documentation: ',
-        description:
-          'Providing expert documentation and legal support for investigations, including valuation reports for enforcement authorities.',
-      },
-      {
-        title: 'Repatriation of Assets: ',
-        description:
-          'Assisting clients with the legal and financial processes involved in repatriating assets held abroad.',
-      },
-    ],
-    sectors: [
-      {
-        title: 'Financial Institutions: ',
-        description:
-          'Supporting banks and non-banking financial companies in uncovering black money and ensuring regulatory compliance.',
-      },
-      {
-        title: 'Government and Law Enforcement: ',
-        description:
-          'Providing services to government bodies and law enforcement agencies for asset investigation, financial compliance, and asset recovery.',
-      },
-      {
-        title: 'Tax Authorities: ',
-        description:
-          'Assisting tax authorities in identifying hidden income, assessing unpaid taxes, and recovering black money.',
-      },
-      {
-        title: 'Corporate Sector: ',
-        description:
-          'Helping corporations detect and manage risks related to black money, ensuring compliance with anti-money laundering standards.',
-      },
-      {
-        title: 'Individuals and Families: ',
-        description:
-          'Providing advisory services to individuals and families involved in asset concealment or looking to rectify financial discrepancies.',
-      },
-    ],
-  },
-  {
-    id: 10,
-    title: 'Town Planning Approvals',
-    description:
-      'We provide comprehensive services for obtaining town planning approvals, ensuring compliance with local regulations and municipal requirements. Our expertise helps clients navigate the approval process for various types of development projects, from residential and commercial to industrial. We assist with project planning, zoning, land use permits, and legal documentation to ensure timely approval and successful project execution.',
-    list: [
-      {
-        title: 'Zoning and Land Use Approvals: ',
-        description:
-          'Assisting clients with obtaining zoning and land use approvals to ensure that their development projects comply with municipal regulations.',
-      },
-      {
-        title: 'Building Permits: ',
-        description:
-          'Helping clients secure the necessary building permits for construction, renovation, or redevelopment projects, ensuring compliance with safety and code standards.',
-      },
-      {
-        title: 'Environmental Clearances: ',
-        description:
-          'Guiding clients through the process of obtaining environmental clearances, ensuring that projects comply with environmental regulations and sustainability standards.',
-      },
-      {
-        title: 'Master Plan Approvals: ',
-        description:
-          'Assisting in obtaining approvals for master plans related to large-scale development projects, including residential, commercial, and mixed-use developments.',
-      },
-      {
-        title: 'Development Control Regulations (DCR) Compliance: ',
-        description:
-          'Ensuring that projects comply with Development Control Regulations (DCR) for height, density, setbacks, and other planning parameters.',
-      },
-      {
-        title: 'Building Code Compliance: ',
-        description:
-          'Assisting with compliance to building codes, including structural, safety, and accessibility standards required by local authorities.',
-      },
-      {
-        title: 'Land Subdivision Approvals: ',
-        description:
-          'Guiding clients through the land subdivision approval process, ensuring that new plots meet municipal standards and are ready for development.',
-      },
-      {
-        title: 'Infrastructure and Utility Approvals: ',
-        description:
-          'Assisting with the approval process for the installation of utilities such as water, electricity, sewage, and road infrastructure for development projects.',
-      },
-      {
-        title: 'Heritage and Conservation Approvals: ',
-        description:
-          'Providing guidance on obtaining approvals for projects involving heritage sites or conservation areas, ensuring adherence to preservation guidelines.',
-      },
-      {
-        title: 'Legal Documentation and Representation: ',
-        description:
-          'Offering legal support in preparing and submitting the necessary documentation, as well as representing clients before municipal or planning authorities.',
-      },
-    ],
-    sectors: [
-      {
-        title: 'Residential Development: ',
-        description:
-          'Helping developers secure approvals for residential projects, including single-family homes, multi-family complexes, and gated communities.',
-      },
-      {
-        title: 'Commercial Development: ',
-        description:
-          'Assisting clients with approvals for commercial properties such as office buildings, retail spaces, hotels, and shopping malls.',
-      },
-      {
-        title: 'Industrial Development: ',
-        description:
-          'Providing guidance on obtaining approvals for industrial projects, including factories, warehouses, and manufacturing units.',
-      },
-      {
-        title: 'Mixed-Use Developments: ',
-        description:
-          'Helping clients navigate the approval process for mixed-use developments that combine residential, commercial, and recreational spaces.',
-      },
-      {
-        title: 'Government and Institutional Projects: ',
-        description:
-          'Assisting government bodies, educational institutions, hospitals, and other public sector entities in obtaining planning approvals for public infrastructure projects.',
-      },
-      {
-        title: 'Urban Infrastructure Projects: ',
-        description:
-          'Guiding clients through the approval process for urban infrastructure projects such as roads, bridges, parks, and utility installations.',
-      },
-    ],
-  },
-  {
-    id: 11,
-    title: 'Tender & Specifications Drafting',
-    description:
-      'We provide expert services in drafting tender documents and specifications for a wide range of construction, procurement, and service contracts. Our approach ensures that all technical and contractual aspects are covered in compliance with legal requirements, industry standards, and client expectations. We assist clients in preparing detailed tender proposals, ensuring clarity, accuracy, and competitiveness to facilitate smooth project execution.',
-    list: [
-      {
-        title: 'Tender Document Preparation: ',
-        description:
-          'Drafting comprehensive tender documents, including instructions to bidders, evaluation criteria, terms and conditions, and project scope.',
-      },
-      {
-        title: 'Technical Specifications: ',
-        description:
-          'Creating detailed technical specifications for construction, equipment procurement, and services to ensure that projects meet industry standards and client requirements.',
-      },
-      {
-        title: 'Bill of Quantities (BoQ): ',
-        description:
-          'Preparing an accurate and detailed Bill of Quantities for construction projects to ensure that all materials, labor, and costs are accounted for.',
-      },
-      {
-        title: 'Contractual Terms and Conditions: ',
-        description:
-          'Drafting clear and enforceable contractual terms and conditions that define the rights and responsibilities of all parties involved in the project.',
-      },
-      {
-        title: 'Scope of Work (SOW): ',
-        description:
-          'Defining the scope of work for various projects, outlining deliverables, timelines, and quality expectations.',
-      },
-      {
-        title: 'Bid Evaluation Criteria: ',
-        description:
-          'Establishing transparent and objective criteria for evaluating bids to ensure that the selection process is fair and aligned with project goals.',
-      },
-      {
-        title: 'Risk Assessment and Mitigation Plans: ',
-        description:
-          'Identifying potential risks in the tendering process and developing mitigation plans to reduce uncertainty during project execution.',
-      },
-      {
-        title: 'Legal and Regulatory Compliance: ',
-        description:
-          'Ensuring that the tender documents adhere to all applicable local and international legal, regulatory, and industry standards.',
-      },
-      {
-        title: 'Pre-Tender Consultations: ',
-        description:
-          'Providing consultations prior to the tender process to clarify project requirements, bid structure, and vendor expectations.',
-      },
-      {
-        title: 'Tender Submission and Review Assistance: ',
-        description:
-          'Assisting clients with the preparation, submission, and review of tender proposals to ensure completeness and competitiveness.',
-      },
-    ],
-    sectors: [
-      {
-        title: 'Construction and Infrastructure: ',
-        description:
-          'Drafting tenders and specifications for construction projects, including residential, commercial, and industrial developments.',
-      },
-      {
-        title: 'Government Contracts: ',
-        description:
-          'Assisting in the preparation of tenders for government contracts, ensuring compliance with public procurement regulations and transparency.',
-      },
-      {
-        title: 'Procurement and Supply Chain: ',
-        description:
-          'Drafting tenders for procurement of goods and services, including detailed specifications for suppliers and vendors.',
-      },
-      {
-        title: 'Engineering and Technical Services: ',
-        description:
-          'Creating detailed tenders and technical specifications for engineering and technical services projects, including machinery procurement and facility management.',
-      },
-      {
-        title: 'Energy and Utilities: ',
-        description:
-          'Drafting tenders and specifications for energy and utilities projects, including renewable energy, power generation, and water supply projects.',
-      },
-      {
-        title: 'Healthcare and Pharmaceuticals: ',
-        description:
-          'Assisting in tendering for healthcare infrastructure, equipment procurement, and pharmaceutical supply contracts.',
-      },
-      {
-        title: 'IT and Telecom: ',
-        description:
-          'Providing tender and specifications drafting for IT services, telecom infrastructure projects, and technology procurement.',
-      },
-      {
-        title: 'Transportation and Logistics: ',
-        description:
-          'Drafting tenders for transportation and logistics services, including infrastructure development, fleet management, and supply chain operations.',
-      },
-    ],
-  },
-  {
-    id: 12,
-    title: 'NDT Testing & Stability Certification',
-    description:
-      'We offer Non-Destructive Testing (NDT) and stability certification services to assess the integrity and reliability of materials, structures, and equipment. Our expert team uses advanced techniques to detect defects, measure structural health, and provide stability certification for projects in various industries. Our services help ensure safety, regulatory compliance, and extended operational life of assets.',
-    list: [
-      {
-        title: 'Ultrasonic Testing (UT): ',
-        description:
-          'Utilizing ultrasonic waves to detect internal flaws or measure thickness of materials, ensuring the integrity of metal and other materials.',
-      },
-      {
-        title: 'Magnetic Particle Testing (MPT): ',
-        description:
-          'Applying magnetic fields to detect surface and near-surface defects in ferromagnetic materials, ensuring structural integrity.',
-      },
-      {
-        title: 'Dye Penetrant Testing (DPT): ',
-        description:
-          'Using liquid penetrants to reveal surface-breaking defects in non-porous materials such as metals, ceramics, and plastics.',
-      },
-      {
-        title: 'Radiographic Testing (RT): ',
-        description:
-          'Using X-rays or gamma rays to inspect the internal structure of materials for defects such as cracks, voids, and corrosion.',
-      },
-      {
-        title: 'Visual Testing (VT): ',
-        description:
-          'Conducting a visual inspection to detect surface defects, misalignments, or damage in structures, equipment, and materials.',
-      },
-      {
-        title: 'Eddy Current Testing (ECT): ',
-        description:
-          'Utilizing electromagnetic induction to detect surface cracks, corrosion, and other material imperfections.',
-      },
-      {
-        title: 'Acoustic Emission Testing (AET): ',
-        description:
-          'Monitoring the release of energy from materials under stress to detect early signs of structural damage or failure.',
-      },
-      {
-        title: 'Stability Assessment & Certification: ',
-        description:
-          'Assessing the stability of structures, equipment, and machinery to ensure they meet safety and design standards, providing official certification.',
-      },
-      {
-        title: 'Fatigue and Stress Testing: ',
-        description:
-          'Conducting tests to assess the impact of cyclic loading and stresses on materials and structures, ensuring long-term durability.',
-      },
-      {
-        title: 'Corrosion Testing: ',
-        description:
-          'Evaluating the extent of corrosion damage in materials and structures, providing recommendations for maintenance or replacement.',
-      },
-    ],
-    sectors: [
-      {
-        title: 'Construction and Infrastructure: ',
-        description:
-          'Providing NDT testing and stability certification for buildings, bridges, roads, and other infrastructure projects to ensure structural safety.',
-      },
-      {
-        title: 'Manufacturing and Engineering: ',
-        description:
-          'Offering NDT services for machinery, equipment, and components to ensure the integrity and reliability of industrial assets.',
-      },
-      {
-        title: 'Oil & Gas Industry: ',
-        description:
-          'Conducting NDT testing and stability certification for pipelines, storage tanks, and offshore platforms to prevent failures and ensure safety.',
-      },
-      {
-        title: 'Aerospace and Aviation: ',
-        description:
-          'Providing NDT testing for aircraft components, ensuring safety and compliance with aviation standards.',
-      },
-      {
-        title: 'Energy and Utilities: ',
-        description:
-          'Ensuring the structural integrity of power plants, renewable energy systems, and utility infrastructure through NDT and stability assessments.',
-      },
-      {
-        title: 'Marine and Shipping: ',
-        description:
-          'Conducting NDT testing for ships, boats, and marine structures to assess structural health and avoid potential failures.',
-      },
-      {
-        title: 'Automotive Industry: ',
-        description:
-          'Offering NDT testing for automotive components, ensuring quality and safety standards are met.',
-      },
-      {
-        title: 'Telecommunications: ',
-        description:
-          'Providing NDT testing for telecom towers, cables, and equipment to ensure structural stability and operational safety.',
-      },
-      {
-        title: 'Mining and Metals: ',
-        description:
-          'Conducting NDT testing for mining equipment, machinery, and structural components to ensure operational safety and minimize downtime.',
-      },
-    ],
-  },
-  {
-    id: 13,
-    title: 'Surveying & Monitoring',
-    description:
-      'We provide comprehensive surveying and monitoring services, utilizing advanced technologies to assess land, buildings, infrastructure, and environmental conditions. Our services include precise measurements, data collection, and real-time monitoring to support construction, urban planning, and environmental protection efforts. We assist clients in making informed decisions based on accurate, up-to-date data.',
-    list: [
-      {
-        title: 'Land Surveying: ',
-        description:
-          'Conducting detailed land surveys for boundary delineation, topography, land use planning, and property development.',
-      },
-      {
-        title: 'Construction Surveying: ',
-        description:
-          'Providing precise measurements and layout services for construction projects, ensuring that buildings, roads, and other infrastructure are developed according to design specifications.',
-      },
-      {
-        title: 'Geodetic Surveying: ',
-        description:
-          'Utilizing advanced geodetic techniques to measure large areas of land and map geographic features with high accuracy.',
-      },
-      {
-        title: 'Environmental Monitoring: ',
-        description:
-          'Monitoring environmental conditions such as air quality, water quality, noise levels, and soil conditions to ensure compliance with regulations and sustainability standards.',
-      },
-      {
-        title: 'Structural Monitoring: ',
-        description:
-          'Providing continuous monitoring of the health and stability of buildings, bridges, and other structures to detect shifts, movements, or potential damage.',
-      },
-      {
-        title: 'Remote Sensing: ',
-        description:
-          'Using satellite imagery, drones, and other technologies to gather data for mapping, land use analysis, and environmental monitoring.',
-      },
-      {
-        title: '3D Laser Scanning: ',
-        description:
-          'Utilizing laser scanning technology to create detailed 3D models of structures, land, and terrain for precise measurements and analysis.',
-      },
-      {
-        title: 'Hydrographic Surveying: ',
-        description:
-          'Conducting surveys of water bodies such as rivers, lakes, and coastal areas to map underwater topography and assess water resources.',
-      },
-      {
-        title: 'Site Analysis and Feasibility Studies: ',
-        description:
-          'Assessing the suitability of sites for development, including the evaluation of land topography, soil conditions, and environmental factors.',
-      },
-      {
-        title: 'Real-Time Monitoring Systems: ',
-        description:
-          'Installing and managing systems that provide real-time monitoring of various parameters such as structural stability, environmental conditions, and construction progress.',
-      },
-    ],
-    sectors: [
-      {
-        title: 'Construction and Infrastructure: ',
-        description:
-          'Providing surveying and monitoring services to ensure the accuracy of construction projects and the structural integrity of infrastructure.',
-      },
-      {
-        title: 'Urban Planning and Development: ',
-        description:
-          'Supporting urban planners with land surveying, mapping, and monitoring data to inform decisions related to zoning, land use, and infrastructure development.',
-      },
-      {
-        title: 'Environmental Protection: ',
-        description:
-          'Offering environmental monitoring services to track pollution, water quality, and ecological impacts, ensuring compliance with environmental regulations.',
-      },
-      {
-        title: 'Transportation: ',
-        description:
-          'Conducting surveying and monitoring for transportation infrastructure such as roads, bridges, railways, and airports.',
-      },
-      {
-        title: 'Real Estate Development: ',
-        description:
-          'Assisting real estate developers with site surveys, feasibility studies, and monitoring to ensure compliance with design and regulatory requirements.',
-      },
-      {
-        title: 'Mining and Resources: ',
-        description:
-          'Providing surveying and monitoring for mining operations to assess land use, resource extraction, and environmental impacts.',
-      },
-      {
-        title: 'Energy and Utilities: ',
-        description:
-          'Offering surveying and monitoring for energy and utility infrastructure, including power plants, transmission lines, and water treatment facilities.',
-      },
-      {
-        title: 'Agriculture: ',
-        description:
-          'Utilizing surveying and remote sensing for precision agriculture, land assessment, and monitoring crop health and soil conditions.',
-      },
-      {
-        title: 'Disaster Management: ',
-        description:
-          'Providing surveying and monitoring services to support disaster preparedness, risk assessments, and recovery efforts, including flood, earthquake, and storm monitoring.',
-      },
-    ],
-  },
-  {
-    id: 14,
+    id: 7,
     title: 'Chartered Engineer Certifications',
+    imgSrc: '/embla/certifications.png',
+    imgAlt: 'Chartered Engineer Certifications',
     description:
       'We offer Chartered Engineer Certification services, providing professional accreditation to engineers who meet the required industry standards, technical expertise, and ethical practices. Our certifications help engineers demonstrate their qualifications, skills, and commitment to delivering high-quality, compliant engineering services across various sectors. We support professionals in obtaining recognized certifications, enhancing their career opportunities and credibility.',
     list: [
@@ -1744,8 +1248,327 @@ export const ServiceCardsDescription = [
     ],
   },
   {
-    id: 15,
+    id: 8,
+    title: 'Factory Act Certification',
+    imgSrc: '/embla/factory.webp',
+    imgAlt: 'Factory Act Certification',
+    description:
+      'We provide Factory Act Certification services, ensuring that factories comply with the regulations set out under the Factory Act for safe and efficient operation. Our services include audits, assessments, and guidance on compliance with labor laws, safety standards, health regulations, and environmental requirements. We help businesses meet the necessary certifications to operate legally and safely, protecting employees and ensuring smooth functioning.',
+    list: [
+      {
+        title: 'Factory Compliance Audit: ',
+        description:
+          'Conducting audits to assess compliance with the Factory Act, including workplace safety, sanitation, labor conditions, and environmental protection.',
+      },
+      {
+        title: 'Health and Safety Assessment: ',
+        description:
+          'Assessing the safety of the work environment, ensuring the factory meets health and safety standards, including fire safety, ventilation, and machinery safety.',
+      },
+      {
+        title: 'Environmental Impact Evaluation: ',
+        description:
+          'Evaluating the factory’s environmental footprint, ensuring proper waste management, pollution control, and adherence to environmental regulations.',
+      },
+      {
+        title: 'Workplace Welfare and Labor Conditions: ',
+        description:
+          'Ensuring the factory meets labor laws regarding working hours, wage payment, overtime, worker health, and overall welfare of employees.',
+      },
+      {
+        title: 'Factory Layout and Equipment Safety: ',
+        description:
+          'Reviewing factory layouts to ensure proper space planning, equipment installation, and compliance with operational safety standards.',
+      },
+      {
+        title: 'Certification Application Support: ',
+        description:
+          'Providing assistance in preparing and submitting the necessary documents for Factory Act Certification application, ensuring all regulatory requirements are met.',
+      },
+      {
+        title: 'Training and Awareness Programs: ',
+        description:
+          'Conducting training sessions for management and workers on safety standards, factory regulations, and compliance with the Factory Act.',
+      },
+      {
+        title: 'Legal Compliance Consultation: ',
+        description:
+          "Offering expert advice on factory-related legal matters, including regulatory compliance, workers' rights, and legal frameworks under the Factory Act.",
+      },
+      {
+        title: 'Factory Safety Manual Preparation: ',
+        description:
+          'Assisting in preparing and implementing a comprehensive safety manual for the factory, covering all aspects of health, safety, and environmental protection.',
+      },
+      {
+        title: 'Post-Certification Monitoring: ',
+        description:
+          'Providing ongoing monitoring services after certification to ensure continuous compliance with Factory Act regulations and industry standards.',
+      },
+    ],
+    sectors: [
+      {
+        title: 'Manufacturing: ',
+        description:
+          'Helping manufacturing units obtain Factory Act Certification by ensuring compliance with safety, labor, and environmental standards.',
+      },
+      {
+        title: 'Food Processing: ',
+        description:
+          'Assisting food processing factories in meeting health and safety standards required under the Factory Act for hygiene and worker protection.',
+      },
+      {
+        title: 'Textile Industry: ',
+        description:
+          'Providing services to textile factories, ensuring adherence to worker welfare, safety measures, and factory regulations as per the Factory Act.',
+      },
+      {
+        title: 'Pharmaceuticals: ',
+        description:
+          'Ensuring pharmaceutical manufacturing units comply with safety, health, and environmental regulations under the Factory Act.',
+      },
+      {
+        title: 'Construction: ',
+        description:
+          'Assisting construction-based factories in meeting safety standards and complying with Factory Act regulations for worker safety and health.',
+      },
+      {
+        title: 'Automotive: ',
+        description:
+          'Supporting automotive manufacturing plants in achieving Factory Act Certification through comprehensive audits and compliance checks.',
+      },
+      {
+        title: 'Electronics: ',
+        description:
+          'Helping electronics manufacturing units comply with the Factory Act regulations, ensuring safe working environments for employees.',
+      },
+      {
+        title: 'Chemical Manufacturing: ',
+        description:
+          'Ensuring chemical manufacturing plants comply with stringent safety, health, and environmental standards under the Factory Act.',
+      },
+    ],
+  },
+  {
+    id: 9,
+    title: 'NDT Testing & Stability Certification',
+    imgSrc: '/embla/testing.png',
+    imgAlt: 'NDT Testing & Stability Certification',
+    description:
+      'We offer Non-Destructive Testing (NDT) and stability certification services to assess the integrity and reliability of materials, structures, and equipment. Our expert team uses advanced techniques to detect defects, measure structural health, and provide stability certification for projects in various industries. Our services help ensure safety, regulatory compliance, and extended operational life of assets.',
+    list: [
+      {
+        title: 'Ultrasonic Testing (UT): ',
+        description:
+          'Utilizing ultrasonic waves to detect internal flaws or measure thickness of materials, ensuring the integrity of metal and other materials.',
+      },
+      {
+        title: 'Magnetic Particle Testing (MPT): ',
+        description:
+          'Applying magnetic fields to detect surface and near-surface defects in ferromagnetic materials, ensuring structural integrity.',
+      },
+      {
+        title: 'Dye Penetrant Testing (DPT): ',
+        description:
+          'Using liquid penetrants to reveal surface-breaking defects in non-porous materials such as metals, ceramics, and plastics.',
+      },
+      {
+        title: 'Radiographic Testing (RT): ',
+        description:
+          'Using X-rays or gamma rays to inspect the internal structure of materials for defects such as cracks, voids, and corrosion.',
+      },
+      {
+        title: 'Visual Testing (VT): ',
+        description:
+          'Conducting a visual inspection to detect surface defects, misalignments, or damage in structures, equipment, and materials.',
+      },
+      {
+        title: 'Eddy Current Testing (ECT): ',
+        description:
+          'Utilizing electromagnetic induction to detect surface cracks, corrosion, and other material imperfections.',
+      },
+      {
+        title: 'Acoustic Emission Testing (AET): ',
+        description:
+          'Monitoring the release of energy from materials under stress to detect early signs of structural damage or failure.',
+      },
+      {
+        title: 'Stability Assessment & Certification: ',
+        description:
+          'Assessing the stability of structures, equipment, and machinery to ensure they meet safety and design standards, providing official certification.',
+      },
+      {
+        title: 'Fatigue and Stress Testing: ',
+        description:
+          'Conducting tests to assess the impact of cyclic loading and stresses on materials and structures, ensuring long-term durability.',
+      },
+      {
+        title: 'Corrosion Testing: ',
+        description:
+          'Evaluating the extent of corrosion damage in materials and structures, providing recommendations for maintenance or replacement.',
+      },
+    ],
+    sectors: [
+      {
+        title: 'Construction and Infrastructure: ',
+        description:
+          'Providing NDT testing and stability certification for buildings, bridges, roads, and other infrastructure projects to ensure structural safety.',
+      },
+      {
+        title: 'Manufacturing and Engineering: ',
+        description:
+          'Offering NDT services for machinery, equipment, and components to ensure the integrity and reliability of industrial assets.',
+      },
+      {
+        title: 'Oil & Gas Industry: ',
+        description:
+          'Conducting NDT testing and stability certification for pipelines, storage tanks, and offshore platforms to prevent failures and ensure safety.',
+      },
+      {
+        title: 'Aerospace and Aviation: ',
+        description:
+          'Providing NDT testing for aircraft components, ensuring safety and compliance with aviation standards.',
+      },
+      {
+        title: 'Energy and Utilities: ',
+        description:
+          'Ensuring the structural integrity of power plants, renewable energy systems, and utility infrastructure through NDT and stability assessments.',
+      },
+      {
+        title: 'Marine and Shipping: ',
+        description:
+          'Conducting NDT testing for ships, boats, and marine structures to assess structural health and avoid potential failures.',
+      },
+      {
+        title: 'Automotive Industry: ',
+        description:
+          'Offering NDT testing for automotive components, ensuring quality and safety standards are met.',
+      },
+      {
+        title: 'Telecommunications: ',
+        description:
+          'Providing NDT testing for telecom towers, cables, and equipment to ensure structural stability and operational safety.',
+      },
+      {
+        title: 'Mining and Metals: ',
+        description:
+          'Conducting NDT testing for mining equipment, machinery, and structural components to ensure operational safety and minimize downtime.',
+      },
+    ],
+  },
+  {
+    id: 10,
+    title: 'Surveying & Monitoring',
+    imgSrc: '/embla/analysis.jpg',
+    imgAlt: 'Surveying & Monitoring',
+    description:
+      'We provide comprehensive surveying and monitoring services, utilizing advanced technologies to assess land, buildings, infrastructure, and environmental conditions. Our services include precise measurements, data collection, and real-time monitoring to support construction, urban planning, and environmental protection efforts. We assist clients in making informed decisions based on accurate, up-to-date data.',
+    list: [
+      {
+        title: 'Land Surveying: ',
+        description:
+          'Conducting detailed land surveys for boundary delineation, topography, land use planning, and property development.',
+      },
+      {
+        title: 'Construction Surveying: ',
+        description:
+          'Providing precise measurements and layout services for construction projects, ensuring that buildings, roads, and other infrastructure are developed according to design specifications.',
+      },
+      {
+        title: 'Geodetic Surveying: ',
+        description:
+          'Utilizing advanced geodetic techniques to measure large areas of land and map geographic features with high accuracy.',
+      },
+      {
+        title: 'Environmental Monitoring: ',
+        description:
+          'Monitoring environmental conditions such as air quality, water quality, noise levels, and soil conditions to ensure compliance with regulations and sustainability standards.',
+      },
+      {
+        title: 'Structural Monitoring: ',
+        description:
+          'Providing continuous monitoring of the health and stability of buildings, bridges, and other structures to detect shifts, movements, or potential damage.',
+      },
+      {
+        title: 'Remote Sensing: ',
+        description:
+          'Using satellite imagery, drones, and other technologies to gather data for mapping, land use analysis, and environmental monitoring.',
+      },
+      {
+        title: '3D Laser Scanning: ',
+        description:
+          'Utilizing laser scanning technology to create detailed 3D models of structures, land, and terrain for precise measurements and analysis.',
+      },
+      {
+        title: 'Hydrographic Surveying: ',
+        description:
+          'Conducting surveys of water bodies such as rivers, lakes, and coastal areas to map underwater topography and assess water resources.',
+      },
+      {
+        title: 'Site Analysis and Feasibility Studies: ',
+        description:
+          'Assessing the suitability of sites for development, including the evaluation of land topography, soil conditions, and environmental factors.',
+      },
+      {
+        title: 'Real-Time Monitoring Systems: ',
+        description:
+          'Installing and managing systems that provide real-time monitoring of various parameters such as structural stability, environmental conditions, and construction progress.',
+      },
+    ],
+    sectors: [
+      {
+        title: 'Construction and Infrastructure: ',
+        description:
+          'Providing surveying and monitoring services to ensure the accuracy of construction projects and the structural integrity of infrastructure.',
+      },
+      {
+        title: 'Urban Planning and Development: ',
+        description:
+          'Supporting urban planners with land surveying, mapping, and monitoring data to inform decisions related to zoning, land use, and infrastructure development.',
+      },
+      {
+        title: 'Environmental Protection: ',
+        description:
+          'Offering environmental monitoring services to track pollution, water quality, and ecological impacts, ensuring compliance with environmental regulations.',
+      },
+      {
+        title: 'Transportation: ',
+        description:
+          'Conducting surveying and monitoring for transportation infrastructure such as roads, bridges, railways, and airports.',
+      },
+      {
+        title: 'Real Estate Development: ',
+        description:
+          'Assisting real estate developers with site surveys, feasibility studies, and monitoring to ensure compliance with design and regulatory requirements.',
+      },
+      {
+        title: 'Mining and Resources: ',
+        description:
+          'Providing surveying and monitoring for mining operations to assess land use, resource extraction, and environmental impacts.',
+      },
+      {
+        title: 'Energy and Utilities: ',
+        description:
+          'Offering surveying and monitoring for energy and utility infrastructure, including power plants, transmission lines, and water treatment facilities.',
+      },
+      {
+        title: 'Agriculture: ',
+        description:
+          'Utilizing surveying and remote sensing for precision agriculture, land assessment, and monitoring crop health and soil conditions.',
+      },
+      {
+        title: 'Disaster Management: ',
+        description:
+          'Providing surveying and monitoring services to support disaster preparedness, risk assessments, and recovery efforts, including flood, earthquake, and storm monitoring.',
+      },
+    ],
+  },
+
+  {
+    id: 11,
     title: 'Industrial Safety Audits',
+    imgSrc: '/embla/safety.jpg',
+    imgAlt: 'Industrial Safety Audits',
     description:
       'We conduct comprehensive industrial safety audits to evaluate workplace safety, assess potential hazards, and ensure compliance with safety regulations. Our audits focus on identifying risks, recommending improvements, and implementing best practices to safeguard employees, equipment, and the environment. We aim to enhance operational efficiency while ensuring adherence to local and international safety standards.',
     list: [
@@ -1853,194 +1676,12 @@ export const ServiceCardsDescription = [
       },
     ],
   },
+
   {
-    id: 16,
-    title: 'NA Conversion of Lands',
-    description:
-      'We offer services for the conversion of agricultural lands to non-agricultural (NA) land, assisting property owners in complying with legal procedures for land use change. Our expertise ensures smooth conversion processes, helping clients unlock the full potential of their land for residential, commercial, or industrial development while adhering to local zoning laws and regulatory requirements.',
-    list: [
-      {
-        title: 'Eligibility Assessment: ',
-        description:
-          'Evaluating whether the land meets the necessary criteria for NA conversion based on location, zoning regulations, and land type.',
-      },
-      {
-        title: 'Documentation Support: ',
-        description:
-          'Assisting with the preparation and submission of required documents, including land ownership proofs, agricultural records, and legal declarations.',
-      },
-      {
-        title: 'Application Filing: ',
-        description:
-          'Filing applications with the local authorities and following up with the relevant departments to ensure the timely processing of NA conversion requests.',
-      },
-      {
-        title: 'Land Use Compliance: ',
-        description:
-          'Ensuring that the proposed non-agricultural use complies with the applicable local zoning laws, municipal plans, and master plans.',
-      },
-      {
-        title: 'Land Survey and Mapping: ',
-        description:
-          'Conducting land surveys and preparing detailed maps required for submission to authorities for NA conversion approval.',
-      },
-      {
-        title: 'Government Liaison: ',
-        description:
-          'Managing communication with government agencies, urban planning departments, and local authorities to expedite the conversion process.',
-      },
-      {
-        title: 'Legal Verification: ',
-        description:
-          'Verifying the legal status of the land, ensuring there are no encumbrances or legal disputes preventing the NA conversion.',
-      },
-      {
-        title: 'Zoning and Land Use Strategy: ',
-        description:
-          'Providing recommendations on the most profitable and compliant land use after conversion, whether for residential, commercial, or industrial development.',
-      },
-      {
-        title: 'NA Conversion Approval: ',
-        description:
-          'Assisting clients in obtaining the formal approval for NA conversion and ensuring all legalities are complied with for future land use.',
-      },
-      {
-        title: 'Post-Conversion Documentation: ',
-        description:
-          'Helping with post-conversion documentation, including updating land records and obtaining relevant land titles and permissions for new development.',
-      },
-    ],
-    sectors: [
-      {
-        title: 'Residential Development: ',
-        description:
-          'Assisting landowners in converting agricultural land into residential zones for building housing projects and residential complexes.',
-      },
-      {
-        title: 'Commercial Development: ',
-        description:
-          'Supporting clients in converting agricultural land into commercial spaces for retail, office buildings, or mixed-use developments.',
-      },
-      {
-        title: 'Industrial Development: ',
-        description:
-          'Facilitating the conversion of agricultural land into industrial plots for factories, manufacturing units, or warehouses.',
-      },
-      {
-        title: 'Real Estate Investment: ',
-        description:
-          "Helping real estate developers and investors with the conversion process to unlock the land's potential for large-scale development.",
-      },
-      {
-        title: 'Agricultural Landowners: ',
-        description:
-          'Assisting agricultural landowners in converting their properties to non-agricultural use for better returns or diversification.',
-      },
-    ],
-  },
-  {
-    id: 17,
-    title: 'Factory Act Certification',
-    description:
-      'We provide Factory Act Certification services, ensuring that factories comply with the regulations set out under the Factory Act for safe and efficient operation. Our services include audits, assessments, and guidance on compliance with labor laws, safety standards, health regulations, and environmental requirements. We help businesses meet the necessary certifications to operate legally and safely, protecting employees and ensuring smooth functioning.',
-    list: [
-      {
-        title: 'Factory Compliance Audit: ',
-        description:
-          'Conducting audits to assess compliance with the Factory Act, including workplace safety, sanitation, labor conditions, and environmental protection.',
-      },
-      {
-        title: 'Health and Safety Assessment: ',
-        description:
-          'Assessing the safety of the work environment, ensuring the factory meets health and safety standards, including fire safety, ventilation, and machinery safety.',
-      },
-      {
-        title: 'Environmental Impact Evaluation: ',
-        description:
-          'Evaluating the factory’s environmental footprint, ensuring proper waste management, pollution control, and adherence to environmental regulations.',
-      },
-      {
-        title: 'Workplace Welfare and Labor Conditions: ',
-        description:
-          'Ensuring the factory meets labor laws regarding working hours, wage payment, overtime, worker health, and overall welfare of employees.',
-      },
-      {
-        title: 'Factory Layout and Equipment Safety: ',
-        description:
-          'Reviewing factory layouts to ensure proper space planning, equipment installation, and compliance with operational safety standards.',
-      },
-      {
-        title: 'Certification Application Support: ',
-        description:
-          'Providing assistance in preparing and submitting the necessary documents for Factory Act Certification application, ensuring all regulatory requirements are met.',
-      },
-      {
-        title: 'Training and Awareness Programs: ',
-        description:
-          'Conducting training sessions for management and workers on safety standards, factory regulations, and compliance with the Factory Act.',
-      },
-      {
-        title: 'Legal Compliance Consultation: ',
-        description:
-          "Offering expert advice on factory-related legal matters, including regulatory compliance, workers' rights, and legal frameworks under the Factory Act.",
-      },
-      {
-        title: 'Factory Safety Manual Preparation: ',
-        description:
-          'Assisting in preparing and implementing a comprehensive safety manual for the factory, covering all aspects of health, safety, and environmental protection.',
-      },
-      {
-        title: 'Post-Certification Monitoring: ',
-        description:
-          'Providing ongoing monitoring services after certification to ensure continuous compliance with Factory Act regulations and industry standards.',
-      },
-    ],
-    sectors: [
-      {
-        title: 'Manufacturing: ',
-        description:
-          'Helping manufacturing units obtain Factory Act Certification by ensuring compliance with safety, labor, and environmental standards.',
-      },
-      {
-        title: 'Food Processing: ',
-        description:
-          'Assisting food processing factories in meeting health and safety standards required under the Factory Act for hygiene and worker protection.',
-      },
-      {
-        title: 'Textile Industry: ',
-        description:
-          'Providing services to textile factories, ensuring adherence to worker welfare, safety measures, and factory regulations as per the Factory Act.',
-      },
-      {
-        title: 'Pharmaceuticals: ',
-        description:
-          'Ensuring pharmaceutical manufacturing units comply with safety, health, and environmental regulations under the Factory Act.',
-      },
-      {
-        title: 'Construction: ',
-        description:
-          'Assisting construction-based factories in meeting safety standards and complying with Factory Act regulations for worker safety and health.',
-      },
-      {
-        title: 'Automotive: ',
-        description:
-          'Supporting automotive manufacturing plants in achieving Factory Act Certification through comprehensive audits and compliance checks.',
-      },
-      {
-        title: 'Electronics: ',
-        description:
-          'Helping electronics manufacturing units comply with the Factory Act regulations, ensuring safe working environments for employees.',
-      },
-      {
-        title: 'Chemical Manufacturing: ',
-        description:
-          'Ensuring chemical manufacturing plants comply with stringent safety, health, and environmental standards under the Factory Act.',
-      },
-    ],
-  },
-  {
-    id: 18,
+    id: 12,
     title: 'IPO Certification',
+    imgSrc: '/embla/ipo.webp',
+    imgAlt: 'IPO Certification',
     description:
       'We provide IPO (Initial Public Offering) Certification services, ensuring that companies comply with the regulatory requirements set by the Securities and Exchange Board of India (SEBI) and other relevant authorities. Our services include guiding companies through the IPO process, from legal documentation to financial audits, and ensuring that all conditions for a successful public offering are met. We help businesses navigate the complexities of going public, ensuring a smooth transition and regulatory compliance.',
     list: [
@@ -2139,8 +1780,588 @@ export const ServiceCardsDescription = [
     ],
   },
   {
+    id: 13,
+    title: 'TEV Consultancy',
+    imgSrc: '/embla/tev.jpg',
+    imgAlt: 'TEV Consultancy',
+    description:
+      "As Lender's Independent Engineers specializing in civil engineering for buildings, we offer technical evaluation services to lenders and investors to ensure that construction projects meet structural, safety, and regulatory standards. Our goal is to assess the viability, monitor the progress, and mitigate risks associated with building projects to ensure successful project delivery.",
+    list: [
+      {
+        title: 'Structural Due Diligence: ',
+        description:
+          'Performing comprehensive structural assessments to evaluate the design, stability, and safety of building projects, ensuring compliance with local and international standards.',
+      },
+      {
+        title: 'Construction Progress Monitoring: ',
+        description:
+          'Regular site inspections to track construction progress, assess adherence to the approved plans, and ensure that quality standards are maintained throughout the project.',
+      },
+      {
+        title: 'Site Inspections and Quality Control: ',
+        description:
+          'Conducting detailed site inspections to evaluate construction quality, materials, and workmanship to ensure that the project meets the lender’s requirements.',
+      },
+      {
+        title: 'Risk Assessment and Mitigation: ',
+        description:
+          'Identifying potential risks related to structural design, construction methods, and materials, and providing mitigation strategies to ensure the safety and feasibility of the project.',
+      },
+      {
+        title: 'Budget Review and Cost Control: ',
+        description:
+          'Reviewing project budgets, cost estimates, and actual expenditures to ensure financial control, efficient resource allocation, and adherence to budget constraints.',
+      },
+      {
+        title: 'Contractor Evaluation and Compliance: ',
+        description:
+          'Assessing the qualifications and reliability of contractors and subcontractors, ensuring that the construction team has the expertise and financial stability to execute the project as planned.',
+      },
+      {
+        title: 'Design and Engineering Compliance: ',
+        description:
+          'Ensuring that the project design and engineering plans are in compliance with local building codes, safety regulations, and environmental standards.',
+      },
+      {
+        title: 'Progress and Final Reporting: ',
+        description:
+          'Providing detailed reports at various project stages, summarizing the construction status, risks, and any necessary corrective actions to be taken.',
+      },
+      {
+        title: 'Final Inspection and Handover: ',
+        description:
+          'Overseeing the final inspection process, ensuring that the building is ready for handover to the client, and meets all necessary requirements for occupancy and safety.',
+      },
+      {
+        title: 'Independent Engineering Reports for Lenders: ',
+        description:
+          'Preparing independent engineering reports for lenders, outlining the technical and structural aspects of the project, progress, compliance with safety standards, and financial viability.',
+      },
+    ],
+    sectors: [
+      {
+        title: 'Residential Building Projects: ',
+        description:
+          'Providing independent engineering assessments for residential buildings, including multi-story apartments, villas, and residential complexes.',
+      },
+      {
+        title: 'Commercial and Office Buildings: ',
+        description:
+          'Assessing the technical and structural feasibility of office buildings, retail spaces, and commercial developments to ensure compliance with safety and design standards.',
+      },
+      {
+        title: 'Industrial and Factory Buildings: ',
+        description:
+          'Offering technical evaluations for industrial buildings, warehouses, and factories to ensure that structural integrity and safety standards are met.',
+      },
+      {
+        title: 'Mixed-Use Developments: ',
+        description:
+          'Conducting due diligence and monitoring the progress of mixed-use developments, including residential, commercial, and recreational spaces.',
+      },
+      {
+        title: 'Institutional Buildings (Schools, Hospitals, etc.): ',
+        description:
+          'Assessing the design and construction of educational institutions, healthcare facilities, and other public buildings for compliance with safety, regulatory, and operational requirements.',
+      },
+      {
+        title: 'Infrastructure for Buildings (Foundations, Roads, Utilities): ',
+        description:
+          'Providing technical support for the construction of essential infrastructure related to buildings, such as foundations, access roads, and utility systems.',
+      },
+    ],
+  },
+  {
+    id: 14,
+    title: 'Structural Designing',
+    imgSrc: '/embla/designing.jpg',
+    imgAlt: 'Structural Designing',
+    description:
+      'We provide structural designing services for a wide range of projects, ensuring the creation of safe, efficient, and cost-effective structural systems. Our expertise spans across residential, commercial, industrial, and infrastructure projects, where we focus on delivering innovative designs that comply with local building codes and international standards. We use advanced engineering techniques and software to provide reliable structural solutions for every phase of construction.',
+    list: [
+      {
+        title: 'Structural Design Analysis: ',
+        description:
+          'Conducting detailed analysis to determine the most efficient and safe structural system, based on the nature of the project, materials, and load-bearing requirements.',
+      },
+      {
+        title: 'Building Design: ',
+        description:
+          'Designing structural systems for buildings, including foundations, beams, columns, and slabs, ensuring safety, stability, and compliance with local regulations.',
+      },
+      {
+        title: 'Reinforced Concrete Design: ',
+        description:
+          'Specializing in the design of reinforced concrete structures, including foundations, floors, and walls, to withstand dynamic and static loads.',
+      },
+      {
+        title: 'Steel Structure Design: ',
+        description:
+          'Designing steel-framed structures for industrial and commercial buildings, ensuring durability, efficiency, and cost-effectiveness.',
+      },
+      {
+        title: 'Seismic Design: ',
+        description:
+          'Providing seismic design solutions for earthquake-prone regions, ensuring that structures are resilient to seismic forces and comply with seismic design codes.',
+      },
+      {
+        title: 'Foundation Design: ',
+        description:
+          'Designing foundations that support buildings and structures, considering soil conditions, load distribution, and construction methods.',
+      },
+      {
+        title: 'Masonry Structure Design: ',
+        description:
+          'Designing masonry structures, including brick and stone buildings, ensuring stability and structural integrity in compliance with construction codes.',
+      },
+      {
+        title: 'Timber Structure Design: ',
+        description:
+          'Designing sustainable and efficient timber structures, focusing on load distribution, material strength, and environmental impact.',
+      },
+      {
+        title: 'Retrofitting and Strengthening: ',
+        description:
+          'Providing design solutions for retrofitting and strengthening existing structures to meet current safety standards and accommodate modern requirements.',
+      },
+      {
+        title: 'Structural Detailing: ',
+        description:
+          'Creating detailed construction drawings and specifications for all structural components, including reinforcement detailing and material specifications.',
+      },
+    ],
+    sectors: [
+      {
+        title: 'Residential Construction: ',
+        description:
+          'Designing structural systems for residential buildings, ensuring safety, aesthetic appeal, and compliance with local building codes.',
+      },
+      {
+        title: 'Commercial and Office Buildings: ',
+        description:
+          'Providing structural design solutions for commercial and office spaces, ensuring functionality, stability, and cost-effectiveness.',
+      },
+      {
+        title: 'Industrial Buildings: ',
+        description:
+          'Designing robust structural systems for industrial buildings, including factories, warehouses, and manufacturing facilities.',
+      },
+      {
+        title: 'Infrastructure Projects: ',
+        description:
+          'Designing structural components for large-scale infrastructure projects, including bridges, roads, tunnels, and dams.',
+      },
+      {
+        title: 'Public Buildings: ',
+        description:
+          'Providing structural design services for public buildings such as schools, hospitals, and government facilities.',
+      },
+      {
+        title: 'Retail and Hospitality: ',
+        description:
+          'Designing structural systems for retail outlets, hotels, and restaurants, ensuring aesthetics, functionality, and safety.',
+      },
+      {
+        title: 'Sports and Entertainment Facilities: ',
+        description:
+          'Designing structures for stadiums, arenas, and other entertainment venues, focusing on capacity, load-bearing, and safety.',
+      },
+    ],
+  },
+  {
+    id: 15,
+    title: 'Interior Designing',
+    imgSrc: '/embla/interior.png',
+    imgAlt: 'Interior Designing',
+    description:
+      'We offer comprehensive interior designing services that transform spaces into functional, aesthetic, and personalized environments. Our approach blends creativity with practicality, ensuring every design element enhances the user experience. We work closely with clients to understand their preferences and vision, while adhering to budget, timeline, and space constraints. From residential to commercial projects, our team ensures that each space is thoughtfully designed to suit the purpose and style of its occupants.',
+    list: [
+      {
+        title: 'Space Planning: ',
+        description:
+          'Optimizing the layout of interior spaces to ensure functional flow and maximize the usability of each area.',
+      },
+      {
+        title: 'Furniture Design and Selection: ',
+        description:
+          'Designing custom furniture pieces or selecting the right furniture to complement the overall interior design theme and functionality.',
+      },
+      {
+        title: 'Lighting Design: ',
+        description:
+          'Designing lighting solutions that enhance the ambiance, highlight architectural features, and create a comfortable atmosphere.',
+      },
+      {
+        title: 'Color Schemes and Material Selection: ',
+        description:
+          'Choosing appropriate color palettes, textures, and materials that reflect the desired aesthetic and complement the space.',
+      },
+      {
+        title: '3D Visualization and Renderings: ',
+        description:
+          'Using advanced 3D modeling software to create realistic visualizations of interior designs, allowing clients to visualize the space before implementation.',
+      },
+      {
+        title: 'Interior Styling: ',
+        description:
+          'Adding final decorative touches, such as artworks, textiles, and accessories, to complete the design and create a cohesive look.',
+      },
+      {
+        title: 'Custom Design Solutions: ',
+        description:
+          'Providing tailored design solutions for unique spaces or specific client needs, including custom-built furniture and feature walls.',
+      },
+      {
+        title: 'Project Management: ',
+        description:
+          'Overseeing the entire design process from concept to execution, ensuring that the project is completed on time, within budget, and according to design specifications.',
+      },
+      {
+        title: 'Sustainable Interior Design: ',
+        description:
+          'Incorporating eco-friendly materials, energy-efficient solutions, and sustainable practices into interior design to minimize environmental impact.',
+      },
+      {
+        title: 'Renovation and Remodeling: ',
+        description:
+          'Providing design services for the renovation or remodeling of existing spaces to enhance functionality, aesthetics, and value.',
+      },
+    ],
+    sectors: [
+      {
+        title: 'Residential Interiors: ',
+        description:
+          'Designing personalized interiors for homes, apartments, and villas, ensuring comfort, style, and functionality.',
+      },
+      {
+        title: 'Commercial Interiors: ',
+        description:
+          'Creating office spaces, retail stores, and restaurants that enhance productivity, brand identity, and customer experience.',
+      },
+      {
+        title: 'Hospitality Interiors: ',
+        description:
+          'Designing hotels, resorts, and other hospitality spaces that create a welcoming, luxurious, and memorable guest experience.',
+      },
+      {
+        title: 'Healthcare Interiors: ',
+        description:
+          'Designing hospital rooms, clinics, and healthcare facilities with a focus on comfort, functionality, and patient well-being.',
+      },
+      {
+        title: 'Education Interiors: ',
+        description:
+          'Creating learning environments for schools, universities, and training centers that foster creativity, engagement, and functionality.',
+      },
+      {
+        title: 'Retail Interiors: ',
+        description:
+          'Designing retail stores, showrooms, and boutiques that enhance the shopping experience and align with brand identity.',
+      },
+      {
+        title: 'Corporate Offices: ',
+        description:
+          'Designing office spaces for businesses that enhance employee productivity, collaboration, and comfort.',
+      },
+      {
+        title: 'Luxury Interiors: ',
+        description:
+          'Creating high-end, luxurious interiors for clients who seek exclusive, bespoke designs with premium finishes and materials.',
+      },
+    ],
+  },
+  {
+    id: 16,
+    title: 'Black Money Valuation',
+    imgSrc: '/embla/blackmoney.jpg',
+    imgAlt: 'Black Money Valuation',
+    description:
+      'We offer specialized services in the valuation of black money and assets acquired through illegal or unaccounted means. Our approach helps clients with risk assessment, financial compliance, and structuring of corrective measures in line with legal frameworks. We support investigations, regulatory bodies, and financial institutions in uncovering illicit wealth and ensuring compliance with anti-money laundering laws.',
+    list: [
+      {
+        title: 'Asset Identification and Valuation: ',
+        description:
+          'Identifying and valuing assets acquired through unaccounted means, including real estate, financial instruments, and offshore holdings.',
+      },
+      {
+        title: 'Cash Flow Analysis: ',
+        description:
+          'Conducting forensic analysis of cash flows to track illicit income sources and quantify hidden assets.',
+      },
+      {
+        title: 'Offshore and Cross-border Asset Valuation: ',
+        description:
+          'Valuing assets held in offshore accounts or across borders, ensuring compliance with international regulations.',
+      },
+      {
+        title: 'Regulatory Compliance Assessment: ',
+        description:
+          'Assessing the level of compliance with financial regulations, including KYC (Know Your Customer) and AML (Anti-Money Laundering) norms.',
+      },
+      {
+        title: 'Financial Restitution and Asset Recovery: ',
+        description:
+          'Assisting in the recovery of assets obtained through illegal means and providing strategies for financial restitution.',
+      },
+      {
+        title: 'Risk Assessment for Financial Institutions: ',
+        description:
+          'Helping financial institutions assess the risk associated with black money and identifying potential compliance gaps.',
+      },
+      {
+        title: 'Legal Support and Documentation: ',
+        description:
+          'Providing expert documentation and legal support for investigations, including valuation reports for enforcement authorities.',
+      },
+      {
+        title: 'Repatriation of Assets: ',
+        description:
+          'Assisting clients with the legal and financial processes involved in repatriating assets held abroad.',
+      },
+    ],
+    sectors: [
+      {
+        title: 'Financial Institutions: ',
+        description:
+          'Supporting banks and non-banking financial companies in uncovering black money and ensuring regulatory compliance.',
+      },
+      {
+        title: 'Government and Law Enforcement: ',
+        description:
+          'Providing services to government bodies and law enforcement agencies for asset investigation, financial compliance, and asset recovery.',
+      },
+      {
+        title: 'Tax Authorities: ',
+        description:
+          'Assisting tax authorities in identifying hidden income, assessing unpaid taxes, and recovering black money.',
+      },
+      {
+        title: 'Corporate Sector: ',
+        description:
+          'Helping corporations detect and manage risks related to black money, ensuring compliance with anti-money laundering standards.',
+      },
+      {
+        title: 'Individuals and Families: ',
+        description:
+          'Providing advisory services to individuals and families involved in asset concealment or looking to rectify financial discrepancies.',
+      },
+    ],
+  },
+  {
+    id: 17,
+    title: 'Tender & Specifications Drafting',
+    imgSrc: '/embla/tender.jpg',
+    imgAlt: 'Tender & Specifications Drafting',
+    description:
+      'We provide expert services in drafting tender documents and specifications for a wide range of construction, procurement, and service contracts. Our approach ensures that all technical and contractual aspects are covered in compliance with legal requirements, industry standards, and client expectations. We assist clients in preparing detailed tender proposals, ensuring clarity, accuracy, and competitiveness to facilitate smooth project execution.',
+    list: [
+      {
+        title: 'Tender Document Preparation: ',
+        description:
+          'Drafting comprehensive tender documents, including instructions to bidders, evaluation criteria, terms and conditions, and project scope.',
+      },
+      {
+        title: 'Technical Specifications: ',
+        description:
+          'Creating detailed technical specifications for construction, equipment procurement, and services to ensure that projects meet industry standards and client requirements.',
+      },
+      {
+        title: 'Bill of Quantities (BoQ): ',
+        description:
+          'Preparing an accurate and detailed Bill of Quantities for construction projects to ensure that all materials, labor, and costs are accounted for.',
+      },
+      {
+        title: 'Contractual Terms and Conditions: ',
+        description:
+          'Drafting clear and enforceable contractual terms and conditions that define the rights and responsibilities of all parties involved in the project.',
+      },
+      {
+        title: 'Scope of Work (SOW): ',
+        description:
+          'Defining the scope of work for various projects, outlining deliverables, timelines, and quality expectations.',
+      },
+      {
+        title: 'Bid Evaluation Criteria: ',
+        description:
+          'Establishing transparent and objective criteria for evaluating bids to ensure that the selection process is fair and aligned with project goals.',
+      },
+      {
+        title: 'Risk Assessment and Mitigation Plans: ',
+        description:
+          'Identifying potential risks in the tendering process and developing mitigation plans to reduce uncertainty during project execution.',
+      },
+      {
+        title: 'Legal and Regulatory Compliance: ',
+        description:
+          'Ensuring that the tender documents adhere to all applicable local and international legal, regulatory, and industry standards.',
+      },
+      {
+        title: 'Pre-Tender Consultations: ',
+        description:
+          'Providing consultations prior to the tender process to clarify project requirements, bid structure, and vendor expectations.',
+      },
+      {
+        title: 'Tender Submission and Review Assistance: ',
+        description:
+          'Assisting clients with the preparation, submission, and review of tender proposals to ensure completeness and competitiveness.',
+      },
+    ],
+    sectors: [
+      {
+        title: 'Construction and Infrastructure: ',
+        description:
+          'Drafting tenders and specifications for construction projects, including residential, commercial, and industrial developments.',
+      },
+      {
+        title: 'Government Contracts: ',
+        description:
+          'Assisting in the preparation of tenders for government contracts, ensuring compliance with public procurement regulations and transparency.',
+      },
+      {
+        title: 'Procurement and Supply Chain: ',
+        description:
+          'Drafting tenders for procurement of goods and services, including detailed specifications for suppliers and vendors.',
+      },
+      {
+        title: 'Engineering and Technical Services: ',
+        description:
+          'Creating detailed tenders and technical specifications for engineering and technical services projects, including machinery procurement and facility management.',
+      },
+      {
+        title: 'Energy and Utilities: ',
+        description:
+          'Drafting tenders and specifications for energy and utilities projects, including renewable energy, power generation, and water supply projects.',
+      },
+      {
+        title: 'Healthcare and Pharmaceuticals: ',
+        description:
+          'Assisting in tendering for healthcare infrastructure, equipment procurement, and pharmaceutical supply contracts.',
+      },
+      {
+        title: 'IT and Telecom: ',
+        description:
+          'Providing tender and specifications drafting for IT services, telecom infrastructure projects, and technology procurement.',
+      },
+      {
+        title: 'Transportation and Logistics: ',
+        description:
+          'Drafting tenders for transportation and logistics services, including infrastructure development, fleet management, and supply chain operations.',
+      },
+    ],
+  },
+  {
+    id: 18,
+    title: 'Lender’s Independent Engineers',
+    imgSrc: '/embla/lender.png',
+    imgAlt: 'Lender’s Independent Engineers',
+    description:
+      'We provide Lender’s Independent Engineer (LIE) services to financial institutions, banks, and developers to ensure compliance, progress tracking, and due diligence for various projects. Our expertise ensures projects meet financial and regulatory benchmarks, minimizing risk and maximizing transparency for stakeholders.',
+    list: [
+      {
+        title: 'Project Feasibility Assessment: ',
+        description:
+          'Evaluating technical and financial feasibility, including design, resources, and anticipated challenges to ensure project viability.',
+      },
+      {
+        title: 'Progress Monitoring: ',
+        description:
+          'Providing periodic reports to track construction progress, budget utilization, and alignment with timelines.',
+      },
+      {
+        title: 'Risk Assessment: ',
+        description:
+          'Identifying potential risks in project execution and recommending strategies to mitigate them.',
+      },
+      {
+        title: 'Technical Due Diligence: ',
+        description:
+          'Conducting in-depth reviews of designs, plans, and construction processes to ensure compliance with industry standards and regulations.',
+      },
+      {
+        title: 'Cost Estimation and Analysis: ',
+        description:
+          "Assessing the project's financial requirements, budget planning, and cost overruns to maintain financial discipline.",
+      },
+      {
+        title: 'Quality Assurance: ',
+        description:
+          'Monitoring the quality of materials and workmanship to ensure adherence to agreed standards and specifications.',
+      },
+      {
+        title: 'Environmental and Safety Compliance: ',
+        description:
+          'Reviewing environmental impact and ensuring safety protocols are implemented during project execution.',
+      },
+      {
+        title: 'Completion Certification: ',
+        description:
+          'Providing final certification of project completion to lenders, confirming that the project meets agreed-upon standards and is ready for operations.',
+      },
+      {
+        title: 'Dispute Resolution Support: ',
+        description:
+          'Offering impartial insights and data to resolve disputes between stakeholders during project execution.',
+      },
+      {
+        title: 'Real-Time Reporting: ',
+        description:
+          'Implementing advanced systems to provide lenders and stakeholders with real-time updates on project status.',
+      },
+    ],
+    sectors: [
+      {
+        title: 'Real Estate and Construction: ',
+        description:
+          'Supporting lenders and developers by monitoring residential, commercial, and industrial construction projects.',
+      },
+      {
+        title: 'Infrastructure Development: ',
+        description:
+          'Ensuring compliance and tracking progress for large-scale infrastructure projects such as highways, railways, and ports.',
+      },
+      {
+        title: 'Power and Energy: ',
+        description:
+          'Providing technical reviews and monitoring for energy projects, including renewable energy, power plants, and transmission lines.',
+      },
+      {
+        title: 'Manufacturing: ',
+        description:
+          'Monitoring manufacturing facility developments and ensuring alignment with financial and technical benchmarks.',
+      },
+      {
+        title: 'Oil and Gas: ',
+        description:
+          'Assessing and monitoring upstream, midstream, and downstream oil and gas projects for lenders and stakeholders.',
+      },
+      {
+        title: 'Water and Sanitation: ',
+        description:
+          'Providing insights and monitoring for water treatment facilities, sewage systems, and sanitation projects.',
+      },
+      {
+        title: 'Transportation: ',
+        description:
+          'Tracking transportation projects, including airports, railways, metro systems, and road networks, for timely completion.',
+      },
+      {
+        title: 'Telecommunications: ',
+        description:
+          'Offering LIE services for telecommunication infrastructure projects such as data centers, towers, and network expansions.',
+      },
+      {
+        title: 'Mining and Resources: ',
+        description:
+          'Providing expertise in monitoring and evaluating mining projects to ensure safety and financial viability.',
+      },
+    ],
+  },
+
+  {
     id: 19,
     title: 'Mould Certification in Structural and Architectural Fields',
+    imgSrc: '/embla/mould.png',
+    imgAlt: 'Mould Certification in Structural and Architectural Fields',
     description:
       'We provide Mould Certification services tailored for the structural and architectural sectors. These services ensure that moulds used in the construction of structural components and architectural elements meet quality, safety, and regulatory standards. Our certification process encompasses design evaluation, material testing, dimensional accuracy checks, and performance testing to support efficient, sustainable, and safe construction practices.',
     list: [

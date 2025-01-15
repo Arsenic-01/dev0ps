@@ -1,9 +1,8 @@
-import React from 'react';
-import EmblaCarousel from './ui/EmblaCarousel';
-import { EmblaOptionsType } from 'embla-carousel';
-import '../app/embla.css';
 import { Button } from '@nextui-org/button';
+import { EmblaOptionsType } from 'embla-carousel';
 import Link from 'next/link';
+import '../app/embla.css';
+import EmblaCarousel from './ui/EmblaCarousel';
 
 const OPTIONS: EmblaOptionsType = { dragFree: true };
 const SLIDE_COUNT = 5;

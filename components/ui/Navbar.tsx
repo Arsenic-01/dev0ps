@@ -1,24 +1,22 @@
 'use client';
 
+import { UserContext } from '@/context/UserContext';
+import { navItems } from '@/data';
+import { deleteSessionClient, getLoggedInUser } from '@/lib/appwrite';
 import {
+  Button,
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
-  Button,
+  NavbarMenuToggle,
 } from '@nextui-org/react';
-import { useContext, useEffect, useState } from 'react';
-import { navItems } from '@/data';
-import { deleteSessionClient, getLoggedInUser } from '@/lib/appwrite';
-import { useRouter } from 'next/navigation';
-import { UserContext } from '@/context/UserContext';
-import { TransitionLink } from '../utils/TransitionLink';
-import NavigationMenuContents from './NavigationMenuDemo';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useContext, useEffect, useState } from 'react';
+import NavigationMenuContents from './NavigationMenuDemo';
 
 export default function NavbarComponent() {
   const userContext = useContext(UserContext);
@@ -72,7 +70,7 @@ export default function NavbarComponent() {
               aria-label='Navigate to homepage'
             >
               <Image
-                src='/SBA_LOGO11-modified.webp'
+                src='/logo.webp'
                 width={30}
                 height={30}
                 priority
@@ -134,7 +132,7 @@ export default function NavbarComponent() {
           )}
         </NavbarContent>
 
-        <NavbarMenu>
+        <NavbarMenu className='z-50'>
           {navItems.map((link, index) => (
             <NavbarMenuItem className='mt-5' key={index}>
               <a

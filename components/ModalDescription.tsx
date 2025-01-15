@@ -1,5 +1,4 @@
 import { ServiceCardsDescription } from '@/data';
-import React from 'react';
 
 interface ModalContentProps {
   id: number;

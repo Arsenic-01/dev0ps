@@ -1,7 +1,5 @@
 'use client';
 
-import * as React from 'react';
-import Link from 'next/link';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,6 +9,8 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
+import Link from 'next/link';
+import * as React from 'react';
 
 import { useRouter } from 'next/navigation';
 const aboutData = [
@@ -29,19 +29,19 @@ const aboutData = [
 ];
 const serviceData = [
   {
-    id: 2,
+    id: 1,
     title: 'Architectural Planning',
   },
   {
-    id: 10,
+    id: 2,
     title: 'Town Planning Approvals',
   },
   {
-    id: 16,
+    id: 3,
     title: 'NA Conversion of Lands',
   },
   {
-    id: 7,
+    id: 4,
     title: 'Real Estate Advisory',
   },
   {
@@ -49,55 +49,55 @@ const serviceData = [
     title: 'Valuation Consultancy',
   },
   {
-    id: 8,
+    id: 6,
     title: 'Plant and Machinery Valuation',
   },
   {
-    id: 14,
+    id: 7,
     title: 'Chartered Engineer Certifications',
   },
   {
-    id: 17,
+    id: 8,
     title: 'Factory Act Certification',
   },
   {
-    id: 12,
+    id: 9,
     title: 'NDT Testing & Stability Certification',
   },
   {
-    id: 13,
+    id: 10,
     title: 'Surveying & Monitoring',
   },
   {
-    id: 15,
+    id: 11,
     title: 'Industrial Safety Audits',
   },
   {
-    id: 18,
+    id: 12,
     title: 'IPO Certification',
   },
   {
-    id: 6,
+    id: 13,
     title: 'TEV Consultancy',
   },
   {
-    id: 1,
+    id: 14,
     title: 'Structural Designing',
   },
   {
-    id: 3,
+    id: 15,
     title: 'Interior Designing',
   },
   {
-    id: 9,
+    id: 16,
     title: 'Black Money Valuation',
   },
   {
-    id: 11,
+    id: 17,
     title: 'Tender and specs drawing',
   },
   {
-    id: 4,
+    id: 18,
     title: 'Lender’s independent engineers',
   },
   {

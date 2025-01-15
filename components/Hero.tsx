@@ -1,7 +1,7 @@
-import React, { useMemo } from 'react';
 import { Star, StarHalf } from 'lucide-react';
-import WordRotateEffect from './ui/wordRotate';
 import Image from 'next/image';
+import { useMemo } from 'react';
+import WordRotateEffect from './ui/wordRotate';
 import { HeroButtonGetStarted } from './utils/Misc';
 
 const Hero = () => {
