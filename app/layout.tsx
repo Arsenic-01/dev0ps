@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: 'Sunil Bhor & Associates - Premier Consultancy Firm in India',
     description:
       'Leading consultancy firm offering services like architectural planning, structural design, project management consultancy, and property valuation for residential, commercial, and industrial projects across India.',
-    images: '/logo.webp',
+    images: '/Letter_Head1_1.jpg',
     type: 'website',
     url: 'https://www.sunilbhor.com',
   },
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: 'Sunil Bhor & Associates',
     description:
       'Over 25 years of excellence in architectural planning, structural design, project management consultancy, and property valuation in India.',
-    images: '/logo.webp',
+    images: '/Letter_Head1_1.jpg',
   },
 
   robots: {
