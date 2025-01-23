@@ -157,13 +157,13 @@ export const linkdata = [
   },
   {
     id: 2,
-    link: '/careers',
+    link: 'https://forms.gle/TtZCiWuE7VWiUWZY8',
     title: 'Careers',
     next: false,
   },
   {
     id: 3,
-    link: '/portfolio',
+    link: '#',
     title: 'Portfolio',
     next: false,
   },

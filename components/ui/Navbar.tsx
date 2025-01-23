@@ -74,7 +74,7 @@ export default function NavbarComponent() {
                 width={30}
                 height={30}
                 priority
-                className='w-7 sm:w-[30px] mr-2 ml-2 sm:ml-0 hover:animate-hovereffect transition-all duration-100 ease-in-out'
+                className='w-7 sm:w-[30px] mr-2 ml-2 sm:ml-0 lg:hover:animate-hovereffect lg:transition-all lg:duration-100 lg:ease-in-out'
                 alt='Company logo: SBA'
               />
               <h1 className='font-bold text-xl sm:text-[22px] select-none'>

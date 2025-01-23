@@ -169,6 +169,9 @@ export const BentoGridItem = ({
                 position='right'
                 width={true}
                 className='md:mt-5'
+                handleClick={() =>
+                  router.push('https://forms.gle/TtZCiWuE7VWiUWZY8')
+                }
                 otherClasses='bg-black'
               />
             </>
